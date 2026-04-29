@@ -1,10 +1,11 @@
 # Changelog
 
-## r19 — 29 April 2026 (in flight)
+## r19 — 29 April 2026 (landed)
 - Stack R12 county harvest offset on top of r18's R14 owner stratification
 - Patched `R/06_projection_engine.R` with `get_county_harvest_mult()` helper modeled after `get_owner_harvest_mult()`. Reads `config/maine_county_harvest_calibration.csv`, returns `rate_relative_to_statewide` capped to [0.3, 2.5]
 - target_prob = base × Q × county_mult × owner_mult
-- Cardinal jobs 8957591–8957594 + expansion 8957595, ETA ~3.5 hr
+- **Result:** small marginal effect over r18 (+0.6 to +3 MMT 2074 AGC). RMSE essentially unchanged (14.5 → 14.6); bias improves marginally (−5.8 → −4.7 RCP4.5 wear, −0.1 → +0.4 RCP8.5 wear). The county multiplier captures real spatial variation but the dominant calibration win came from R14.
+- Both R12 and R14 retained in canonical pipeline (orthogonal effects)
 
 ## r18 — 29 April 2026 (active landowner-stratified pipeline)
 - Added Harris–Caputo–Butler 2025 landowner stratification (R14) — **landed in v2**
