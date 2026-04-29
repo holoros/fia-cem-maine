@@ -87,6 +87,20 @@ get_owner_harvest_mult <- function(projected, cfg) {
     keep <- own[, c("STATECD", "COUNTYCD", "PLOT", "hcb_class")]
     keep$owner_harvest_mult <- leg$harvest_mult[match(keep$hcb_class, leg$hcb_class)]
     keep$owner_harvest_mult[is.na(keep$owner_harvest_mult)] <- 1.0
+
+    ## Optional: forest-area-mean mass-balance rescale (R14-bal). Multipliers
+    ## are divided by the forest-area mean so that the average plot has
+    ## multiplier 1.0 — isolates the spatial redistribution effect from the
+    ## net rate reduction. Activated by cfg$harvest$use_owner_balanced.
+    if (isTRUE(cfg$harvest$use_owner_balanced %||% FALSE)) {
+      forest_mask <- keep$hcb_class %in% 3:8
+      fa_mean <- mean(keep$owner_harvest_mult[forest_mask], na.rm = TRUE)
+      if (is.finite(fa_mean) && fa_mean > 0) {
+        keep$owner_harvest_mult <- keep$owner_harvest_mult / fa_mean
+        cat(sprintf("  R14-bal mass-balance rescale: divided multipliers by forest-area mean %.3f\n",
+                    fa_mean))
+      }
+    }
     assign(".OWNER_MULT_LOOKUP", keep, envir = .GlobalEnv)
     cat(sprintf("  R14 owner-mult lookup loaded: %d plot rows; mean mult %.3f\n",
                 nrow(keep), mean(keep$owner_harvest_mult)))

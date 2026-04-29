@@ -1,5 +1,13 @@
 # Changelog
 
+## r20 — 29 April 2026 (in flight)
+- Mass-balanced R14 variant: rescale owner multipliers by 1/forest-area-mean (1/0.81) so that the average plot has multiplier 1.0
+- Isolates the spatial-redistribution effect of ownership from the net rate reduction in r18/r19
+- Patched `R/06_projection_engine.R` `get_owner_harvest_mult()` to apply rescale when `cfg$harvest$use_owner_balanced = TRUE`
+- New CLI flag `--use_owner_balanced`
+- Cardinal jobs 8974686-8974690, ETA ~3.5 hr
+- MCC policy brief refreshed with r18/r19 numbers and 4 new recommendations including PERSEUS cross-model coherence
+
 ## r19 — 29 April 2026 (landed)
 - Stack R12 county harvest offset on top of r18's R14 owner stratification
 - Patched `R/06_projection_engine.R` with `get_county_harvest_mult()` helper modeled after `get_owner_harvest_mult()`. Reads `config/maine_county_harvest_calibration.csv`, returns `rate_relative_to_statewide` capped to [0.3, 2.5]

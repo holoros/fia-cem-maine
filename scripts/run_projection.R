@@ -127,6 +127,8 @@ parse_cli_args <- function() {
         parsed$use_county_harvest <- TRUE; i <- i + 1
       } else if (args[i] == "--use_owner_stratification") {
         parsed$use_owner_stratification <- TRUE; i <- i + 1
+      } else if (args[i] == "--use_owner_balanced") {
+        parsed$use_owner_balanced <- TRUE; i <- i + 1
       } else {
         i <- i + 1
       }
@@ -254,6 +256,10 @@ main <- function() {
   if (isTRUE(cli_args$use_owner_stratification)) {
     CONFIG$harvest$use_owner_stratification <- TRUE
     cat("HCB landowner stratification enabled (R14; Harris-Caputo-Butler 2025 raster)\n")
+  }
+  if (isTRUE(cli_args$use_owner_balanced)) {
+    CONFIG$harvest$use_owner_balanced <- TRUE
+    cat("R14-bal: forest-area mass-balance rescale enabled (preserve statewide harvest)\n")
   }
   for (nm in c("insect_amp_mult", "wind_amp_mult", "fire_amp_mult")) {
     if (!is.null(cli_args[[nm]])) CONFIG[[nm]] <- cli_args[[nm]]
