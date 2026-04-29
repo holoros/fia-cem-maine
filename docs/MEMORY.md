@@ -145,6 +145,31 @@ Hindcast skill (r12 BAU vs observed, 2004 to 2024):
 
 **Recommendation for manuscript:** report r11 as the canonical published pipeline. Note R1 expansion as future work that requires the DESIGNCD filter refinement. The hindcast validation at r11 (RMSE 16 MMT vs subject-matched, bias −2 MMT) remains the headline validation result.
 
+## Session #5 progress (continued — r18 v2 LANDED with R14 effect)
+
+**r18 v2 finished and the R14 patch worked.** All four projection jobs (8942049-8942052) and dependent expansion (8942053) completed. Log confirms `R14 owner-mult lookup loaded: 6288 plot rows; mean mult 0.648`. Trajectories diverge meaningfully from r17:
+
+| RCP | Pipeline | r17 BAU 2004 | r18 BAU 2004 | r17 BAU 2074 | r18 BAU 2074 | Δ MMT 2074 |
+|-----|----------|---:|---:|---:|---:|---:|
+| 4.5 | wear     | 231.4 | 237.0 | 35.9 | 48.7 | **+12.8** |
+| 4.5 | wear+econ | 230.8 | 236.4 | 29.8 | 44.3 | **+14.5** |
+| 8.5 | wear     | 232.8 | 238.3 | 43.4 | 58.6 | **+15.2** |
+| 8.5 | wear+econ | 232.1 | 237.8 | 35.6 | 52.4 | **+16.8** |
+
+The marginal effect of HCB landowner stratification peaks around 2034-2039 at ~24 MMT then decays as both trajectories approach low steady state. Forest-area-weighted mean owner multiplier is 0.81 (NIPF×0.5 dominates by 54% area share), so r18 statewide harvest is ~19% lower than uniform-rate r17.
+
+**r18 baseline calibration also slightly improved**: 237 MMT 2004 baseline vs r17's 231 MMT — closer to subject-matched observed 268 MMT (now -31 MMT, -12% undershoot vs r17's -37 MMT).
+
+**Updates committed to repo:**
+- `figures/fig_r17_vs_r18_rcp{45,85}.png` — 2-panel (trajectory + delta bar)
+- `figures/fig_r18_summary_2x2.png` — full RCP × econ × scenario lattice
+- `figures/fig_progression_rcp{45,85}.png` — extended through r18
+- `state_summary_progression/state_*_r{17,18}_ci.csv` × 8 — committed for full reproducibility
+- Manuscript Section 3.7 added (new): Landowner stratification effect
+- Manuscript Section 4 (Discussion) extended to 4 points
+- CHANGELOG.md updated with r18 v2 details
+- 4 commits total on `main`: cf556e9 → d232e31 → d7d2932 → 80c65fc
+
 ## Session #5 progress (continued — repo built, R14 fix, r18 v2)
 
 **GitHub repo built locally** at `/sessions/wonderful-peaceful-feynman/mnt/outputs/fia-cem-maine` (4.9 MB, 71 files, 2 commits on `main`):
