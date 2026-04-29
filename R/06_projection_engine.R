@@ -24,6 +24,40 @@ library(tidyverse)
 # Helpers
 # =============================================================================
 
+#' Look up the per-plot county harvest probability multiplier (R12).
+#' Reads config/maine_county_harvest_calibration.csv once per session
+#' (cached on .GlobalEnv$.COUNTY_MULT_LOOKUP). Multiplier =
+#' rate_relative_to_statewide capped to [0.3, 2.5] for stability. Returns
+#' 1.0 when flag off or lookup missing.
+get_county_harvest_mult <- function(projected, cfg) {
+  if (!isTRUE(cfg$harvest$use_county_harvest %||% FALSE)) {
+    return(rep(1.0, nrow(projected)))
+  }
+  if (!exists(".COUNTY_MULT_LOOKUP", envir = .GlobalEnv)) {
+    cfg_dir <- cfg$paths$config_dir %||% "config"
+    cal_csv <- file.path(cfg_dir, "maine_county_harvest_calibration.csv")
+    if (!file.exists(cal_csv)) {
+      warning(sprintf("use_county_harvest TRUE but %s missing", cal_csv))
+      return(rep(1.0, nrow(projected)))
+    }
+    cal <- read.csv(cal_csv, stringsAsFactors = FALSE)
+    cal$STATECD <- 23L
+    cal$county_harvest_mult <- pmin(2.5, pmax(0.3,
+                                              cal$rate_relative_to_statewide))
+    keep <- cal[, c("STATECD", "COUNTYCD", "county_harvest_mult")]
+    assign(".COUNTY_MULT_LOOKUP", keep, envir = .GlobalEnv)
+    cat(sprintf("  R12 county-mult lookup loaded: %d county rows; range [%.2f, %.2f]\n",
+                nrow(keep),
+                min(keep$county_harvest_mult), max(keep$county_harvest_mult)))
+  }
+  lk <- get(".COUNTY_MULT_LOOKUP", envir = .GlobalEnv)
+  key <- paste(projected$STATECD, projected$COUNTYCD, sep = "_")
+  lkk <- paste(lk$STATECD,        lk$COUNTYCD,        sep = "_")
+  m <- lk$county_harvest_mult[match(key, lkk)]
+  m[is.na(m)] <- 1.0
+  m
+}
+
 #' Look up the per-plot HCB owner-class harvest probability multiplier (R14).
 #' Reads config/fia_plots_with_owner.csv and config/owner_class_legend.csv
 #' once per session (cached on .GlobalEnv$.OWNER_MULT_LOOKUP) and returns a
@@ -189,18 +223,23 @@ project_one_cycle <- function(subjects, remeasured, scenario,
     base_target <- pmin(0.95, pmax(0, as.numeric(cfg$fixed_harvest_rate) * q_h))
     set.seed(cfg$seed + cycle_num * 7919 + sim_id)
 
-    # ---- R14 HCB owner-class multiplier (applied per plot) -----
-    owner_mult <- get_owner_harvest_mult(projected, cfg)
+    # ---- R12 county + R14 HCB owner multipliers (applied per plot) -----
+    county_mult <- get_county_harvest_mult(projected, cfg)
+    owner_mult  <- get_owner_harvest_mult(projected, cfg)
     projected <- projected |>
       mutate(
-        owner_harvest_mult = owner_mult,
-        target_prob        = pmin(0.95, pmax(0, base_target * owner_harvest_mult)),
-        final_harvest      = runif(n()) < target_prob
+        county_harvest_mult = county_mult,
+        owner_harvest_mult  = owner_mult,
+        target_prob = pmin(0.95, pmax(0, base_target *
+                                          county_harvest_mult *
+                                          owner_harvest_mult)),
+        final_harvest = runif(n()) < target_prob
       ) |>
-      select(-owner_harvest_mult, -target_prob)
+      select(-county_harvest_mult, -owner_harvest_mult, -target_prob)
     if (cycle_num <= 1) {
-      cat(sprintf("  Fixed harvest branch: base=%.3f * Q=%.2f = %.3f; owner-mult mean=%.3f\n",
+      cat(sprintf("  Fixed harvest: base=%.3f * Q=%.2f = %.3f; county-mult mean=%.3f; owner-mult mean=%.3f\n",
                   cfg$fixed_harvest_rate, q_h, base_target,
+                  mean(county_mult, na.rm = TRUE),
                   mean(owner_mult, na.rm = TRUE)))
     }
   } else {
@@ -210,15 +249,20 @@ project_one_cycle <- function(subjects, remeasured, scenario,
     q_h <- tryCatch(scenario$Q_values$harvested, error = function(e) 1)
     q_h <- if (is.null(q_h) || !is.finite(q_h)) 1 else q_h
     set.seed(cfg$seed + cycle_num * 7919 + sim_id)
-    owner_mult <- get_owner_harvest_mult(projected, cfg)
+    county_mult <- get_county_harvest_mult(projected, cfg)
+    owner_mult  <- get_owner_harvest_mult(projected, cfg)
     projected <- projected |>
       mutate(
-        base_prob          = mean(harvested, na.rm = TRUE),
-        owner_harvest_mult = owner_mult,
-        target_prob        = pmin(0.95, pmax(0, base_prob * q_h * owner_harvest_mult)),
-        final_harvest      = runif(n()) < target_prob
+        base_prob           = mean(harvested, na.rm = TRUE),
+        county_harvest_mult = county_mult,
+        owner_harvest_mult  = owner_mult,
+        target_prob = pmin(0.95, pmax(0, base_prob * q_h *
+                                          county_harvest_mult *
+                                          owner_harvest_mult)),
+        final_harvest = runif(n()) < target_prob
       ) |>
-      select(-base_prob, -target_prob, -owner_harvest_mult)
+      select(-base_prob, -target_prob,
+             -county_harvest_mult, -owner_harvest_mult)
   }
 
   # --- Step 5: Apply harvest intensity and compute removals ------------------
