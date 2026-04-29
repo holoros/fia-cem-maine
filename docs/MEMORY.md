@@ -145,6 +145,33 @@ Hindcast skill (r12 BAU vs observed, 2004 to 2024):
 
 **Recommendation for manuscript:** report r11 as the canonical published pipeline. Note R1 expansion as future work that requires the DESIGNCD filter refinement. The hindcast validation at r11 (RMSE 16 MMT vs subject-matched, bias −2 MMT) remains the headline validation result.
 
+## Session #5 progress (continued — r19 + comprehensive CV table)
+
+**r19 LANDED.** All four projections + expansion completed (Cardinal 8957591-8957595). r19 = r18 + R12 county harvest offset. The patched 06_projection_engine.R now applies both `county_mult × owner_mult` per plot.
+
+**r19 vs r18 BAU 2074 AGC delta:** +0.6 to +3 MMT (small marginal effect). The county multiplier captures real spatial variation (Aroostook 0.42×, Washington 0.30× capped, Sagadahoc 2.50× capped) but the dominant calibration win came from R14.
+
+**Comprehensive CV table against subject-matched observed FIA** (RMSE / bias / MAE, MMT, at 2004 / 2009 / 2014 / 2019 / 2024):
+
+| Tag | RCP | Pipeline | RMSE | Bias | MAE |
+|---|---|---|---:|---:|---:|
+| r17 | 4.5 | wear | 22.4 | −20.1 | 20.1 |
+| r17 | 4.5 | wear+econ | 24.3 | −22.3 | 22.3 |
+| r17 | 8.5 | wear | 18.7 | −15.1 | 15.1 |
+| r17 | 8.5 | wear+econ | 20.5 | −17.7 | 17.7 |
+| **r18** | 4.5 | wear | **14.5** | −5.8 | 12.5 |
+| r18 | 4.5 | wear+econ | 14.8 | −7.2 | 12.7 |
+| r18 | 8.5 | wear | 15.4 | −0.1 | 13.3 |
+| r18 | 8.5 | wear+econ | 14.9 | −2.0 | 12.4 |
+| r19 | 4.5 | wear | 14.6 | −4.7 | 12.6 |
+| r19 | 4.5 | wear+econ | 14.6 | −6.1 | 12.6 |
+| r19 | 8.5 | wear | 15.6 | +0.4 | 13.6 |
+| r19 | 8.5 | wear+econ | 15.0 | −1.2 | 12.7 |
+
+**Dominant finding stands**: R14 owner stratification is the calibration driver. R12 county offset is a small refinement on top.
+
+**Repo at 10 commits** on `main`. Latest: `a59025d r19 landed`. Local at `/sessions/wonderful-peaceful-feynman/mnt/outputs/fia-cem-maine`. Ready for `gh auth login && gh repo create`.
+
 ## Session #5 progress (continued — r18 v2 LANDED with R14 effect)
 
 **r18 v2 finished and the R14 patch worked.** All four projection jobs (8942049-8942052) and dependent expansion (8942053) completed. Log confirms `R14 owner-mult lookup loaded: 6288 plot rows; mean mult 0.648`. Trajectories diverge meaningfully from r17:
