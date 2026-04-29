@@ -1,0 +1,8 @@
+"fortype_group","n_plots","sdimax_m_mean","sdimax_m_median","sdimax_m_p10","sdimax_m_p90","sdimax_e_mean","sdimax_e_median","sdimax_e_p10","sdimax_e_p90"
+"Aspen-birch",315,1027,993,564,1474,416,402,228,597
+"Hardwood",165,874,839,560,1285,354,340,227,520
+"Mixed",83,1061,1017,649,1543,429,411,262,624
+"Northern hardwood",1312,935,893,596,1306,378,361,241,529
+"Other",64,850,829,397,1351,344,336,161,547
+"Softwood",255,1113,1085,683,1561,450,439,276,632
+"Spruce-fir",1059,1119,1064,642,1642,453,431,260,665

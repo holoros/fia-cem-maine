@@ -1,0 +1,63 @@
+# R
+.Rhistory
+.Rproj.user/
+.Rapp.history
+.RData
+.Renviron
+.Rdata
+*.Rproj
+.Rprofile
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+*.pyc
+
+# Large pipeline outputs (regenerated on Cardinal)
+output/
+**/per_plot_projections.rds
+**/raw_mc_summaries.csv
+**/ci_summaries.csv
+
+# Source raster (8.4 GB, fetch from RDS-2025-0045 instead)
+**/NewEngland_LandOwners.tif
+**/US_forest_ownership.tif
+*.tif.aux.xml
+*.tif.ovr
+*.tif.vat.*
+
+# FIA CSVs (download separately)
+fia_data/
+**/ME_TREE.csv
+**/ME_PLOT.csv
+**/ME_COND.csv
+**/*_POP_*.csv
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Secrets and SSH keys (never commit)
+.ssh/
+*.pem
+*.key
+id_*
+**/cardinal_key*
+**/id_osc*
+**/id_ed25519*
+
+# Local node_modules (used for docx building)
+node_modules/
+package-lock.json
+package.json

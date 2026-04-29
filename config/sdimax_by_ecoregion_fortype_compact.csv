@@ -1,0 +1,76 @@
+"ecoregion","fortype_group","fortype_label","n_plots","sdimax_m_mean","sdimax_m_p10","sdimax_m_p90","sdimax_e_mean","sdimax_e_p10","sdimax_e_p90"
+"Acadian Highlands","Aspen-birch","Aspen",63,1073,525,1646,434,212,666
+"Acadian Highlands","Aspen-birch","Paper birch",39,1071,609,1586,433,246,642
+"Acadian Highlands","Aspen-birch","Balsam poplar",13,922,609,1252,373,246,506
+"Acadian Highlands","Mixed","Eastern white pine / N. red oak / wht ash",8,1158,792,1562,469,321,632
+"Acadian Highlands","Northern hardwood","Sugar maple / beech / yellow birch",406,929,575,1288,376,233,521
+"Acadian Highlands","Northern hardwood","Red maple (upland)",37,923,446,1345,373,180,544
+"Acadian Highlands","Northern hardwood","Hard maple / basswood",13,796,454,981,322,184,397
+"Acadian Highlands","Other","FORTYPCD 962",8,902,651,1161,365,263,470
+"Acadian Highlands","Other","FORTYPCD 905",5,974,604,1337,394,244,541
+"Acadian Highlands","Softwood","Eastern white pine / eastern hemlock",8,1168,761,1482,473,308,600
+"Acadian Highlands","Softwood","Eastern white pine",7,1346,953,1598,545,386,647
+"Acadian Highlands","Spruce-fir","Balsam fir",191,1176,691,1737,476,280,703
+"Acadian Highlands","Spruce-fir","Red spruce / balsam fir",92,1193,794,1701,483,321,688
+"Acadian Highlands","Spruce-fir","Northern white-cedar",88,1284,762,1754,519,308,710
+"Acadian Highlands","Spruce-fir","Red spruce",63,1184,828,1573,479,335,636
+"Acadian Highlands","Spruce-fir","Black spruce",44,892,470,1272,361,190,515
+"Acadian Highlands","Spruce-fir","White spruce",19,962,619,1334,389,250,540
+"Acadian Highlands","Spruce-fir","Tamarack (eastern)",9,886,411,1363,359,166,552
+"Central Maine","Aspen-birch","Aspen",34,1125,724,1549,455,293,627
+"Central Maine","Aspen-birch","Gray birch",13,850,473,1151,344,191,466
+"Central Maine","Aspen-birch","Paper birch",9,981,758,1224,397,307,495
+"Central Maine","Hardwood","Northern red oak",43,916,640,1293,371,259,523
+"Central Maine","Hardwood","Sweetgum / Nuttall oak / willow oak",34,847,554,1251,343,224,506
+"Central Maine","Hardwood","Black ash / American elm / red maple",11,991,547,1179,401,221,477
+"Central Maine","Hardwood","White oak / red oak / hickory",10,883,620,1101,357,251,446
+"Central Maine","Mixed","Eastern white pine / N. red oak / wht ash",37,1084,672,1532,439,272,620
+"Central Maine","Northern hardwood","Sugar maple / beech / yellow birch",225,972,622,1354,393,252,548
+"Central Maine","Northern hardwood","Red maple (upland)",42,965,615,1346,391,249,545
+"Central Maine","Northern hardwood","Hard maple / basswood",13,842,500,1316,341,203,532
+"Central Maine","Softwood","Eastern white pine",76,1126,635,1644,456,257,665
+"Central Maine","Softwood","Eastern white pine / eastern hemlock",34,1058,780,1373,428,316,556
+"Central Maine","Softwood","Eastern white pine / red pine",20,1204,773,1644,487,313,665
+"Central Maine","Spruce-fir","Balsam fir",46,1098,609,1625,445,247,658
+"Central Maine","Spruce-fir","Northern white-cedar",33,1171,754,1555,474,305,629
+"Central Maine","Spruce-fir","Red spruce",23,1165,866,1474,471,351,596
+"Central Maine","Spruce-fir","Red spruce / balsam fir",14,1135,622,1843,459,252,746
+"Central Maine","Spruce-fir","Black spruce",9,930,445,1359,376,180,550
+"Eastern/Coastal","Aspen-birch","Aspen",22,1006,538,1333,407,218,540
+"Eastern/Coastal","Aspen-birch","Gray birch",17,937,501,1268,379,203,513
+"Eastern/Coastal","Aspen-birch","Paper birch",16,842,585,1078,341,237,436
+"Eastern/Coastal","Hardwood","Northern red oak",15,851,624,1186,344,252,480
+"Eastern/Coastal","Hardwood","Sweetgum / Nuttall oak / willow oak",11,821,619,1114,332,250,451
+"Eastern/Coastal","Mixed","Eastern white pine / N. red oak / wht ash",18,1044,685,1488,422,277,602
+"Eastern/Coastal","Northern hardwood","Sugar maple / beech / yellow birch",100,1030,620,1523,417,251,616
+"Eastern/Coastal","Northern hardwood","Red maple (upland)",34,905,580,1196,366,235,484
+"Eastern/Coastal","Northern hardwood","Hard maple / basswood",6,1017,698,1356,412,283,549
+"Eastern/Coastal","Other","FORTYPCD 962",9,658,345,967,266,140,391
+"Eastern/Coastal","Softwood","Eastern white pine",38,1073,682,1445,434,276,585
+"Eastern/Coastal","Softwood","Eastern white pine / eastern hemlock",21,1041,672,1464,421,272,593
+"Eastern/Coastal","Spruce-fir","Balsam fir",64,985,595,1425,399,241,577
+"Eastern/Coastal","Spruce-fir","Red spruce",47,1005,603,1503,407,244,608
+"Eastern/Coastal","Spruce-fir","Red spruce / balsam fir",32,1106,791,1326,448,320,537
+"Eastern/Coastal","Spruce-fir","Black spruce",25,967,507,1817,391,205,735
+"Eastern/Coastal","Spruce-fir","Northern white-cedar",22,1053,687,1286,426,278,521
+"Eastern/Coastal","Spruce-fir","White spruce",6,710,312,1130,287,126,457
+"Western Mountains","Aspen-birch","Paper birch",40,1031,618,1328,417,250,537
+"Western Mountains","Aspen-birch","Aspen",39,1060,655,1382,429,265,559
+"Western Mountains","Aspen-birch","Gray birch",6,972,578,1364,393,234,552
+"Western Mountains","Hardwood","Northern red oak",7,1005,767,1330,407,310,538
+"Western Mountains","Hardwood","Black ash / American elm / red maple",7,918,430,1505,372,174,609
+"Western Mountains","Hardwood","Sweetgum / Nuttall oak / willow oak",7,858,667,1111,347,270,450
+"Western Mountains","Mixed","Eastern white pine / N. red oak / wht ash",18,1018,512,1567,412,207,634
+"Western Mountains","Northern hardwood","Sugar maple / beech / yellow birch",375,906,622,1251,367,252,506
+"Western Mountains","Northern hardwood","Red maple (upland)",40,957,606,1276,387,245,517
+"Western Mountains","Northern hardwood","Hard maple / basswood",21,807,425,1209,327,172,489
+"Western Mountains","Other","FORTYPCD 905",6,871,582,1155,352,236,467
+"Western Mountains","Other","FORTYPCD 962",6,645,428,856,261,173,346
+"Western Mountains","Softwood","Eastern white pine",21,1156,754,1497,468,305,606
+"Western Mountains","Softwood","Eastern white pine / eastern hemlock",10,1198,818,1538,485,331,622
+"Western Mountains","Softwood","Eastern white pine / red pine",5,1171,923,1456,474,374,589
+"Western Mountains","Spruce-fir","Balsam fir",83,1167,688,1767,472,278,715
+"Western Mountains","Spruce-fir","Red spruce",51,1155,771,1694,467,312,686
+"Western Mountains","Spruce-fir","Red spruce / balsam fir",47,1055,660,1458,427,267,590
+"Western Mountains","Spruce-fir","Northern white-cedar",21,1194,792,1728,483,321,699
+"Western Mountains","Spruce-fir","Black spruce",18,1087,595,1889,440,241,765

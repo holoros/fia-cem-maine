@@ -1,0 +1,107 @@
+COUNTYCD,hcb_class,hcb_label,n_plots,area_acres
+1,1,Non-Forest,25,224401
+1,2,Water,2,13048
+1,3,Family Forest (NIPF),55,401207
+1,4,Corporate/Other Private (Industrial),8,51630
+1,7,State Forest,2,12090
+1,8,Local Forest,3,29965
+3,1,Non-Forest,236,2033479
+3,2,Water,26,228372
+3,3,Family Forest (NIPF),452,3994699
+3,4,Corporate/Other Private (Industrial),466,4112895
+3,6,Federal Forest,3,21013
+3,7,State Forest,59,480744
+3,8,Local Forest,16,216011
+5,1,Non-Forest,50,439096
+5,2,Water,12,105362
+5,3,Family Forest (NIPF),89,768711
+5,4,Corporate/Other Private (Industrial),32,201879
+5,6,Federal Forest,1,6230
+5,7,State Forest,2,16147
+5,8,Local Forest,4,27837
+7,1,Non-Forest,51,472678
+7,2,Water,12,88239
+7,3,Family Forest (NIPF),158,1331086
+7,4,Corporate/Other Private (Industrial),108,983178
+7,6,Federal Forest,6,41338
+7,7,State Forest,30,256820
+7,8,Local Forest,2,14316
+9,1,Non-Forest,51,448564
+9,2,Water,14,79262
+9,3,Family Forest (NIPF),214,1732216
+9,4,Corporate/Other Private (Industrial),57,548043
+9,5,Tribal Forest,1,5766
+9,6,Federal Forest,12,135243
+9,7,State Forest,8,80722
+11,1,Non-Forest,47,349060
+11,2,Water,9,65127
+11,3,Family Forest (NIPF),97,789077
+11,4,Corporate/Other Private (Industrial),19,123058
+11,7,State Forest,4,25964
+11,8,Local Forest,1,5292
+13,1,Non-Forest,23,150612
+13,2,Water,2,13887
+13,3,Family Forest (NIPF),51,494709
+13,4,Corporate/Other Private (Industrial),5,61553
+13,6,Federal Forest,2,12931
+13,7,State Forest,1,33359
+15,1,Non-Forest,22,134737
+15,2,Water,4,26728
+15,3,Family Forest (NIPF),68,524900
+15,4,Corporate/Other Private (Industrial),4,23047
+15,7,State Forest,2,13793
+15,8,Local Forest,1,6512
+17,1,Non-Forest,45,360676
+17,2,Water,11,129505
+17,3,Family Forest (NIPF),238,2094130
+17,4,Corporate/Other Private (Industrial),68,616807
+17,6,Federal Forest,39,283071
+17,7,State Forest,14,108076
+17,8,Local Forest,13,148230
+19,1,Non-Forest,105,1003963
+19,2,Water,18,133635
+19,3,Family Forest (NIPF),245,2029853
+19,4,Corporate/Other Private (Industrial),184,1428688
+19,5,Tribal Forest,7,47245
+19,6,Federal Forest,52,504351
+19,7,State Forest,40,289062
+19,8,Local Forest,33,269753
+21,1,Non-Forest,112,1001788
+21,2,Water,40,336979
+21,3,Family Forest (NIPF),249,2001837
+21,4,Corporate/Other Private (Industrial),278,2452456
+21,6,Federal Forest,4,25074
+21,7,State Forest,107,863994
+21,8,Local Forest,26,237010
+23,1,Non-Forest,12,136378
+23,3,Family Forest (NIPF),39,353089
+23,4,Corporate/Other Private (Industrial),4,23607
+23,7,State Forest,2,12335
+23,8,Local Forest,1,5504
+25,1,Non-Forest,132,1133363
+25,2,Water,21,168973
+25,3,Family Forest (NIPF),305,2693886
+25,4,Corporate/Other Private (Industrial),222,1971929
+25,5,Tribal Forest,2,12525
+25,6,Federal Forest,6,44582
+25,7,State Forest,83,691967
+25,8,Local Forest,2,12067
+27,1,Non-Forest,33,240627
+27,2,Water,4,53208
+27,3,Family Forest (NIPF),98,692677
+27,4,Corporate/Other Private (Industrial),16,128617
+27,7,State Forest,2,40232
+29,1,Non-Forest,57,521464
+29,2,Water,25,308390
+29,3,Family Forest (NIPF),268,2305463
+29,4,Corporate/Other Private (Industrial),148,1157916
+29,5,Tribal Forest,10,70901
+29,6,Federal Forest,8,88937
+29,7,State Forest,28,344183
+29,8,Local Forest,2,11134
+31,1,Non-Forest,56,415802
+31,2,Water,4,27796
+31,3,Family Forest (NIPF),108,1009375
+31,4,Corporate/Other Private (Industrial),16,105237
+31,6,Federal Forest,7,40926
+31,8,Local Forest,10,93050

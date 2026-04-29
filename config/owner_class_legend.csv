@@ -1,0 +1,10 @@
+hcb_class,label,cem_class,treat_baseline
+0,Unknown Forest,Unknown,NA
+1,Non-Forest,Mask,NA
+2,Water,Mask,NA
+3,Family Forest (NIPF),NIPF,light_partial
+4,Corporate/Other Private (Industrial),Industrial,heavy_partial
+5,Tribal Forest,Public-Other,no_harvest
+6,Federal Forest,Federal,no_harvest
+7,State Forest,State,light_partial
+8,Local Forest,Public-Other,no_harvest

@@ -1,0 +1,26 @@
+SPCD,scientific_name,common_name,potter_VCC_score,potter_cluster,beta_per_C
+12,Abies balsamea,balsam fir,36.1,E2,-0.006
+71,Larix laricina,eastern larch,28.0,E2,0.002
+91,Picea rubens,red spruce,38.0,D,-0.020
+94,Picea glauca,white spruce,49.2,C,-0.025
+95,Picea mariana,black spruce,46.0,C,-0.020
+129,Pinus strobus,eastern white pine,40.2,E4,-0.010
+241,Thuja occidentalis,northern white-cedar,32.0,E2,-0.002
+261,Tsuga canadensis,eastern hemlock,39.3,E4,-0.018
+316,Acer rubrum,red maple,31.0,E4,0.000
+318,Acer saccharum,sugar maple,37.4,E4,-0.005
+371,Betula alleghaniensis,yellow birch,30.8,E2,-0.001
+375,Betula papyrifera,paper birch,23.0,E4,0.005
+531,Fagus grandifolia,American beech,28.8,E4,0.002
+541,Fraxinus americana,white ash,35.6,E4,-0.005
+544,Fraxinus pennsylvanica,green ash,38.0,E4,-0.005
+762,Prunus serotina,black cherry,29.0,E4,0.001
+763,Prunus pensylvanica,pin cherry,30.0,E4,0.000
+743,Populus tremuloides,quaking aspen,27.8,E4,0.002
+744,Populus grandidentata,bigtooth aspen,39.9,C,-0.008
+746,Populus heterophylla,swamp cottonwood,60.3,C,-0.030
+802,Quercus alba,white oak,28.0,E4,0.005
+833,Quercus rubra,northern red oak,36.6,E4,-0.005
+837,Quercus velutina,black oak,30.0,E4,0.005
+951,Tilia americana,American basswood,54.2,C,-0.020
+972,Ulmus americana,American elm,40.0,E4,-0.010
