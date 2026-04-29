@@ -145,6 +145,23 @@ Hindcast skill (r12 BAU vs observed, 2004 to 2024):
 
 **Recommendation for manuscript:** report r11 as the canonical published pipeline. Note R1 expansion as future work that requires the DESIGNCD filter refinement. The hindcast validation at r11 (RMSE 16 MMT vs subject-matched, bias −2 MMT) remains the headline validation result.
 
+## Session #5 progress (continued — repo built, R14 fix, r18 v2)
+
+**GitHub repo built locally** at `/sessions/wonderful-peaceful-feynman/mnt/outputs/fia-cem-maine` (4.9 MB, 71 files, 2 commits on `main`):
+- README, LICENSE (MIT), CHANGELOG, .gitignore
+- R/ (6 pipeline modules), scripts/ (10 driver scripts), viz/ (6 Python figure builders), osc/ (11 SLURM submit scripts), config/ (14 reference tables), docs/ (MEMORY + LANDOWNER strategy + PIPELINE_OVERVIEW), figures/ (7 PNGs), tables/ (5 endpoint CSVs), manuscript/ (methods note + 3 supplements)
+- Two commits: initial commit (cf556e9) and R14 fix (d232e31)
+- Ready for `gh auth login` then `gh repo create` push
+
+**R14 fix:** the first r18 (jobs 8916881-8916884) ran to completion and produced **byte-identical** output to r17. Diagnosis: my previous owner-stratification patch was in `predict_harvest_probability()` in `R/03_harvest_choice.R`, but production submit scripts use `--skip_supply --no_econ` which routes harvest decisions through `06_projection_engine.R`'s `fixed_harvest_rate` branch, which never calls 03's logit. Fix:
+
+- Added `get_owner_harvest_mult()` helper at the top of `R/06_projection_engine.R`. Reads `config/fia_plots_with_owner.csv` + `config/owner_class_legend.csv` once per session (cached on `.GlobalEnv`), returns per-plot multiplier vector keyed by STATECD/COUNTYCD/PLOT.
+- Patched both fixed_harvest_rate branch and donor-rate branch to apply: `target_prob = base * Q * owner_mult`.
+- Default 1.0 when flag off or files missing — no impact on r17 etc.
+- Parse OK on Cardinal, file uploaded with backup.
+
+**r18 v2 submitted** (jobs 8942049-8942052, dependent expansion 8942053). Cleaned old r18 dirs and CSVs first. ETA ~3.5 hours.
+
 ## Session #5 progress (continued — r17 expansion done, manuscript updated)
 
 **All four r17 CSVs landed.** r17 expansion (job 8915695) completed successfully and the per-plot RDS files were removed afterward to keep quota. Pulled all 4 r17 CIs locally.
