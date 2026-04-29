@@ -1,12 +1,15 @@
 # Changelog
 
-## r18 — 28 April 2026 (in flight)
-- Added Harris–Caputo–Butler 2025 landowner stratification (R14)
+## r18 — 29 April 2026 (active landowner-stratified pipeline)
+- Added Harris–Caputo–Butler 2025 landowner stratification (R14) — **landed in v2**
 - Built `config/fia_plots_with_owner.csv` (6,288 Maine FIA plots × HCB class)
-- Patched `R/03_harvest_choice.R` with `cfg$harvest$use_owner_stratification` flag and per-class harvest probability multipliers
+- Patched `R/06_projection_engine.R` with `get_owner_harvest_mult()` helper and per-plot owner multiplier in both fixed_harvest_rate and donor-rate branches (the v1 patch in 03_harvest_choice.R turned out to be on a code path that production runs don't take, so v2 moved the patch to 06)
+- Patched `R/03_harvest_choice.R` with `cfg$harvest$use_owner_stratification` flag (kept for econ-overlay path)
 - New CLI flag `--use_owner_stratification`
 - Added `docs/LANDOWNER_INTEGRATION_STRATEGY.md`
 - New supplement: `manuscript/supplement_S3_maine_ownership_atlas.docx`
+- **Result:** r18 retains 13–17 MMT MORE 2074 AGC than r17 across the four RCP × econ-overlay combinations. NIPF (54% of forest) at ×0.5 multiplier dominates the area-weighted mean to 0.81, so statewide harvest is ~19% lower than uniform-rate baseline. Marginal effect peaks at ~24 MMT around 2034–2039 then decays.
+- New figures: `fig_r17_vs_r18_rcp{45,85}.png`, `fig_r18_summary_2x2.png`
 
 ## r17 — 27 April 2026 (canonical refined-pipeline baseline)
 - DESIGNCD filter on subject-pool expansion (excludes pre-1999 periodic plots)

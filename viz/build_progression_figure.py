@@ -29,6 +29,7 @@ TAG_DIRS = {
     "r15": "state_summary_progression",
     "r16": "state_summary_progression",
     "r17": "state_summary_progression",
+    "r18": "state_summary_progression",
 }
 TAG_REFINEMENT = {
     "r11": "r11 baseline (econ + multi-pool, no expansion)",
@@ -38,11 +39,12 @@ TAG_REFINEMENT = {
     "r15": "r15 + R4 FORTYPCD species climate",
     "r16": "r16 + R4-VCC Potter species climate",
     "r17": "r17 R1-v2 (DESIGNCD-filtered, annualized only)",
+    "r18": "r18 + R14 HCB landowner stratification",
 }
 TAG_COLORS = {
     "r11": "#7f7f7f", "r12": "#1f77b4", "r13": "#2ca02c",
     "r14": "#ff7f0e", "r15": "#9467bd", "r16": "#d62728",
-    "r17": "#17becf",
+    "r17": "#17becf", "r18": "#e91e63",
 }
 
 # Subject-matched observed (from r11 hindcast validation work)

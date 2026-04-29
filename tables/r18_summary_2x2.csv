@@ -1,0 +1,13 @@
+rcp,econ,scenario,agc_2004,agc_2074,agc_2074_lo,agc_2074_hi
+45,False,No_harvest,246.8,96.6,84.2,108.9
+45,False,BAU,237.0,48.7,41.9,55.8
+45,False,Harvest_p50_biomass,232.0,34.9,29.6,41.5
+45,True,No_harvest,246.8,96.6,84.2,108.9
+45,True,BAU,236.4,44.3,37.2,52.1
+45,True,Harvest_p50_biomass,231.2,29.5,23.2,36.8
+85,False,No_harvest,248.2,119.2,102.5,134.5
+85,False,BAU,238.3,58.6,50.5,66.0
+85,False,Harvest_p50_biomass,233.3,40.3,32.9,49.9
+85,True,No_harvest,248.2,119.2,102.5,134.5
+85,True,BAU,237.8,52.4,42.3,60.6
+85,True,Harvest_p50_biomass,232.6,34.0,26.5,41.3
