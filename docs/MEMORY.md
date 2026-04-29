@@ -145,6 +145,22 @@ Hindcast skill (r12 BAU vs observed, 2004 to 2024):
 
 **Recommendation for manuscript:** report r11 as the canonical published pipeline. Note R1 expansion as future work that requires the DESIGNCD filter refinement. The hindcast validation at r11 (RMSE 16 MMT vs subject-matched, bias −2 MMT) remains the headline validation result.
 
+## Session #5 progress (continued — manuscript polish + Figure 1)
+
+**Manuscript abstract refreshed** to lead with the calibration story (RMSE 22.4 → 14.5 MMT from owner stratification). Old r10/r11-era numbers replaced with refined-pipeline r17/r18 results. Lists the 8 refinement layers explicitly.
+
+**Manuscript conclusions** expanded from 1 to 4 paragraphs covering: pipeline summary, dominant calibration finding, three policy implications (NIPF/Industrial asymmetry, owner-targeted levers, PERSEUS cross-model coherence), future work scaffold.
+
+**New deliverables:**
+- `figures/fig_hindcast_residuals_r17_r18_r19.png` — 4-panel residual time series across all RCP × overlay combinations. r17 (blue) systematically undershoots; r18/r19 (red/purple) track within ±15 MMT band.
+- `figures/fig_manuscript_figure_1.png` — single 4-panel candidate Manuscript Figure 1 combining (a) trajectories with observed-overlay, (b) Maine ownership pie, (c) RMSE bar chart, (d) 2074 endpoint bars. Suitable as single Figure 1 or split into Figures 1-2.
+- `figures/fig_r17_r20_attribution_rcp45.png` — 4-panel decomposition figure (auto-updates when r20 lands to add the r20 spatial-only line).
+- `manuscript/r17_r19_consolidated_results.docx` — 213-paragraph polished co-author review package combining all figures, tables, refinement progression, and recommendations.
+
+**Repo at 17 commits**, 116 files, 17 MB. Latest: `f36ef07 Consolidated r17-r19 results docx for co-author review`.
+
+**r20 at ~24% complete** as of writing (29 min elapsed of estimated 2 hr). Auto-expansion fires when projections done. Ready to pull and rebuild attribution figure once landed.
+
 ## Session #5 progress (continued — r20 mass-balanced + outstanding items)
 
 **r20 in flight** — mass-balanced R14 variant. Patched `06_projection_engine.R`'s `get_owner_harvest_mult()` to rescale multipliers by `1 / forest-area mean` when `cfg$harvest$use_owner_balanced` is set. After rescale, NIPF×0.617, Industrial×1.852, Tribal×0.247, Federal×0.247, State×0.617, Local×0.371. Statewide harvest mass should match r17 uniform-rate; only the spatial distribution shifts. Cardinal jobs 8974686-8974690, ETA ~3.5 hr. Log confirms `R14-bal: forest-area mass-balance rescale enabled (preserve statewide harvest)` and `divided multipliers by forest-area mean 0.811`.
