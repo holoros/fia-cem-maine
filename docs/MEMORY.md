@@ -145,6 +145,18 @@ Hindcast skill (r12 BAU vs observed, 2004 to 2024):
 
 **Recommendation for manuscript:** report r11 as the canonical published pipeline. Note R1 expansion as future work that requires the DESIGNCD filter refinement. The hindcast validation at r11 (RMSE 16 MMT vs subject-matched, bias −2 MMT) remains the headline validation result.
 
+## Session #5 progress (continued — r20 mass-balanced + outstanding items)
+
+**r20 in flight** — mass-balanced R14 variant. Patched `06_projection_engine.R`'s `get_owner_harvest_mult()` to rescale multipliers by `1 / forest-area mean` when `cfg$harvest$use_owner_balanced` is set. After rescale, NIPF×0.617, Industrial×1.852, Tribal×0.247, Federal×0.247, State×0.617, Local×0.371. Statewide harvest mass should match r17 uniform-rate; only the spatial distribution shifts. Cardinal jobs 8974686-8974690, ETA ~3.5 hr. Log confirms `R14-bal: forest-area mass-balance rescale enabled (preserve statewide harvest)` and `divided multipliers by forest-area mean 0.811`.
+
+**MCC policy brief refreshed** with r18/r19 numbers. Bottom-line table updated to refined-pipeline values (BAU 2074 = 44 MMT under wear+econ, was 81 MMT in old r10/r11 era). New section on landowner stratification as the largest single calibration improvement. Cross-validation table lists r17 vs r18 RMSE/bias for all four RCP × overlay combinations. Four recommendations including PERSEUS cross-model coherence.
+
+**County × owner crosstab built.** 75 populated cells of 96 theoretical (16 counties × 6 owner classes); 33 with n ≥ 30, 44 with n ≥ 10. Top cells: Aroostook NIPF 1,109, Aroostook Industrial 894, Penobscot NIPF 586. 19 cells have product multipliers outside [0.15, 2.5] — hint at county × owner interaction but most extreme cells are sparse. Useful as scaffold for future R14-VCC interaction model.
+
+**Climate ensemble design note** drafted at `docs/CLIMATE_ENSEMBLE_DESIGN.md`. Proposes 12-GCM cool-dry/cool-wet/warm-dry/warm-wet ensemble for CMIP5-style climate uncertainty propagation. 6 hr Cardinal compute + 1-2 day engineer time. Deferred to manuscript-revision phase or follow-on paper.
+
+**Repo at 13 commits** on `main`. Latest: `dbfdf80 County x owner crosstab + climate ensemble design note`. Ready for `gh auth login && gh repo create`.
+
 ## Session #5 progress (continued — r19 + comprehensive CV table)
 
 **r19 LANDED.** All four projections + expansion completed (Cardinal 8957591-8957595). r19 = r18 + R12 county harvest offset. The patched 06_projection_engine.R now applies both `county_mult × owner_mult` per plot.
