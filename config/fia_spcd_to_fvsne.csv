@@ -1,0 +1,98 @@
+SPCD,common_name,fvs_ne,fvs_acd
+12,balsam fir,BF,BF
+14,fraser fir,FR,BF
+17,jack pine,JP,JP
+70,northern white-cedar,NC,NC
+71,tamarack,TA,TA
+73,red spruce,RS,RS
+91,engelmann spruce,ES,RS
+94,white spruce,WS,WS
+95,black spruce,BS,BS
+97,red spruce,RS,RS
+105,jack pine,JP,JP
+110,shortleaf pine,JP,JP
+115,red pine,RN,RN
+125,red pine,RN,RN
+129,eastern white pine,WP,WP
+130,scotch pine,SP,WP
+241,northern white-cedar,NC,NC
+261,eastern hemlock,HE,HE
+299,unspecified hardwood,OH,OH
+300,unspecified hardwood,OH,OH
+310,maple sp.,RM,RM
+312,bigtooth maple,RM,RM
+313,boxelder,RM,RM
+314,black maple,SM,SM
+315,striped maple,RM,RM
+316,red maple,RM,RM
+317,silver maple,RM,RM
+318,sugar maple,SM,SM
+319,mountain maple,RM,RM
+320,sycamore maple,RM,RM
+355,european alder,GB,GB
+356,common serviceberry,GB,GB
+370,birch sp.,YB,YB
+371,paper birch,PB,PB
+372,gray birch,GB,GB
+373,sweet birch,YB,YB
+375,yellow birch,YB,YB
+379,heartleaf birch,YB,YB
+391,american hornbeam,AH,AH
+402,bitternut hickory,HI,HI
+403,pignut hickory,HI,HI
+407,shagbark hickory,HI,HI
+409,mockernut hickory,HI,HI
+421,american chestnut,OH,OH
+462,hackberry,OH,OH
+491,flowering dogwood,OH,OH
+531,american beech,BE,BE
+540,white ash,WA,WA
+541,black ash,BA,BA
+543,green ash,GA,GA
+544,european ash,WA,WA
+552,honey locust,OH,OH
+571,butternut,OH,OH
+601,butternut,OH,OH
+602,black walnut,OH,OH
+621,yellow-poplar,OH,OH
+651,cucumber tree,OH,OH
+653,sweetbay,OH,OH
+660,white mulberry,OH,OH
+661,red mulberry,OH,OH
+680,blackgum,OH,OH
+691,blackgum,OH,OH
+693,water tupelo,OH,OH
+701,eastern hophornbeam,HH,HH
+711,sourwood,OH,OH
+731,paulownia,OH,OH
+741,balsam poplar,QA,QA
+742,eastern cottonwood,QA,QA
+743,bigtooth aspen,BP,BP
+744,quaking aspen,QA,QA
+745,swamp cottonwood,QA,QA
+746,bigtooth aspen,BP,BP
+761,black cherry,BC,BC
+762,pin cherry,PC,PC
+763,chokecherry,PC,PC
+767,european alder,GB,GB
+802,white oak,WO,WO
+806,scarlet oak,SO,WO
+812,southern red oak,RO,RO
+820,bear oak,SC,SC
+823,bur oak,WO,WO
+826,black oak,BO,BO
+830,chestnut oak,WO,WO
+832,chinkapin oak,WO,WO
+833,northern red oak,RO,RO
+834,bear oak,SC,SC
+837,post oak,WO,WO
+838,black oak,BO,BO
+901,black locust,BL,BL
+922,sassafras,OH,OH
+931,american basswood,BW,BW
+951,american elm,AE,AE
+952,slippery elm,RE,RE
+972,red elm,RE,RE
+975,winged elm,RE,RE
+998,other softwood,OS,OS
+999,other tree,OH,OH
