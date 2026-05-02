@@ -1,0 +1,49 @@
+LandisData PnETBiomassParameters
+
+>> Generated from FIA empirical chronosequence yield curves
+>> Source: maine_yield_curves_v3_fits.csv
+
+BiomassParameters
+>>StratumKey                                       MaxAGB_MgHa  Age50pct     Age90pct     Treatment   
+Northern hardwood_ME_APH_NIPF                      142.3        39           88           untreated   
+Northern hardwood_ME_APH_NIPF                      503.1        179          513          harvested   
+Northern hardwood_ME_NCZ_NIPF                      158.3        47           143          untreated   
+Northern hardwood_ME_NCZ_NIPF                      130.3        52           113          harvested   
+Spruce-fir_ME_NH_Industrial                        97.0         21           39           untreated   
+Spruce-fir_ME_NH_Industrial                        408.4        188          509          harvested   
+Spruce-fir_ME_APH_NIPF                             100.4        26           89           untreated   
+Spruce-fir_ME_APH_NIPF                             352.0        185          521          harvested   
+Spruce-fir_ME_NH_NIPF                              92.1         19           37           untreated   
+Spruce-fir_ME_NH_NIPF                              72.6         12           23           harvested   
+Northern hardwood_ME_NH_Industrial                 103.7        23           48           untreated   
+Northern hardwood_ME_NH_Industrial                 130.1        46           95           harvested   
+Northern hardwood_ME_NH_NIPF                       123.1        33           131          untreated   
+Northern hardwood_ME_NH_NIPF                       74.2         19           35           harvested   
+Northern hardwood_ME_NCZ_Industrial                142.4        44           120          untreated   
+Northern hardwood_ME_NCZ_Industrial                771.7        126          265          harvested   
+Spruce-fir_ME_NCZ_NIPF                             92.4         24           45           untreated   
+White/Red pine_ME_APH_NIPF                         241.4        68           351          untreated   
+White/Red pine_ME_APH_NIPF                         84.1         24           45           harvested   
+Spruce-fir_ME_APH_Industrial                       82.2         20           37           untreated   
+Spruce-fir_ME_APH_Industrial                       78.8         27           50           harvested   
+Northern hardwood_ME_APH_Industrial                188.6        86           382          untreated   
+Northern hardwood_ME_APH_Industrial                71.3         31           70           harvested   
+Spruce-fir_ME_NCZ_Industrial                       96.0         18           34           untreated   
+Aspen-birch_ME_APH_NIPF                            157.3        60           227          untreated   
+Oak/Pine/Hemlock_ME_APH_NIPF                       198.4        45           111          untreated   
+Oak/Pine/Hemlock_ME_APH_NIPF                       120.0        29           62           harvested   
+Aspen-birch_ME_NH_NIPF                             101.0        23           55           untreated   
+Aspen-birch_ME_NH_Industrial                       99.0         22           41           untreated   
+Spruce-fir_ME_NH_State                             97.8         20           38           untreated   
+Aspen-birch_ME_NCZ_NIPF                            210.1        64           197          untreated   
+Northern hardwood_ME_NCZ_State                     167.7        40           161          untreated   
+Aspen-birch_ME_APH_Industrial                      146.6        48           129          untreated   
+Northern hardwood_ME_NH_State                      267.5        108          417          untreated   
+White/Red pine_ME_APH_Industrial                   148.4        40           100          untreated   
+Aspen-birch_ME_NCZ_Industrial                      109.1        31           81           untreated   
+Northern hardwood_ME_APH_Public-Other              155.4        53           177          untreated   
+Mixedwood_ME_APH_NIPF                              91.5         30           58           untreated   
+White/Red pine_ME_NCZ_NIPF                         145.9        34           63           untreated   
+Spruce-fir_ME_APH_Public-Other                     116.9        28           83           untreated   
+Northern hardwood_ME_NCZ_Public-Other              210.8        66           205          untreated   
+Spruce-fir_ME_NCZ_State                            98.5         20           38           untreated   

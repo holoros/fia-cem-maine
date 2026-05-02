@@ -1,6 +1,6 @@
 # FIA CEM Maine Carbon Projection Pipeline — Memory File
 
-**Last updated:** 2 May 2026 (session #6 — Phase 2 yield curves landed, FVS+Woodstock strategy live)
+**Last updated:** 2 May 2026 (session #6b — v3 treatment-stratified curves + 4-model adapters landed)
 
 ## Repository
 
@@ -52,6 +52,23 @@ This matches expected Maine productivity gradient (less productive at higher ele
 - Stage 3: Woodstock LP optimization (3,000-variable LP, 6 constraint sets, 3 objectives, shadow-price analysis for marginal cost of carbon retention)
 
 The empirical curves (v2) are the immediate Phase 2 deliverable; FVS process-driven curves remain as future work for the cross-model PERSEUS comparison.
+
+**v3 treatment-stratified curves (added 2 May 2026):**
+- `scripts/yc_07_treatment_stratified.R` adds a treatment dimension to v2 by classifying each plot as `untreated`, `harvested`, or `disturbed` based on FIA `TRTCD1/2/3` (codes 10/20/30/50 within 30 yr window) and `DSTRBCD1/2/3` (severe codes within 20 yr window). Of the 3,930 stand-aged plots: 71% untreated, 25% harvested, 4% disturbed.
+- Outputs: `yield_curves/maine_yield_curves_v3_long.csv` (6,300 rows), `yield_curves/maine_yield_curves_v3_fits.csv` (210 fits = 42 stratum × treatment × 5 responses), `figures/fig_yield_curves_v3_treatment.png`.
+- Fit yield: 42 of 70 cell × treatment combinations had ≥6 plots × ≥3 unique ages for a stable Chapman-Richards fit. Untreated curves dominate; harvested fits exist for 7 cells with 10+ harvested plots.
+- SLURM job 9073569, 3:22 elapsed, 5.4 GB peak RSS.
+- **Caveat for future v4:** harvested chronosequences are upward-biased because younger harvested plots are recently cut (low AGB) while older ones have regrown. A few harvested asymptotes ran high (Northern hardwood NIPF harvested = 224 ton/ac vs untreated 64 ton/ac). The constraint `a ≤ 3 × max(y)` allows this. v4 should either tighten asymptote bounds for harvested or fit time-since-treatment as a separate covariate.
+
+**4-model adapter outputs (added 2 May 2026):**
+- `scripts/yc_08_adapters.R` reads v3 outputs and emits four model-specific input formats under `yield_curves/adapters/`:
+  - `gcbm_growth_curves.csv` (1,260 rows) — classifier-set keyed for GCBM/libcbm with merch_vol_m3_ha, foliage_kgC_m2, other_above_kgC_m2, total_above_kgC_m2 derived via Jenkins component ratios (foliage 5%, other above 18% of AGB).
+  - `landis_biomass_parameters.csv` (42 rows) + `landis_biomass_parameters.txt` — LANDIS PnET-Succession block per (cell × treatment) with MaxAGB_MgHa, BG_root_MgHa (Jenkins 0.22 ratio), age_to_50pct_a, age_to_90pct_a.
+  - `cem_productivity_multipliers.csv` (42 rows) — per (cell × treatment) productivity scaling factor relative to population-mean asymptote (mean a = 74.1 ton/ac), for direct ingestion into the CEM `06_projection_engine.R` growth multiplier.
+  - `woodstock_yields_long.csv` (1,260 rows) + `woodstock_yields_AGB_wide.csv` (42 rows × 30 periods) — periodic AGB and merchantable volume per (stratum × action × period) for direct paste into a Woodstock YIELDS section.
+- Conversion factors used: `0.45` AGB-to-C, `2.2417` ton/ac to Mg/ha, `0.069972` cuft/ac to m³/ha, `0.22` Jenkins below-ground ratio.
+
+**Cross-model PERSEUS handoff is now possible.** Anyone with GCBM, LANDIS, or Woodstock can now run the same 35 Maine forest type × ecoregion × owner strata using these adapter files. The CEM productivity multiplier is the simplest way to back-port the empirical asymptote into our own pipeline as an alternative to the BRMS-fitted SDImax cap.
 
 ## Session #4 progress (April 27, Cardinal access restored)
 **Project owner:** Aaron Weiskittel (CRSF, University of Maine)

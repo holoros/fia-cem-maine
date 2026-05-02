@@ -1,0 +1,43 @@
+"cell_key","ft_group","ecoregion","owner","treatment","asymptote_tonac","prod_mult","n_plots"
+"Northern hardwood|ME_APH|NIPF","Northern hardwood","ME_APH","NIPF","untreated",63.5,0.857,323
+"Northern hardwood|ME_APH|NIPF","Northern hardwood","ME_APH","NIPF","harvested",224.4,3.028,124
+"Northern hardwood|ME_NCZ|NIPF","Northern hardwood","ME_NCZ","NIPF","untreated",70.6,0.953,308
+"Northern hardwood|ME_NCZ|NIPF","Northern hardwood","ME_NCZ","NIPF","harvested",58.1,0.784,149
+"Spruce-fir|ME_NH|Industrial","Spruce-fir","ME_NH","Industrial","untreated",43.3,0.584,320
+"Spruce-fir|ME_NH|Industrial","Spruce-fir","ME_NH","Industrial","harvested",182.2,2.458,25
+"Spruce-fir|ME_APH|NIPF","Spruce-fir","ME_APH","NIPF","untreated",44.8,0.604,316
+"Spruce-fir|ME_APH|NIPF","Spruce-fir","ME_APH","NIPF","harvested",157,2.119,90
+"Spruce-fir|ME_NH|NIPF","Spruce-fir","ME_NH","NIPF","untreated",41.1,0.554,286
+"Spruce-fir|ME_NH|NIPF","Spruce-fir","ME_NH","NIPF","harvested",32.4,0.437,42
+"Northern hardwood|ME_NH|Industrial","Northern hardwood","ME_NH","Industrial","untreated",46.3,0.624,263
+"Northern hardwood|ME_NH|Industrial","Northern hardwood","ME_NH","Industrial","harvested",58,0.783,64
+"Northern hardwood|ME_NH|NIPF","Northern hardwood","ME_NH","NIPF","untreated",54.9,0.741,224
+"Northern hardwood|ME_NH|NIPF","Northern hardwood","ME_NH","NIPF","harvested",33.1,0.446,63
+"Northern hardwood|ME_NCZ|Industrial","Northern hardwood","ME_NCZ","Industrial","untreated",63.5,0.857,167
+"Northern hardwood|ME_NCZ|Industrial","Northern hardwood","ME_NCZ","Industrial","harvested",344.2,4.644,62
+"Spruce-fir|ME_NCZ|NIPF","Spruce-fir","ME_NCZ","NIPF","untreated",41.2,0.556,158
+"White/Red pine|ME_APH|NIPF","White/Red pine","ME_APH","NIPF","untreated",107.7,1.453,145
+"White/Red pine|ME_APH|NIPF","White/Red pine","ME_APH","NIPF","harvested",37.5,0.506,35
+"Spruce-fir|ME_APH|Industrial","Spruce-fir","ME_APH","Industrial","untreated",36.7,0.495,136
+"Spruce-fir|ME_APH|Industrial","Spruce-fir","ME_APH","Industrial","harvested",35.2,0.474,42
+"Northern hardwood|ME_APH|Industrial","Northern hardwood","ME_APH","Industrial","untreated",84.2,1.135,113
+"Northern hardwood|ME_APH|Industrial","Northern hardwood","ME_APH","Industrial","harvested",31.8,0.429,48
+"Spruce-fir|ME_NCZ|Industrial","Spruce-fir","ME_NCZ","Industrial","untreated",42.8,0.578,121
+"Aspen-birch|ME_APH|NIPF","Aspen-birch","ME_APH","NIPF","untreated",70.2,0.947,104
+"Oak/Pine/Hemlock|ME_APH|NIPF","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",88.5,1.194,84
+"Oak/Pine/Hemlock|ME_APH|NIPF","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",53.5,0.722,26
+"Aspen-birch|ME_NH|NIPF","Aspen-birch","ME_NH","NIPF","untreated",45,0.608,73
+"Aspen-birch|ME_NH|Industrial","Aspen-birch","ME_NH","Industrial","untreated",44.1,0.596,70
+"Spruce-fir|ME_NH|State","Spruce-fir","ME_NH","State","untreated",43.6,0.588,69
+"Aspen-birch|ME_NCZ|NIPF","Aspen-birch","ME_NCZ","NIPF","untreated",93.7,1.264,66
+"Northern hardwood|ME_NCZ|State","Northern hardwood","ME_NCZ","State","untreated",74.8,1.009,60
+"Aspen-birch|ME_APH|Industrial","Aspen-birch","ME_APH","Industrial","untreated",65.4,0.882,50
+"Northern hardwood|ME_NH|State","Northern hardwood","ME_NH","State","untreated",119.3,1.61,51
+"White/Red pine|ME_APH|Industrial","White/Red pine","ME_APH","Industrial","untreated",66.2,0.893,48
+"Aspen-birch|ME_NCZ|Industrial","Aspen-birch","ME_NCZ","Industrial","untreated",48.7,0.657,44
+"Northern hardwood|ME_APH|Public-Other","Northern hardwood","ME_APH","Public-Other","untreated",69.3,0.935,43
+"Mixedwood|ME_APH|NIPF","Mixedwood","ME_APH","NIPF","untreated",40.8,0.551,41
+"White/Red pine|ME_NCZ|NIPF","White/Red pine","ME_NCZ","NIPF","untreated",65.1,0.878,34
+"Spruce-fir|ME_APH|Public-Other","Spruce-fir","ME_APH","Public-Other","untreated",52.2,0.704,38
+"Northern hardwood|ME_NCZ|Public-Other","Northern hardwood","ME_NCZ","Public-Other","untreated",94.1,1.269,28
+"Spruce-fir|ME_NCZ|State","Spruce-fir","ME_NCZ","State","untreated",43.9,0.593,28
