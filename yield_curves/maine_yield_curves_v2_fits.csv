@@ -1,0 +1,151 @@
+"cell_key","ft_group","ecoregion","owner","response","a","b","c","rmse","n_plots","n_boot_succ","asymptote"
+"Northern hardwood|ME_APH|NIPF","Northern hardwood","ME_APH","NIPF","agb_tonac",65.128,0.03416,2.26,22.12,285,200,65.128
+"Northern hardwood|ME_APH|NIPF","Northern hardwood","ME_APH","NIPF","ba_ft2ac",127.737,0.04351,1.908,40.055,285,200,127.737
+"Northern hardwood|ME_APH|NIPF","Northern hardwood","ME_APH","NIPF","carbon_lbac",63189.486,0.03441,2.275,21464.47,285,200,63189.486
+"Northern hardwood|ME_APH|NIPF","Northern hardwood","ME_APH","NIPF","tpa_total",990.777,0.2,3.126,703.926,285,200,990.777
+"Northern hardwood|ME_APH|NIPF","Northern hardwood","ME_APH","NIPF","vol_cuftac",2560.303,0.02801,2.677,844.002,285,200,2560.303
+"Northern hardwood|ME_NCZ|NIPF","Northern hardwood","ME_NCZ","NIPF","agb_tonac",76.816,0.01796,1.463,21.221,254,200,76.816
+"Northern hardwood|ME_NCZ|NIPF","Northern hardwood","ME_NCZ","NIPF","ba_ft2ac",153.682,0.01286,0.73,37.334,254,200,153.682
+"Northern hardwood|ME_NCZ|NIPF","Northern hardwood","ME_NCZ","NIPF","carbon_lbac",74847.515,0.01777,1.449,20510.777,254,200,74847.515
+"Northern hardwood|ME_NCZ|NIPF","Northern hardwood","ME_NCZ","NIPF","tpa_total",921.081,0.2,1.876,661.701,254,200,921.081
+"Northern hardwood|ME_NCZ|NIPF","Northern hardwood","ME_NCZ","NIPF","vol_cuftac",2594.661,0.02653,2.964,769.861,254,200,2594.661
+"Spruce-fir|ME_NH|Industrial","Spruce-fir","ME_NH","Industrial","agb_tonac",43.105,0.09711,5,19.016,316,200,43.105
+"Spruce-fir|ME_NH|Industrial","Spruce-fir","ME_NH","Industrial","ba_ft2ac",137.232,0.10781,5,56.421,316,200,137.232
+"Spruce-fir|ME_NH|Industrial","Spruce-fir","ME_NH","Industrial","carbon_lbac",42568.669,0.09756,5,18819.895,316,200,42568.669
+"Spruce-fir|ME_NH|Industrial","Spruce-fir","ME_NH","Industrial","tpa_total",1633.341,0.2,5,1223.88,316,200,1633.341
+"Spruce-fir|ME_NH|Industrial","Spruce-fir","ME_NH","Industrial","vol_cuftac",2147.409,0.02535,1.495,786.076,316,200,2147.409
+"Spruce-fir|ME_APH|NIPF","Spruce-fir","ME_APH","NIPF","agb_tonac",43.529,0.03887,1.522,20.175,285,200,43.529
+"Spruce-fir|ME_APH|NIPF","Spruce-fir","ME_APH","NIPF","ba_ft2ac",125.481,0.07596,3.099,52.712,285,200,125.481
+"Spruce-fir|ME_APH|NIPF","Spruce-fir","ME_APH","NIPF","carbon_lbac",42414.473,0.0419,1.651,19822.434,285,200,42414.473
+"Spruce-fir|ME_APH|NIPF","Spruce-fir","ME_APH","NIPF","tpa_total",1238.875,0.2,2.941,830.238,285,200,1238.875
+"Spruce-fir|ME_APH|NIPF","Spruce-fir","ME_APH","NIPF","vol_cuftac",2330.632,0.01571,1.1,919.785,285,200,2330.632
+"Spruce-fir|ME_NH|NIPF","Spruce-fir","ME_NH","NIPF","agb_tonac",41.252,0.1077,5,18.973,282,200,41.252
+"Spruce-fir|ME_NH|NIPF","Spruce-fir","ME_NH","NIPF","ba_ft2ac",134.612,0.11534,5,53.949,282,200,134.612
+"Spruce-fir|ME_NH|NIPF","Spruce-fir","ME_NH","NIPF","carbon_lbac",40871.676,0.10797,5,18808.782,282,200,40871.676
+"Spruce-fir|ME_NH|NIPF","Spruce-fir","ME_NH","NIPF","tpa_total",1558.496,0.18588,5,1222.52,282,200,1558.496
+"Spruce-fir|ME_NH|NIPF","Spruce-fir","ME_NH","NIPF","vol_cuftac",1796.718,0.0657,5,782.174,282,200,1796.718
+"Northern hardwood|ME_NH|Industrial","Northern hardwood","ME_NH","Industrial","agb_tonac",52.226,0.03187,1.391,16.777,263,200,52.226
+"Northern hardwood|ME_NH|Industrial","Northern hardwood","ME_NH","Industrial","ba_ft2ac",107.596,0.07242,2.694,34.09,263,200,107.596
+"Northern hardwood|ME_NH|Industrial","Northern hardwood","ME_NH","Industrial","carbon_lbac",50525.999,0.0329,1.42,16396.361,263,200,50525.999
+"Northern hardwood|ME_NH|Industrial","Northern hardwood","ME_NH","Industrial","tpa_total",983.573,0.2,3.433,630.992,263,200,983.573
+"Northern hardwood|ME_NH|Industrial","Northern hardwood","ME_NH","Industrial","vol_cuftac",2589.385,0.01152,1.05,605.9,263,200,2589.385
+"Northern hardwood|ME_NH|NIPF","Northern hardwood","ME_NH","NIPF","agb_tonac",60.506,0.01359,0.78,18.399,233,200,60.506
+"Northern hardwood|ME_NH|NIPF","Northern hardwood","ME_NH","NIPF","ba_ft2ac",125.29,0.01722,0.636,36.804,233,200,125.29
+"Northern hardwood|ME_NH|NIPF","Northern hardwood","ME_NH","NIPF","carbon_lbac",58264.401,0.01395,0.781,17965.038,233,200,58264.401
+"Northern hardwood|ME_NH|NIPF","Northern hardwood","ME_NH","NIPF","tpa_total",976.358,0.2,0.5,634.182,233,200,976.358
+"Northern hardwood|ME_NH|NIPF","Northern hardwood","ME_NH","NIPF","vol_cuftac",2811.927,0.00891,1.006,626.478,233,200,2811.927
+"Northern hardwood|ME_NCZ|Industrial","Northern hardwood","ME_NCZ","Industrial","agb_tonac",77.831,0.01438,1.273,18.264,148,200,77.831
+"Northern hardwood|ME_NCZ|Industrial","Northern hardwood","ME_NCZ","Industrial","ba_ft2ac",144.067,0.01845,1.012,33.573,148,200,144.067
+"Northern hardwood|ME_NCZ|Industrial","Northern hardwood","ME_NCZ","Industrial","carbon_lbac",75580.697,0.01442,1.272,17791.501,148,200,75580.697
+"Northern hardwood|ME_NCZ|Industrial","Northern hardwood","ME_NCZ","Industrial","tpa_total",1011.779,0.2,1.159,662.829,148,200,1011.779
+"Northern hardwood|ME_NCZ|Industrial","Northern hardwood","ME_NCZ","Industrial","vol_cuftac",3280.362,0.0124,1.547,637.495,148,200,3280.362
+"Spruce-fir|ME_NCZ|NIPF","Spruce-fir","ME_NCZ","NIPF","agb_tonac",41.086,0.0875,5,19.312,136,200,41.086
+"Spruce-fir|ME_NCZ|NIPF","Spruce-fir","ME_NCZ","NIPF","ba_ft2ac",127.259,0.109,5,51.505,136,200,127.259
+"Spruce-fir|ME_NCZ|NIPF","Spruce-fir","ME_NCZ","NIPF","carbon_lbac",40559.792,0.08799,5,19089.289,136,200,40559.792
+"Spruce-fir|ME_NCZ|NIPF","Spruce-fir","ME_NCZ","NIPF","tpa_total",1682.872,0.1842,5,1358.479,136,200,1682.872
+"Spruce-fir|ME_NCZ|NIPF","Spruce-fir","ME_NCZ","NIPF","vol_cuftac",1957.779,0.03366,2.676,767.135,136,200,1957.779
+"White/Red pine|ME_APH|NIPF","White/Red pine","ME_APH","NIPF","agb_tonac",102.084,0.005,0.5,25.994,134,200,102.084
+"White/Red pine|ME_APH|NIPF","White/Red pine","ME_APH","NIPF","ba_ft2ac",140.649,0.10494,5,50.681,134,200,140.649
+"White/Red pine|ME_APH|NIPF","White/Red pine","ME_APH","NIPF","carbon_lbac",100647.483,0.005,0.5,25797.314,134,200,100647.483
+"White/Red pine|ME_APH|NIPF","White/Red pine","ME_APH","NIPF","tpa_total",858.745,0.2,0.5,649.951,134,200,858.745
+"White/Red pine|ME_APH|NIPF","White/Red pine","ME_APH","NIPF","vol_cuftac",2759.47,0.06072,5,1298.916,134,200,2759.47
+"Spruce-fir|ME_APH|Industrial","Spruce-fir","ME_APH","Industrial","agb_tonac",38.026,0.09926,5,18.283,120,200,38.026
+"Spruce-fir|ME_APH|Industrial","Spruce-fir","ME_APH","Industrial","ba_ft2ac",122.53,0.08225,2.356,50.136,120,200,122.53
+"Spruce-fir|ME_APH|Industrial","Spruce-fir","ME_APH","Industrial","carbon_lbac",37424.126,0.09962,5,17969.381,120,200,37424.126
+"Spruce-fir|ME_APH|Industrial","Spruce-fir","ME_APH","Industrial","tpa_total",1431.91,0.2,0.5,995.493,120,200,1431.91
+"Spruce-fir|ME_APH|Industrial","Spruce-fir","ME_APH","Industrial","vol_cuftac",1586.106,0.06171,5,754.532,120,200,1586.106
+"Northern hardwood|ME_APH|Industrial","Northern hardwood","ME_APH","Industrial","agb_tonac",66.236,0.01125,0.814,17.931,106,200,66.236
+"Northern hardwood|ME_APH|Industrial","Northern hardwood","ME_APH","Industrial","ba_ft2ac",137.078,0.01453,0.73,33.725,106,200,137.078
+"Northern hardwood|ME_APH|Industrial","Northern hardwood","ME_APH","Industrial","carbon_lbac",63631.456,0.01166,0.823,17396.473,106,200,63631.456
+"Northern hardwood|ME_APH|Industrial","Northern hardwood","ME_APH","Industrial","tpa_total",1029.714,0.2,3.966,638.014,106,200,1029.714
+"Northern hardwood|ME_APH|Industrial","Northern hardwood","ME_APH","Industrial","vol_cuftac",4204.609,0.005,1,628.678,106,200,4204.609
+"Spruce-fir|ME_NCZ|Industrial","Spruce-fir","ME_NCZ","Industrial","agb_tonac",43.404,0.11063,5,17.026,108,200,43.404
+"Spruce-fir|ME_NCZ|Industrial","Spruce-fir","ME_NCZ","Industrial","ba_ft2ac",139.39,0.1329,5,48.435,108,200,139.39
+"Spruce-fir|ME_NCZ|Industrial","Spruce-fir","ME_NCZ","Industrial","carbon_lbac",42902.956,0.11144,5,16966.998,108,200,42902.956
+"Spruce-fir|ME_NCZ|Industrial","Spruce-fir","ME_NCZ","Industrial","tpa_total",1569.967,0.2,3.941,1172.986,108,200,1569.967
+"Spruce-fir|ME_NCZ|Industrial","Spruce-fir","ME_NCZ","Industrial","vol_cuftac",1784.383,0.06377,3.599,804.075,108,200,1784.383
+"Aspen-birch|ME_APH|NIPF","Aspen-birch","ME_APH","NIPF","agb_tonac",58.069,0.02015,1.148,21.098,93,200,58.069
+"Aspen-birch|ME_APH|NIPF","Aspen-birch","ME_APH","NIPF","ba_ft2ac",121.453,0.03249,1.108,45.295,93,200,121.453
+"Aspen-birch|ME_APH|NIPF","Aspen-birch","ME_APH","NIPF","carbon_lbac",57399.633,0.01997,1.148,20653.174,93,200,57399.633
+"Aspen-birch|ME_APH|NIPF","Aspen-birch","ME_APH","NIPF","tpa_total",1222.066,0.2,1.922,777.353,93,200,1222.066
+"Aspen-birch|ME_APH|NIPF","Aspen-birch","ME_APH","NIPF","vol_cuftac",5452.502,0.005,1.16,761.338,93,200,5452.502
+"Oak/Pine/Hemlock|ME_APH|NIPF","Oak/Pine/Hemlock","ME_APH","NIPF","agb_tonac",110.3,0.01501,1.318,24.81,82,200,110.3
+"Oak/Pine/Hemlock|ME_APH|NIPF","Oak/Pine/Hemlock","ME_APH","NIPF","ba_ft2ac",230.687,0.005,0.54,40.319,82,200,230.687
+"Oak/Pine/Hemlock|ME_APH|NIPF","Oak/Pine/Hemlock","ME_APH","NIPF","carbon_lbac",105955.002,0.0156,1.352,24003.376,82,200,105955.002
+"Oak/Pine/Hemlock|ME_APH|NIPF","Oak/Pine/Hemlock","ME_APH","NIPF","tpa_total",796.399,0.2,0.5,542.132,82,200,796.399
+"Oak/Pine/Hemlock|ME_APH|NIPF","Oak/Pine/Hemlock","ME_APH","NIPF","vol_cuftac",3523.82,0.02596,2.804,929.733,82,200,3523.82
+"Aspen-birch|ME_NH|NIPF","Aspen-birch","ME_NH","NIPF","agb_tonac",45.612,0.04545,1.651,17.911,75,200,45.612
+"Aspen-birch|ME_NH|NIPF","Aspen-birch","ME_NH","NIPF","ba_ft2ac",119.329,0.0491,1.209,48.058,75,200,119.329
+"Aspen-birch|ME_NH|NIPF","Aspen-birch","ME_NH","NIPF","carbon_lbac",44844.596,0.04572,1.654,17693.538,75,200,44844.596
+"Aspen-birch|ME_NH|NIPF","Aspen-birch","ME_NH","NIPF","tpa_total",1336.017,0.2,1.106,1074.647,75,200,1336.017
+"Aspen-birch|ME_NH|NIPF","Aspen-birch","ME_NH","NIPF","vol_cuftac",2052.799,0.04503,3.828,670.06,75,200,2052.799
+"Aspen-birch|ME_NH|Industrial","Aspen-birch","ME_NH","Industrial","agb_tonac",42.557,0.09603,5,16.814,73,200,42.557
+"Aspen-birch|ME_NH|Industrial","Aspen-birch","ME_NH","Industrial","ba_ft2ac",119.623,0.11183,5,43.101,73,200,119.623
+"Aspen-birch|ME_NH|Industrial","Aspen-birch","ME_NH","Industrial","carbon_lbac",42132.815,0.09637,5,16711.974,73,200,42132.815
+"Aspen-birch|ME_NH|Industrial","Aspen-birch","ME_NH","Industrial","tpa_total",1434.539,0.2,4.397,960.115,73,200,1434.539
+"Aspen-birch|ME_NH|Industrial","Aspen-birch","ME_NH","Industrial","vol_cuftac",1681.677,0.06314,5,614.895,73,200,1681.677
+"Spruce-fir|ME_NH|State","Spruce-fir","ME_NH","State","agb_tonac",45.113,0.09708,5,22.762,67,200,45.113
+"Spruce-fir|ME_NH|State","Spruce-fir","ME_NH","State","ba_ft2ac",132.081,0.1187,5,60.197,67,200,132.081
+"Spruce-fir|ME_NH|State","Spruce-fir","ME_NH","State","carbon_lbac",44421.268,0.09821,5,22375.314,67,200,44421.268
+"Spruce-fir|ME_NH|State","Spruce-fir","ME_NH","State","tpa_total",1676.348,0.2,2.226,1237.106,67,200,1676.348
+"Spruce-fir|ME_NH|State","Spruce-fir","ME_NH","State","vol_cuftac",2155.258,0.02709,1.745,827.524,67,200,2155.258
+"Aspen-birch|ME_NCZ|NIPF","Aspen-birch","ME_NCZ","NIPF","agb_tonac",94.305,0.0124,1.153,21.141,62,200,94.305
+"Aspen-birch|ME_NCZ|NIPF","Aspen-birch","ME_NCZ","NIPF","ba_ft2ac",142.691,0.04795,2.002,46.338,62,200,142.691
+"Aspen-birch|ME_NCZ|NIPF","Aspen-birch","ME_NCZ","NIPF","carbon_lbac",94677.882,0.01207,1.149,20553.859,62,200,94677.882
+"Aspen-birch|ME_NCZ|NIPF","Aspen-birch","ME_NCZ","NIPF","tpa_total",1216.389,0.2,5,829.517,62,200,1216.389
+"Aspen-birch|ME_NCZ|NIPF","Aspen-birch","ME_NCZ","NIPF","vol_cuftac",6082.689,0.00814,1.457,931.25,62,200,6082.689
+"Northern hardwood|ME_NCZ|State","Northern hardwood","ME_NCZ","State","agb_tonac",94.773,0.00946,0.832,18.126,50,200,94.773
+"Northern hardwood|ME_NCZ|State","Northern hardwood","ME_NCZ","State","ba_ft2ac",157.833,0.01538,0.606,39.104,50,200,157.833
+"Northern hardwood|ME_NCZ|State","Northern hardwood","ME_NCZ","State","carbon_lbac",91774.589,0.00962,0.835,17560.457,50,200,91774.589
+"Northern hardwood|ME_NCZ|State","Northern hardwood","ME_NCZ","State","tpa_total",1128.38,0.2,5,718.51,50,200,1128.38
+"Northern hardwood|ME_NCZ|State","Northern hardwood","ME_NCZ","State","vol_cuftac",2620.439,0.02821,3.082,629.401,50,200,2620.439
+"Aspen-birch|ME_APH|Industrial","Aspen-birch","ME_APH","Industrial","agb_tonac",76.361,0.01273,1.165,18.782,47,200,76.361
+"Aspen-birch|ME_APH|Industrial","Aspen-birch","ME_APH","Industrial","ba_ft2ac",109.458,0.04093,1.235,44.388,47,200,109.458
+"Aspen-birch|ME_APH|Industrial","Aspen-birch","ME_APH","Industrial","carbon_lbac",71845.355,0.01389,1.207,18299.715,47,200,71845.355
+"Aspen-birch|ME_APH|Industrial","Aspen-birch","ME_APH","Industrial","tpa_total",1270.319,0.2,1.793,899.844,47,200,1270.319
+"Aspen-birch|ME_APH|Industrial","Aspen-birch","ME_APH","Industrial","vol_cuftac",5580.708,0.00777,1.58,754.063,47,200,5580.708
+"Northern hardwood|ME_NH|State","Northern hardwood","ME_NH","State","agb_tonac",73.957,0.02149,1.549,19.496,51,200,73.957
+"Northern hardwood|ME_NH|State","Northern hardwood","ME_NH","State","ba_ft2ac",202.718,0.00727,0.67,33.154,51,200,202.718
+"Northern hardwood|ME_NH|State","Northern hardwood","ME_NH","State","carbon_lbac",71751.868,0.02176,1.567,18920.786,51,200,71751.868
+"Northern hardwood|ME_NH|State","Northern hardwood","ME_NH","State","tpa_total",888.492,0.2,0.5,567.081,51,200,888.492
+"Northern hardwood|ME_NH|State","Northern hardwood","ME_NH","State","vol_cuftac",5885.371,0.00601,1.26,734.822,51,200,5885.371
+"White/Red pine|ME_APH|Industrial","White/Red pine","ME_APH","Industrial","agb_tonac",65.79,0.02463,1.206,21.217,46,200,65.79
+"White/Red pine|ME_APH|Industrial","White/Red pine","ME_APH","Industrial","ba_ft2ac",151.518,0.02389,0.635,43.083,46,200,151.518
+"White/Red pine|ME_APH|Industrial","White/Red pine","ME_APH","Industrial","carbon_lbac",63357.028,0.02753,1.292,21352.111,46,200,63357.028
+"White/Red pine|ME_APH|Industrial","White/Red pine","ME_APH","Industrial","tpa_total",919.466,0.2,0.5,676.105,46,200,919.466
+"White/Red pine|ME_APH|Industrial","White/Red pine","ME_APH","Industrial","vol_cuftac",2695.597,0.04308,2.776,1161.917,46,200,2695.597
+"Aspen-birch|ME_NCZ|Industrial","Aspen-birch","ME_NCZ","Industrial","agb_tonac",49.342,0.0359,1.997,14.696,41,200,49.342
+"Aspen-birch|ME_NCZ|Industrial","Aspen-birch","ME_NCZ","Industrial","ba_ft2ac",125.108,0.04892,2.075,40.149,41,200,125.108
+"Aspen-birch|ME_NCZ|Industrial","Aspen-birch","ME_NCZ","Industrial","carbon_lbac",49725.607,0.03447,1.915,14711.964,41,200,49725.607
+"Aspen-birch|ME_NCZ|Industrial","Aspen-birch","ME_NCZ","Industrial","tpa_total",1229.855,0.2,0.521,909.349,41,200,1229.855
+"Aspen-birch|ME_NCZ|Industrial","Aspen-birch","ME_NCZ","Industrial","vol_cuftac",1915.306,0.0425,4.396,530.422,41,200,1915.306
+"Northern hardwood|ME_APH|Public-Other","Northern hardwood","ME_APH","Public-Other","agb_tonac",82.467,0.005,0.51,17.922,40,200,82.467
+"Northern hardwood|ME_APH|Public-Other","Northern hardwood","ME_APH","Public-Other","ba_ft2ac",115.565,0.02559,0.5,32.272,40,200,115.565
+"Northern hardwood|ME_APH|Public-Other","Northern hardwood","ME_APH","Public-Other","carbon_lbac",79376.257,0.005,0.501,17278.305,40,200,79376.257
+"Northern hardwood|ME_APH|Public-Other","Northern hardwood","ME_APH","Public-Other","tpa_total",1192.893,0.2,0.5,794.414,40,200,1192.893
+"Northern hardwood|ME_APH|Public-Other","Northern hardwood","ME_APH","Public-Other","vol_cuftac",3387.517,0.00733,1.006,609.675,40,200,3387.517
+"Mixedwood|ME_APH|NIPF","Mixedwood","ME_APH","NIPF","agb_tonac",40.326,0.07048,5,21.455,39,200,40.326
+"Mixedwood|ME_APH|NIPF","Mixedwood","ME_APH","NIPF","ba_ft2ac",91.38,0.06306,2.896,40.254,39,200,91.38
+"Mixedwood|ME_APH|NIPF","Mixedwood","ME_APH","NIPF","carbon_lbac",39291.091,0.07023,5,20914.821,39,200,39291.091
+"Mixedwood|ME_APH|NIPF","Mixedwood","ME_APH","NIPF","tpa_total",622.024,0.2,0.5,520.753,39,200,622.024
+"Mixedwood|ME_APH|NIPF","Mixedwood","ME_APH","NIPF","vol_cuftac",1255.825,0.07001,5,769.384,39,200,1255.825
+"White/Red pine|ME_NCZ|NIPF","White/Red pine","ME_NCZ","NIPF","agb_tonac",68.612,0.06095,5,22.452,30,200,68.612
+"White/Red pine|ME_NCZ|NIPF","White/Red pine","ME_NCZ","NIPF","ba_ft2ac",144.679,0.17338,5,32,30,200,144.679
+"White/Red pine|ME_NCZ|NIPF","White/Red pine","ME_NCZ","NIPF","carbon_lbac",67563.401,0.06274,5,22632.936,30,200,67563.401
+"White/Red pine|ME_NCZ|NIPF","White/Red pine","ME_NCZ","NIPF","tpa_total",966.98,0.2,0.5,730.142,30,200,966.98
+"White/Red pine|ME_NCZ|NIPF","White/Red pine","ME_NCZ","NIPF","vol_cuftac",3235.142,0.05868,5,1316.868,30,200,3235.142
+"Spruce-fir|ME_APH|Public-Other","Spruce-fir","ME_APH","Public-Other","agb_tonac",53.363,0.0272,1.15,18.499,32,200,53.363
+"Spruce-fir|ME_APH|Public-Other","Spruce-fir","ME_APH","Public-Other","ba_ft2ac",134.623,0.10793,4.901,44.039,32,200,134.623
+"Spruce-fir|ME_APH|Public-Other","Spruce-fir","ME_APH","Public-Other","carbon_lbac",52106.085,0.02878,1.196,18254.336,32,200,52106.085
+"Spruce-fir|ME_APH|Public-Other","Spruce-fir","ME_APH","Public-Other","tpa_total",1509.475,0.17805,5,954.295,32,200,1509.475
+"Spruce-fir|ME_APH|Public-Other","Spruce-fir","ME_APH","Public-Other","vol_cuftac",4244.616,0.005,0.859,867.2,32,200,4244.616
+"Northern hardwood|ME_NCZ|Public-Other","Northern hardwood","ME_NCZ","Public-Other","agb_tonac",92.142,0.0294,5,20.658,30,200,92.142
+"Northern hardwood|ME_NCZ|Public-Other","Northern hardwood","ME_NCZ","Public-Other","ba_ft2ac",303.3,0.005,0.879,39.699,30,200,303.3
+"Northern hardwood|ME_NCZ|Public-Other","Northern hardwood","ME_NCZ","Public-Other","carbon_lbac",89342.663,0.02945,5,20050.696,30,200,89342.663
+"Northern hardwood|ME_NCZ|Public-Other","Northern hardwood","ME_NCZ","Public-Other","tpa_total",771.317,0.2,5,396.212,30,200,771.317
+"Northern hardwood|ME_NCZ|Public-Other","Northern hardwood","ME_NCZ","Public-Other","vol_cuftac",3618.727,0.0266,5,783.905,30,200,3618.727
+"Spruce-fir|ME_NCZ|State","Spruce-fir","ME_NCZ","State","agb_tonac",44.194,0.10111,5,14.782,26,200,44.194
+"Spruce-fir|ME_NCZ|State","Spruce-fir","ME_NCZ","State","ba_ft2ac",135.502,0.11984,5,41.81,26,200,135.502
+"Spruce-fir|ME_NCZ|State","Spruce-fir","ME_NCZ","State","carbon_lbac",43469.469,0.10216,5,14672.663,26,200,43469.469
+"Spruce-fir|ME_NCZ|State","Spruce-fir","ME_NCZ","State","tpa_total",1355.931,0.2,3.653,880.743,26,200,1355.931
+"Spruce-fir|ME_NCZ|State","Spruce-fir","ME_NCZ","State","vol_cuftac",2127.096,0.02877,1.244,793.706,26,200,2127.096

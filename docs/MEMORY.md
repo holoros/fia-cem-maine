@@ -1,6 +1,59 @@
 # FIA CEM Maine Carbon Projection Pipeline — Memory File
 
-**Last updated:** 27 April 2026 (session #4 — Cardinal back online, r17 resubmitted)
+**Last updated:** 2 May 2026 (session #6 — Phase 2 yield curves landed, FVS+Woodstock strategy live)
+
+## Repository
+
+**GitHub:** [github.com/holoros/fia-cem-maine](https://github.com/holoros/fia-cem-maine) (public, MIT)
+**Branch:** main, 22+ commits
+**Local mirror:** `/sessions/wonderful-peaceful-feynman/mnt/outputs/fia-cem-maine`
+**SSH:** id_ed25519 for github.com (user `holoros`), id_ed25519_cardinal for Cardinal HPC (user `crsfaaron`)
+
+To push from anywhere: `GIT_SSH_COMMAND="ssh -F ~/.ssh/config" git push` from the repo directory.
+
+## Session #6 progress (2 May 2026 — yield curves Phase 2 LANDED)
+
+After hitting FVS-modern legacy fixed-width I/O format issues that would take many sessions to debug, pivoted to an empirical chronosequence approach using the FIA stand-age data directly. This produces yield curves that are anchored in real Maine FIA observations (3,930 plots with COND.STDAGE × 35 well-sampled cells × 5 response variables × 200 bootstrap draws).
+
+**v2 yield curves (constrained Chapman-Richards + bootstrap CIs):**
+- `yield_curves/maine_yield_curves_v2_long.csv` — 4,500 rows: per (cell, response, age) with `predicted, lo95, median, hi95`
+- `yield_curves/maine_yield_curves_v2_fits.csv` — 150 fits with (a, b, c, RMSE, n_plots, n_boot_succ)
+- `figures/fig_yield_curves_v2_top9.png` — top 9 cells with mean curve and 5-95 ribbon
+
+**v1 vs v2 fit stability:**
+- v1 (unconstrained): 114 fits, 41 with runaway parameters (36%) — c values up to 3,311,195, b up to 34,638
+- v2 (port algorithm with bounds b ∈ [0.005, 0.20], c ∈ [0.5, 5.0]): 150 fits, **0 with runaway parameters**
+- All v2 fits land in publishable Chapman-Richards parameter ranges
+
+**AGB asymptote (Chapman-Richards `a` parameter, tons/ac) by ecoregion:**
+- ME_APH (Acadian Plains/Hills): 66.8 tons/ac across 12 cells
+- ME_NCZ (Northern Central Zone): 68.3 tons/ac across 10 cells
+- ME_NH  (Northern Highlands): 50.5 tons/ac across 8 cells
+
+This matches expected Maine productivity gradient (less productive at higher elevations / colder).
+
+**Top productive cells (AGB asymptote, tons/ac):**
+- Aspen-birch × ME_NCZ × NIPF: 94 (n=62)
+- Northern hardwood × ME_NCZ × Industrial: 78 (n=148)
+- Northern hardwood × ME_NCZ × NIPF: 77 (n=254)
+- Aspen-birch × ME_APH × Industrial: 76 (n=47)
+- Northern hardwood × ME_NH × State: 74 (n=51)
+
+**FVS-modern path (paused, infrastructure committed):**
+- 35 cells × 4 treatments = 140 FVS run dirs generated under `~/yield_curves/runs/` on Cardinal
+- SLURM array submitter staged at `osc/yc_array_submit.sh`
+- FVSne and FVSacd binaries at `~/fvs-modern/lib/`
+- Issue: legacy fixed-width .key and .tre format requires Fortran-precise column alignment; FVS rejects keywords (`MAICALC`, `CARBREPT`, `END`) and produces `transfer.c:2491` Fortran I/O errors on the .tre records
+- Next session: decode column widths from `~/fvs-modern/src-converted/rd/getrec.f90` or `subtre.f90`, OR use FVS Database extension (SQLite input) to bypass legacy I/O
+
+**FVS+Woodstock strategy doc** (`docs/FVS_WOODSTOCK_STRATEGY.md`, ~3,400 words) lays out the full Stage 1-3 pipeline including:
+- Stage 1: 6 forest-type × 3 ecoregion × 4 owner = 72 cells × 4 treatments = 288 FVS runs
+- Stage 2: Chapman-Richards yield-curve archive with adapter scripts for GCBM/LANDIS/CEM/Woodstock
+- Stage 3: Woodstock LP optimization (3,000-variable LP, 6 constraint sets, 3 objectives, shadow-price analysis for marginal cost of carbon retention)
+
+The empirical curves (v2) are the immediate Phase 2 deliverable; FVS process-driven curves remain as future work for the cross-model PERSEUS comparison.
+
+## Session #4 progress (April 27, Cardinal access restored)
 **Project owner:** Aaron Weiskittel (CRSF, University of Maine)
 **Compute:** OSC Cardinal HPC, account PUOM0008, user crsfaaron
 **Pipeline location:** `/users/PUOM0008/crsfaaron/fia_cem_projections/`
