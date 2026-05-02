@@ -1,0 +1,1261 @@
+"classifier_set","ft_group","ecoregion","owner","treatment","age","merch_vol_m3_ha","foliage_kgC_m2","other_above_kgC_m2","total_above_kgC_m2"
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",10,1.016,0.0028,0.0099,0.0552
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",100,151.843,0.027,0.0973,0.5404
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",105,155.574,0.0276,0.0993,0.5518
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",110,158.8,0.0281,0.1012,0.5621
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",115,161.581,0.0286,0.1029,0.5715
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",120,163.973,0.029,0.1044,0.58
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",125,166.026,0.0294,0.1058,0.5877
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",130,167.787,0.0297,0.107,0.5947
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",135,169.295,0.03,0.1082,0.601
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",140,170.584,0.0303,0.1092,0.6067
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",145,171.686,0.0306,0.1101,0.6119
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",15,3.838,0.0047,0.0168,0.0934
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",150,172.626,0.0308,0.111,0.6165
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",20,9.096,0.0067,0.024,0.1331
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",25,16.764,0.0086,0.0311,0.1725
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",30,26.434,0.0105,0.0379,0.2108
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",35,37.524,0.0124,0.0445,0.2474
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",40,49.429,0.0141,0.0508,0.282
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",45,61.607,0.0157,0.0566,0.3144
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",5,0.085,0.0011,0.0038,0.0213
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",50,73.623,0.0172,0.062,0.3446
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",55,85.152,0.0186,0.0671,0.3726
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",60,95.976,0.0199,0.0717,0.3984
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",65,105.961,0.0211,0.076,0.4222
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",70,115.045,0.0222,0.0799,0.444
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",75,123.216,0.0232,0.0835,0.464
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",80,130.497,0.0241,0.0868,0.4822
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",85,136.936,0.0249,0.0898,0.4989
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",90,142.594,0.0257,0.0925,0.5141
+"Aspen-birch/ME_APH/Industrial/untreated","Aspen-birch","ME_APH","Industrial","untreated",95,147.539,0.0264,0.095,0.5279
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",10,9.984,0.0048,0.0174,0.0968
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",100,121.525,0.0235,0.0845,0.4694
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",105,127.082,0.024,0.0865,0.4808
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",110,132.541,0.0246,0.0885,0.4916
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",115,137.9,0.0251,0.0903,0.5019
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",120,143.161,0.0256,0.0921,0.5116
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",125,148.323,0.026,0.0938,0.5209
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",130,153.385,0.0265,0.0953,0.5297
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",135,158.35,0.0269,0.0969,0.5381
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",140,163.216,0.0273,0.0983,0.5461
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",145,167.986,0.0277,0.0997,0.5537
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",15,15.982,0.0066,0.0239,0.1327
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",150,172.659,0.028,0.101,0.5609
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",20,22.222,0.0082,0.0297,0.165
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",25,28.603,0.0097,0.035,0.1946
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",30,35.062,0.0111,0.04,0.222
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",35,41.558,0.0124,0.0445,0.2475
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",40,48.059,0.0136,0.0488,0.2712
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",45,54.542,0.0147,0.0528,0.2935
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",5,4.42,0.0028,0.01,0.0558
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",50,60.991,0.0157,0.0566,0.3145
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",55,67.39,0.0167,0.0602,0.3342
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",60,73.73,0.0176,0.0635,0.3528
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",65,80.001,0.0185,0.0667,0.3703
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",70,86.195,0.0193,0.0696,0.3869
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",75,92.309,0.0201,0.0725,0.4025
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",80,98.337,0.0209,0.0751,0.4174
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",85,104.275,0.0216,0.0777,0.4314
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",90,110.12,0.0222,0.0801,0.4448
+"Aspen-birch/ME_APH/NIPF/untreated","Aspen-birch","ME_APH","NIPF","untreated",95,115.871,0.0229,0.0823,0.4574
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",10,0.749,0.0031,0.0112,0.0625
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",100,126.534,0.0233,0.0838,0.4658
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",105,128.135,0.0235,0.0846,0.4698
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",110,129.434,0.0237,0.0852,0.4732
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",115,130.486,0.0238,0.0857,0.476
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",120,131.337,0.0239,0.0861,0.4784
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",125,132.024,0.024,0.0865,0.4804
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",130,132.578,0.0241,0.0868,0.4821
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",135,133.025,0.0242,0.087,0.4835
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",140,133.385,0.0242,0.0873,0.4847
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",145,133.675,0.0243,0.0874,0.4858
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",15,3.46,0.0054,0.0194,0.1079
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",150,133.908,0.0243,0.0876,0.4866
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",20,9.049,0.0077,0.0276,0.1535
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",25,17.468,0.0098,0.0354,0.1967
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",30,28.014,0.0118,0.0425,0.2363
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",35,39.745,0.0136,0.0489,0.2719
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",40,51.775,0.0152,0.0546,0.3033
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",45,63.419,0.0165,0.0595,0.3308
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",5,0.039,0.0011,0.004,0.0224
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",50,74.221,0.0177,0.0638,0.3546
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",55,83.931,0.0188,0.0675,0.3751
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",60,92.45,0.0196,0.0707,0.3928
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",65,99.787,0.0204,0.0734,0.4079
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",70,106.016,0.021,0.0757,0.4207
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",75,111.245,0.0216,0.0777,0.4316
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",80,115.597,0.022,0.0794,0.4409
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",85,119.192,0.0224,0.0808,0.4488
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",90,122.146,0.0228,0.082,0.4554
+"Aspen-birch/ME_NCZ/Industrial/untreated","Aspen-birch","ME_NCZ","Industrial","untreated",95,124.563,0.0231,0.083,0.461
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",10,9.819,0.0039,0.0141,0.0785
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",100,180.087,0.0318,0.1145,0.6361
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",105,188.672,0.0327,0.1177,0.6541
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",110,197.042,0.0336,0.1208,0.6712
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",115,205.194,0.0344,0.1237,0.6873
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",120,213.127,0.0351,0.1264,0.7024
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",125,220.841,0.0358,0.129,0.7167
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",130,228.336,0.0365,0.1314,0.7302
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",135,235.614,0.0371,0.1337,0.7429
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",140,242.676,0.0377,0.1359,0.7548
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",145,249.525,0.0383,0.1379,0.7661
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",15,17.361,0.0061,0.0218,0.1212
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",150,256.164,0.0388,0.1398,0.7767
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",20,25.799,0.0082,0.0294,0.1634
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",25,34.86,0.0102,0.0368,0.2044
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",30,44.356,0.0122,0.0439,0.244
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",35,54.148,0.0141,0.0508,0.2821
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",40,64.133,0.0159,0.0573,0.3185
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",45,74.226,0.0177,0.0636,0.3533
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",5,3.632,0.0018,0.0066,0.0365
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",50,84.363,0.0193,0.0696,0.3864
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",55,94.489,0.0209,0.0752,0.4179
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",60,104.562,0.0224,0.0806,0.4478
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",65,114.546,0.0238,0.0857,0.4761
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",70,124.412,0.0251,0.0905,0.503
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",75,134.137,0.0264,0.0951,0.5284
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",80,143.701,0.0276,0.0994,0.5524
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",85,153.089,0.0288,0.1035,0.5751
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",90,162.289,0.0298,0.1074,0.5966
+"Aspen-birch/ME_NCZ/NIPF/untreated","Aspen-birch","ME_NCZ","NIPF","untreated",95,171.291,0.0308,0.111,0.6169
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",10,2.43,0.0018,0.0066,0.0366
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",100,123.286,0.0223,0.0801,0.4452
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",105,123.661,0.0223,0.0801,0.4452
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",110,123.939,0.0223,0.0802,0.4453
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",115,124.144,0.0223,0.0802,0.4453
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",120,124.295,0.0223,0.0802,0.4453
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",125,124.407,0.0223,0.0802,0.4453
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",130,124.49,0.0223,0.0802,0.4454
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",135,124.551,0.0223,0.0802,0.4454
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",140,124.596,0.0223,0.0802,0.4454
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",145,124.63,0.0223,0.0802,0.4454
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",15,9.503,0.0054,0.0194,0.108
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",150,124.654,0.0223,0.0802,0.4454
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",20,21.396,0.0096,0.0346,0.1922
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",25,36.156,0.0134,0.0481,0.2674
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",30,51.555,0.0163,0.0586,0.3254
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",35,65.979,0.0183,0.066,0.3666
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",40,78.568,0.0197,0.071,0.3946
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",45,89.041,0.0206,0.0743,0.4129
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",5,0.153,2e-04,6e-04,0.0032
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",50,97.466,0.0212,0.0765,0.4248
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",55,104.087,0.0216,0.0778,0.4324
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",60,109.202,0.0219,0.0787,0.4372
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",65,113.105,0.022,0.0792,0.4402
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",70,116.058,0.0221,0.0796,0.4421
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",75,118.278,0.0222,0.0798,0.4433
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",80,119.939,0.0222,0.0799,0.4441
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",85,121.176,0.0222,0.08,0.4446
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",90,122.097,0.0222,0.0801,0.4449
+"Aspen-birch/ME_NH/Industrial/untreated","Aspen-birch","ME_NH","Industrial","untreated",95,122.78,0.0223,0.0801,0.4451
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",10,3.223,0.0041,0.0147,0.0816
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",100,136.805,0.0225,0.081,0.45
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",105,137.852,0.0225,0.0812,0.451
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",110,138.686,0.0226,0.0813,0.4518
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",115,139.349,0.0226,0.0814,0.4524
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",120,139.876,0.0226,0.0815,0.4528
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",125,140.295,0.0227,0.0816,0.4532
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",130,140.627,0.0227,0.0816,0.4535
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",135,140.891,0.0227,0.0817,0.4537
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",140,141.101,0.0227,0.0817,0.4538
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",145,141.267,0.0227,0.0817,0.454
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",15,10.18,0.0071,0.0256,0.1423
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",150,141.398,0.0227,0.0817,0.454
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",20,20.827,0.01,0.0359,0.1996
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",25,33.836,0.0125,0.045,0.2499
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",30,47.781,0.0146,0.0526,0.2922
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",35,61.532,0.0163,0.0588,0.3268
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",40,74.346,0.0177,0.0638,0.3547
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",45,85.82,0.0188,0.0678,0.3768
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",5,0.345,0.0014,0.0049,0.0272
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",50,95.8,0.0197,0.071,0.3942
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",55,104.297,0.0204,0.0734,0.4078
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",60,111.414,0.0209,0.0753,0.4184
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",65,117.303,0.0213,0.0768,0.4267
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",70,122.13,0.0217,0.0779,0.433
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",75,126.057,0.0219,0.0788,0.4379
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",80,129.234,0.0221,0.0795,0.4417
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",85,131.793,0.0222,0.08,0.4447
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",90,133.847,0.0223,0.0804,0.4469
+"Aspen-birch/ME_NH/NIPF/untreated","Aspen-birch","ME_NH","NIPF","untreated",95,135.491,0.0224,0.0808,0.4486
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",10,2.65,6e-04,0.0021,0.0116
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",100,89.312,0.0205,0.0737,0.4092
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",105,89.453,0.0205,0.0738,0.4099
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",110,89.554,0.0205,0.0739,0.4104
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",115,89.625,0.0205,0.0739,0.4108
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",120,89.676,0.0206,0.074,0.411
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",125,89.713,0.0206,0.074,0.4112
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",130,89.738,0.0206,0.074,0.4113
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",135,89.757,0.0206,0.0741,0.4114
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",140,89.77,0.0206,0.0741,0.4115
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",145,89.779,0.0206,0.0741,0.4115
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",15,9.671,0.0021,0.0077,0.0427
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",150,89.786,0.0206,0.0741,0.4116
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",20,20.508,0.0046,0.0164,0.0911
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",25,32.917,0.0074,0.0265,0.1472
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",30,44.932,0.0101,0.0363,0.2019
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",35,55.435,0.0125,0.045,0.2501
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",40,64.034,0.0145,0.0522,0.2898
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",45,70.773,0.0161,0.0578,0.3212
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",5,0.181,0,1e-04,8e-04
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",50,75.902,0.0173,0.0621,0.3452
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",55,79.726,0.0182,0.0654,0.3633
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",60,82.539,0.0188,0.0678,0.3766
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",65,84.587,0.0193,0.0695,0.3864
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",70,86.068,0.0197,0.0708,0.3935
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",75,87.133,0.0199,0.0717,0.3986
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",80,87.898,0.0201,0.0724,0.4023
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",85,88.444,0.0202,0.0729,0.405
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",90,88.835,0.0203,0.0732,0.4069
+"Mixedwood/ME_APH/NIPF/untreated","Mixedwood","ME_APH","NIPF","untreated",95,89.113,0.0204,0.0735,0.4082
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",10,0.946,0.0012,0.0043,0.0237
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",100,62.544,0.0157,0.0564,0.3131
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",105,62.819,0.0157,0.0567,0.3147
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",110,63.027,0.0158,0.0569,0.316
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",115,63.184,0.0159,0.0571,0.3171
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",120,63.303,0.0159,0.0572,0.3179
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",125,63.393,0.0159,0.0573,0.3186
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",130,63.461,0.016,0.0574,0.3191
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",135,63.512,0.016,0.0575,0.3195
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",140,63.551,0.016,0.0576,0.3198
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",145,63.58,0.016,0.0576,0.3201
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",15,3.856,0.0026,0.0094,0.0523
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",150,63.602,0.016,0.0576,0.3203
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",20,9.001,0.0043,0.0154,0.0857
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",25,15.696,0.006,0.0215,0.1197
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",30,22.998,0.0076,0.0273,0.1518
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",35,30.127,0.009,0.0325,0.1806
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",40,36.593,0.0103,0.037,0.2058
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",45,42.17,0.0114,0.0409,0.2272
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",5,0.057,3e-04,9e-04,0.0051
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",50,46.81,0.0123,0.0441,0.245
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",55,50.574,0.013,0.0468,0.2598
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",60,53.57,0.0136,0.0489,0.2719
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",65,55.923,0.0141,0.0507,0.2817
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",70,57.752,0.0145,0.0521,0.2896
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",75,59.163,0.0148,0.0533,0.296
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",80,60.245,0.0151,0.0542,0.3011
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",85,61.073,0.0153,0.0549,0.3052
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",90,61.702,0.0154,0.0555,0.3084
+"Northern hardwood/ME_APH/Industrial/harvested","Northern hardwood","ME_APH","Industrial","harvested",95,62.181,0.0156,0.056,0.311
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",10,14.064,0.0058,0.021,0.1167
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",100,111.351,0.023,0.0828,0.4599
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",105,115.55,0.0236,0.0848,0.4714
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",110,119.644,0.0241,0.0868,0.4824
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",115,123.636,0.0246,0.0887,0.493
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",120,127.528,0.0252,0.0906,0.5032
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",125,131.323,0.0257,0.0924,0.5131
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",130,135.023,0.0261,0.0941,0.5227
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",135,138.631,0.0266,0.0957,0.5319
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",140,142.15,0.027,0.0973,0.5408
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",145,145.58,0.0275,0.0989,0.5494
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",15,20.763,0.0076,0.0272,0.1511
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",150,148.925,0.0279,0.1004,0.5577
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",20,27.277,0.0091,0.0326,0.181
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",25,33.617,0.0104,0.0374,0.2079
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",30,39.789,0.0116,0.0419,0.2325
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",35,45.801,0.0128,0.0459,0.2552
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",40,51.658,0.0138,0.0498,0.2764
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",45,57.364,0.0148,0.0533,0.2963
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",5,7.164,0.0037,0.0134,0.0746
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",50,62.924,0.0158,0.0567,0.315
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",55,68.343,0.0166,0.0599,0.3328
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",60,73.624,0.0175,0.0629,0.3496
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",65,78.771,0.0183,0.0658,0.3656
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",70,83.789,0.019,0.0686,0.3809
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",75,88.68,0.0198,0.0712,0.3955
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",80,93.447,0.0205,0.0737,0.4095
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",85,98.095,0.0211,0.0761,0.4229
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",90,102.626,0.0218,0.0784,0.4357
+"Northern hardwood/ME_APH/Industrial/untreated","Northern hardwood","ME_APH","Industrial","untreated",95,107.044,0.0224,0.0807,0.4481
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",10,0.392,6e-04,0.0022,0.012
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",100,26.154,0.0094,0.0338,0.1877
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",105,28.195,0.0099,0.0355,0.1972
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",110,30.26,0.0103,0.0372,0.2065
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",115,32.345,0.0108,0.0388,0.2157
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",120,34.446,0.0112,0.0405,0.2247
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",125,36.559,0.0117,0.0421,0.2337
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",130,38.681,0.0121,0.0436,0.2424
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",135,40.809,0.0126,0.0452,0.2511
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",140,42.939,0.013,0.0467,0.2596
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",145,45.069,0.0134,0.0482,0.2679
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",15,0.864,0.001,0.0036,0.0202
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",150,47.196,0.0138,0.0497,0.2761
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",20,1.504,0.0014,0.0052,0.029
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",25,2.299,0.0019,0.0069,0.0383
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",30,3.237,0.0024,0.0086,0.0479
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",35,4.307,0.0029,0.0104,0.0577
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",40,5.5,0.0034,0.0122,0.0677
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",45,6.803,0.0039,0.014,0.0778
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",5,0.1,2e-04,9e-04,0.0049
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",50,8.209,0.0044,0.0158,0.088
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",55,9.708,0.0049,0.0177,0.0982
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",60,11.291,0.0054,0.0195,0.1084
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",65,12.952,0.0059,0.0213,0.1185
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",70,14.682,0.0064,0.0232,0.1287
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",75,16.474,0.0069,0.025,0.1387
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",80,18.322,0.0074,0.0268,0.1487
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",85,20.22,0.0079,0.0286,0.1586
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",90,22.161,0.0084,0.0303,0.1684
+"Northern hardwood/ME_APH/NIPF/harvested","Northern hardwood","ME_APH","NIPF","harvested",95,24.141,0.0089,0.0321,0.1781
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",10,3.142,0.0017,0.0061,0.0339
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",100,149.611,0.0299,0.1077,0.5981
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",105,152.595,0.0302,0.1089,0.6049
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",110,155.175,0.0305,0.1099,0.6107
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",115,157.4,0.0308,0.1108,0.6156
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",120,159.318,0.031,0.1115,0.6196
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",125,160.967,0.0312,0.1121,0.623
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",130,162.385,0.0313,0.1127,0.6259
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",135,163.602,0.0314,0.1131,0.6283
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",140,164.645,0.0315,0.1135,0.6303
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",145,165.54,0.0316,0.1138,0.632
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",15,8.668,0.0037,0.0134,0.0747
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",150,166.307,0.0317,0.114,0.6334
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",20,16.783,0.0062,0.0224,0.1242
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",25,26.839,0.0089,0.0319,0.1774
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",30,38.114,0.0115,0.0415,0.2307
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",35,49.959,0.0141,0.0507,0.2817
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",40,61.851,0.0165,0.0592,0.3291
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",45,73.402,0.0186,0.067,0.372
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",5,0.475,4e-04,0.0014,0.0076
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",50,84.347,0.0205,0.0739,0.4103
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",55,94.519,0.0222,0.0799,0.444
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",60,103.833,0.0237,0.0852,0.4734
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",65,112.258,0.0249,0.0898,0.4989
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",70,119.807,0.026,0.0937,0.5207
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",75,126.517,0.027,0.0971,0.5394
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",80,132.443,0.0278,0.1,0.5553
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",85,137.648,0.0284,0.1024,0.5688
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",90,142.2,0.029,0.1045,0.5803
+"Northern hardwood/ME_APH/NIPF/untreated","Northern hardwood","ME_APH","NIPF","untreated",95,146.166,0.0295,0.1062,0.5899
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",10,4.657,0.0042,0.0152,0.0846
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",100,125.752,0.0254,0.0916,0.5088
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",105,129.86,0.026,0.0937,0.5208
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",110,133.648,0.0266,0.0958,0.532
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",115,137.135,0.0271,0.0977,0.5426
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",120,140.34,0.0276,0.0994,0.5525
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",125,143.283,0.0281,0.1011,0.5617
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",130,145.981,0.0285,0.1027,0.5704
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",135,148.453,0.0289,0.1041,0.5785
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",140,150.716,0.0293,0.1055,0.5861
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",145,152.785,0.0297,0.1068,0.5933
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",15,9.844,0.0062,0.0222,0.1232
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",150,154.675,0.03,0.108,0.6
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",20,16.302,0.008,0.0287,0.1594
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",25,23.638,0.0097,0.0348,0.1934
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",30,31.53,0.0113,0.0405,0.2252
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",35,39.72,0.0128,0.0459,0.2551
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",40,48.008,0.0142,0.0509,0.283
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",45,56.241,0.0155,0.0557,0.3093
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",5,1.211,0.0022,0.0078,0.0436
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",50,64.302,0.0167,0.0601,0.3338
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",55,72.105,0.0178,0.0642,0.3569
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",60,79.592,0.0189,0.0681,0.3785
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",65,86.721,0.0199,0.0718,0.3987
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",70,93.467,0.0209,0.0752,0.4176
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",75,99.819,0.0218,0.0784,0.4354
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",80,105.772,0.0226,0.0814,0.452
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",85,111.331,0.0234,0.0842,0.4676
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",90,116.504,0.0241,0.0868,0.4822
+"Northern hardwood/ME_APH/Public-Other/untreated","Northern hardwood","ME_APH","Public-Other","untreated",95,121.307,0.0248,0.0893,0.4959
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",10,0.045,0,2e-04,9e-04
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",100,70.127,0.0117,0.0421,0.2337
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",105,76.187,0.0126,0.0453,0.2514
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",110,82.125,0.0134,0.0484,0.2688
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",115,87.91,0.0143,0.0515,0.2859
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",120,93.516,0.0151,0.0545,0.3026
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",125,98.926,0.0159,0.0574,0.3189
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",130,104.124,0.0167,0.0602,0.3346
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",135,109.101,0.0175,0.063,0.3499
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",140,113.849,0.0182,0.0656,0.3646
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",145,118.367,0.0189,0.0682,0.3788
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",15,0.226,1e-04,5e-04,0.0029
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",150,122.653,0.0196,0.0706,0.3924
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",20,0.671,3e-04,0.0011,0.0063
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",25,1.507,6e-04,0.0021,0.0115
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",30,2.839,9e-04,0.0033,0.0185
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",35,4.739,0.0014,0.0049,0.0272
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",40,7.244,0.0019,0.0068,0.0376
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",45,10.361,0.0025,0.0089,0.0495
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",5,0.003,0,0,1e-04
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",50,14.068,0.0031,0.0113,0.0628
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",55,18.322,0.0039,0.0139,0.0773
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",60,23.065,0.0046,0.0167,0.0928
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",65,28.229,0.0055,0.0196,0.1091
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",70,33.739,0.0063,0.0227,0.1261
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",75,39.521,0.0072,0.0258,0.1436
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",80,45.503,0.0081,0.0291,0.1615
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",85,51.615,0.009,0.0323,0.1795
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",90,57.794,0.0099,0.0356,0.1976
+"Northern hardwood/ME_NCZ/Industrial/harvested","Northern hardwood","ME_NCZ","Industrial","harvested",95,63.981,0.0108,0.0388,0.2157
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",10,9.165,0.0029,0.0106,0.0587
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",100,134.359,0.0271,0.0975,0.5416
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",105,138.231,0.0276,0.0993,0.5518
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",110,141.814,0.0281,0.101,0.5611
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",115,145.126,0.0285,0.1025,0.5693
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",120,148.184,0.0288,0.1038,0.5768
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",125,151.006,0.0292,0.105,0.5835
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",130,153.607,0.0295,0.1061,0.5895
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",135,156.003,0.0297,0.1071,0.5948
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",140,158.21,0.03,0.1079,0.5997
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",145,160.241,0.0302,0.1087,0.604
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",15,16.643,0.005,0.0178,0.0991
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",150,162.109,0.0304,0.1094,0.6079
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",20,24.931,0.007,0.0253,0.1406
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",25,33.622,0.0091,0.0327,0.1815
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",30,42.444,0.011,0.0398,0.2209
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",35,51.209,0.0129,0.0465,0.2582
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",40,59.789,0.0147,0.0528,0.2931
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",45,68.093,0.0163,0.0586,0.3256
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",5,3.148,0.0011,0.0041,0.0227
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",50,76.06,0.0178,0.064,0.3555
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",55,83.654,0.0192,0.0689,0.383
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",60,90.852,0.0204,0.0735,0.4082
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",65,97.644,0.0216,0.0776,0.4312
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",70,104.029,0.0226,0.0814,0.452
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",75,110.013,0.0235,0.0848,0.471
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",80,115.605,0.0244,0.0879,0.4881
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",85,120.819,0.0252,0.0906,0.5036
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",90,125.671,0.0259,0.0932,0.5176
+"Northern hardwood/ME_NCZ/Industrial/untreated","Northern hardwood","ME_NCZ","Industrial","untreated",95,130.178,0.0265,0.0954,0.5302
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",10,0.347,6e-04,0.0023,0.0126
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",100,122.218,0.0251,0.0902,0.5012
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",105,125.12,0.0256,0.0922,0.5122
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",110,127.588,0.0261,0.0939,0.5219
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",115,129.681,0.0265,0.0955,0.5303
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",120,131.452,0.0269,0.0968,0.5376
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",125,132.948,0.0272,0.0979,0.5441
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",130,134.21,0.0275,0.0989,0.5496
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",135,135.271,0.0277,0.0998,0.5545
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",140,136.165,0.0279,0.1006,0.5587
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",145,136.915,0.0281,0.1012,0.5624
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",15,1.742,0.0016,0.0058,0.0323
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",150,137.545,0.0283,0.1018,0.5656
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",20,4.915,0.003,0.0108,0.0599
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",25,10.176,0.0047,0.0167,0.093
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",30,17.401,0.0065,0.0233,0.1297
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",35,26.173,0.0084,0.0302,0.1679
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",40,35.952,0.0103,0.0371,0.2063
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",45,46.2,0.0122,0.0439,0.2436
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",5,0.017,1e-04,4e-04,0.0022
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",50,56.455,0.014,0.0503,0.2792
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",55,66.36,0.0156,0.0562,0.3125
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",60,75.669,0.0172,0.0618,0.3432
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",65,84.229,0.0186,0.0668,0.3713
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",70,91.966,0.0198,0.0714,0.3968
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",75,98.863,0.021,0.0755,0.4197
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",80,104.942,0.022,0.0792,0.4402
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",85,110.252,0.0229,0.0825,0.4584
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",90,114.854,0.0237,0.0854,0.4745
+"Northern hardwood/ME_NCZ/NIPF/harvested","Northern hardwood","ME_NCZ","NIPF","harvested",95,118.819,0.0244,0.088,0.4887
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",10,9.129,0.0042,0.0152,0.0843
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",100,139.381,0.0283,0.1018,0.5654
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",105,143.392,0.0289,0.1039,0.5773
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",110,147.098,0.0294,0.1059,0.5882
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",115,150.519,0.0299,0.1077,0.5982
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",120,153.673,0.0304,0.1093,0.6074
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",125,156.578,0.0308,0.1109,0.6159
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",130,159.252,0.0312,0.1123,0.6237
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",135,161.712,0.0315,0.1136,0.6309
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",140,163.974,0.0319,0.1147,0.6375
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",145,166.052,0.0322,0.1158,0.6436
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",15,16.774,0.0064,0.0231,0.1283
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",150,167.96,0.0325,0.1168,0.6492
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",20,25.317,0.0085,0.0307,0.1705
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",25,34.323,0.0105,0.0379,0.2106
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",30,43.497,0.0124,0.0447,0.2483
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",35,52.634,0.0142,0.051,0.2836
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",40,61.59,0.0158,0.057,0.3165
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",45,70.266,0.0174,0.0625,0.3472
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",5,3.068,0.002,0.0072,0.0398
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",50,78.595,0.0188,0.0676,0.3757
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",55,86.534,0.0201,0.0724,0.4021
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",60,94.057,0.0213,0.0768,0.4265
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",65,101.153,0.0225,0.0808,0.4491
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",70,107.819,0.0235,0.0846,0.47
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",75,114.061,0.0245,0.0881,0.4893
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",80,119.888,0.0254,0.0913,0.5071
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",85,125.317,0.0262,0.0942,0.5235
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",90,130.363,0.0269,0.097,0.5386
+"Northern hardwood/ME_NCZ/NIPF/untreated","Northern hardwood","ME_NCZ","NIPF","untreated",95,135.044,0.0276,0.0995,0.5526
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",10,19.969,0.0039,0.014,0.0777
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",100,158.765,0.0313,0.1127,0.6262
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",105,164.764,0.0322,0.116,0.6443
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",110,170.614,0.0331,0.1191,0.6614
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",115,176.318,0.0339,0.122,0.6776
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",120,181.88,0.0346,0.1247,0.693
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",125,187.303,0.0354,0.1273,0.7074
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",130,192.592,0.0361,0.1298,0.7211
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",135,197.749,0.0367,0.1321,0.734
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",140,202.778,0.0373,0.1343,0.7462
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",145,207.681,0.0379,0.1364,0.7577
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",15,29.503,0.006,0.0215,0.1195
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",150,212.463,0.0384,0.1383,0.7686
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",20,38.781,0.008,0.0289,0.1607
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",25,47.815,0.01,0.0361,0.2007
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",30,56.614,0.012,0.0431,0.2394
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",35,65.187,0.0138,0.0498,0.2766
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",40,73.54,0.0156,0.0562,0.3123
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",45,81.68,0.0173,0.0623,0.3463
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",5,10.157,0.0018,0.0065,0.0364
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",50,89.614,0.0189,0.0682,0.3788
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",55,97.348,0.0205,0.0738,0.4098
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",60,104.886,0.022,0.0791,0.4392
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",65,112.234,0.0234,0.0841,0.4672
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",70,119.398,0.0247,0.0889,0.4937
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",75,126.382,0.0259,0.0934,0.5189
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",80,133.191,0.0271,0.0977,0.5427
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",85,139.829,0.0283,0.1018,0.5653
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",90,146.301,0.0293,0.1056,0.5867
+"Northern hardwood/ME_NCZ/Public-Other/untreated","Northern hardwood","ME_NCZ","Public-Other","untreated",95,152.612,0.0303,0.1093,0.607
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",10,3.894,0.0077,0.0278,0.1543
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",100,144.173,0.0294,0.1059,0.5884
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",105,147.148,0.0299,0.1078,0.5989
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",110,149.741,0.0304,0.1096,0.6088
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",115,151.999,0.0309,0.1112,0.618
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",120,153.961,0.0313,0.1128,0.6266
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",125,155.664,0.0317,0.1142,0.6346
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",130,157.141,0.0321,0.1156,0.6422
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",135,158.421,0.0325,0.1169,0.6492
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",140,159.528,0.0328,0.118,0.6558
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",145,160.487,0.0331,0.1191,0.6619
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",15,9.867,0.0102,0.0367,0.2039
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",150,161.315,0.0334,0.1202,0.6677
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",20,18.131,0.0123,0.0444,0.2469
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",25,28.003,0.0142,0.0513,0.285
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",30,38.817,0.016,0.0575,0.3192
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",35,50.013,0.0175,0.063,0.3502
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",40,61.157,0.0189,0.0681,0.3785
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",45,71.934,0.0202,0.0728,0.4044
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",5,0.696,0.0047,0.017,0.0943
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",50,82.132,0.0214,0.0771,0.4283
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",55,91.622,0.0225,0.081,0.4502
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",60,100.337,0.0235,0.0847,0.4705
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",65,108.254,0.0245,0.0881,0.4893
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",70,115.386,0.0253,0.0912,0.5067
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",75,121.766,0.0261,0.0941,0.5229
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",80,127.438,0.0269,0.0968,0.5379
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",85,132.458,0.0276,0.0993,0.5519
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",90,136.883,0.0282,0.1017,0.5649
+"Northern hardwood/ME_NCZ/State/untreated","Northern hardwood","ME_NCZ","State","untreated",95,140.769,0.0289,0.1039,0.5771
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",10,5.721,4e-04,0.0014,0.008
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",100,125.762,0.0214,0.0769,0.4271
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",105,129.829,0.0217,0.078,0.4336
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",110,133.594,0.0219,0.079,0.439
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",115,137.077,0.0222,0.0798,0.4436
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",120,140.293,0.0224,0.0805,0.4474
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",125,143.26,0.0225,0.0811,0.4506
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",130,145.994,0.0227,0.0816,0.4533
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",135,148.511,0.0228,0.082,0.4555
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",140,150.827,0.0229,0.0823,0.4574
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",145,152.956,0.0229,0.0826,0.4589
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",15,11.426,0.0012,0.0044,0.0242
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",150,154.912,0.023,0.0828,0.4602
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",20,18.241,0.0025,0.0089,0.0492
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",25,25.771,0.004,0.0145,0.0807
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",30,33.719,0.0058,0.0209,0.1161
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",35,41.858,0.0077,0.0275,0.153
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",40,50.017,0.0095,0.0341,0.1896
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",45,58.068,0.0112,0.0404,0.2244
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",5,1.654,0,2e-04,0.001
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",50,65.916,0.0128,0.0462,0.2566
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",55,73.492,0.0143,0.0514,0.2858
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",60,80.752,0.0156,0.0561,0.3119
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",65,87.662,0.0167,0.0603,0.3348
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",70,94.207,0.0177,0.0639,0.3548
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",75,100.377,0.0186,0.067,0.3721
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",80,106.172,0.0193,0.0696,0.3869
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",85,111.597,0.02,0.0719,0.3995
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",90,116.662,0.0205,0.0739,0.4103
+"Northern hardwood/ME_NH/Industrial/harvested","Northern hardwood","ME_NH","Industrial","harvested",95,121.379,0.021,0.0755,0.4194
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",10,23.256,0.0028,0.0102,0.0568
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",100,119.916,0.0233,0.0838,0.4655
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",105,122.962,0.0233,0.0838,0.4658
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",110,125.859,0.0233,0.0839,0.4661
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",115,128.616,0.0233,0.0839,0.4663
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",120,131.24,0.0233,0.084,0.4664
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",125,133.739,0.0233,0.084,0.4665
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",130,136.118,0.0233,0.084,0.4666
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",135,138.384,0.0233,0.084,0.4666
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",140,140.542,0.0233,0.084,0.4666
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",145,142.599,0.0233,0.084,0.4667
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",15,32.231,0.0062,0.0224,0.1247
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",150,144.559,0.0233,0.084,0.4667
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",20,40.409,0.0098,0.0353,0.1963
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",25,47.959,0.013,0.0469,0.2606
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",30,54.983,0.0157,0.0564,0.3135
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",35,61.549,0.0177,0.0638,0.3547
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",40,67.709,0.0193,0.0694,0.3858
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",45,73.504,0.0204,0.0736,0.4087
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",5,13.135,5e-04,0.002,0.011
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",50,78.967,0.0213,0.0766,0.4254
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",55,84.124,0.0219,0.0787,0.4374
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",60,89,0.0223,0.0803,0.446
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",65,93.615,0.0226,0.0814,0.4521
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",70,97.987,0.0228,0.0821,0.4564
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",75,102.132,0.023,0.0827,0.4594
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",80,106.065,0.0231,0.0831,0.4616
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",85,109.798,0.0232,0.0834,0.4631
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",90,113.344,0.0232,0.0836,0.4642
+"Northern hardwood/ME_NH/Industrial/untreated","Northern hardwood","ME_NH","Industrial","untreated",95,116.713,0.0232,0.0837,0.4649
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",10,21.086,0.0022,0.0078,0.0432
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",100,95.206,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",105,97.809,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",110,100.322,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",115,102.749,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",120,105.096,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",125,107.365,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",130,109.561,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",135,111.686,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",140,113.744,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",145,115.738,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",15,28.006,0.0057,0.0204,0.1132
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",150,117.669,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",20,34.166,0.0092,0.033,0.1836
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",25,39.785,0.0119,0.0429,0.2381
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",30,44.984,0.0138,0.0495,0.2752
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",35,49.84,0.0149,0.0538,0.2987
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",40,54.406,0.0157,0.0564,0.3131
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",45,58.722,0.0161,0.0579,0.3217
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",5,12.899,2e-04,8e-04,0.0044
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",50,62.816,0.0163,0.0588,0.3267
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",55,66.713,0.0165,0.0593,0.3297
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",60,70.431,0.0166,0.0596,0.3314
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",65,73.985,0.0166,0.0598,0.3324
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",70,77.39,0.0166,0.0599,0.333
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",75,80.655,0.0167,0.06,0.3333
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",80,83.792,0.0167,0.06,0.3335
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",85,86.808,0.0167,0.06,0.3336
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",90,89.712,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/harvested","Northern hardwood","ME_NH","NIPF","harvested",95,92.509,0.0167,0.0601,0.3337
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",10,16.85,0.0062,0.0224,0.1244
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",100,113.239,0.0231,0.0832,0.4623
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",105,116.488,0.0235,0.0845,0.4694
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",110,119.58,0.0238,0.0857,0.4759
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",115,122.524,0.0241,0.0867,0.4819
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",120,125.325,0.0244,0.0877,0.4874
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",125,127.992,0.0246,0.0887,0.4925
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",130,130.53,0.0249,0.0895,0.4972
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",135,132.946,0.0251,0.0903,0.5015
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",140,135.246,0.0253,0.091,0.5055
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",145,137.435,0.0255,0.0917,0.5092
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",15,24.708,0.0083,0.0298,0.1654
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",150,139.518,0.0256,0.0923,0.5126
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",20,32.196,0.01,0.0361,0.2007
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",25,39.33,0.0116,0.0417,0.2318
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",30,46.124,0.013,0.0467,0.2595
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",35,52.594,0.0142,0.0512,0.2844
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",40,58.755,0.0153,0.0552,0.3068
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",45,64.621,0.0164,0.0589,0.3271
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",5,8.61,0.0037,0.0135,0.075
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",50,70.206,0.0173,0.0622,0.3456
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",55,75.524,0.0181,0.0652,0.3624
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",60,80.586,0.0189,0.068,0.3778
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",65,85.405,0.0196,0.0705,0.3918
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",70,89.992,0.0202,0.0728,0.4046
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",75,94.359,0.0208,0.075,0.4164
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",80,98.516,0.0214,0.0769,0.4272
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",85,102.474,0.0219,0.0787,0.4371
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",90,106.241,0.0223,0.0803,0.4462
+"Northern hardwood/ME_NH/NIPF/untreated","Northern hardwood","ME_NH","NIPF","untreated",95,109.826,0.0227,0.0818,0.4546
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",10,9.089,0.0055,0.0197,0.1094
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",100,147.277,0.0287,0.1033,0.574
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",105,154.802,0.0296,0.1064,0.5912
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",110,162.23,0.0304,0.1094,0.608
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",115,169.558,0.0312,0.1124,0.6242
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",120,176.782,0.032,0.1152,0.6399
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",125,183.9,0.0328,0.1179,0.6551
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",130,190.909,0.0335,0.1206,0.6698
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",135,197.808,0.0342,0.1231,0.6841
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",140,204.595,0.0349,0.1256,0.698
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",145,211.269,0.0356,0.1281,0.7115
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",15,15.356,0.0075,0.0269,0.1494
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",150,217.829,0.0362,0.1304,0.7245
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",20,22.172,0.0093,0.0335,0.186
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",25,29.375,0.011,0.0396,0.2199
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",30,36.857,0.0126,0.0453,0.2517
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",35,44.543,0.0141,0.0507,0.2817
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",40,52.376,0.0155,0.0558,0.3102
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",45,60.309,0.0169,0.0607,0.3374
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",5,3.666,0.0032,0.0115,0.0637
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",50,68.307,0.0182,0.0654,0.3633
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",55,76.341,0.0194,0.0699,0.3882
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",60,84.387,0.0206,0.0742,0.412
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",65,92.423,0.0217,0.0783,0.435
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",70,100.434,0.0229,0.0823,0.457
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",75,108.404,0.0239,0.0861,0.4783
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",80,116.322,0.0249,0.0898,0.4988
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",85,124.176,0.0259,0.0933,0.5185
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",90,131.958,0.0269,0.0968,0.5377
+"Northern hardwood/ME_NH/State/untreated","Northern hardwood","ME_NH","State","untreated",95,139.661,0.0278,0.1001,0.5561
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",10,1.739,0.0023,0.0081,0.0451
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",100,139.852,0.0266,0.0959,0.5325
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",105,140.642,0.0267,0.0962,0.5343
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",110,141.249,0.0268,0.0964,0.5356
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",115,141.716,0.0268,0.0966,0.5366
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",120,142.073,0.0269,0.0967,0.5374
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",125,142.348,0.0269,0.0968,0.538
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",130,142.558,0.0269,0.0969,0.5384
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",135,142.72,0.0269,0.097,0.5388
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",140,142.843,0.027,0.097,0.5391
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",145,142.938,0.027,0.0971,0.5393
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",15,7.292,0.005,0.0182,0.1009
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",150,143.01,0.027,0.0971,0.5394
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",20,17.461,0.0082,0.0296,0.1647
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",25,31.142,0.0114,0.041,0.2281
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",30,46.538,0.0143,0.0515,0.2859
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",35,62.016,0.0168,0.0605,0.3361
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",40,76.445,0.0189,0.0681,0.3782
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",45,89.212,0.0206,0.0743,0.4127
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",5,0.101,5e-04,0.0016,0.0092
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",50,100.094,0.022,0.0793,0.4404
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",55,109.122,0.0231,0.0832,0.4625
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",60,116.465,0.024,0.0864,0.4799
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",65,122.35,0.0247,0.0888,0.4935
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",70,127.014,0.0252,0.0907,0.5041
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",75,130.68,0.0256,0.0922,0.5123
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",80,133.543,0.0259,0.0934,0.5187
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",85,135.769,0.0262,0.0942,0.5236
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",90,137.493,0.0264,0.0949,0.5274
+"Oak/Pine/Hemlock/ME_APH/NIPF/harvested","Oak/Pine/Hemlock","ME_APH","NIPF","harvested",95,138.825,0.0265,0.0955,0.5303
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",10,2.236,0.0028,0.0101,0.0562
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",100,194.309,0.0387,0.1395,0.775
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",105,198.248,0.0395,0.142,0.7891
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",110,201.62,0.0401,0.1443,0.8015
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",115,204.5,0.0406,0.1463,0.8125
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",120,206.954,0.0411,0.148,0.8222
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",125,209.044,0.0415,0.1495,0.8308
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",130,210.82,0.0419,0.1509,0.8383
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",135,212.329,0.0422,0.1521,0.8449
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",140,213.609,0.0425,0.1531,0.8508
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",145,214.694,0.0428,0.1541,0.8559
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",15,7.441,0.0054,0.0194,0.1075
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",150,215.613,0.043,0.1549,0.8604
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",20,16.193,0.0082,0.0297,0.165
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",25,28.032,0.0112,0.0405,0.2248
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",30,42.118,0.0142,0.0512,0.2843
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",35,57.531,0.0171,0.0615,0.3419
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",40,73.443,0.0198,0.0714,0.3964
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",45,89.191,0.0224,0.0805,0.4474
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",5,0.235,9e-04,0.0031,0.0171
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",50,104.292,0.0247,0.089,0.4945
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",55,118.426,0.0269,0.0968,0.5376
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",60,131.407,0.0288,0.1038,0.5767
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",65,143.149,0.0306,0.1102,0.6121
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",70,153.644,0.0322,0.1159,0.644
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",75,162.934,0.0336,0.1211,0.6726
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",80,171.091,0.0349,0.1257,0.6981
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",85,178.208,0.036,0.1298,0.7209
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",90,184.383,0.0371,0.1334,0.7411
+"Oak/Pine/Hemlock/ME_APH/NIPF/untreated","Oak/Pine/Hemlock","ME_APH","NIPF","untreated",95,189.717,0.038,0.1366,0.7591
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",10,2.106,8e-04,0.0028,0.0158
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",100,97.463,0.0177,0.0637,0.3539
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",105,97.721,0.0177,0.0638,0.3542
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",110,97.911,0.0177,0.0638,0.3543
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",115,98.05,0.0177,0.0638,0.3545
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",120,98.152,0.0177,0.0638,0.3546
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",125,98.227,0.0177,0.0638,0.3546
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",130,98.281,0.0177,0.0638,0.3546
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",135,98.322,0.0177,0.0638,0.3547
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",140,98.351,0.0177,0.0638,0.3547
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",145,98.373,0.0177,0.0638,0.3547
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",15,8.114,0.0027,0.0096,0.0534
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",150,98.388,0.0177,0.0638,0.3547
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",20,18.033,0.0053,0.0191,0.106
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",25,30.131,0.0081,0.029,0.161
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",30,42.552,0.0105,0.0378,0.2101
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",35,54.013,0.0125,0.045,0.2499
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",40,63.878,0.014,0.0504,0.2802
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",45,71.979,0.0151,0.0544,0.3025
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",5,0.135,1e-04,2e-04,0.0012
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",50,78.417,0.0159,0.0573,0.3184
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",55,83.419,0.0165,0.0593,0.3297
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",60,87.243,0.0169,0.0608,0.3375
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",65,90.131,0.0171,0.0617,0.3429
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",70,92.295,0.0173,0.0624,0.3467
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",75,93.906,0.0175,0.0629,0.3492
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",80,95.1,0.0175,0.0632,0.351
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",85,95.982,0.0176,0.0634,0.3522
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",90,96.633,0.0176,0.0635,0.353
+"Spruce-fir/ME_APH/Industrial/harvested","Spruce-fir","ME_APH","Industrial","harvested",95,97.111,0.0177,0.0636,0.3535
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",10,2.522,0.0021,0.0074,0.0411
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",100,108.205,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",105,108.46,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",110,108.646,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",115,108.782,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",120,108.88,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",125,108.952,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",130,109.004,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",135,109.042,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",140,109.07,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",145,109.09,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",15,9.596,0.0056,0.0202,0.1124
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",150,109.105,0.0185,0.0666,0.37
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",20,21.095,0.0094,0.0339,0.1882
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",25,34.918,0.0125,0.045,0.25
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",30,48.917,0.0147,0.0529,0.294
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",35,61.675,0.0162,0.0581,0.323
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",40,72.528,0.0171,0.0614,0.3414
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",45,81.343,0.0176,0.0635,0.3527
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",5,0.164,2e-04,7e-04,0.004
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",50,88.28,0.018,0.0647,0.3596
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",55,93.617,0.0182,0.0655,0.3638
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",60,97.66,0.0183,0.0659,0.3663
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",65,100.689,0.0184,0.0662,0.3678
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",70,102.938,0.0184,0.0664,0.3687
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",75,104.601,0.0185,0.0665,0.3692
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",80,105.823,0.0185,0.0665,0.3696
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",85,106.72,0.0185,0.0666,0.3698
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",90,107.376,0.0185,0.0666,0.3699
+"Spruce-fir/ME_APH/Industrial/untreated","Spruce-fir","ME_APH","Industrial","untreated",95,107.855,0.0185,0.0666,0.3699
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",10,0.093,4e-04,0.0013,0.0071
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",100,55.36,0.0063,0.0226,0.1254
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",105,60.318,0.0066,0.0238,0.132
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",110,65.261,0.0069,0.0249,0.1386
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",115,70.168,0.0073,0.0261,0.145
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",120,75.017,0.0076,0.0272,0.1514
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",125,79.79,0.0079,0.0284,0.1577
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",130,84.472,0.0082,0.0295,0.1639
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",135,89.051,0.0085,0.0306,0.17
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",140,93.515,0.0088,0.0317,0.176
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",145,97.857,0.0091,0.0327,0.1819
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",15,0.349,6e-04,0.0022,0.0122
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",150,102.068,0.0094,0.0338,0.1877
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",20,0.868,9e-04,0.0032,0.0178
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",25,1.721,0.0012,0.0043,0.0238
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",30,2.957,0.0015,0.0054,0.0301
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",35,4.605,0.0018,0.0066,0.0366
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",40,6.676,0.0022,0.0078,0.0432
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",45,9.163,0.0025,0.009,0.05
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",5,0.009,1e-04,5e-04,0.0028
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",50,12.051,0.0028,0.0102,0.0569
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",55,15.312,0.0032,0.0115,0.0637
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",60,18.914,0.0035,0.0127,0.0707
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",65,22.819,0.0039,0.014,0.0776
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",70,26.989,0.0042,0.0152,0.0846
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",75,31.382,0.0046,0.0165,0.0915
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",80,35.959,0.0049,0.0177,0.0984
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",85,40.681,0.0053,0.0189,0.1052
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",90,45.512,0.0056,0.0202,0.112
+"Spruce-fir/ME_APH/NIPF/harvested","Spruce-fir","ME_APH","NIPF","harvested",95,50.415,0.0059,0.0214,0.1188
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",10,25.633,0.0053,0.0189,0.1051
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",100,125.828,0.0209,0.0753,0.4182
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",105,128.847,0.0211,0.076,0.4223
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",110,131.708,0.0213,0.0767,0.4259
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",115,134.422,0.0215,0.0772,0.429
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",120,136.996,0.0216,0.0777,0.4318
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",125,139.438,0.0217,0.0782,0.4342
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",130,141.756,0.0218,0.0785,0.4364
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",135,143.955,0.0219,0.0789,0.4382
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",140,146.044,0.022,0.0792,0.4399
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",145,148.028,0.0221,0.0794,0.4413
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",15,35.274,0.0074,0.0266,0.1476
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",150,149.911,0.0221,0.0797,0.4426
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",20,43.993,0.0092,0.0333,0.1847
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",25,51.99,0.0109,0.0391,0.2173
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",30,59.386,0.0123,0.0443,0.2459
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",35,66.265,0.0135,0.0488,0.271
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",40,72.688,0.0146,0.0527,0.293
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",45,78.703,0.0156,0.0562,0.3123
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",5,14.643,0.0028,0.0102,0.0564
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",50,84.347,0.0165,0.0593,0.3293
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",55,89.654,0.0172,0.0619,0.3442
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",60,94.651,0.0179,0.0643,0.3572
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",65,99.362,0.0184,0.0664,0.3687
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",70,103.807,0.0189,0.0682,0.3788
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",75,108.006,0.0194,0.0698,0.3877
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",80,111.974,0.0198,0.0712,0.3955
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",85,115.727,0.0201,0.0724,0.4023
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",90,119.279,0.0204,0.0735,0.4083
+"Spruce-fir/ME_APH/NIPF/untreated","Spruce-fir","ME_APH","NIPF","untreated",95,122.642,0.0207,0.0744,0.4136
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",10,22.683,0.005,0.018,0.1
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",100,132.68,0.0247,0.089,0.4945
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",105,136.939,0.0249,0.0898,0.4989
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",110,141.071,0.0251,0.0905,0.5027
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",115,145.079,0.0253,0.0911,0.5059
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",120,148.969,0.0254,0.0916,0.5088
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",125,152.746,0.0256,0.092,0.5112
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",130,156.412,0.0257,0.0924,0.5133
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",135,159.973,0.0258,0.0927,0.5151
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",140,163.433,0.0258,0.093,0.5166
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",145,166.794,0.0259,0.0932,0.5179
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",15,31.631,0.0076,0.0272,0.1512
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",150,170.06,0.026,0.0934,0.5191
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",20,39.929,0.0099,0.0356,0.198
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",25,47.728,0.012,0.0432,0.2401
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",30,55.115,0.0139,0.0499,0.2775
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",35,62.15,0.0155,0.0559,0.3104
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",40,68.874,0.017,0.0611,0.3392
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",45,75.318,0.0182,0.0656,0.3644
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",5,12.752,0.0023,0.0084,0.0465
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",50,81.507,0.0193,0.0695,0.3863
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",55,87.463,0.0203,0.073,0.4054
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",60,93.201,0.0211,0.0759,0.4219
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",65,98.736,0.0218,0.0785,0.4362
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",70,104.08,0.0224,0.0808,0.4486
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",75,109.245,0.023,0.0827,0.4593
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",80,114.24,0.0234,0.0843,0.4686
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",85,119.073,0.0238,0.0858,0.4765
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",90,123.753,0.0242,0.087,0.4834
+"Spruce-fir/ME_APH/Public-Other/untreated","Spruce-fir","ME_APH","Public-Other","untreated",95,128.286,0.0245,0.0881,0.4894
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",10,8.747,0.0031,0.0111,0.0617
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",100,121.338,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",105,121.507,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",110,121.629,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",115,121.716,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",120,121.779,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",125,121.824,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",130,121.857,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",135,121.88,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",140,121.897,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",145,121.909,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",15,22.66,0.0079,0.0283,0.1572
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",150,121.918,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",20,39.543,0.0125,0.0449,0.2496
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",25,56.299,0.0159,0.0574,0.3188
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",30,71.163,0.0182,0.0656,0.3644
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",35,83.474,0.0196,0.0707,0.3925
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",40,93.23,0.0205,0.0737,0.4093
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",45,100.738,0.021,0.0754,0.419
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",5,1.231,3e-04,0.0012,0.0065
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",50,106.4,0.0212,0.0764,0.4247
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",55,110.612,0.0214,0.077,0.4279
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",60,113.714,0.0215,0.0774,0.4297
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",65,115.983,0.0215,0.0775,0.4308
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",70,117.635,0.0216,0.0776,0.4314
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",75,118.833,0.0216,0.0777,0.4317
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",80,119.7,0.0216,0.0777,0.4319
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",85,120.326,0.0216,0.0778,0.432
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",90,120.778,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/Industrial/untreated","Spruce-fir","ME_NCZ","Industrial","untreated",95,121.104,0.0216,0.0778,0.4321
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",10,5.317,0.0013,0.0048,0.0269
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",100,125.69,0.0208,0.0748,0.4154
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",105,127.756,0.0208,0.0748,0.4155
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",110,129.537,0.0208,0.0748,0.4156
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",115,131.07,0.0208,0.0748,0.4156
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",120,132.389,0.0208,0.0748,0.4157
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",125,133.522,0.0208,0.0748,0.4157
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",130,134.495,0.0208,0.0748,0.4157
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",135,135.329,0.0208,0.0748,0.4157
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",140,136.045,0.0208,0.0748,0.4157
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",145,136.658,0.0208,0.0748,0.4157
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",15,12.189,0.0042,0.0151,0.0841
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",150,137.183,0.0208,0.0748,0.4157
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",20,20.922,0.0078,0.0281,0.1564
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",25,30.72,0.0113,0.0406,0.2253
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",30,40.934,0.0141,0.0507,0.2817
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",35,51.089,0.0162,0.0583,0.3241
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",40,60.855,0.0177,0.0637,0.3542
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",45,70.023,0.0187,0.0675,0.3749
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",5,1.136,1e-04,4e-04,0.0022
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",50,78.476,0.0194,0.07,0.3888
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",55,86.161,0.0199,0.0717,0.3981
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",60,93.071,0.0202,0.0728,0.4042
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",65,99.23,0.0204,0.0735,0.4082
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",70,104.682,0.0205,0.074,0.4108
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",75,109.48,0.0206,0.0743,0.4126
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",80,113.681,0.0207,0.0745,0.4137
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",85,117.347,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",90,120.534,0.0207,0.0747,0.4149
+"Spruce-fir/ME_NCZ/NIPF/untreated","Spruce-fir","ME_NCZ","NIPF","untreated",95,123.299,0.0208,0.0747,0.4152
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",10,23.922,0.0024,0.0085,0.0472
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",100,137.854,0.0222,0.0797,0.443
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",105,138.412,0.0222,0.0797,0.443
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",110,138.859,0.0222,0.0798,0.4431
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",115,139.217,0.0222,0.0798,0.4431
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",120,139.504,0.0222,0.0798,0.4431
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",125,139.733,0.0222,0.0798,0.4431
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",130,139.917,0.0222,0.0798,0.4431
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",135,140.064,0.0222,0.0798,0.4431
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",140,140.182,0.0222,0.0798,0.4431
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",145,140.276,0.0222,0.0798,0.4431
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",15,40.54,0.0065,0.0235,0.1304
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",150,140.352,0.0222,0.0798,0.4431
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",20,56.407,0.011,0.0397,0.2204
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",25,70.661,0.0147,0.053,0.2947
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",30,83.028,0.0174,0.0627,0.3482
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",35,93.522,0.0192,0.0691,0.3839
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",40,102.296,0.0203,0.0732,0.4067
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",45,109.553,0.021,0.0758,0.4209
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",5,8.633,2e-04,8e-04,0.0045
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",50,115.509,0.0215,0.0773,0.4297
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",55,120.37,0.0217,0.0783,0.435
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",60,124.32,0.0219,0.0789,0.4382
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",65,127.518,0.022,0.0792,0.4402
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",70,130.102,0.0221,0.0794,0.4413
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",75,132.184,0.0221,0.0796,0.442
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",80,133.86,0.0221,0.0796,0.4425
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",85,135.207,0.0221,0.0797,0.4427
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",90,136.289,0.0221,0.0797,0.4429
+"Spruce-fir/ME_NCZ/State/untreated","Spruce-fir","ME_NCZ","State","untreated",95,137.158,0.0221,0.0797,0.443
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",10,1.031,3e-04,9e-04,0.0051
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",100,40.477,0.0058,0.0207,0.115
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",105,43.058,0.0061,0.0219,0.1215
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",110,45.622,0.0064,0.023,0.128
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",115,48.167,0.0067,0.0242,0.1344
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",120,50.687,0.007,0.0253,0.1407
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",125,53.179,0.0073,0.0265,0.147
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",130,55.641,0.0077,0.0276,0.1531
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",135,58.07,0.008,0.0287,0.1592
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",140,60.464,0.0083,0.0297,0.1653
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",145,62.822,0.0086,0.0308,0.1712
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",15,2.09,5e-04,0.0017,0.0092
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",150,65.14,0.0089,0.0319,0.177
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",20,3.42,7e-04,0.0025,0.0139
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",25,4.98,0.001,0.0034,0.0191
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",30,6.734,0.0012,0.0044,0.0246
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",35,8.652,0.0015,0.0055,0.0304
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",40,10.711,0.0018,0.0066,0.0364
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",45,12.889,0.0021,0.0077,0.0426
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",5,0.302,1e-04,3e-04,0.0018
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",50,15.166,0.0024,0.0088,0.049
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",55,17.526,0.0028,0.01,0.0554
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",60,19.953,0.0031,0.0112,0.062
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",65,22.434,0.0034,0.0123,0.0686
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",70,24.959,0.0038,0.0135,0.0752
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",75,27.515,0.0041,0.0147,0.0819
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",80,30.093,0.0044,0.0159,0.0885
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",85,32.686,0.0048,0.0171,0.0952
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",90,35.285,0.0051,0.0183,0.1018
+"Spruce-fir/ME_NH/Industrial/harvested","Spruce-fir","ME_NH","Industrial","harvested",95,37.884,0.0054,0.0195,0.1085
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",10,17.249,0.0021,0.0077,0.0425
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",100,132.865,0.0218,0.0785,0.4363
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",105,134.884,0.0218,0.0785,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",110,136.673,0.0218,0.0785,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",115,138.259,0.0218,0.0786,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",120,139.664,0.0218,0.0786,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",125,140.908,0.0218,0.0786,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",130,142.009,0.0218,0.0786,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",135,142.983,0.0218,0.0786,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",140,143.845,0.0218,0.0786,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",145,144.608,0.0218,0.0786,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",15,28.329,0.006,0.0217,0.1203
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",150,145.282,0.0218,0.0786,0.4364
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",20,39.376,0.0103,0.0372,0.2069
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",25,49.99,0.014,0.0505,0.2805
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",30,59.971,0.0167,0.0603,0.3348
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",35,69.225,0.0186,0.0669,0.3719
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",40,77.72,0.0198,0.0713,0.3961
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",45,85.462,0.0206,0.0741,0.4114
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",5,6.97,2e-04,7e-04,0.0039
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",50,92.478,0.0211,0.0758,0.421
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",55,98.811,0.0213,0.0769,0.427
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",60,104.506,0.0215,0.0775,0.4306
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",65,109.613,0.0216,0.0779,0.4329
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",70,114.184,0.0217,0.0782,0.4343
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",75,118.265,0.0218,0.0783,0.4351
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",80,121.905,0.0218,0.0784,0.4356
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",85,125.146,0.0218,0.0785,0.4359
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",90,128.029,0.0218,0.0785,0.4361
+"Spruce-fir/ME_NH/Industrial/untreated","Spruce-fir","ME_NH","Industrial","untreated",95,130.591,0.0218,0.0785,0.4362
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",10,14.287,0.006,0.0214,0.1191
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",100,75.907,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",105,75.907,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",110,75.908,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",115,75.908,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",120,75.908,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",125,75.908,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",130,75.908,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",135,75.908,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",140,75.908,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",145,75.908,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",15,33.42,0.0109,0.0392,0.2175
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",150,75.908,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",20,49.857,0.0138,0.0496,0.2757
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",25,60.942,0.0152,0.0547,0.304
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",30,67.606,0.0158,0.057,0.3168
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",35,71.388,0.0161,0.058,0.3225
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",40,73.472,0.0162,0.0585,0.3249
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",45,74.602,0.0163,0.0587,0.3259
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",5,1.688,0.001,0.0036,0.0201
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",50,75.21,0.0163,0.0587,0.3264
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",55,75.535,0.0163,0.0588,0.3265
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",60,75.709,0.0163,0.0588,0.3266
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",65,75.802,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",70,75.851,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",75,75.878,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",80,75.892,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",85,75.899,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",90,75.903,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/harvested","Spruce-fir","ME_NH","NIPF","harvested",95,75.905,0.0163,0.0588,0.3267
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",10,3.127,0.0025,0.0089,0.0493
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",100,125.525,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",105,125.791,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",110,125.984,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",115,126.123,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",120,126.224,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",125,126.297,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",130,126.35,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",135,126.388,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",140,126.416,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",145,126.436,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",15,11.767,0.0066,0.0238,0.1323
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",150,126.45,0.0207,0.0746,0.4144
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",20,25.616,0.0109,0.0393,0.2184
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",25,42.047,0.0144,0.0517,0.2871
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",30,58.487,0.0167,0.0603,0.335
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",35,73.3,0.0183,0.0659,0.366
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",40,85.772,0.0193,0.0694,0.3853
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",45,95.804,0.0199,0.0715,0.3971
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",5,0.206,2e-04,9e-04,0.0049
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",50,103.627,0.0202,0.0727,0.4042
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",55,109.596,0.0204,0.0735,0.4083
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",60,114.081,0.0205,0.074,0.4108
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",65,117.414,0.0206,0.0742,0.4123
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",70,119.873,0.0207,0.0744,0.4132
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",75,121.676,0.0207,0.0745,0.4137
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",80,122.994,0.0207,0.0745,0.414
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",85,123.953,0.0207,0.0746,0.4142
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",90,124.651,0.0207,0.0746,0.4143
+"Spruce-fir/ME_NH/NIPF/untreated","Spruce-fir","ME_NH","NIPF","untreated",95,125.158,0.0207,0.0746,0.4143
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",10,2.476,0.0023,0.0082,0.0456
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",100,125.932,0.022,0.0792,0.4399
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",105,126.316,0.022,0.0792,0.4399
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",110,126.6,0.022,0.0792,0.4399
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",115,126.811,0.022,0.0792,0.4399
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",120,126.966,0.022,0.0792,0.4399
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",125,127.081,0.022,0.0792,0.4399
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",130,127.166,0.022,0.0792,0.44
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",135,127.229,0.022,0.0792,0.44
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",140,127.275,0.022,0.0792,0.44
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",145,127.309,0.022,0.0792,0.44
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",15,9.687,0.0064,0.0229,0.127
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",150,127.335,0.022,0.0792,0.44
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",20,21.819,0.0108,0.0388,0.2158
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",25,36.881,0.0145,0.0521,0.2897
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",30,52.603,0.0172,0.0618,0.3433
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",35,67.334,0.019,0.0683,0.3793
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",40,80.196,0.0201,0.0724,0.4025
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",45,90.898,0.0209,0.0751,0.417
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",5,0.156,2e-04,8e-04,0.0043
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",50,99.512,0.0213,0.0767,0.426
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",55,106.282,0.0216,0.0777,0.4315
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",60,111.514,0.0217,0.0783,0.4348
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",65,115.508,0.0218,0.0786,0.4368
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",70,118.53,0.0219,0.0789,0.4381
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",75,120.802,0.0219,0.079,0.4388
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",80,122.502,0.022,0.0791,0.4393
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",85,123.77,0.022,0.0791,0.4395
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",90,124.713,0.022,0.0791,0.4397
+"Spruce-fir/ME_NH/State/untreated","Spruce-fir","ME_NH","State","untreated",95,125.413,0.022,0.0792,0.4398
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",10,6.93,0.0029,0.0103,0.0571
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",100,182.101,0.03,0.1081,0.6004
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",105,183.364,0.0305,0.1096,0.6091
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",110,184.372,0.0308,0.111,0.6167
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",115,185.175,0.0312,0.1122,0.6233
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",120,185.816,0.0315,0.1132,0.6291
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",125,186.326,0.0317,0.1141,0.6341
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",130,186.732,0.0319,0.1149,0.6385
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",135,187.055,0.0321,0.1156,0.6423
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",140,187.312,0.0323,0.1162,0.6456
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",145,187.516,0.0324,0.1167,0.6485
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",15,18.788,0.0052,0.0187,0.1036
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",150,187.679,0.0326,0.1172,0.651
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",20,34.992,0.0077,0.0276,0.1533
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",25,53.382,0.0101,0.0365,0.203
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",30,72.129,0.0125,0.0452,0.2509
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",35,89.974,0.0148,0.0533,0.2959
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",40,106.189,0.0169,0.0608,0.3376
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",45,120.449,0.0188,0.0676,0.3757
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",5,1.001,0.001,0.0034,0.0191
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",50,132.694,0.0205,0.0738,0.4101
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",55,143.023,0.0221,0.0794,0.441
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",60,151.622,0.0234,0.0844,0.4687
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",65,158.707,0.0247,0.0888,0.4932
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",70,164.499,0.0257,0.0927,0.515
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",75,169.206,0.0267,0.0962,0.5342
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",80,173.013,0.0276,0.0992,0.5511
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",85,176.08,0.0283,0.1019,0.5659
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",90,178.545,0.0289,0.1042,0.579
+"White/Red pine/ME_APH/Industrial/untreated","White/Red pine","ME_APH","Industrial","untreated",95,180.52,0.0295,0.1063,0.5904
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",10,18.256,0.0012,0.0044,0.0245
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",100,104.928,0.0189,0.068,0.378
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",105,104.93,0.0189,0.0681,0.3781
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",110,104.93,0.0189,0.0681,0.3782
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",115,104.931,0.0189,0.0681,0.3782
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",120,104.931,0.0189,0.0681,0.3782
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",125,104.931,0.0189,0.0681,0.3783
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",130,104.931,0.0189,0.0681,0.3783
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",135,104.931,0.0189,0.0681,0.3783
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",140,104.931,0.0189,0.0681,0.3783
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",145,104.931,0.0189,0.0681,0.3783
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",15,43.794,0.0038,0.0137,0.0763
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",150,104.931,0.0189,0.0681,0.3783
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",20,66.527,0.0071,0.0256,0.1421
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",25,82.344,0.0102,0.0369,0.2048
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",30,92.119,0.0128,0.0461,0.2561
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",35,97.805,0.0147,0.053,0.2947
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",40,101.01,0.0161,0.058,0.3221
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",45,102.786,0.017,0.0614,0.341
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",5,2.085,1e-04,4e-04,0.002
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",50,103.761,0.0177,0.0637,0.3537
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",55,104.294,0.0181,0.0652,0.3622
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",60,104.585,0.0184,0.0662,0.3678
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",65,104.743,0.0186,0.0669,0.3714
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",70,104.829,0.0187,0.0673,0.3738
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",75,104.876,0.0188,0.0676,0.3754
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",80,104.901,0.0188,0.0678,0.3764
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",85,104.915,0.0189,0.0679,0.3771
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",90,104.922,0.0189,0.068,0.3775
+"White/Red pine/ME_APH/NIPF/harvested","White/Red pine","ME_APH","NIPF","harvested",95,104.926,0.0189,0.068,0.3778
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",10,59.904,0.0101,0.0365,0.2025
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",100,200.243,0.0323,0.1164,0.6467
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",105,204.614,0.033,0.1188,0.6603
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",110,208.811,0.0337,0.1212,0.6733
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",115,212.847,0.0343,0.1234,0.6858
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",120,216.73,0.0349,0.1256,0.6978
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",125,220.468,0.0355,0.1277,0.7094
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",130,224.071,0.036,0.1297,0.7205
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",135,227.544,0.0366,0.1316,0.7313
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",140,230.894,0.0371,0.1335,0.7416
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",145,234.128,0.0376,0.1353,0.7516
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",15,75.185,0.0126,0.0454,0.252
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",150,237.251,0.0381,0.137,0.7613
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",20,88.156,0.0147,0.0529,0.2937
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",25,99.584,0.0165,0.0594,0.3303
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",30,109.873,0.0182,0.0653,0.363
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",35,119.27,0.0196,0.0707,0.3929
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",40,127.941,0.021,0.0757,0.4203
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",45,136.004,0.0223,0.0802,0.4457
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",5,40.418,0.0069,0.025,0.1387
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",50,143.544,0.0235,0.0845,0.4695
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",55,150.629,0.0246,0.0885,0.4918
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",60,157.312,0.0256,0.0923,0.5127
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",65,163.637,0.0266,0.0959,0.5325
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",70,169.638,0.0276,0.0992,0.5513
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",75,175.345,0.0285,0.1024,0.5691
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",80,180.783,0.0293,0.1055,0.5861
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",85,185.974,0.0301,0.1084,0.6023
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",90,190.937,0.0309,0.1112,0.6177
+"White/Red pine/ME_APH/NIPF/untreated","White/Red pine","ME_APH","NIPF","untreated",95,195.689,0.0316,0.1139,0.6325
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",10,4.017,7e-04,0.0023,0.013
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",100,208.837,0.0325,0.1169,0.6493
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",105,209.495,0.0326,0.1172,0.6512
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",110,209.982,0.0326,0.1175,0.6526
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",115,210.344,0.0327,0.1177,0.6537
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",120,210.612,0.0327,0.1178,0.6544
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",125,210.81,0.0328,0.1179,0.655
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",130,210.957,0.0328,0.118,0.6554
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",135,211.065,0.0328,0.118,0.6558
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",140,211.146,0.0328,0.1181,0.656
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",145,211.205,0.0328,0.1181,0.6562
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",15,15.773,0.0025,0.0091,0.0507
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",150,211.249,0.0328,0.1181,0.6563
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",20,35.634,0.0057,0.0205,0.1139
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",25,60.393,0.0096,0.0346,0.1922
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",30,86.332,0.0137,0.0492,0.2735
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",35,110.725,0.0175,0.0629,0.3496
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",40,132.09,0.0208,0.0748,0.4158
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",45,149.924,0.0235,0.0847,0.4708
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",5,0.252,0,1e-04,8e-04
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",50,164.317,0.0257,0.0927,0.5149
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",55,175.66,0.0275,0.0989,0.5495
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",60,184.448,0.0288,0.1037,0.5762
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",65,191.173,0.0298,0.1074,0.5965
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",70,196.274,0.0306,0.1101,0.6118
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",75,200.117,0.0312,0.1122,0.6234
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",80,202.998,0.0316,0.1138,0.632
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",85,205.152,0.0319,0.1149,0.6384
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",90,206.756,0.0322,0.1158,0.6431
+"White/Red pine/ME_NCZ/NIPF/untreated","White/Red pine","ME_NCZ","NIPF","untreated",95,207.95,0.0323,0.1164,0.6467

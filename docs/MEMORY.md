@@ -1,6 +1,6 @@
 # FIA CEM Maine Carbon Projection Pipeline — Memory File
 
-**Last updated:** 2 May 2026 (session #6b — v3 treatment-stratified curves + 4-model adapters landed)
+**Last updated:** 2 May 2026 (session #6c — v4 anchored harvested asymptotes, v4 adapters)
 
 ## Repository
 
@@ -69,6 +69,14 @@ The empirical curves (v2) are the immediate Phase 2 deliverable; FVS process-dri
 - Conversion factors used: `0.45` AGB-to-C, `2.2417` ton/ac to Mg/ha, `0.069972` cuft/ac to m³/ha, `0.22` Jenkins below-ground ratio.
 
 **Cross-model PERSEUS handoff is now possible.** Anyone with GCBM, LANDIS, or Woodstock can now run the same 35 Maine forest type × ecoregion × owner strata using these adapter files. The CEM productivity multiplier is the simplest way to back-port the empirical asymptote into our own pipeline as an alternative to the BRMS-fitted SDImax cap.
+
+**v4 anchored harvested fits (added 2 May 2026):**
+- `scripts/yc_09_treatment_v4.R` addresses the v3 harvested asymptote bias analytically. For any cell where the v3 harvested `a` exceeded the matched untreated `a` by more than 20%, v4 rescales the harvested asymptote to the untreated value while preserving the harvested curve's `b` (rate) and `c` (shape). Biological assumption: harvested and undisturbed stands of the same forest type × ecoregion × owner share long-term carrying capacity; only the recovery trajectory differs.
+- 20 of 60 paired harvested fits triggered the anchor (e.g., Northern hardwood NCZ Industrial v3 a = 344 ton/ac → v4 a = 64 ton/ac; Northern hardwood APH NIPF 224 → 64; Spruce-fir NH Industrial 182 → 43). 40 stayed within tolerance and kept their v3 free fit.
+- Mean asymptote `a` across the 42 stratum × treatment fits dropped from 74.1 ton/ac (v3) to 57.3 ton/ac (v4). v4 numbers are now defensible against the harvested chronosequence critique.
+- Outputs: `yield_curves/maine_yield_curves_v4_long.csv`, `yield_curves/maine_yield_curves_v4_fits.csv` (with new `anchor_source` column: `free` | `anchored_untreated_a` | `v3_kept_within_20pct` | `v3_kept_no_pair`), `figures/fig_yield_curves_v4_anchored.png` (top-9 cells, untreated green vs harvested orange/grey), `figures/fig_v3_vs_v4_harvested.png` (asymptote scatter with 1:1 line).
+- v4 adapter outputs landed under `yield_curves/adapters_v4/` via `scripts/yc_10_adapters_v4.R`. Same four model formats (GCBM/LANDIS/CEM/Woodstock) using the anchored asymptotes; v3 adapters under `yield_curves/adapters/` are retained for comparison.
+- Recommended use going forward: **v4 is the headline cross-model handoff** for PERSEUS, citing the anchor logic in methods. v3 remains as the unconstrained empirical baseline that motivates the anchor.
 
 ## Session #4 progress (April 27, Cardinal access restored)
 **Project owner:** Aaron Weiskittel (CRSF, University of Maine)
