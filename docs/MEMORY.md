@@ -1,6 +1,6 @@
 # FIA CEM Maine Carbon Projection Pipeline — Memory File
 
-**Last updated:** 2 May 2026 (session #6c — v4 anchored harvested asymptotes, v4 adapters)
+**Last updated:** 2 May 2026 (session #6d — Faustmann demo + PERSEUS handoff README)
 
 ## Repository
 
@@ -77,6 +77,13 @@ The empirical curves (v2) are the immediate Phase 2 deliverable; FVS process-dri
 - Outputs: `yield_curves/maine_yield_curves_v4_long.csv`, `yield_curves/maine_yield_curves_v4_fits.csv` (with new `anchor_source` column: `free` | `anchored_untreated_a` | `v3_kept_within_20pct` | `v3_kept_no_pair`), `figures/fig_yield_curves_v4_anchored.png` (top-9 cells, untreated green vs harvested orange/grey), `figures/fig_v3_vs_v4_harvested.png` (asymptote scatter with 1:1 line).
 - v4 adapter outputs landed under `yield_curves/adapters_v4/` via `scripts/yc_10_adapters_v4.R`. Same four model formats (GCBM/LANDIS/CEM/Woodstock) using the anchored asymptotes; v3 adapters under `yield_curves/adapters/` are retained for comparison.
 - Recommended use going forward: **v4 is the headline cross-model handoff** for PERSEUS, citing the anchor logic in methods. v3 remains as the unconstrained empirical baseline that motivates the anchor.
+
+**Faustmann rotation demo + PERSEUS handoff (added 2 May 2026):**
+- `scripts/yc_11_faustmann.R` runs an analytical Faustmann optimization on every v4 stratum × treatment combination, sweeping rotation R from 20 to 150 yr. Reports SEV-maximizing rotation under three carbon floors (30, 45, 60 ton/ac time-averaged AGB) and the carbon shadow price (delta-SEV per ton additional C retained).
+- Headline numbers (untreated cells, notional 2024 Maine stumpage at $12/cuft, 4% discount, $200/ac regen): unconstrained R* = 26 yr, 30 ton/ac floor lengthens R* to 86 yr, 45 ton/ac floor pushes to 129 yr, 60 ton/ac is infeasible (mean v4 untreated asymptote = 57 ton/ac so the time-average can't reach 60). Mean shadow price $375-403 per ton C across binding floors.
+- Outputs: `yield_curves/faustmann_rotation_sweep.csv` (1,134 rows), `faustmann_optimal_rotation.csv` (168 rows), `faustmann_carbon_shadow_price.csv` (41 rows), `figures/fig_faustmann_rotation_carbon.png` (R* vs floor + shadow price boxplot).
+- The 26 yr unconstrained R* is shorter than typical Maine industrial rotations (35-70 yr) because the 4% discount rate dominates over yield curve shape on slow-growing softwood strata. Real Woodstock LP with multi-product pricing would shift this upward. Documented as caveat in `docs/PERSEUS_demo.md`.
+- `docs/PERSEUS_handoff.md` is the orientation README for downstream modelers (GCBM/LANDIS/CEM/Woodstock practitioners) using the v4 adapter files. Walks through schema for each of the 6 adapter outputs, conversion factors, demonstration results, and citation guidance. This is the artifact to share when handing v4 curves off externally.
 
 ## Session #4 progress (April 27, Cardinal access restored)
 **Project owner:** Aaron Weiskittel (CRSF, University of Maine)
