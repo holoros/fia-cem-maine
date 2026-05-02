@@ -1,6 +1,6 @@
 # FIA CEM Maine Carbon Projection Pipeline — Memory File
 
-**Last updated:** 2 May 2026 (session #6d — Faustmann demo + PERSEUS handoff README)
+**Last updated:** 2 May 2026 (session #6e — S5 yield curves supplement docx + PDF)
 
 ## Repository
 
@@ -84,6 +84,13 @@ The empirical curves (v2) are the immediate Phase 2 deliverable; FVS process-dri
 - Outputs: `yield_curves/faustmann_rotation_sweep.csv` (1,134 rows), `faustmann_optimal_rotation.csv` (168 rows), `faustmann_carbon_shadow_price.csv` (41 rows), `figures/fig_faustmann_rotation_carbon.png` (R* vs floor + shadow price boxplot).
 - The 26 yr unconstrained R* is shorter than typical Maine industrial rotations (35-70 yr) because the 4% discount rate dominates over yield curve shape on slow-growing softwood strata. Real Woodstock LP with multi-product pricing would shift this upward. Documented as caveat in `docs/PERSEUS_demo.md`.
 - `docs/PERSEUS_handoff.md` is the orientation README for downstream modelers (GCBM/LANDIS/CEM/Woodstock practitioners) using the v4 adapter files. Walks through schema for each of the 6 adapter outputs, conversion factors, demonstration results, and citation guidance. This is the artifact to share when handing v4 curves off externally.
+
+**S5 manuscript supplement (added 2 May 2026):**
+- `manuscript/supplement_S5_yield_curves_v4.docx` (and PDF) matches the S2/S3/S4 v2 polish style: US Letter, Arial 12pt body, structured Method/Result/Tables/Figures/Discussion sections.
+- Tables: ecoregion AGB asymptote summary, top 10 productive cells with paired untreated and harvested asymptotes, AGB anchored cells (5 of 20 across all responses; the doc clarifies the across-response count), Faustmann rotation summary by carbon floor.
+- Figures embedded: fig_yield_curves_v3_treatment.png, fig_yield_curves_v4_anchored.png, fig_v3_vs_v4_harvested.png, fig_faustmann_rotation_carbon.png. All four render correctly through LibreOffice's PDF export.
+- Validates clean through `scripts/office/validate.py`. Built with `node build_s5.js` in scratch using docx-js; build script is in `/sessions/wonderful-peaceful-feynman/scratch/build_s5.js` (not committed; can be regenerated from the v4 fits CSV).
+- This is the paper-ready Phase 2 supplement, directly companion to the S4 v2 stratification supplement. Reference it when describing the empirical chronosequence yield curve approach in the manuscript Methods section.
 
 ## Session #4 progress (April 27, Cardinal access restored)
 **Project owner:** Aaron Weiskittel (CRSF, University of Maine)
