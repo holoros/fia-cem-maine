@@ -1,6 +1,6 @@
 # FIA CEM Maine Carbon Projection Pipeline — Memory File
 
-**Last updated:** 2 May 2026 (session #6e — S5 yield curves supplement docx + PDF)
+**Last updated:** 5 May 2026 (session #6f — CEM v4 multiplier patch landed, r21 in flight, Woodstock package shipped)
 
 ## Repository
 
@@ -91,6 +91,18 @@ The empirical curves (v2) are the immediate Phase 2 deliverable; FVS process-dri
 - Figures embedded: fig_yield_curves_v3_treatment.png, fig_yield_curves_v4_anchored.png, fig_v3_vs_v4_harvested.png, fig_faustmann_rotation_carbon.png. All four render correctly through LibreOffice's PDF export.
 - Validates clean through `scripts/office/validate.py`. Built with `node build_s5.js` in scratch using docx-js; build script is in `/sessions/wonderful-peaceful-feynman/scratch/build_s5.js` (not committed; can be regenerated from the v4 fits CSV).
 - This is the paper-ready Phase 2 supplement, directly companion to the S4 v2 stratification supplement. Reference it when describing the empirical chronosequence yield curve approach in the manuscript Methods section.
+
+**CEM pipeline v4 multiplier integration (added 5 May 2026):**
+- Patches to `~/fia_cem_projections/R/06_projection_engine.R` and `run_projection.R` add `--use_v4_prod_mult` and `--v4_prod_mult_strength` flags. Multiplier loaded from `cem_productivity_multipliers_v4.csv` keyed by PLT_CN via `yc_plot_membership.csv`, applied per-cycle as `prod_mult^(strength/30)` BEFORE the SDImax cap so over-scaled strata still get bounded by carrying capacity. Default-off design keeps r20 behavior identical without flag.
+- Smoke test (job 9182112, 1 sim × 5 cycles) completed in 2:06 with no errors. Multiplier loaded for all 5,027 plots; per-cycle range [0.985, 1.025] mean 0.999. The full-pipeline integration works.
+- r21 BAU run (job 9182685, rcp45 wear, 100 sims × 15 cycles) submitted; ~3-4 hr expected. Three other r21 scenarios (rcp45_econ, rcp85, rcp85_econ) staged in `~/fia_cem_projections/osc/submit_*_r21.sh`, ready for `sbatch` when desired.
+- Patches mirrored to `cem_pipeline_patch/` in fia-cem-maine repo with README documenting rollback procedure (backups at `06_projection_engine.R.bak.20260505_161709` etc.).
+- **Diagnostic outcome at next session:** if r21 statewide AGC differs from r20 by <5% the existing donor-driven CEM machinery already captures the v4 productivity signal; >10% means v4 is adding meaningful site productivity differentiation that strengthens the manuscript argument for stratum-aware projection.
+
+**Remsoft Woodstock package shipped (added 5 May 2026):**
+- `woodstock_package/` directory with everything a Woodstock practitioner needs: THEMES (4 classifier themes), YIELDS (42 stratum × treatment age-keyed tables), AREAS template (1.0 ha placeholder per stratum), LIFESPAN keyed to age_to_90pct of the v4 AGB fit bounded [50, 150] yr, ACTIONS template with CLEARCUT and PARTIAL_CUT plus Faustmann optimal rotations as comments per stratum, flat CSV copy, JSON manifest, and a comprehensive README walkthrough.
+- `build_woodstock_pkg.R` regenerates the package from the v4 archive plus Faustmann results; reproducible from a clone of the repo with one Rscript call.
+- Citation in README directs partners to cite the GitHub repo. The PERSEUS_handoff.md and PERSEUS_demo.md remain the cross-model orientation. This package is what to email when reaching out to a Woodstock practitioner or the Remsoft user community.
 
 ## Session #4 progress (April 27, Cardinal access restored)
 **Project owner:** Aaron Weiskittel (CRSF, University of Maine)
