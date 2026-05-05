@@ -1,0 +1,13 @@
+{
+  "package_name": "Maine FIA v4 Yield Curve Package for Remsoft Woodstock",
+  "version": "1.0",
+  "generated": "2026-05-05 16:19:18.047879",
+  "source_repo": "github.com/holoros/fia-cem-maine",
+  "source_files": ["woodstock_yields_v4_long.csv", "maine_yield_curves_v4_fits.csv", "faustmann_optimal_rotation.csv"],
+  "n_strata_treatments": 42,
+  "n_yield_rows": 1260,
+  "age_range_yr": ["5", "150"],
+  "conversion_factors": { "AGB_to_C": 0.45, "tonac_to_MgHa": 2.2417, "cuftac_to_m3ha": 0.069972, "Jenkins_BG_ratio": 0.22 },
+  "contact": "aaron.weiskittel@maine.edu"
+}
+

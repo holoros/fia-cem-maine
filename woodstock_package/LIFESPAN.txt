@@ -1,0 +1,47 @@
+; LIFESPAN section
+; Set per-stratum maximum age based on age_to_90pct of v4 AGB fit
+; bounded to [50, 150] years
+;
+*LIFESPAN
+Northern_hardwood ME_APH NIPF untreated                      88
+Northern_hardwood ME_APH NIPF harvested                      150
+Northern_hardwood ME_NCZ NIPF untreated                      143
+Northern_hardwood ME_NCZ NIPF harvested                      113
+Sprucefir ME_NH Industrial untreated                         50
+Sprucefir ME_NH Industrial harvested                         150
+Sprucefir ME_APH NIPF untreated                              89
+Sprucefir ME_APH NIPF harvested                              150
+Sprucefir ME_NH NIPF untreated                               50
+Sprucefir ME_NH NIPF harvested                               50
+Northern_hardwood ME_NH Industrial untreated                 50
+Northern_hardwood ME_NH Industrial harvested                 95
+Northern_hardwood ME_NH NIPF untreated                       131
+Northern_hardwood ME_NH NIPF harvested                       50
+Northern_hardwood ME_NCZ Industrial untreated                120
+Northern_hardwood ME_NCZ Industrial harvested                150
+Sprucefir ME_NCZ NIPF untreated                              50
+White_Red_pine ME_APH NIPF untreated                         150
+White_Red_pine ME_APH NIPF harvested                         50
+Sprucefir ME_APH Industrial untreated                        50
+Sprucefir ME_APH Industrial harvested                        50
+Northern_hardwood ME_APH Industrial untreated                150
+Northern_hardwood ME_APH Industrial harvested                70
+Sprucefir ME_NCZ Industrial untreated                        50
+Aspenbirch ME_APH NIPF untreated                             150
+Oak_Pine_Hemlock ME_APH NIPF untreated                       111
+Oak_Pine_Hemlock ME_APH NIPF harvested                       62
+Aspenbirch ME_NH NIPF untreated                              55
+Aspenbirch ME_NH Industrial untreated                        50
+Sprucefir ME_NH State untreated                              50
+Aspenbirch ME_NCZ NIPF untreated                             150
+Northern_hardwood ME_NCZ State untreated                     150
+Aspenbirch ME_APH Industrial untreated                       129
+Northern_hardwood ME_NH State untreated                      150
+White_Red_pine ME_APH Industrial untreated                   100
+Aspenbirch ME_NCZ Industrial untreated                       81
+Northern_hardwood ME_APH PublicOther untreated               150
+Mixedwood ME_APH NIPF untreated                              58
+White_Red_pine ME_NCZ NIPF untreated                         63
+Sprucefir ME_APH PublicOther untreated                       83
+Northern_hardwood ME_NCZ PublicOther untreated               150
+Sprucefir ME_NCZ State untreated                             50

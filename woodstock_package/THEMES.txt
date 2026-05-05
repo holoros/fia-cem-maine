@@ -1,0 +1,22 @@
+*THEME 1 Forest type group
+  Aspenbirch
+  Mixedwood
+  Northern_hardwood
+  Oak_Pine_Hemlock
+  Sprucefir
+  White_Red_pine
+
+*THEME 2 Ecoregion
+  ME_APH
+  ME_NCZ
+  ME_NH
+
+*THEME 3 Ownership
+  Industrial
+  NIPF
+  PublicOther
+  State
+
+*THEME 4 Treatment history
+  harvested
+  untreated

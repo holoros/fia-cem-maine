@@ -1,0 +1,47 @@
+; AREAS section template
+; Replace 1.0 with actual inventory area in hectares per stratum
+; Source the area distribution from your FIA expansion or HCB owner atlas
+;
+*A
+Aspenbirch ME_APH Industrial untreated                       1.0
+Aspenbirch ME_APH NIPF untreated                             1.0
+Aspenbirch ME_NCZ Industrial untreated                       1.0
+Aspenbirch ME_NCZ NIPF untreated                             1.0
+Aspenbirch ME_NH Industrial untreated                        1.0
+Aspenbirch ME_NH NIPF untreated                              1.0
+Mixedwood ME_APH NIPF untreated                              1.0
+Northern_hardwood ME_APH Industrial harvested                1.0
+Northern_hardwood ME_APH Industrial untreated                1.0
+Northern_hardwood ME_APH NIPF harvested                      1.0
+Northern_hardwood ME_APH NIPF untreated                      1.0
+Northern_hardwood ME_APH PublicOther untreated               1.0
+Northern_hardwood ME_NCZ Industrial harvested                1.0
+Northern_hardwood ME_NCZ Industrial untreated                1.0
+Northern_hardwood ME_NCZ NIPF harvested                      1.0
+Northern_hardwood ME_NCZ NIPF untreated                      1.0
+Northern_hardwood ME_NCZ PublicOther untreated               1.0
+Northern_hardwood ME_NCZ State untreated                     1.0
+Northern_hardwood ME_NH Industrial harvested                 1.0
+Northern_hardwood ME_NH Industrial untreated                 1.0
+Northern_hardwood ME_NH NIPF harvested                       1.0
+Northern_hardwood ME_NH NIPF untreated                       1.0
+Northern_hardwood ME_NH State untreated                      1.0
+Oak_Pine_Hemlock ME_APH NIPF harvested                       1.0
+Oak_Pine_Hemlock ME_APH NIPF untreated                       1.0
+Sprucefir ME_APH Industrial harvested                        1.0
+Sprucefir ME_APH Industrial untreated                        1.0
+Sprucefir ME_APH NIPF harvested                              1.0
+Sprucefir ME_APH NIPF untreated                              1.0
+Sprucefir ME_APH PublicOther untreated                       1.0
+Sprucefir ME_NCZ Industrial untreated                        1.0
+Sprucefir ME_NCZ NIPF untreated                              1.0
+Sprucefir ME_NCZ State untreated                             1.0
+Sprucefir ME_NH Industrial harvested                         1.0
+Sprucefir ME_NH Industrial untreated                         1.0
+Sprucefir ME_NH NIPF harvested                               1.0
+Sprucefir ME_NH NIPF untreated                               1.0
+Sprucefir ME_NH State untreated                              1.0
+White_Red_pine ME_APH Industrial untreated                   1.0
+White_Red_pine ME_APH NIPF harvested                         1.0
+White_Red_pine ME_APH NIPF untreated                         1.0
+White_Red_pine ME_NCZ NIPF untreated                         1.0

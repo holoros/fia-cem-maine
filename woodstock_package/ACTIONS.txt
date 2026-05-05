@@ -1,0 +1,51 @@
+; ACTIONS section template
+; CLEARCUT: full removal, transitions stratum to harvested treatment
+;           and resets age to 0 (with regeneration delay)
+; PARTIAL_CUT: ~50% removal, age penalty 40 yr (Wear 2019 Table 2)
+; FAUSTMANN_OPT: Faustmann-optimal rotation (notional 12 USD/cuft, 4% disc)
+;                shown as a comment for the no-carbon-floor case
+;
+*ACTION CLEARCUT
+*OPERABILITY
+  ? ? ? untreated _AGE >= 30
+*PARTIAL
+  none
+
+*ACTION PARTIAL_CUT
+*OPERABILITY
+  ? ? ? untreated _AGE >= 50
+*PARTIAL
+  Vol_m3ha 0.50
+
+; ===== Faustmann optimal rotations (no carbon floor) =====
+; Stratum                                                     R*
+; Northern_hardwood ME_APH NIPF untreated                      R* = 35 yr
+; Northern_hardwood ME_NCZ NIPF untreated                      R* = 20 yr
+; Sprucefir ME_NH Industrial untreated                         R* = 20 yr
+; Sprucefir ME_APH NIPF untreated                              R* = 20 yr
+; Sprucefir ME_NH NIPF untreated                               R* = 30 yr
+; Northern_hardwood ME_NH Industrial untreated                 R* = 20 yr
+; Northern_hardwood ME_NH NIPF untreated                       R* = 20 yr
+; Northern_hardwood ME_NCZ Industrial untreated                R* = 20 yr
+; Sprucefir ME_NCZ NIPF untreated                              R* = 25 yr
+; White_Red_pine ME_APH NIPF untreated                         R* = 20 yr
+; Sprucefir ME_APH Industrial untreated                        R* = 30 yr
+; Northern_hardwood ME_APH Industrial untreated                R* = 20 yr
+; Sprucefir ME_NCZ Industrial untreated                        R* = 25 yr
+; Aspenbirch ME_APH NIPF untreated                             R* = 20 yr
+; Oak_Pine_Hemlock ME_APH NIPF untreated                       R* = 35 yr
+; Aspenbirch ME_NH NIPF untreated                              R* = 30 yr
+; Aspenbirch ME_NH Industrial untreated                        R* = 30 yr
+; Sprucefir ME_NH State untreated                              R* = 30 yr
+; Aspenbirch ME_NCZ NIPF untreated                             R* = 20 yr
+; Northern_hardwood ME_NCZ State untreated                     R* = 30 yr
+; Aspenbirch ME_APH Industrial untreated                       R* = 40 yr
+; Northern_hardwood ME_NH State untreated                      R* = 20 yr
+; White_Red_pine ME_APH Industrial untreated                   R* = 30 yr
+; Aspenbirch ME_NCZ Industrial untreated                       R* = 40 yr
+; Northern_hardwood ME_APH PublicOther untreated               R* = 30 yr
+; Mixedwood ME_APH NIPF untreated                              R* = 30 yr
+; White_Red_pine ME_NCZ NIPF untreated                         R* = 30 yr
+; Sprucefir ME_APH PublicOther untreated                       R* = 20 yr
+; Northern_hardwood ME_NCZ PublicOther untreated               R* = 20 yr
+; Sprucefir ME_NCZ State untreated                             R* = 20 yr
