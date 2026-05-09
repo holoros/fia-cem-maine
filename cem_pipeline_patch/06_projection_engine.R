@@ -113,6 +113,53 @@ get_owner_harvest_mult <- function(projected, cfg) {
   m
 }
 
+#' Look up state-varying climate / disturbance / SDImax constants from
+#' config/state_constants.csv (see MULTISTATE_PORTABILITY_GAPS.md Section 8
+#' step 6). Falls back to Maine values when the state is missing or the CSV
+#' is absent so existing ME runs are unaffected. Cached on
+#' .GlobalEnv$.STATE_CONSTANTS.
+#'
+#' @return A 1-row data.frame with: dT_2099_rcp45, dT_2099_rcp85,
+#'   fire_baseline_per_cycle, sdimax_default_english, sbw_relevance,
+#'   terminal_age.
+get_state_constants <- function(cfg) {
+  state <- cfg$target_state %||% "ME"
+  if (!exists(".STATE_CONSTANTS", envir = .GlobalEnv)) {
+    cfg_dir <- cfg$paths$config_dir %||% cfg$config_dir %||% "config"
+    sc_csv  <- file.path(cfg_dir, "state_constants.csv")
+    if (file.exists(sc_csv)) {
+      sc <- read.csv(sc_csv, stringsAsFactors = FALSE)
+      assign(".STATE_CONSTANTS", sc, envir = .GlobalEnv)
+      cat(sprintf("  state_constants.csv loaded: %d states\n", nrow(sc)))
+    } else {
+      assign(".STATE_CONSTANTS", NULL, envir = .GlobalEnv)
+    }
+  }
+  sc <- get(".STATE_CONSTANTS", envir = .GlobalEnv)
+  ## Hardcoded Maine fallback (matches the pre-externalization values exactly).
+  me_default <- data.frame(
+    state = "ME", statecd = 23L,
+    dT_2099_rcp45 = 2.5, dT_2099_rcp85 = 4.5,
+    fire_baseline_per_cycle = 0.005, sdimax_default_english = 440,
+    sbw_relevance = "full", terminal_age = 120,
+    stringsAsFactors = FALSE
+  )
+  if (is.null(sc)) {
+    if (state != "ME") {
+      warning(sprintf("state_constants.csv missing; using ME fallback for %s",
+                      state))
+    }
+    return(me_default)
+  }
+  row <- sc[sc$state == state, , drop = FALSE]
+  if (nrow(row) == 0) {
+    warning(sprintf("No state_constants row for '%s'; using ME fallback",
+                    state))
+    return(me_default)
+  }
+  row[1, , drop = FALSE]
+}
+
 # =============================================================================
 # 1. Single Cycle Projection
 # =============================================================================
@@ -379,17 +426,19 @@ project_one_cycle <- function(subjects, remeasured, scenario,
   # -- Climate-scenario multiplier (HadGEM2-AO RCP 4.5 / 8.5) ---------------
   # Computes a time-varying growth multiplier and disturbance weighting
   # based on cumulative warming from 1999 to the projected year for the
-  # selected RCP. Values are Maine-regional approximations from HadGEM2-AO
-  # downscaled projections (MACA/ClimateNA).
+  # selected RCP. Per-state warming targets come from config/state_constants.csv
+  # (see MULTISTATE_PORTABILITY_GAPS.md Section 8 step 6); ME values match the
+  # original HadGEM2-AO downscaled projections (MACA/ClimateNA).
+  state_const <- get_state_constants(cfg)
   climate_mult <- 1.0   # default: no climate effect
   fire_climate_mult   <- 1.0
   insect_climate_mult <- 1.0
   if (!is.null(cfg$climate_rcp)) {
     rcp <- as.numeric(cfg$climate_rcp)
-    # Warming at 2099 for Maine under each RCP (HadGEM2-AO approx)
+    # Warming at 2099 for the target state under each RCP.
     dT_2099 <- switch(as.character(rcp),
-                       "4.5" = 2.5,    # moderate warming
-                       "8.5" = 4.5,    # high warming
+                       "4.5" = state_const$dT_2099_rcp45,
+                       "8.5" = state_const$dT_2099_rcp85,
                        0)
     # Linear ramp from baseline to 2099
     years_elapsed <- (cycle_num) * (cfg$cycle_length_yrs %||% 5L)
@@ -553,8 +602,12 @@ project_one_cycle <- function(subjects, remeasured, scenario,
     wind_p_per_cycle <- 0.025 * (cfg$wind_amp_mult %||% 1.0)
     wind_hit <- runif(n) < wind_p_per_cycle
 
-    # --- Wildfire (Maine baseline 0.5% per cycle, climate-amplified) ---
-    fire_p_per_cycle <- 0.005 * fire_climate_mult * (cfg$fire_amp_mult %||% 1.0)
+    # --- Wildfire (per-state baseline, climate-amplified) ---
+    # Baseline reads from state_constants.csv. ME 0.005/cycle (~0.1%/yr);
+    # WA ~0.06/cycle (10x ME); GA ~0.04/cycle; MN ~0.01/cycle.
+    fire_baseline <- state_const$fire_baseline_per_cycle %||% 0.005
+    fire_p_per_cycle <- fire_baseline * fire_climate_mult *
+                        (cfg$fire_amp_mult %||% 1.0)
     fire_hit <- runif(n) < fire_p_per_cycle
 
     # Apply per-plot reductions:
@@ -625,7 +678,10 @@ project_one_cycle <- function(subjects, remeasured, scenario,
       cat("  BRMS SDImax cap disabled: lookup CSVs not found\n")
     }
   }
-  GLOBAL_SDIMAX_DEFAULT_ENG <- 440  # Maine northern hardwood-conifer mean
+  GLOBAL_SDIMAX_DEFAULT_ENG <- state_const$sdimax_default_english %||% 440
+  # Per-state SDImax fallback (English: trees per acre). Used when neither
+  # the BRMS plot lookup nor the state x FORTYPCD lookup hits. ME 440;
+  # MN 330; WA 510 (Doug-fir / hemlock-Sitka); GA 360.
 
   # -- v4 productivity multiplier (Phase 2 yield curve archive) -------------
   # When --use_v4_prod_mult is set, load FIA empirical asymptote multipliers
