@@ -10,8 +10,8 @@
 ## Inputs:
 ##   ~/landowner/US_forest_ownership.tif    CONUS HCB raster, NAD83
 ##   ~/Disturbance/us_eco_l3_state_boundaries.shp  L3 ecoregion polygons
-##   ~/fia_data/<STATE>_PLOT.csv            FIA PLOT table
-##   ~/fia_data/<STATE>_COND.csv            FIA COND table (for OWNCD, FORTYPCD)
+##   ~/FIA/ENTIRE_PLOT.csv                  national FIA PLOT table
+##   ~/FIA/ENTIRE_COND.csv                  national FIA COND table
 ##
 ## Output:
 ##   <OUT_DIR>/fia_plots_hcb_l3.csv         joined plot-level table
@@ -27,17 +27,18 @@
 ##   Rscript scripts/build_hcb_l3_crosswalk.R \
 ##       ~/landowner/US_forest_ownership.tif \
 ##       ~/Disturbance/us_eco_l3_state_boundaries.shp \
-##       ~/fia_data \
+##       ~/FIA \
 ##       ~/fia_cem_projections/config
 
 suppressPackageStartupMessages({
   library(terra); library(sf); library(dplyr); library(readr); library(tidyr)
+  library(data.table)
 })
 
 args <- commandArgs(trailingOnly = TRUE)
 HCB_TIF <- if (length(args) >= 1) args[1] else "~/landowner/US_forest_ownership.tif"
 L3_SHP  <- if (length(args) >= 2) args[2] else "~/Disturbance/us_eco_l3_state_boundaries.shp"
-FIA_DIR <- if (length(args) >= 3) args[3] else file.path(Sys.getenv("HOME"), "fia_data")
+FIA_DIR <- if (length(args) >= 3) args[3] else file.path(Sys.getenv("HOME"), "FIA")
 OUT_DIR <- if (length(args) >= 4) args[4] else file.path(Sys.getenv("HOME"), "fia_cem_projections", "config")
 
 dir.create(OUT_DIR, recursive = TRUE, showWarnings = FALSE)
@@ -55,6 +56,38 @@ stopifnot(file.exists(HCB_TIF), file.exists(L3_SHP), dir.exists(FIA_DIR))
 ## Target states for this audit batch.
 STATES <- c("ME", "MN", "WA", "GA")
 STATECD_LOOKUP <- c(ME = 23L, MN = 27L, WA = 53L, GA = 13L)
+
+## ---- Load ENTIRE FIA tables once and filter to target STATECDs ----------
+## ~/FIA/ENTIRE_PLOT.csv is 1.98M rows, 443 MB. data.table::fread is fast and
+## memory-efficient; we filter to the four target states immediately.
+ENTIRE_PLOT <- file.path(FIA_DIR, "ENTIRE_PLOT.csv")
+ENTIRE_COND <- file.path(FIA_DIR, "ENTIRE_COND.csv")
+stopifnot(file.exists(ENTIRE_PLOT), file.exists(ENTIRE_COND))
+
+cat(sprintf("Reading %s...\n", ENTIRE_PLOT))
+plot_all <- data.table::fread(
+  ENTIRE_PLOT,
+  select = c("CN", "STATECD", "UNITCD", "COUNTYCD", "PLOT",
+             "INVYR", "LAT", "LON", "DESIGNCD"),
+  data.table = FALSE,
+  showProgress = FALSE
+)
+plot_all <- plot_all[plot_all$STATECD %in% STATECD_LOOKUP, ]
+cat(sprintf("  retained %d plot rows across STATECDs %s\n",
+            nrow(plot_all),
+            paste(sort(unique(plot_all$STATECD)), collapse = ", ")))
+names(plot_all)[names(plot_all) == "CN"] <- "PLT_CN"
+
+cat(sprintf("Reading %s...\n", ENTIRE_COND))
+cond_all <- data.table::fread(
+  ENTIRE_COND,
+  select = c("PLT_CN", "CONDID", "FORTYPCD", "OWNCD", "OWNGRPCD",
+             "CONDPROP_UNADJ"),
+  data.table = FALSE,
+  showProgress = FALSE
+)
+cond_all <- cond_all[cond_all$PLT_CN %in% plot_all$PLT_CN, ]
+cat(sprintf("  retained %d cond rows for those plots\n", nrow(cond_all)))
 
 ## Load HCB raster (uses overviews for fast point queries).
 cat("Loading HCB raster...\n")
@@ -103,44 +136,23 @@ fia_owngrpcd_to_class <- function(owngrpcd) {
 }
 
 ## ---- Per-state worker ---------------------------------------------------
+## Operates on pre-filtered plot_all and cond_all (single read of ENTIRE_*).
 process_state <- function(state) {
   cat(sprintf("\n--- %s ---\n", state))
-  plt_csv <- file.path(FIA_DIR, sprintf("%s_PLOT.csv", state))
-  cnd_csv <- file.path(FIA_DIR, sprintf("%s_COND.csv", state))
-  if (!file.exists(plt_csv)) {
-    warning(sprintf("Missing %s; skipping %s", plt_csv, state))
+  statecd <- STATECD_LOOKUP[[state]]
+  plt <- plot_all[plot_all$STATECD == statecd, ]
+  if (nrow(plt) == 0) {
+    warning(sprintf("No plots found for STATECD=%d (%s)", statecd, state))
     return(NULL)
   }
-  if (!file.exists(cnd_csv)) {
-    warning(sprintf("Missing %s; skipping %s", cnd_csv, state))
-    return(NULL)
-  }
-
-  plt <- read_csv(plt_csv, col_types = cols(.default = "c"),
-                  show_col_types = FALSE)
-  cnd <- read_csv(cnd_csv, col_types = cols(.default = "c"),
-                  show_col_types = FALSE)
-
-  plt <- plt |>
-    select(PLT_CN = CN, STATECD, UNITCD, COUNTYCD, PLOT, INVYR,
-           LAT, LON, DESIGNCD) |>
-    mutate(across(c(STATECD, UNITCD, COUNTYCD, PLOT, INVYR, DESIGNCD),
-                  ~ suppressWarnings(as.integer(.))),
-           LAT = suppressWarnings(as.numeric(LAT)),
-           LON = suppressWarnings(as.numeric(LON)))
-
-  cnd <- cnd |>
-    select(PLT_CN, CONDID, FORTYPCD, OWNCD, OWNGRPCD, CONDPROP_UNADJ) |>
-    mutate(across(c(CONDID, FORTYPCD, OWNCD, OWNGRPCD),
-                  ~ suppressWarnings(as.integer(.))),
-           CONDPROP_UNADJ = suppressWarnings(as.numeric(CONDPROP_UNADJ)))
 
   ## Latest measurement per plot, keep only those with valid coordinates.
   plt_latest <- plt |>
-    filter(!is.na(LAT), !is.na(LON)) |>
-    group_by(STATECD, UNITCD, COUNTYCD, PLOT) |>
-    slice_max(INVYR, n = 1, with_ties = FALSE) |>
-    ungroup()
+    dplyr::filter(!is.na(LAT), !is.na(LON)) |>
+    dplyr::group_by(STATECD, UNITCD, COUNTYCD, PLOT) |>
+    dplyr::slice_max(INVYR, n = 1, with_ties = FALSE) |>
+    dplyr::ungroup()
+  cnd <- cond_all[cond_all$PLT_CN %in% plt_latest$PLT_CN, ]
 
   cat(sprintf("  plots with lat/lon (latest per plot): %d\n", nrow(plt_latest)))
 
