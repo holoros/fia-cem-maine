@@ -9,7 +9,7 @@
 ##
 ## Inputs:
 ##   ~/landowner/US_forest_ownership.tif    CONUS HCB raster, NAD83
-##   ~/Disturbance/us_eco_l3_state_boundaries.shp  L3 ecoregion polygons
+##   ~/Disturbance/us_eco_l3.shp  L3 ecoregion polygons
 ##   ~/FIA/ENTIRE_PLOT.csv                  national FIA PLOT table
 ##   ~/FIA/ENTIRE_COND.csv                  national FIA COND table
 ##
@@ -26,7 +26,7 @@
 ##   module load gcc/12.3.0 R/4.4.0 proj/9.2.1 gdal/3.7.3 geos/3.12.0
 ##   Rscript scripts/build_hcb_l3_crosswalk.R \
 ##       ~/landowner/US_forest_ownership.tif \
-##       ~/Disturbance/us_eco_l3_state_boundaries.shp \
+##       ~/Disturbance/us_eco_l3.shp \
 ##       ~/FIA \
 ##       ~/fia_cem_projections/config
 
@@ -37,7 +37,7 @@ suppressPackageStartupMessages({
 
 args <- commandArgs(trailingOnly = TRUE)
 HCB_TIF <- if (length(args) >= 1) args[1] else "~/landowner/US_forest_ownership.tif"
-L3_SHP  <- if (length(args) >= 2) args[2] else "~/Disturbance/us_eco_l3_state_boundaries.shp"
+L3_SHP  <- if (length(args) >= 2) args[2] else "~/Disturbance/us_eco_l3.shp"
 FIA_DIR <- if (length(args) >= 3) args[3] else file.path(Sys.getenv("HOME"), "FIA")
 OUT_DIR <- if (length(args) >= 4) args[4] else file.path(Sys.getenv("HOME"), "fia_cem_projections", "config")
 

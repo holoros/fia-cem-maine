@@ -29,7 +29,7 @@ echo "============================================"
 
 Rscript scripts/build_hcb_l3_crosswalk.R \
   ${HOME}/landowner/US_forest_ownership.tif \
-  ${HOME}/Disturbance/us_eco_l3_state_boundaries.shp \
+  ${HOME}/Disturbance/us_eco_l3.shp \
   ${HOME}/FIA \
   ${HOME}/fia_cem_projections/config
 
