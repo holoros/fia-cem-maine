@@ -452,7 +452,7 @@ get_donor_states <- function(state) {
     SC = c("SC", "NC", "GA"),
     VA = c("VA", "WV", "NC", "MD", "KY", "TN"),
     OR = c("OR", "WA", "CA", "ID"),
-    WA = c("WA", "OR", "ID")
+    WA = c("WA", "OR", "ID", "MT")
   )
 
   if (state %in% names(neighbors)) {

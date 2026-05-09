@@ -114,7 +114,9 @@ build_sdimax_lookup <- function(state = "ME",
                        "ME" = "Maine", "NH" = "New Hampshire", "VT" = "Vermont",
                        "NY" = "New York", "MA" = "Massachusetts",
                        "CT" = "Connecticut", "RI" = "Rhode Island",
-                       "PA" = "Pennsylvania", state)  # fallback: use as-is
+                       "PA" = "Pennsylvania",
+                       "MN" = "Minnesota", "WA" = "Washington", "GA" = "Georgia",
+                       state)  # fallback: use as-is
   sdimax  <- read_csv(sdimax_csv, show_col_types = FALSE) |>
     filter(STATE == state_name)
   fortype <- read_csv(fortype_csv, show_col_types = FALSE) |>
@@ -173,6 +175,7 @@ expand_to_state <- function(per_plot_file,
   statecd <- switch(toupper(state),
                     "ME" = 23L, "NH" = 33L, "VT" = 50L, "NY" = 36L,
                     "MA" = 25L, "CT" = 9L,  "RI" = 44L, "PA" = 42L,
+                    "MN" = 27L, "WA" = 53L, "GA" = 13L,
                     NA_integer_)
 
   per_plot_raw <- readRDS(per_plot_file) |>

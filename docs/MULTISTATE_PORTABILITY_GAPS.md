@@ -20,13 +20,13 @@ These are the concrete, surgical fixes. Each is a one line edit.
 
 ### 1a. `cem_pipeline_patch/run_projection.R`, function `get_donor_states()`, lines 440 to ~460
 
-Already has MN and GA neighbor lists. **WA is missing entirely.** Add:
+**Audit correction (2026-05-09):** the original audit said WA was missing entirely. It is not. WA exists at line 455 with `WA = c("WA", "OR", "ID")`, and OR exists at line 454. The only gap is that WA's neighbor list is missing MT. ME, MN, GA, OR, WA all have neighbor lists already.
+
+Applied: WA neighbor list extended to include MT.
 
 ```r
-WA = c("WA", "OR", "ID", "MT"),
+WA = c("WA", "OR", "ID", "MT")
 ```
-
-(Also missing: OR, ID, MT, the natural neighbor pool. Suggest adding all four together.)
 
 ### 1b. `R/10_state_expansion.R`, `build_sdimax_lookup()` state name switch, line 113
 
