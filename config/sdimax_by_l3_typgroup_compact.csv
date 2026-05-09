@@ -1,0 +1,151 @@
+us_l3code,us_l3name,TYPGRPCD,typgroup_label,n_plots,sdimax_m_mean,sdimax_m_median,sdimax_m_p10,sdimax_m_p90,sdimax_e_mean,sdimax_e_median,sdimax_e_p10,sdimax_e_p90
+1,Coast Range,200,Douglas-fir,443,1202,1124,679,1867,487,455,275,756
+1,Coast Range,300,Hemlock-Sitka spruce,366,1512,1475,837,2237,612,597,339,905
+1,Coast Range,910,Alder-maple,114,1130,1030,641,1635,457,417,259,662
+1,Coast Range,260,Fir-spruce-mountain hemlock,31,1953,1950,1326,2538,790,789,537,1027
+1,Coast Range,999,Nonstocked,15,1288,1314,804,1709,521,532,325,692
+1,Coast Range,960,Other hardwoods,7,865,943,558,1138,350,382,226,460
+2,Puget Lowland,200,Douglas-fir,251,1156,1068,592,1805,468,432,240,730
+2,Puget Lowland,910,Alder-maple,110,1145,975,674,1799,463,395,273,728
+2,Puget Lowland,300,Hemlock-Sitka spruce,48,1499,1520,954,2086,607,615,386,844
+2,Puget Lowland,700,Elm-ash-cottonwood,26,996,983,690,1306,403,398,279,528
+2,Puget Lowland,999,Nonstocked,11,1059,765,514,1691,429,310,208,684
+2,Puget Lowland,900,Aspen-birch,5,887,747,607,1238,359,302,246,501
+2,Puget Lowland,260,Fir-spruce-mountain hemlock,5,833,744,553,1157,337,301,224,468
+3,Willamette Valley,910,Alder-maple,6,705,749,461,905,285,303,187,366
+4,Cascades,200,Douglas-fir,642,1326,1271,732,1960,536,514,296,793
+4,Cascades,260,Fir-spruce-mountain hemlock,267,1390,1366,657,2127,562,553,266,861
+4,Cascades,300,Hemlock-Sitka spruce,144,1608,1597,1053,2201,651,646,426,891
+4,Cascades,910,Alder-maple,72,1079,1006,574,1601,437,407,232,648
+4,Cascades,999,Nonstocked,21,1050,1114,339,1630,425,451,137,660
+4,Cascades,280,Lodgepole pine,7,1086,976,812,1448,439,395,329,586
+4,Cascades,700,Elm-ash-cottonwood,6,867,870,532,1198,351,352,215,485
+9,Eastern Cascades Slopes and Foothills,200,Douglas-fir,180,1063,994,513,1602,430,402,208,648
+9,Eastern Cascades Slopes and Foothills,220,Ponderosa pine,146,829,789,441,1281,335,319,178,518
+9,Eastern Cascades Slopes and Foothills,260,Fir-spruce-mountain hemlock,95,1083,1093,498,1683,438,442,202,681
+9,Eastern Cascades Slopes and Foothills,920,Western oak,26,740,655,429,1050,300,265,174,425
+9,Eastern Cascades Slopes and Foothills,280,Lodgepole pine,23,1024,859,590,1456,414,348,239,589
+9,Eastern Cascades Slopes and Foothills,320,Western larch,16,1020,823,419,1753,413,333,169,710
+9,Eastern Cascades Slopes and Foothills,999,Nonstocked,11,762,448,249,1831,308,181,101,741
+9,Eastern Cascades Slopes and Foothills,300,Hemlock-Sitka spruce,5,1382,1316,972,1907,559,533,393,772
+10,Columbia Plateau,220,Ponderosa pine,56,641,593,389,975,260,240,158,394
+10,Columbia Plateau,200,Douglas-fir,24,848,774,451,1480,343,313,182,599
+10,Columbia Plateau,999,Nonstocked,10,689,582,385,1035,279,235,156,419
+10,Columbia Plateau,920,Western oak,7,810,729,557,1152,328,295,225,466
+11,Blue Mountains,260,Fir-spruce-mountain hemlock,49,1014,1041,584,1539,410,421,236,623
+11,Blue Mountains,200,Douglas-fir,22,853,769,454,1311,345,311,184,531
+11,Blue Mountains,220,Ponderosa pine,16,545,521,251,857,221,211,101,347
+11,Blue Mountains,999,Nonstocked,12,700,652,217,1199,283,264,88,485
+15,Northern Rockies,200,Douglas-fir,590,847,781,461,1329,343,316,186,538
+15,Northern Rockies,220,Ponderosa pine,218,675,634,367,1032,273,257,148,418
+15,Northern Rockies,260,Fir-spruce-mountain hemlock,130,981,979,493,1487,397,396,200,602
+15,Northern Rockies,320,Western larch,110,1011,941,580,1462,409,381,235,592
+15,Northern Rockies,300,Hemlock-Sitka spruce,96,1299,1334,784,1763,526,540,317,714
+15,Northern Rockies,280,Lodgepole pine,87,953,905,526,1374,386,366,213,556
+15,Northern Rockies,999,Nonstocked,54,636,564,319,956,257,228,129,387
+15,Northern Rockies,900,Aspen-birch,20,834,857,425,1176,337,347,172,476
+15,Northern Rockies,960,Other hardwoods,19,592,563,312,833,239,228,126,337
+15,Northern Rockies,700,Elm-ash-cottonwood,7,1117,1080,531,1643,452,437,215,665
+45,Piedmont,160,Loblolly-shortleaf pine,548,937,917,624,1257,379,371,253,509
+45,Piedmont,500,Oak-hickory,471,866,843,567,1205,350,341,230,488
+45,Piedmont,400,Oak-pine,168,880,858,549,1229,356,347,222,497
+45,Piedmont,600,Oak-gum-cypress,42,1017,910,615,1596,411,368,249,646
+45,Piedmont,700,Elm-ash-cottonwood,29,814,751,438,1123,330,304,177,455
+45,Piedmont,960,Other hardwoods,7,957,951,768,1198,387,385,311,485
+46,Northern Glaciated Plains,500,Oak-hickory,6,796,825,537,1025,322,334,217,415
+47,Western Corn Belt Plains,700,Elm-ash-cottonwood,37,925,886,474,1494,374,358,192,605
+47,Western Corn Belt Plains,500,Oak-hickory,17,971,996,659,1311,393,403,267,531
+47,Western Corn Belt Plains,990,Exotic hardwoods,5,546,485,431,700,221,196,175,283
+47,Western Corn Belt Plains,800,Maple-beech-birch,5,1028,1091,687,1365,416,441,278,552
+48,Lake Agassiz Plain,900,Aspen-birch,89,716,671,423,1141,290,272,171,462
+48,Lake Agassiz Plain,500,Oak-hickory,34,788,791,504,1056,319,320,204,427
+48,Lake Agassiz Plain,700,Elm-ash-cottonwood,15,636,605,393,854,257,245,159,346
+49,Northern Minnesota Wetlands,120,Spruce-fir,525,845,759,420,1372,342,307,170,555
+49,Northern Minnesota Wetlands,900,Aspen-birch,401,868,820,523,1312,351,332,212,531
+49,Northern Minnesota Wetlands,700,Elm-ash-cottonwood,89,865,833,537,1276,350,337,217,517
+49,Northern Minnesota Wetlands,100,White-red-jack pine,35,904,901,509,1161,366,364,206,470
+49,Northern Minnesota Wetlands,999,Nonstocked,12,680,519,423,1133,275,210,171,459
+49,Northern Minnesota Wetlands,800,Maple-beech-birch,10,704,681,481,936,285,276,194,379
+49,Northern Minnesota Wetlands,500,Oak-hickory,10,839,687,519,1255,339,278,210,508
+49,Northern Minnesota Wetlands,400,Oak-pine,5,784,752,655,920,317,304,265,372
+50,Northern Lakes and Forests,900,Aspen-birch,1478,866,826,516,1254,351,334,209,508
+50,Northern Lakes and Forests,120,Spruce-fir,770,799,737,413,1245,323,298,167,504
+50,Northern Lakes and Forests,800,Maple-beech-birch,283,867,868,556,1167,351,351,225,472
+50,Northern Lakes and Forests,500,Oak-hickory,276,807,776,502,1113,326,314,203,450
+50,Northern Lakes and Forests,100,White-red-jack pine,252,964,918,593,1423,390,371,240,576
+50,Northern Lakes and Forests,700,Elm-ash-cottonwood,250,775,754,435,1159,314,305,176,469
+50,Northern Lakes and Forests,400,Oak-pine,71,905,859,591,1333,366,348,239,540
+50,Northern Lakes and Forests,960,Other hardwoods,38,645,645,253,1095,261,261,103,443
+50,Northern Lakes and Forests,999,Nonstocked,14,589,619,299,791,238,251,121,320
+51,North Central Hardwood Forests,500,Oak-hickory,212,879,857,538,1270,356,347,218,514
+51,North Central Hardwood Forests,700,Elm-ash-cottonwood,105,799,714,388,1210,323,289,157,490
+51,North Central Hardwood Forests,900,Aspen-birch,88,814,825,499,1173,329,334,202,475
+51,North Central Hardwood Forests,800,Maple-beech-birch,52,919,859,639,1329,372,348,259,538
+51,North Central Hardwood Forests,100,White-red-jack pine,34,805,785,409,1134,326,318,165,459
+51,North Central Hardwood Forests,990,Exotic hardwoods,15,425,426,184,676,172,172,74,274
+51,North Central Hardwood Forests,120,Spruce-fir,13,629,516,345,1003,254,209,140,406
+51,North Central Hardwood Forests,400,Oak-pine,11,813,765,423,1104,329,310,171,447
+51,North Central Hardwood Forests,999,Nonstocked,6,480,528,291,620,194,214,118,251
+52,Driftless Area,500,Oak-hickory,113,863,812,504,1269,349,329,204,514
+52,Driftless Area,700,Elm-ash-cottonwood,26,849,725,459,1349,343,293,186,546
+52,Driftless Area,800,Maple-beech-birch,19,707,658,447,1051,286,266,181,425
+58,Northeastern Highlands,800,Maple-beech-birch,659,923,880,606,1279,374,356,245,518
+58,Northeastern Highlands,120,Spruce-fir,500,1168,1109,694,1706,473,449,281,690
+58,Northeastern Highlands,900,Aspen-birch,124,1085,1022,658,1543,439,413,266,624
+58,Northeastern Highlands,100,White-red-jack pine,46,1154,1113,731,1511,467,451,296,612
+58,Northeastern Highlands,500,Oak-hickory,19,914,896,601,1318,370,363,243,533
+58,Northeastern Highlands,400,Oak-pine,16,1022,1018,634,1395,414,412,256,565
+58,Northeastern Highlands,700,Elm-ash-cottonwood,9,972,965,702,1355,393,390,284,548
+58,Northeastern Highlands,960,Other hardwoods,5,863,907,622,1057,349,367,252,428
+59,Northeastern Coastal Zone,800,Maple-beech-birch,23,1004,1011,744,1226,406,409,301,496
+59,Northeastern Coastal Zone,500,Oak-hickory,19,891,822,644,1156,360,333,261,468
+59,Northeastern Coastal Zone,100,White-red-jack pine,19,1237,1199,798,1597,500,485,323,646
+59,Northeastern Coastal Zone,700,Elm-ash-cottonwood,14,916,781,589,1383,371,316,238,560
+59,Northeastern Coastal Zone,400,Oak-pine,13,1162,1141,710,1350,470,462,287,546
+65,Southeastern Plains,160,Loblolly-shortleaf pine,612,837,782,518,1220,339,316,210,494
+65,Southeastern Plains,500,Oak-hickory,351,846,781,464,1306,342,316,188,529
+65,Southeastern Plains,600,Oak-gum-cypress,321,1033,996,611,1473,418,403,247,596
+65,Southeastern Plains,140,Longleaf-slash pine,295,732,709,436,1047,296,287,176,424
+65,Southeastern Plains,400,Oak-pine,221,773,727,409,1180,313,294,166,478
+65,Southeastern Plains,700,Elm-ash-cottonwood,37,971,933,550,1372,393,377,223,555
+65,Southeastern Plains,999,Nonstocked,19,698,616,313,1084,283,249,126,439
+65,Southeastern Plains,960,Other hardwoods,14,853,856,539,1121,345,346,218,454
+65,Southeastern Plains,990,Exotic hardwoods,8,609,624,250,885,246,253,101,358
+66,Blue Ridge,500,Oak-hickory,303,947,922,673,1243,383,373,272,503
+66,Blue Ridge,400,Oak-pine,89,984,948,710,1282,398,384,287,519
+66,Blue Ridge,160,Loblolly-shortleaf pine,39,986,991,593,1325,399,401,240,536
+66,Blue Ridge,100,White-red-jack pine,24,1154,1150,757,1558,467,465,306,630
+67,Ridge and Valley,500,Oak-hickory,102,822,798,592,1092,333,323,240,442
+67,Ridge and Valley,160,Loblolly-shortleaf pine,65,919,896,618,1265,372,362,250,512
+67,Ridge and Valley,400,Oak-pine,37,783,786,507,1082,317,318,205,438
+67,Ridge and Valley,700,Elm-ash-cottonwood,7,812,750,641,1045,329,304,259,423
+68,Southwestern Appalachians,500,Oak-hickory,22,896,895,628,1161,363,362,254,470
+75,Southern Coastal Plain,140,Longleaf-slash pine,308,778,726,472,1154,315,294,191,467
+75,Southern Coastal Plain,160,Loblolly-shortleaf pine,223,855,832,557,1182,346,337,225,479
+75,Southern Coastal Plain,600,Oak-gum-cypress,208,1046,1009,588,1524,423,408,238,617
+75,Southern Coastal Plain,400,Oak-pine,73,831,807,465,1235,336,327,188,500
+75,Southern Coastal Plain,500,Oak-hickory,50,798,773,418,1199,323,313,169,485
+75,Southern Coastal Plain,999,Nonstocked,16,911,939,586,1100,369,380,237,445
+75,Southern Coastal Plain,700,Elm-ash-cottonwood,5,1052,945,583,1629,426,383,236,659
+75,Southern Coastal Plain,990,Exotic hardwoods,5,1098,903,550,1736,444,365,223,703
+77,North Cascades,200,Douglas-fir,557,1101,1015,539,1772,446,411,218,717
+77,North Cascades,260,Fir-spruce-mountain hemlock,474,1354,1296,658,2136,548,524,266,864
+77,North Cascades,300,Hemlock-Sitka spruce,254,1655,1605,1010,2320,670,650,409,939
+77,North Cascades,220,Ponderosa pine,118,660,600,359,1073,267,243,145,434
+77,North Cascades,999,Nonstocked,113,780,668,366,1346,316,270,148,545
+77,North Cascades,280,Lodgepole pine,101,798,739,445,1235,323,299,180,500
+77,North Cascades,910,Alder-maple,62,1136,1058,611,1718,460,428,247,695
+77,North Cascades,360,Other western softwoods,23,852,837,441,1421,345,339,178,575
+77,North Cascades,320,Western larch,18,922,930,489,1308,373,376,198,529
+77,North Cascades,900,Aspen-birch,15,876,767,458,1377,355,310,185,557
+77,North Cascades,700,Elm-ash-cottonwood,9,950,749,554,1585,385,303,224,641
+77,North Cascades,960,Other hardwoods,9,463,514,253,586,187,208,102,237
+82,Acadian Plains and Hills,800,Maple-beech-birch,538,958,909,603,1349,388,368,244,546
+82,Acadian Plains and Hills,120,Spruce-fir,507,1095,1058,620,1599,443,428,251,647
+82,Acadian Plains and Hills,900,Aspen-birch,164,1027,1000,569,1438,416,405,230,582
+82,Acadian Plains and Hills,100,White-red-jack pine,148,1105,1086,716,1552,447,439,290,628
+82,Acadian Plains and Hills,700,Elm-ash-cottonwood,47,824,799,435,1168,333,323,176,473
+82,Acadian Plains and Hills,400,Oak-pine,39,1143,1058,791,1557,462,428,320,630
+82,Acadian Plains and Hills,500,Oak-hickory,33,909,851,628,1218,368,344,254,493
+82,Acadian Plains and Hills,960,Other hardwoods,14,771,802,383,1192,312,325,155,482
+82,Acadian Plains and Hills,380,Exotic softwoods,5,1135,1121,826,1441,459,454,334,583
