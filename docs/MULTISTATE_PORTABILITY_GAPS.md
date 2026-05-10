@@ -288,4 +288,47 @@ Three things that could surprise you on first non Maine run:
 
 ---
 
+## Section 11. Progress log (added 2026-05-09)
+
+| Step | Status | Notes |
+|---|---|---|
+| 1. HCB x L3 plot crosswalk | DONE | `config/fia_plots_hcb_l3.csv`, 104,628 rows, 22 L3 ecoregions touched. Built by `scripts/build_hcb_l3_crosswalk.R` against `~/FIA/ENTIRE_PLOT.csv` and `~/Disturbance/us_eco_l3.shp`. Per-state HCB-classified % runs 33 to 56; HCB-FIA agreement varies 41 to 74%, highest in MN. |
+| 2. Per-state FIA RDS caches | IN FLIGHT | `scripts/download_donor_states.sh` running on Cardinal login node 2026-05-09 21:25 EDT. Routes writes to `~/FIA` (scratch, 0 quota impact) via `OSC_PROJECT_DIR`. Order: MN, WA, GA. Unblocks all three smoke tests. |
+| 3. Plot locations + ClimateNA inputs | DONE | `~/FIA/climate/plot_locations_<STATE>.csv` and `~/FIA/climate/climatena_input_<STATE>.csv` for all 4 states. Built by `scripts/extract_plot_locations.R`. ClimateNA itself runs externally; outputs land back in `~/FIA/climate/<STATE>/`. |
+| 4. SDImax by L3 ecoregion | DONE | Five new lookup CSVs: `sdimax_by_l3_ecoregion.csv` (22 rows), `sdimax_by_l3_typgroup.csv`, `sdimax_by_l3_typgroup_compact.csv`, `sdimax_by_typgroup.csv`, `sdimax_by_state_l3.csv`. PNW peaks (1300+ trees/ha for Cascades, Coast Range), prairie transitions ~700, MN northern hardwoods ~830. Replaces Maine-only `sdimax_by_ecoregion.csv` and `sdimax_by_fortype_group_maine.csv`. |
+| 5. Switch-table edits | DONE | Three surgical edits committed: `R/10_state_expansion.R` `build_sdimax_lookup()` adds MN/WA/GA state names; `R/10_state_expansion.R` `expand_to_state()` adds STATECDs 27/53/13; `cem_pipeline_patch/run_projection.R` `get_donor_states()` extends WA neighbors to include MT. Audit correction: WA was already in `get_donor_states()` (with OR, ID), not entirely missing as originally stated. |
+| 6. Externalize Maine constants from R/06 | DONE | New `config/state_constants.csv` keyed by state. Three switch statements in `06_projection_engine.R` now read from it: HadGEM2-AO RCP 4.5 / 8.5 dT_2099, wildfire baseline per cycle, default global SDImax (English). New helper `get_state_constants(cfg)` cached on `.GlobalEnv$.STATE_CONSTANTS`. Falls back to ME defaults on lookup miss. ME row preserves the exact original values. WA wildfire 0.060/cycle (10x ME); MN 0.010 (2x); GA 0.040 (8x). |
+| 7. Per-state county harvest logit offset | NOT STARTED | Maine version `config/maine_county_harvest_logit_offset.csv` was built by `scripts/build_county_harvest_lookup.R` from FIA harvest event rates. Multistate version needs analogous CSVs for MN, WA, GA. Blocked on step 2 completion. |
+| 8. Smoke test runs | BLOCKED -> UNBLOCKING | First MN smoke (job 9292743) failed because compute nodes lack internet for rFIA::getFIA(). Step 2 produces the per-cohort RDS files; once present, `run_projection.R` line 297 auto-upgrades from `--fia_access rfia` to `rds` mode, no submit-script changes needed. Resubmit after MN/WA/GA RDS files land. |
+| 9. Production runs | BLOCKED | Blocked on 8. |
+
+## Section 12. Findings discovered while implementing
+
+These didn't appear in the original audit but surfaced during implementation.
+
+### 12a. FIA data architecture gap
+
+`~/FIA/ENTIRE_TREE.csv` is **not present** on Cardinal as of 2026-05-09. Only `ENTIRE_TREE_GRM_THRESHOLD.csv` and `ENTIRE_TREE_WOODLAND_STEMS.csv` exist there. The base TREE table (DBH, HT, SPCD, TPA_UNADJ, ...) lives only as per-state `<STATE>_TREE.csv` files in `~/fia_data/`. Coverage at session start:
+
+* Full 11-table set: ME, NH, VT, NY, MN, WA, GA
+* Partial (6 tables): MA, CT, RI
+* Sparse (2 tables, COND + TREE only): OR, ID, MT, FL, SC, TN, AL
+* Missing entirely: WI, MI, IA, NC
+
+The download driver currently running fills the gap for MN/WA/GA donor pools.
+
+### 12b. Cardinal's FIA shapefile name
+
+The L3 ecoregion shapefile on Cardinal is `~/Disturbance/us_eco_l3.shp` (full set: .shp + .dbf + .shx + .prj + .sbn + .sbx + .shp.xml). The audit originally referred to `us_eco_l3_state_boundaries.shp` based on a `.dbf` file with that base name; that .dbf is a standalone attribute join lookup and has no associated geometry. First crosswalk job (9282082) failed with `file.exists(L3_SHP) is not TRUE`; corrected in commit 4c53e5f.
+
+### 12c. Local repo location
+
+The actual local clone of `holoros/fia-cem-maine` lives at `~/Documents/Claude/CRSF-Cowork/active-projects/fia-plot-matching/` (note hyphenated folder name and CRSF-Cowork parent), not at the previously assumed `~/Documents/Claude/fia_plot_matching/`. The repo has 30+ commits of curated history including manuscript materials, MEMORY logs, and `cem_pipeline_patch/` deltas.
+
+### 12d. Curated repo strategy
+
+`R/06_projection_engine.R` in the curated repo is intentionally the older r20 baseline. The newer r21 / v4 productivity multiplier code lives in `cem_pipeline_patch/06_projection_engine.R`. Cardinal runs the patched version (it copies cem_pipeline_patch over R/ at deployment). The Section 6 externalization landed in `cem_pipeline_patch/06_projection_engine.R` (the version Cardinal actually executes); R/06 keeps the original Maine hardcodes as the historical baseline.
+
+---
+
 End of audit.
