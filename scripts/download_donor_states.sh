@@ -44,8 +44,10 @@ for state in MN WA GA; do
   echo "  Started: $(date)" | tee -a "$LOG_DIR/master.log"
   echo "  Log: $log" | tee -a "$LOG_DIR/master.log"
 
-  # Run the existing 00_download_data.R; it expands the donor pool internally
-  Rscript osc/00_download_data.R "$state" > "$log" 2>&1
+  # Run the existing 00_download_data.R; it expands the donor pool internally.
+  # Set options(timeout = 3600) up front because the default 60 s download.file
+  # timeout fails on the 174+ MB TREE.zip files on Cardinal's outbound link.
+  Rscript -e 'options(timeout = 3600); commandArgs <- function(trailingOnly = TRUE) c("'"$state"'"); source("osc/00_download_data.R")' > "$log" 2>&1
   rc=$?
 
   echo "  Finished: $(date), exit code $rc" | tee -a "$LOG_DIR/master.log"
