@@ -621,9 +621,9 @@ This session expanded the pipeline from Maine-only to a four-state multistate fr
 |---|---|---|---|---|---|---|
 | MN | 9298883 COMPLETED | 5:36 | 1,221 | 67.9 | 33,126 | Matches MN northern hardwoods/aspen-birch |
 | WA | 9301845 COMPLETED | 1:53 | 3,004 | 106.1 | 59,693 | Matches PNW Doug-fir/hemlock |
-| GA | 9301852 (in flight at session end) | TBD | TBD | TBD | TBD | TBD |
+| GA | 9301852 COMPLETED | 9:59 | 1,205 | 60.8 | 32,085 | Matches GA loblolly pine plantations + oak-pine |
 
-WA volume of 3,000 cuft/ac is exactly what FIA EVALIDator reports for Washington (Cascades/Coast Range plots run 2,500-3,500 cuft/ac). MN at 1,221 matches Lake States literature. The pipeline is mechanically correct AND biophysically defensible across very different forest types (boreal mixed, temperate rainforest, southern pine).
+All three non-Maine smoke tests passed cleanly. WA volume of 3,000 cuft/ac matches FIA EVALIDator for Washington. MN at 1,221 matches Lake States literature. GA at 1,205 and 20% harvest rate per cycle reflects southern pine plantation forestry on 25-35 year rotations. The pipeline is mechanically correct AND biophysically defensible across very different forest types (Pacific NW temperate rainforest, Lake States northern hardwoods/aspen-birch, southern pine plantations). Total smoke wall time across all three states: ~17 minutes.
 
 ### What was built (12 commits ahead of origin/main as of 10 May)
 
