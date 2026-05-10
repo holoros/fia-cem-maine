@@ -673,7 +673,16 @@ All three non-Maine smoke tests passed cleanly. WA volume of 3,000 cuft/ac match
 
 ### Pre-existing bug discovered (not multistate-related)
 
-`gr_ratio` field in `raw_mc_summaries.csv` shows ~0.001 for both ME r21 (May 5) and MN smoke (May 10). Root cause: `cem_pipeline_patch/06_projection_engine.R` line 922 computes `mean(harvested_plots$vol_removed_total)` (per-harvested-plot expanded total cuft) and divides per-acre `gross_growth` by it, giving roughly 1500× undervaluation. Affects all states equally; fix is one-line but is a separate manuscript-figures issue. Possibly the user computes G/R via state-expansion outputs downstream rather than from this raw field.
+`gr_ratio` field in `raw_mc_summaries.csv` shows ~0.001 for both ME r21 (May 5) and MN smoke (May 10). The bug has two layers:
+
+**Layer 1 (line 922 of cem_pipeline_patch/06_projection_engine.R)**: `mean(harvested_plots$vol_removed_total)` averaged only over harvested plots, while `gross_growth` and `mortality` averaged over ALL plots. This made removals 1/harvest_rate inflated. Fixed in commit `bc0a2cf` to `sum(...) / n()`. Resubmitted MN smoke (job 9326826) confirmed the math: gr_ratio went from 0.001 to 0.006 for MN, an exactly 1/0.116 multiplier matching the harvest rate of 11.6%.
+
+**Layer 2 (line 409 of R/03_harvest_choice.R)**: `vol_removed_total = volcfnet * tpa_live * harvest_intensity` has a dimensional inconsistency: volcfnet is cuft/ac plot mean, tpa_live is trees/ac plot mean, their product is not cuft/ac. The result is a per-plot expanded value (~40k cuft for an MN harvested plot) that doesn't compare cleanly to the per-acre `proj_volcfnet`. To make gr_ratio truly correct, either:
+
+* `vol_removed_total` should be computed per-acre (cuft/ac per cycle removed) directly, or
+* `gross_growth` and `mortality` should be multiplied by plot expansion factors to match `vol_removed_total`'s expanded basis.
+
+The line 922 fix is correct and worth keeping. Layer 2 is a separate one-day audit task on R/03's harvest intensity formulation. Affects all states equally; not blocking the multistate work since the published Maine results were probably produced via a different code path or with G/R computed downstream from per-plot projections.
 
 ### Findings that didn't appear in the original audit
 
