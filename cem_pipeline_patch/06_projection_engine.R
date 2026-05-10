@@ -916,11 +916,20 @@ project_one_cycle <- function(subjects, remeasured, scenario,
       harvest_rate     = mean(was_harvested),
       n_planted        = sum(was_planted, na.rm = TRUE),
       plant_rate       = mean(was_planted, na.rm = TRUE),
-      # Decomposition: growth / mortality / removals per cycle
+      # Decomposition: growth / mortality / removals per cycle, all in per-plot
+      # cuft units so they're comparable. gross_growth and mortality already
+      # average across ALL plots (zero contribution from non-events). Removals
+      # must do the same: sum the harvested volume and divide by total plot
+      # count (not harvested-plot count), giving a per-plot mean where unharvested
+      # plots contribute zero. This makes gr_ratio = growth_per_plot /
+      # removals_per_plot, which is dimensionally consistent. Prior version
+      # divided by harvested-plot count which inflated removals by 1/harvest_rate
+      # (~10x for ME, ~9x for MN, ~6x for WA, ~5x for GA), producing gr_ratio
+      # values ~1000x too small.
       gross_growth     = mean(pmax(coalesce(T2_volcfnet - pre_volcfnet, 0), 0), na.rm = TRUE),
       mortality        = mean(pmax(coalesce(pre_volcfnet - T2_volcfnet, 0), 0), na.rm = TRUE),
       harvest_removals = if (nrow(harvested_plots) > 0) {
-                           mean(harvested_plots$vol_removed_total, na.rm = TRUE)
+                           sum(harvested_plots$vol_removed_total, na.rm = TRUE) / n()
                          } else 0,
       net_change       = gross_growth - mortality - harvest_removals,
       gr_ratio         = if (harvest_removals > 0) gross_growth / harvest_removals else Inf,
