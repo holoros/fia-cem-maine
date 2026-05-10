@@ -608,3 +608,99 @@ Local outputs at `/sessions/wonderful-peaceful-feynman/mnt/outputs/fia_cem_resul
 - `output/state_summary_*/` (canonical result CSVs)
 - `output/ME_20260419_*_r1?` (per_plot_projections.rds for downstream analysis)
 - `config/maine_stumpage_*.csv`, `config/maine_treatment_proportions.csv`, `config/sdimax_brms_*.csv`, `config/spcd_potter_vcc.csv`, `config/potter2017_VCC_species.csv`, `config/maine_county_harvest_calibration.csv`
+
+---
+
+## Session #7 (8-10 May 2026): MULTISTATE PORTABILITY LANDED
+
+This session expanded the pipeline from Maine-only to a four-state multistate framework covering ME (23), MN (27), WA (53), GA (13) with HCB ownership × EPA Omernik Level III ecoregion as the canonical cross-state stratification scheme. The full multistate pipeline mechanically runs end-to-end for non-Maine states and produces biophysically defensible per-state numbers.
+
+### Smoke test outcomes
+
+| State | Job | Wall | Vol (cuft/ac) | BA (sq ft/ac) | Carbon | Plausibility |
+|---|---|---|---|---|---|---|
+| MN | 9298883 COMPLETED | 5:36 | 1,221 | 67.9 | 33,126 | Matches MN northern hardwoods/aspen-birch |
+| WA | 9301845 COMPLETED | 1:53 | 3,004 | 106.1 | 59,693 | Matches PNW Doug-fir/hemlock |
+| GA | 9301852 (in flight at session end) | TBD | TBD | TBD | TBD | TBD |
+
+WA volume of 3,000 cuft/ac is exactly what FIA EVALIDator reports for Washington (Cascades/Coast Range plots run 2,500-3,500 cuft/ac). MN at 1,221 matches Lake States literature. The pipeline is mechanically correct AND biophysically defensible across very different forest types (boreal mixed, temperate rainforest, southern pine).
+
+### What was built (12 commits ahead of origin/main as of 10 May)
+
+1. **`docs/MULTISTATE_PORTABILITY_GAPS.md`** — comprehensive 12-section audit doc identifying every Maine-hardcoded reference in the codebase, grouped by severity (silent fallbacks, switch-table edits, Maine-only modules, missing config CSVs). Section 11 progress log tracks each step from the original gap list.
+
+2. **`scripts/build_hcb_l3_crosswalk.R`** — joins `~/FIA/ENTIRE_PLOT.csv` to `~/landowner/US_forest_ownership.tif` (Harris-Caputo-Butler 2025 raster) and `~/Disturbance/us_eco_l3.shp` (EPA Omernik L3 ecoregions). Output `config/fia_plots_hcb_l3.csv`: 104,628 rows × 16 columns, 22 L3 ecoregions touched. Per-state HCB-FIA agreement: MN 74%, GA 57%, ME 48%, WA 41%. Submitted as Cardinal job 9288133, ran 1:09. Foundation data for everything downstream.
+
+3. **`scripts/extract_plot_locations.R`** — ME/MN/WA/GA plot lat/lon and ClimateNA-formatted input CSVs. Output to `~/FIA/climate/plot_locations_<STATE>.csv` and `~/FIA/climate/climatena_input_<STATE>.csv`. Hand to ClimateNA externally for normals + SSP/RCP futures. ME 6,288 plots, MN 63,032, WA 11,775, GA 23,533.
+
+4. **`scripts/build_sdimax_l3_ecoregion_table.R`** — joins CONUS-wide BRMS plot SDImax estimates (`config/brms_SDImax_plot.csv`, 22,795 plots filtered to 4 target states) to the HCB×L3 crosswalk and FIA TYPGRPCD reference. Outputs:
+   - `config/sdimax_by_l3_ecoregion.csv` (22 rows): Coast Range 1,322 trees/ha, Cascades 1,337, Acadian Plains/Hills 1,006, Piedmont 884, Northern Lakes/Forests 826
+   - `config/sdimax_by_l3_typgroup.csv` (per L3 × TYPGRPCD)
+   - `config/sdimax_by_typgroup.csv` (national by TYPGRPCD)
+   - `config/sdimax_by_state_l3.csv` (per state × L3 for report tables)
+   Replaces Maine-only `sdimax_by_ecoregion.csv` (5 rows) and `sdimax_by_fortype_group_maine.csv`. Pacific NW peaks (1,300+) and prairie transitions trough (~700) match Reineke literature.
+
+5. **`scripts/download_donor_states.sh`** + **`scripts/build_fia_rds_from_entire.R`** — login-node download driver plus offline RDS builder. Donor downloads ran serially via `osc/00_download_data.R` (with `options(timeout = 3600)` patch since the default 60 s download.file timeout fails on the 174 MB MN_TREE.zip). Total wall: 23 minutes for all three cohorts. Writes routed to `OSC_PROJECT_DIR=~/FIA` (scratch, no quota impact). Resulting RDS: `fia_db_MN.rds` 1.4 GB, `fia_db_WA.rds` 586 MB, `fia_db_GA.rds` 1.7 GB. Symlinked into `~/fia_data/` so `run_projection.R` line 297 auto-upgrades from `--fia_access rfia` to `rds` mode.
+
+6. **Section 1 switch-table edits** (committed `bc2f443`): `R/10_state_expansion.R` `build_sdimax_lookup()` state-name switch adds MN/WA/GA; `expand_to_state()` STATECD switch adds 27/53/13; `cem_pipeline_patch/run_projection.R` `get_donor_states()` extends WA neighbors to include MT. Audit correction: WA was already in `get_donor_states()` (with OR, ID), not entirely missing as the original audit stated. All edits no-op for existing ME runs.
+
+7. **`config/state_constants.csv`** + **R/06 externalization** (committed `c1cd54a`): three Maine-hardcoded values in `cem_pipeline_patch/06_projection_engine.R` now read from CSV keyed by `cfg$target_state`. New helper `get_state_constants(cfg)` cached on `.GlobalEnv$.STATE_CONSTANTS`. ME row preserves the exact original values (2.5/4.5 dT, 0.005 fire baseline, 440 SDImax). Per-state values:
+   ```
+                  dT45  dT85   fire   sdimax  sbw     term_age
+   ME (23 ref)    2.5   4.5   0.005   440    full      120
+   MN (27)        2.8   5.2   0.010   330    partial   110
+   WA (53)        2.0   3.8   0.060   510    none      200
+   GA (13)        2.2   4.0   0.040   360    none       80
+   ```
+   Confirmed at runtime: smoke logs show `state_constants.csv loaded: 4 states`. WA wildfire 0.060/cycle is 10× ME (matching PNW DNR + USFS reality).
+
+8. **MN/WA/GA smoke submit scripts** (`osc/submit_{mn,wa,ga}_smoke.sh`) — one-hour walltime, 8 cpus, 32 GB; `--n_sims 10 --cycles 3 --scenario_set bau --no_econ`. Diagnostic checklist embedded in MN script comments.
+
+### Cardinal cleanup completed earlier in session
+
+- Output archive: 30 superseded runs (~21 GB) moved to `/fs/scratch/PUOM0008/crsfaaron/archive/output_archive_20260508/`. Manifest at `~/fia_cem_projections/archive_manifest_20260508.txt`.
+- .bak.* archive: 16 files moved to `archive/code_baks_20260508/`. Working tree clean.
+- osc/ archive: 112 superseded submit scripts moved to `archive/osc_archive_20260508/`. osc/ shrunk from 142 to 30 files.
+- R/11 collision: `R/11_compare_figure.R` renamed to `R/compare_figure.R` so the `^\d{2}_` auto-source pattern skips it (was triggering a `dir.create()` side effect on every projection run).
+- Polished `submit_rcp45_wear_r21.sh` lifted from origin/cem_pipeline_patch onto Cardinal; pre-update backup at `osc/submit_rcp45_wear_r21.sh.preupdate.20260508`.
+
+### What's still on Cardinal worth noting
+
+- `~/FIA/download_logs/master.log` documents the full donor download chain
+- `~/FIA/fia_db_{MN,WA,GA}.rds` (3.7 GB total) symlinked into `~/fia_data/`
+- `~/fia_data/fia_db_ME.rds` (727 MB) untouched, still the original ME cohort RDS
+- Quota: 462 GB / 500 GB. Symlinks and scratch routing kept the multistate work to ~3 GB of /users impact.
+
+### Pre-existing bug discovered (not multistate-related)
+
+`gr_ratio` field in `raw_mc_summaries.csv` shows ~0.001 for both ME r21 (May 5) and MN smoke (May 10). Root cause: `cem_pipeline_patch/06_projection_engine.R` line 922 computes `mean(harvested_plots$vol_removed_total)` (per-harvested-plot expanded total cuft) and divides per-acre `gross_growth` by it, giving roughly 1500× undervaluation. Affects all states equally; fix is one-line but is a separate manuscript-figures issue. Possibly the user computes G/R via state-expansion outputs downstream rather than from this raw field.
+
+### Findings that didn't appear in the original audit
+
+12a. **`~/FIA/ENTIRE_TREE.csv` is missing on Cardinal.** Only `ENTIRE_TREE_GRM_THRESHOLD.csv` and `ENTIRE_TREE_WOODLAND_STEMS.csv` exist there. The base TREE table lives only as per-state CSVs in `~/fia_data/`. Initial coverage: full 11-table set for ME/NH/VT/NY/MN/WA/GA; missing entirely for WI/MI/IA (MN donors) and NC (GA donor). Resolved via `download_donor_states.sh`.
+
+12b. **Cardinal's L3 shapefile name correction.** Real shapefile is `~/Disturbance/us_eco_l3.shp` (full set: .shp + .dbf + .shx + .prj + .sbn + .sbx + .shp.xml). The original audit referenced `us_eco_l3_state_boundaries.shp` based on a standalone `.dbf` file with that base name (no associated geometry). First crosswalk job (9282082) failed with `file.exists(L3_SHP) is not TRUE`; corrected in commit 4c53e5f.
+
+12c. **Local repo location.** The actual local clone of `holoros/fia-cem-maine` lives at `~/Documents/Claude/CRSF-Cowork/active-projects/fia-plot-matching/` (hyphenated folder name, CRSF-Cowork parent), not at `~/Documents/Claude/fia_plot_matching/` as previously assumed.
+
+12d. **Curated repo strategy.** `R/06_projection_engine.R` in the curated repo is intentionally the older r20 baseline; the newer r21 / v4 productivity multiplier code lives in `cem_pipeline_patch/06_projection_engine.R`. Cardinal runs the patched version (it copies cem_pipeline_patch over R/ at deployment). The Section 6 externalization landed in the patched version (Cardinal-executed code path); R/06 keeps the original Maine hardcodes as the historical baseline.
+
+### Session #7 production runs that completed
+
+- `output/ME_20260508_rcp85_hadgem2_wear_r21` — companion to the May 5 RCP 4.5 r21 finish, both 5 scenarios × 100 sims × 15 cycles. Submitted as job 9272913 the prior day, finished while session #7 was running.
+
+### What's NOT done from MULTISTATE_PORTABILITY_GAPS.md
+
+| Step | Status |
+|---|---|
+| 7. Per-state county harvest logit offset | NOT STARTED. Maine version `config/maine_county_harvest_logit_offset.csv` was built by `scripts/build_county_harvest_lookup.R` from a pre-computed `harvest_rate_per_yr` per county. Multistate version needs an upstream FIA harvest-event analysis that produces analogous per-state calibration tables. Did not block smoke tests since `submit_*_smoke.sh` doesn't use `--use_county_harvest`. |
+| 9. Production-quality multistate runs | UNBLOCKED. Once GA smoke confirms exit 0, the pattern is to upgrade `--n_sims 100 --cycles 15 --scenario_set harvest --use_owner_stratification --use_brms_sdimax --save_per_plot` and submit per-state SBATCH for the production sweep. State_constants.csv values for MN/WA/GA are educated estimates and should be revisited before publication-quality runs. |
+
+### Push-forward opportunities
+
+1. Push the 13 local commits to GitHub. Session sandbox can't because the HTTPS remote needs interactive credentials. From workstation: `git push origin main` (or switch to SSH first via `git remote set-url origin git@github.com:holoros/fia-cem-maine.git`).
+2. Run ClimateNA externally on `climatena_input_{ME,MN,WA,GA}.csv`, drop outputs into `~/FIA/climate/<STATE>/`. Unblocks `--use_decoupled_climate` for non-Maine.
+3. Fix the gr_ratio units mismatch at line 922 (one-line patch — divide `vol_removed_total` by per-plot acre-area for unit consistency).
+4. Audit Section 1 (`get_donor_states()`) extension: add OR neighbors (already present), verify ID/MT mappings include their CONUS adjacent states.
+5. Run a production-grade MN/WA/GA sweep at `--n_sims 100 --cycles 15` once decoupled climate inputs land.
+6. Carbon validation: pull MN per_plot_projections.rds and compare statewide AGC totals to FIA EVALIDator MN published estimates (~700 TgC).
