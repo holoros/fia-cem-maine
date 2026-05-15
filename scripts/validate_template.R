@@ -243,26 +243,42 @@ gr_cyc1 <- if (!is.null(st_gr)) {
 # -----------------------------------------------------------------------------
 
 owner_dist <- NULL
+owngrp_legend <- c("10" = "USDA Forest Service",
+                   "20" = "Other federal",
+                   "30" = "State and local",
+                   "40" = "Private (NIPF + industrial)")
+
 if (!is.null(st_plot) && is.data.frame(st_plot)) {
-  owner_cols <- intersect(c("owner_class", "OwnerClass", "hcb_class",
-                            "HCB_CLASS", "OWNCD"), names(st_plot))
+  # Owner column candidates (broad to narrow). Production per_plot_projections.rds
+  # uses OWNGRPCD (FIA standard); older builds may use different names.
+  owner_cols <- intersect(c("OWNGRPCD", "owngrpcd", "owner_class",
+                            "OwnerClass", "hcb_class", "HCB_CLASS", "OWNCD"),
+                          names(st_plot))
   if (length(owner_cols) > 0) {
     oc <- owner_cols[1]
-    harv_cols <- intersect(c("vol_removed_total", "harvest_volume",
-                             "removed_vol", "harv_vol"), names(st_plot))
-    vol_cols  <- intersect(c("proj_volcfnet", "volcfnet", "vol"),
-                           names(st_plot))
-    use_col <- if (length(harv_cols) > 0) harv_cols[1]
-               else if (length(vol_cols) > 0) vol_cols[1] else NULL
-    if (!is.null(use_col)) {
-      owner_dist <- st_plot |>
-        filter(!is.na(.data[[oc]])) |>
-        group_by(owner = .data[[oc]]) |>
+
+    # Restrict to cycle 1 BAU for a comparable cross owner snapshot. The
+    # per_plot table is long format across scenario x sim x cycle x plot, so
+    # we average across sims at cycle 1 for the headline BAU panel.
+    snap <- st_plot |>
+      filter(scenario == "BAU", cycle == 1, !is.na(.data[[oc]]))
+
+    if (nrow(snap) > 0) {
+      # Harvest fraction = mean(was_harvested) per owner group at cycle 1.
+      # Per acre volume = mean(proj_volcfnet) per owner group.
+      harv_avail <- "was_harvested" %in% names(snap)
+      vol_avail  <- "proj_volcfnet" %in% names(snap)
+
+      owner_dist <- snap |>
+        group_by(owner_code = as.character(.data[[oc]])) |>
         summarise(
-          n_plots = n_distinct(if ("PLT_CN" %in% names(st_plot)) PLT_CN else row_number()),
-          mean_value = mean(.data[[use_col]], na.rm = TRUE),
-          .groups = "drop"
+          n_plots    = n_distinct(PLT_CN),
+          mean_vol   = if (vol_avail) mean(proj_volcfnet, na.rm = TRUE) else NA_real_,
+          harv_frac  = if (harv_avail) mean(was_harvested, na.rm = TRUE) else NA_real_,
+          .groups    = "drop"
         ) |>
+        mutate(owner_label = coalesce(owngrp_legend[owner_code],
+                                      paste("code", owner_code))) |>
         arrange(desc(n_plots))
     }
   }
@@ -369,15 +385,21 @@ if (!is.null(deltas)) {
 }
 
 if (!is.null(owner_dist) && nrow(owner_dist) > 0) {
-  cat("## Per ownership distribution\n\n")
-  cat("| Owner class | N plots | Mean value |\n|---|---:|---:|\n")
+  cat("## Per ownership distribution (cycle 1 BAU)\n\n")
+  cat("| Owner code | Owner class | N plots | Mean vol (cuft/ac) | Harvest fraction |\n",
+      "|---|---|---:|---:|---:|\n", sep = "")
   for (i in seq_len(nrow(owner_dist))) {
-    cat(sprintf("| %s | %d | %s |\n",
-                as.character(owner_dist$owner[i]),
+    cat(sprintf("| %s | %s | %d | %s | %s |\n",
+                owner_dist$owner_code[i],
+                owner_dist$owner_label[i],
                 owner_dist$n_plots[i],
-                fmt_num(owner_dist$mean_value[i], 1)))
+                fmt_num(owner_dist$mean_vol[i], 1),
+                fmt_num(owner_dist$harv_frac[i], 3)))
   }
-  cat("\nOwner code legend at `~/fia_cem_projections/config/owner_class_legend.csv`.\n\n")
+  cat("\nOWNGRPCD codes follow the FIA convention: 10 USDA Forest Service, ",
+      "20 Other federal, 30 State and local, 40 Private. HCB sub classification ",
+      "lives in `config/fia_plots_with_owner.csv` and is not joined into per_plot.\n\n",
+      sep = "")
 } else {
   cat("## Per ownership distribution\n\nOwner distribution unavailable from per_plot RDS. Inspect schema manually.\n\n")
 }

@@ -405,13 +405,17 @@ estimate_removals <- function(cond_data, prices = NULL) {
 
   cond_data |>
     mutate(
-      # Total removal volume = standing volume * intensity
-      vol_removed_total = volcfnet * tpa_live * harvest_intensity,
+      # Total removal volume (cuft/acre): volcfnet is already per acre from
+      # R/01_data_prep.R line 149 sum(TPA_UNADJ * VOLCFNET). The prior version
+      # multiplied by tpa_live again, double counting the per acre conversion
+      # and inflating vol_removed_total by ~tpa_live (~400 to 600x for ME).
+      # Patch applied 13 May 2026 per docs/GR_RATIO_LAYER2_AUDIT.md.
+      vol_removed_total = volcfnet * harvest_intensity,
 
       # Split into sawtimber and pulpwood based on standing inventory composition
       saw_fraction = coalesce(
         (vol_sawtimber_softwood + vol_sawtimber_hardwood) /
-        pmax(volcfnet * tpa_live, 1), 0.3),
+        pmax(volcfnet, 1), 0.3),
 
       vol_removed_sawtimber = vol_removed_total * saw_fraction,
       vol_removed_pulpwood  = vol_removed_total * (1 - saw_fraction),
