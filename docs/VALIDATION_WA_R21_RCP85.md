@@ -1,6 +1,6 @@
 # WA RCP 85 production run validation
 
-*Generated 2026-05-11 16:00 EDT from /users/PUOM0008/crsfaaron/fia_cem_projections/output/WA_20260510_rcp85_wear_p1*
+*Generated 2026-05-15 17:04 EDT from /users/PUOM0008/crsfaaron/fia_cem_projections/output/WA_20260510_rcp85_wear_p1*
 
 **Overall: REVIEW (one or two flagged; not blocking).** 6 of 8 checks passed, 2 flagged, 0 missing.
 
@@ -40,9 +40,16 @@
 | Statewide vol (Bcuft) | 69.0 | 27.1 | 154.2 |
 | Statewide carbon (TgC) | 1,378.1 | 778.6 | 77.0 |
 
-## Per ownership distribution
+## Per ownership distribution (cycle 1 BAU)
 
-Owner distribution unavailable from per_plot RDS. Inspect schema manually.
+| Owner code | Owner class | N plots | Mean vol (cuft/ac) | Harvest fraction |
+|---|---|---:|---:|---:|
+| 10 | USDA Forest Service | 19277 | 3,267.5 | 0.100 |
+| 40 | Private (NIPF + industrial) | 5716 | 2,512.8 | 0.092 |
+| 30 | State and local | 1376 | 3,963.2 | 0.096 |
+| 20 | Other federal | 1237 | 2,927.2 | 0.093 |
+
+OWNGRPCD codes follow the FIA convention: 10 USDA Forest Service, 20 Other federal, 30 State and local, 40 Private. HCB sub classification lives in `config/fia_plots_with_owner.csv` and is not joined into per_plot.
 
 ## Flags and follow ups
 

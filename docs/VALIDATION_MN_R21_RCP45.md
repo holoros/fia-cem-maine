@@ -1,6 +1,6 @@
 # MN RCP 45 production run validation
 
-*Generated 2026-05-11 15:56 EDT from /users/PUOM0008/crsfaaron/fia_cem_projections/output/MN_20260510_rcp45_wear_p1*
+*Generated 2026-05-15 17:12 EDT from /users/PUOM0008/crsfaaron/fia_cem_projections/output/MN_20260510_rcp45_wear_p1*
 
 **Overall: PASS (all checks within bounds).** 8 of 8 checks passed, 0 flagged, 0 missing.
 
@@ -40,9 +40,16 @@
 | Statewide vol (Bcuft) | 21.6 | 27.0 | -20.0 |
 | Statewide carbon (TgC) | 585.5 | 773.9 | -24.3 |
 
-## Per ownership distribution
+## Per ownership distribution (cycle 1 BAU)
 
-Owner distribution unavailable from per_plot RDS. Inspect schema manually.
+| Owner code | Owner class | N plots | Mean vol (cuft/ac) | Harvest fraction |
+|---|---|---:|---:|---:|
+| 40 | Private (NIPF + industrial) | 47173 | 1,261.3 | 0.099 |
+| 30 | State and local | 20949 | 1,081.1 | 0.099 |
+| 10 | USDA Forest Service | 8932 | 1,489.1 | 0.101 |
+| 20 | Other federal | 200 | 1,074.3 | 0.074 |
+
+OWNGRPCD codes follow the FIA convention: 10 USDA Forest Service, 20 Other federal, 30 State and local, 40 Private. HCB sub classification lives in `config/fia_plots_with_owner.csv` and is not joined into per_plot.
 
 ## Flags and follow ups
 
