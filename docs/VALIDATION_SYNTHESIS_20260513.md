@@ -64,9 +64,31 @@ Only year 2019 matched a canonical projection cycle (cycle 4 = baseline 1999 + 4
 
 The single matched year is informative: the WA p1 projection over-predicts subject matched observed AGC by approximately 65 percent. This is much larger than the ME r11 reference RMSE of 6 percent and bias of -1.1 percent. The discrepancy is consistent across both RCPs (RCP 4.5 vs 8.5 diverge only marginally by cycle 4), pointing to structural over-prediction in the WA pipeline rather than a climate scenario artifact.
 
-### MN and GA hindcasts in flight
+### MN RCP 4.5 hindcast (landed late in session)
 
-SLURM job 9573773 still processing MN RCP 4.5 (5.6 GB per_plot RDS load is the bottleneck), then MN RCP 8.5, GA both RCPs. Memos and CSVs will land at `~/fia_cem_projections/docs/HINDCAST_*.md` and `~/fia_cem_projections/output/hindcast/*.csv` for the four remaining state × RCP combinations.
+MN has annual EXPALL EVALIDs from 2003 through 2024, allowing all five canonical projection cycles (1 through 5) to match:
+
+| Year | Cycle | Obs subj AGC (MMT) | Proj subj AGC (MMT) | Residual (MMT) | Pct |
+|---:|---:|---:|---:|---:|---:|
+| 2004 | 1 | 178.9 | 408.9 | +230.0 | +129% |
+| 2009 | 2 | 145.0 | 218.3 | +73.2 | +50% |
+| 2014 | 3 | 92.8 | 175.3 | +82.5 | +89% |
+| 2019 | 4 | 83.9 | 197.6 | +113.7 | +135% |
+| 2024 | 5 | 79.8 | 206.6 | +126.7 | +159% |
+
+**Summary: MN p1 RCP 4.5 RMSE 137 MMT, bias +125 MMT, +108 percent of subject matched observed mean.** The bias is largest at cycle 1 in absolute terms (+230 MMT) and even larger as a percent at cycles 4 and 5 (+135 and +159 percent). The pattern combined with the WA result establishes that the multistate p1 set systematically over predicts subject matched observed AGC by roughly 60 to 130 percent.
+
+A useful additional signal: obs_subj_agc declines monotonically over time (178.9 → 79.8 MMT, 2004 to 2024) while obs_full_agc stays stable around 200 to 230 MMT. The decline reflects subject plot attrition (n_subj_plots_in_eval falls from 5221 to 2449 as later EVALIDs include fewer plots with the original 1999 PLT_CN values). The projection cycles produce a similar pattern of decline at first then partial recovery, but at a much higher absolute level.
+
+### Working hypothesis for the systematic over prediction
+
+Combining the four hypotheses laid out under the WA section with the MN evidence:
+
+1. **Subject pool bias is the dominant signal.** The 2004 EVALID intersection of MN subject plots (5221 plots) carries about 200 MMT FIA observed AGC out of a state total of 200 MMT. That implies subject plots represent essentially the entire MN AGC despite covering only about 30 percent of MN forest area. The subject pool is sharply biased toward high biomass plots. When the projection feeds these plots through CEM matching, the high biomass values stay high or grow.
+2. **The projection cycle 1 value already over predicts the FIA cycle 1 (year 2004) value for the SAME plots by a factor of about 2.3 in MN.** This is not 5 years of growth (which would imply 17 percent per year, biophysically impossible). It points to either a per acre scaling issue in the projection at the baseline step or a unit handling discrepancy at the FIA-to-projection interface.
+3. **The pattern is consistent across RCP scenarios for WA**, ruling out climate divergence as the driver.
+
+GA hindcast still pending; will confirm whether the systematic over prediction pattern extends to the southern pine plantation case. If yes, this is a methodological finding worth investigating before the multistate p1 results carry to manuscript tables.
 
 ### Interpretation of the WA overshoot
 
