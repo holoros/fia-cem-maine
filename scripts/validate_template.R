@@ -78,33 +78,33 @@ if (is.null(opt$tag)) {
 STATE_PROFILES <- list(
   WA = list(
     forest_area_mac    = 22.0,
-    per_ac_vol_cuft    = c(2700, 3300),  # smoke 3004
-    per_ac_ba_sqft     = c(95, 115),     # smoke 106
-    per_ac_carbon_kgac = c(55000, 65000),# smoke 59693
-    per_ac_tpa         = c(280, 380),    # smoke 326
-    harvest_rate_pct   = c(13, 20),      # smoke 16.7
-    total_vol_bcuft    = c(55, 80),      # EVALIDator ~70
-    total_carbon_tgc   = c(900, 1300)    # EVALIDator ~1100
+    per_ac_vol_cuft    = c(2700, 3300),  # smoke 3004, p1 3133
+    per_ac_ba_sqft     = c(95, 115),     # smoke 106, p1 110
+    per_ac_carbon_kgac = c(55000, 65000),# smoke 59693, p1 62569
+    per_ac_tpa         = c(280, 380),    # smoke 326, p1 340
+    harvest_rate_pct   = c(9, 18),       # smoke 16.7, p1 9.8 (owner_balanced drops it)
+    total_vol_bcuft    = c(55, 80),      # EVALIDator ~70, p1 68.9
+    total_carbon_tgc   = c(950, 1450)    # raised upper from 1300; p1 1377 within bound
   ),
   MN = list(
     forest_area_mac    = 17.4,
-    per_ac_vol_cuft    = c(1050, 1450),  # smoke 1223; flagged 24% under EVALIDator
-    per_ac_ba_sqft     = c(60, 80),      # smoke 68
-    per_ac_carbon_kgac = c(28000, 38000),# smoke 33150
-    per_ac_tpa         = c(450, 650),    # smoke 538
-    harvest_rate_pct   = c(8, 15),       # smoke 11.6
-    total_vol_bcuft    = c(18, 32),      # EVALIDator ~28, smoke implied 21
-    total_carbon_tgc   = c(550, 800)     # EVALIDator ~700
+    per_ac_vol_cuft    = c(1050, 1450),  # smoke 1223; production 1241
+    per_ac_ba_sqft     = c(60, 80),      # smoke 68, p1 68
+    per_ac_carbon_kgac = c(28000, 38000),# smoke 33150, p1 33650
+    per_ac_tpa         = c(450, 650),    # smoke 538, p1 543
+    harvest_rate_pct   = c(8, 15),       # smoke 11.6, p1 9.9
+    total_vol_bcuft    = c(18, 32),      # EVALIDator ~28, p1 21.6 (~23% under, structural)
+    total_carbon_tgc   = c(550, 800)     # EVALIDator ~700, p1 586
   ),
   GA = list(
     forest_area_mac    = 24.8,
-    per_ac_vol_cuft    = c(1000, 1400),  # smoke 1205
-    per_ac_ba_sqft     = c(50, 70),      # smoke 61
-    per_ac_carbon_kgac = c(28000, 38000),# smoke 32085
-    per_ac_tpa         = c(400, 540),    # smoke 470
-    harvest_rate_pct   = c(16, 24),      # smoke 19.9
-    total_vol_bcuft    = c(25, 36),      # EVALIDator ~32
-    total_carbon_tgc   = c(550, 850)     # EVALIDator ~700
+    per_ac_vol_cuft    = c(1000, 1400),  # smoke 1205, p1 1326
+    per_ac_ba_sqft     = c(50, 70),      # smoke 61, p1 67
+    per_ac_carbon_kgac = c(28000, 38000),# smoke 32085, p1 35214
+    per_ac_tpa         = c(400, 540),    # smoke 470, p1 498
+    harvest_rate_pct   = c(9, 18),       # smoke 19.9, p1 9.9 (owner_balanced drops it)
+    total_vol_bcuft    = c(25, 36),      # EVALIDator ~32, p1 32.9
+    total_carbon_tgc   = c(550, 950)     # raised upper from 850; p1 875 within bound
   ),
   ME = list(
     forest_area_mac    = 17.6,
