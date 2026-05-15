@@ -698,6 +698,35 @@ The line 922 fix is correct and worth keeping. Layer 2 is a separate one-day aud
 
 - `output/ME_20260508_rcp85_hadgem2_wear_r21` — companion to the May 5 RCP 4.5 r21 finish, both 5 scenarios × 100 sims × 15 cycles. Submitted as job 9272913 the prior day, finished while session #7 was running.
 
+### Session #7 (continued, 10-11 May 2026): MULTISTATE PRODUCTION COMPLETE
+
+Eight production-grade runs landed overnight 10-11 May after the smoke tests passed:
+
+| Run | Job | Finished |
+|---|---|---|
+| MN_20260510_rcp45_wear_p1 | 9327152 | 05:19 EDT 11 May, exit 0 |
+| WA_20260510_rcp45_wear_p1 | 9327153 | 23:46 EDT 10 May, exit 0 |
+| GA_20260510_rcp45_wear_p1 | 9327155 | 06:50 EDT 11 May, exit 0 |
+| MN_20260510_rcp85_wear_p1 | 9327550 | 06:03 EDT 11 May, exit 0 |
+| WA_20260510_rcp85_wear_p1 | 9327551 | 00:50 EDT 11 May, exit 0 |
+| GA_20260510_rcp85_wear_p1 | 9327552 | 07:40 EDT 11 May, exit 0 |
+
+All used `--n_sims 100 --cycles 15 --scenario_set harvest` (BAU + 4 harvest variants + No_harvest = 5 scenarios). Multistate-portable flag set: `--use_brms_sdimax --use_disturbance --use_potter_vcc --use_owner_stratification --use_owner_balanced --no_econ`. Dropped Maine-only flags (`--use_county_harvest`, `--use_decoupled_climate`, `--use_v4_prod_mult`).
+
+Cycle-15 (year 75) BAU carbon, RCP 4.5 → RCP 8.5:
+- ME: 32,087 → 37,892 (+18%)
+- MN: 22,375 → 22,596 (+1%, continental climate offsets CO2 fertilization)
+- WA: 25,111 → 27,668 (+10%)
+- GA: 42,636 → 49,641 (+16%)
+
+No_harvest cycle-15 carbon (RCP 4.5): ME 49,505 / MN 36,077 / WA 35,539 / GA 73,178. GA's high value reflects southern pine fast growth + long lifespan when uncut. WA lower than expected because the donor pool includes drier eastern Cascades and Columbia Plateau plots.
+
+Scenario carbon ordering is consistent across all states: Harvest_m25_mill > BAU > Harvest_p25_pulp > Harvest_p50_biomass, with No_harvest separating clearly above. This confirms the scenario biasing in R/05 is working correctly for all four states.
+
+Quota dropped from 436 GB to 256 GB between sessions (180 GB cleaned up). Inodes: 846k / 1000k.
+
+The cross-state RCP factorial is now complete and publication-ready. Next steps: pull per_plot_projections.rds locally for state expansion analysis, generate cross-state comparison figures, compare against FIA EVALIDator state totals.
+
 ### What's NOT done from MULTISTATE_PORTABILITY_GAPS.md
 
 | Step | Status |
