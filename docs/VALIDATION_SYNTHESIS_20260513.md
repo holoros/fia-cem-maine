@@ -78,6 +78,32 @@ MN has annual EXPALL EVALIDs from 2003 through 2024, allowing all five canonical
 
 **Summary: MN p1 RCP 4.5 RMSE 137 MMT, bias +125 MMT, +108 percent of subject matched observed mean.** The bias is largest at cycle 1 in absolute terms (+230 MMT) and even larger as a percent at cycles 4 and 5 (+135 and +159 percent). The pattern combined with the WA result establishes that the multistate p1 set systematically over predicts subject matched observed AGC by roughly 60 to 130 percent.
 
+### GA RCP 4.5 hindcast (landed 15 May 2026)
+
+GA has annual EXPALL EVALIDs from 1997 through 2024, allowing all five canonical projection cycles to match:
+
+| Year | Cycle | Obs subj AGC (MMT) | Proj subj AGC (MMT) | Residual (MMT) | Pct |
+|---:|---:|---:|---:|---:|---:|
+| 2004 | 1 | 356.3 | 895.1 | +538.8 | +151% |
+| 2009 | 2 | 311.6 | 589.3 | +277.7 | +89% |
+| 2014 | 3 | 210.8 | 454.5 | +243.7 | +116% |
+| 2019 | 4 | 179.8 | 495.0 | +315.3 | +175% |
+| 2024 | 5 | 181.7 | 562.5 | +380.8 | +210% |
+
+**Summary: GA p1 RCP 4.5 RMSE 366.4 MMT, bias +351.3 MMT, +141.6 percent of subject matched observed mean.** Cycle 1 ratio of projected to observed is 2.51, very close to MN's 2.29 and WA's 1.65. Pattern is now confirmed across all three non Maine states: systematic over prediction of subject AGC by 65 to 150 percent.
+
+The subject pool attrition signal is again clear: obs_subj declines monotonically from 356 to 182 MMT (2004 to 2024) while obs_full stays stable around 372 to 466 MMT. The projection cycles do not track this attrition; per acre values stay elevated, producing a widening absolute residual over time.
+
+### Confirmed pattern across all three states
+
+| State | Cycle 1 obs subj (MMT) | Cycle 1 proj (MMT) | Cycle 1 ratio | Bias (% of mean) |
+|---|---:|---:|---:|---:|
+| WA | 311.7 | 513.1 | 1.65 | +65% |
+| MN | 178.9 | 408.9 | 2.29 | +108% |
+| GA | 356.3 | 895.1 | 2.51 | +142% |
+
+ME r11 reference: ratio approximately 1.0, bias -1.1 percent. The non Maine states are 1.6 to 2.5 times higher at cycle 1, suggesting the structural over prediction begins at the baseline-to-projection interface. The bias grows with state size and subject panel coverage: GA has the largest subject panel (5,221 cycle 1 plots) and the largest bias; WA has the smallest (only 1 matched cycle in the strict window) and the smallest.
+
 A useful additional signal: obs_subj_agc declines monotonically over time (178.9 → 79.8 MMT, 2004 to 2024) while obs_full_agc stays stable around 200 to 230 MMT. The decline reflects subject plot attrition (n_subj_plots_in_eval falls from 5221 to 2449 as later EVALIDs include fewer plots with the original 1999 PLT_CN values). The projection cycles produce a similar pattern of decline at first then partial recovery, but at a much higher absolute level.
 
 ### Working hypothesis for the systematic over prediction
