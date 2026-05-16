@@ -152,10 +152,15 @@ aggregate_to_rpa <- function(fit_m1_op, fit_m2, fit_m4,
   # Issue #16 fix (Lane D, 12 May 2026): upstream plot_pair_complete carries
   # STATECD (FIA integer), conus_states.csv carries state_fips. They are the
   # same integer; rename the config side to bridge.
+  # Layer 21 fix (16 May 2026): coerce STATECD to integer on both sides to
+  # prevent vctrs incompatible-type errors when plot_pair_complete encodes
+  # STATECD as character (some FIA ingest paths produce character codes).
   states_cfg <- states_cfg |>
     dplyr::select(state_fips, fia_region, rpa_subregion) |>
-    dplyr::rename(STATECD = state_fips)
+    dplyr::rename(STATECD = state_fips) |>
+    dplyr::mutate(STATECD = as.integer(STATECD))
   plot_pair_complete <- plot_pair_complete |>
+    dplyr::mutate(STATECD = as.integer(STATECD)) |>
     dplyr::left_join(states_cfg, by = "STATECD")
 
   # ---- Aggregate: RPA region ----
