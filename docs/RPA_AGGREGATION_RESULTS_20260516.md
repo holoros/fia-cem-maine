@@ -23,13 +23,29 @@ Pulled from `~/conus_hcs/output/phase4/` and committed to local workspace at `fi
 
 ### Flag 1: p_harvest saturates at 0.86 to 0.91
 
-All four subregions report mean harvest probability between 0.860 and 0.915. The published Maine RPA harvest rate per five year cycle is approximately 0.10. The South_East and South_Central regions have historically higher harvest rates due to plantation rotations (often 25 to 35 years) but values approaching 1.0 are not plausible at the per cycle level. Two candidate explanations:
+All four subregions report mean harvest probability between 0.860 and 0.915. The published Maine RPA harvest rate per five year cycle is approximately 0.10.
 
-1. **The Layer 19 union approximation overcounts.** The patch combines partial regime fit and clearcut regime fit as `pmin(P_partial + P_clearcut, 1)`. This assumes the two regimes are independent. In practice, partial and clearcut are nearly mutually exclusive on the same plot in the same five year panel. If both regime-specific fits return high conditional probabilities (because they're trained only on plots in that regime), the sum approaches saturation.
+**Direct inspection of the unified TM2016 fit** at `data/checkpoints/m1_p_harvest_TM2016_unified.qs` (6,210 row lookup) shows the M1 occurrence model produces the same saturation pattern as the regime-split union:
 
-2. **The regime-specific fits return conditional rather than marginal probabilities.** Each M1 fit was trained only on plots experiencing that regime. When applied to a new plot, the predicted probability is `P(harvest | harvested)` which is by construction near 1, not `P(harvested | covariates)`. The unified TM2016 fit at `data/checkpoints/m1_p_harvest_TM2016_unified.qs` may be the methodologically correct prediction source for this aggregation.
+| Quantile | p_partial | p_clearcut | p_any |
+|---|---:|---:|---:|
+| 10% | 0.298 | 0.695 | 0.780 |
+| 50% | 0.446 | 0.770 | 0.873 |
+| 90% | 0.649 | 0.850 | 0.923 |
 
-Recommend tabulating the M1 partial and clearcut predicted probabilities separately before combination, and comparing against the unified TM2016 fit's output for the same plots, before publishing the per subregion harvest rates.
+Median `p_any` of 0.873 matches the aggregation output `p_harvest` of 0.880 to 0.915 within rounding. **The Layer 19 union approximation `pmin(P_partial + P_clearcut, 1)` is not the source of the saturation. The M1 occurrence model itself returns probabilities near 0.87 for the average plot.**
+
+**Most plausible explanation: plot_pair_complete is a re-measured plot subset, not the full FIA plot population.** Plots that appear in plot_pair_complete are those where pre and post measurements were both captured (the FIA panel pair logic). Re-measured plots are a biased sample because plots get re-surveyed more often when they have flagged change events (often harvest). The M1 models trained on these pairs are therefore predicting `P(harvest | plot was re-measured)`, which on that conditional set is near 1, not `P(harvest | random plot in population)`.
+
+For comparison against the Johnston Guo Prestemon 2021 RPA baselines (which are population level harvest rates per all forest area), the aggregation needs either:
+
+1. A different prediction frame: extend M1 prediction to the full FIA plot population, not just the re-measured panel pairs, or
+2. A reweighting factor: scale per-plot prediction by `P(plot is re-measured | population)`, which converts conditional to marginal probability, or
+3. Acceptance of the current output as a "harvest pressure among monitored plots" metric, distinct from population harvest rate.
+
+The methodological choice depends on the manuscript framing. Population level rate (option 1 or 2) supports direct RPA baseline comparison. Pressure on monitored plots (option 3) supports a within-FIA-panel analytical statement.
+
+Worth noting: with median `p_any = 0.87` and `removal_per_ha` values of 0.12 to 0.45, the absolute removal magnitudes are in roughly the right RPA range. The saturation issue is specifically the probability-of-harvest interpretation, not the per-hectare removal volume.
 
 ### Flag 2: 47 percent NA p_harvest_mean
 
