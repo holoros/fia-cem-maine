@@ -100,10 +100,17 @@ compute_ending_value <- function(cond_data, prices, harvested) {
 
   cond_data |>
     mutate(
-      # Ending value is volume at time 2 * prices
+      # Ending value is volume at time 2 * prices, per acre.
+      # Layer 3 fix (15 May 2026): T2_volcfnet is already cuft/ac from
+      # R/01_data_prep.R aggregation sum(TPA_UNADJ * VOLCFNET). The prior
+      # version multiplied by tpa_live again, double counting the per acre
+      # conversion. This inflated EV by ~tpa_live factor (~400 to 600x),
+      # which propagated to dVAL and saturated the Wear 2025 logit, producing
+      # the 83 percent cycle 1 harvest rate observed in the Layer 2 10 sim
+      # smoke. Removing * tpa_live restores per acre dVAL magnitude.
       EV = coalesce(T2_volcfnet, volcfnet) * (
         prices$sawtimber$softwood * 0.5 + prices$pulpwood$softwood * 0.5
-      ) * tpa_live
+      )
     )
 }
 
