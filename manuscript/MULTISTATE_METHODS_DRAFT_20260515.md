@@ -111,5 +111,5 @@ This multistate result extends the FIA CEM Maine work that participates in the P
 
 1. `docs/UNIT_BUG_FINDING_20260515.md` -> Supplementary methods note on unit handling
 2. `docs/BIAS_DOCUMENTATION_20260515.md` -> Supplementary discussion on cross state bias
-3. `docs/HINDCAST_*_R21_*.md` per state -> Supplementary hindcast detail tables
-4. `docs/VALIDATION_*_R21_*.md` per state -> Supplementary validation memos
+3. `docs/HINDCAST_<STATE>_<RCP>_WEAR_P1.md` per state plus `docs/HINDCAST_ME_RCP45_HADGEM2_WEAR_R21.md` for ME -> Supplementary hindcast detail tables
+4. `docs/VALIDATION_<STATE>_R21_<RCP>.md` per state -> Supplementary validation memos
