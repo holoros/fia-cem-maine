@@ -2,6 +2,18 @@
 
 *Generated 16 May 2026 from `table_inventory_summary.csv` in all eight production output directories.*
 
+## STATUS BANNER (added retroactively, 16 May 2026 evening)
+
+Three updates to this memo's findings landed after it was first written:
+
+1. **Carbon unit bug found and fixed in the validation tooling.** `mean_carbon` in `table_inventory_summary.csv` is in lb/ac not kg/ac. The carbon comparisons in this memo (TgC totals, the 1,709 MMT GA RPA value vs our outputs) need scaling by 1/2.2 on our side. Volume comparisons (cuft/ac, Bcuft) are unaffected. See `BIAS_DOCUMENTATION_20260515.md` for the corrected synthesis.
+
+2. **Layer 4 patch landed but it was a different fix than this memo proposed.** The actual Layer 4 patch corrects a price unit conversion in `compute_harvest_revenue` (cuft to MBF/cord), not the proj_tpa SDImax cap I proposed. The user's commit `bc5e095` validates Layer 4 at full ME r21 econ production scale: cycle 1 BAU gr_ratio = 3.46 (matches Maine RPA's 3.32 within 4%), harvest rate 8.9% (down from 83.6% in pre-fix smoke). My proposed proj_tpa fix is still on the table but not yet applied.
+
+3. **WA No_harvest decline confirmed disturbance-driven.** Job 9695159 (`WA_20260516_wa_fire_halfamp`) ran WA No_harvest with `--fire_amp_mult 0.5` and produced gr_ratio of 2.26 (vs 0.01 in the original) and cycle 5 vol of 2,710 cuft/ac (down only -10% from cycle 1, vs -58% in the original). Confirms the fire compounding hypothesis.
+
+The Finding 1 (WA No_harvest decline) and Finding 2 (TPA accumulation) sections below remain correct in their identification of the problems. Finding 3 (GA baseline timing) and the cycle 5 RPA comparison are unaffected by the unit bug.
+
 ## Three findings worth manuscript attention
 
 ### Finding 1: WA No_harvest volume declines (state-specific bug candidate)

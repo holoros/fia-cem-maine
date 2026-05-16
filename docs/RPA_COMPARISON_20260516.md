@@ -2,6 +2,14 @@
 
 *Generated 16 May 2026. Sources: Forests of Maine 2021 (FS-366), Forests of Minnesota 2020 (FS-326), Forests of Georgia 2022 (FS-484), Pacific Northwest Research Station Washington State Stats. Production data from the May 10 2026 p1 multistate output set, cycle 1 BAU baseline.*
 
+## STATUS BANNER (added retroactively, 16 May 2026 evening)
+
+After this memo was written, a unit bug was discovered in the hindcast and validation tooling: `carbon_ag` in `per_plot_projections.rds` and `mean_carbon` in `table_inventory_summary.csv` are in **pounds per acre**, not kilograms per acre. Conversion ratio is 2.2046. The carbon-side claims in this memo (TgC totals, kg/cuft ratios) were computed assuming kg/ac and are therefore inflated by 2.2x. The volume-side claims (Bcuft, cuft/ac, gr_ratio) are unaffected since they were always in cuft.
+
+The corrected post-fix hindcast biases are documented in `BIAS_DOCUMENTATION_20260515.md` and supersede the related carbon analyses in this memo: MN -5.7%, WA -25.3%, GA +9.6%, all bracketing the ME r11 reference of -1.1% on both sides.
+
+The volume comparison (FIA published 27.7 Bcuft ME, 20.9 Bcuft MN, etc. vs our cycle 1 totals) remains as documented below.
+
 ## Headline comparison
 
 | State | Forest area (Mac) | p1 cycle 1 vol per ac (cuft/ac) | p1 statewide vol (Bcuft) | FIA published volume (Bcuft) | FIA volume metric | Delta (%) |
