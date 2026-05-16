@@ -1,5 +1,7 @@
 # MN statewide volume undercount root cause: DESIGNCD periodic plot exclusion at 1999 baseline
 
+> **SUPERSEDED 16 May 2026.** This file's DESIGNCD attribution was refuted by the MN 2004 baseline diagnostic (SLURM 9676388), which produced 21.8 Bcuft versus the 1999 baseline 21.6 Bcuft (essentially identical). The DESIGNCD periodic plot exclusion is not the dominant cause of the MN -23 percent statewide gap. See `MN_VOLUME_GAP_REVISED_20260516.md` for the current finding and revised candidate mechanisms (Lake States donor pool, HCB owner downscale, climate response gating, state_constants).
+
 *Generated 16 May 2026 after a direct FIA plot database audit on Cardinal resolved the outstanding MN -23 percent statewide volume gap.*
 
 ## The finding
