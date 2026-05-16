@@ -99,11 +99,23 @@ aggregate_to_rpa <- function(fit_m1_op, fit_m2, fit_m4,
   }
 
   # Expected harvested BA per plot (joint M1 x M2)
+  # Layer 19 followup (16 May 2026 second pass): the regime-split prediction
+  # combination can produce NaN cells when one of the regime brms fits
+  # returns NA for a plot row (typically when factor levels in newdata don't
+  # match training). Add na.rm = TRUE to the summary calls so the aggregation
+  # proceeds with the valid plots; flag the NA count downstream.
   exp_removal <- pred_p1 * pred_p2
-  plot_pair_complete$p_harvest_mean   <- apply(pred_p1, 2, mean)
-  plot_pair_complete$p_harvest_lo     <- apply(pred_p1, 2, quantile, probs = 0.05)
-  plot_pair_complete$p_harvest_hi     <- apply(pred_p1, 2, quantile, probs = 0.95)
-  plot_pair_complete$expected_removal <- apply(exp_removal, 2, mean)
+  plot_pair_complete$p_harvest_mean   <- apply(pred_p1, 2, mean, na.rm = TRUE)
+  plot_pair_complete$p_harvest_lo     <- apply(pred_p1, 2, quantile,
+                                                probs = 0.05, na.rm = TRUE)
+  plot_pair_complete$p_harvest_hi     <- apply(pred_p1, 2, quantile,
+                                                probs = 0.95, na.rm = TRUE)
+  plot_pair_complete$expected_removal <- apply(exp_removal, 2, mean,
+                                                na.rm = TRUE)
+  n_na_pred1 <- sum(is.na(plot_pair_complete$p_harvest_mean))
+  if (n_na_pred1 > 0) {
+    cli_alert_warning("{n_na_pred1} of {length(plot_pair_complete$p_harvest_mean)} plots have NA p_harvest_mean after regime combination.")
+  }
 
   # ---- M4 HCS class shares ----
   cli_alert_info("Computing HCS class probabilities...")
