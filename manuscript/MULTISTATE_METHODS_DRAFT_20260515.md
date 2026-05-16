@@ -20,7 +20,7 @@ Three independent validation methods established the multistate framework as tra
 
 ### EVALIDator sanity bounds
 
-For each state x RCP combination, eight per acre and statewide totals (basal area, volume, carbon, trees per acre, harvest rate, statewide total volume, statewide total carbon, gr_ratio) were compared against published FIA EVALIDator state totals at the cycle 1 baseline (year 2004 from a 1999 baseline plus five year offset). Per acre means and statewide totals were within four to twenty three percent of EVALIDator across the six runs, with all six PASSING the threshold check defined in `STATE_PROFILES`. Volume totals match EVALIDator to within two percent for WA, three percent for GA, and twenty three percent under for MN. The MN under estimate is structural and traces to the DESIGNCD periodic plot inclusion handling that excludes pre 1999 Lake States plots from the subject pool.
+For each state x RCP combination, eight per acre and statewide totals (basal area, volume, carbon, trees per acre, harvest rate, statewide total volume, statewide total carbon, gr_ratio) were compared against published FIA EVALIDator state totals at the cycle 1 baseline (year 2004 from a 1999 baseline plus five year offset). Per acre means and statewide totals were within four to twenty three percent of EVALIDator across the six runs, with all six PASSING the threshold check defined in `STATE_PROFILES`. Volume totals match EVALIDator to within two percent for WA, three percent for GA, and twenty three percent under for MN. The MN under estimate is structural; a 2004 baseline diagnostic produced 21.8 Bcuft versus the 1999 baseline result of 21.6 Bcuft, confirming the DESIGNCD periodic plot exclusion is not the dominant cause. Candidate remaining mechanisms include Lake States donor pool composition, Harris Caputo Butler owner downscale behavior, climate response gating, and `state_constants.csv` MN parameters; the gap is reported as a known limitation pending future investigation.
 
 ### Subject matched hindcast
 
@@ -78,13 +78,13 @@ Post Layer 4, a 10 simulation ME baseline-as-usual smoke produced cycle 1 BAU ha
 
 Layers 2 and 3 turned out to be in code paths that did not drive cycle 1 harvest decisions; Layer 2 affected cycle 2 and later revenue feedback, and Layer 3 was in a never called function (`compute_ending_value()`). Both patches stay in the codebase for correctness and for any future code paths that might invoke them.
 
-The multistate p1 runs reported in Section X.2 use the `--no_econ` and `--skip_supply` paths and bypass the harvest economic overlay entirely. Their validation results are unaffected by any of the four layer patches. The ME r21 economic projection that is the canonical Maine result with the full Wear and Coulston (2025) harvest overlay was rerun after the Layer 4 patch landed and now produces realistic Maine harvest dynamics.
+The multistate p1 runs reported in Section X.2 use the `--no_econ` and `--skip_supply` paths and bypass the harvest economic overlay entirely. Their validation results are unaffected by any of the four layer patches. The ME r21 economic projection that is the canonical Maine result with the full Wear and Coulston (2025) harvest overlay was rerun after the Layer 4 patch landed. At full production scale (100 simulations, 15 cycles, both RCPs), cycle 1 BAU gr_ratio is 3.46, matching the Maine RPA Forests of Maine 2021 reported state level growth to removals ratio of 3.32 within four percent and confirming the Layer 4 patch produces realistic Maine harvest dynamics at production scale.
 
 Future implementations of the projection framework should adopt explicit unit attributes on aggregated columns (for example using the `units` package in R) to prevent recurrence of unit and scaling errors in the economic overlay.
 
 ### Outstanding state level limitations
 
-- MN -23 percent statewide volume under EVALIDator: traceable to DESIGNCD periodic plot exclusion. Future iteration: relaxed DESIGNCD filter for Lake States to recover the pre 1999 periodic plot cohorts.
+- MN -23 percent statewide volume under EVALIDator: structural, root cause unidentified after the 2004 baseline diagnostic refuted the DESIGNCD attribution. Candidate mechanisms: Lake States donor pool composition (ND, SD, IA, WI, MI, IL underrepresent MN's boreal mixed plus aspen mix), Harris Caputo Butler owner downscale behavior on the 26 percent of plots on default multipliers, climate response gating (`--use_decoupled_climate` blocked for non Maine states), and `state_constants.csv` MN parameters (wildfire baseline, terminal age, SDImax). Future iteration: donor pool composition audit, expanded Northeast plus Lake States donor pool, ClimateNA per state inputs.
 - WA -25 percent conservative hindcast bias: traceable to PNW donor pool composition and absence of ClimateNA decoupled climate inputs. Future iteration: expanded WA + OR + ID donor pool and per state ClimateNA integration.
 - GA +10 percent over bias: traceable to plantation versus natural stand donor mixing without STDORGCD stratification. Future iteration: STDORGCD stratified matching.
 
@@ -98,7 +98,7 @@ This multistate result extends the FIA CEM Maine work that participates in the P
 2. Statewide AGC trajectory by state and RCP (`figures/p1_statewide_agc_panel.png`)
 3. Harvest scenario delta from BAU by state and RCP (`figures/p1_harvest_delta_panel.png`)
 4. Summary grid showing BA, volume, carbon, gr_ratio BAU trajectories cross state cross RCP (`figures/p1_summary_grid.png`)
-5. Hindcast performance plot: observed versus projected AGC for matched years, faceted by state (to be built next session)
+5. Hindcast performance plot: observed versus projected AGC for matched years, faceted by state (`figures/p1_hindcast_observed_vs_projected.png`)
 
 ## Suggested table list for the manuscript
 
