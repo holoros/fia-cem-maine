@@ -97,3 +97,64 @@ GA is the only state where BAU volume increases (because southern pine plantatio
 * Pull cycles 2 to 14 for one state to fit a logistic curve and confirm the cycle 5 to 7 reporting horizon.
 * Sanity check: does WA cycle 1 No_harvest TPA (348) match FIA published WA mean TPA? If yes, cycle 1 baseline is FIA-faithful and the bug is downstream.
 * Sanity check: does ME r21 cycle 5 vol = 1,533 + (1,168 − 1,533)(4/14) ≈ 1,429 match the user's prior r21 cycle-5 inventory snapshot? Confirm the linear interpolation is approximately representative.
+
+## Update: actual cycle 5 values pulled from ci_summaries.csv
+
+The linear interpolation estimate was systematically low. Actual c5 BAU values from `ci_summaries.csv`:
+
+| State | RCP | c1 vol | c5 vol (actual) | c5 vol (interp) | c15 vol |
+|---|---|---:|---:|---:|---:|
+| ME r21 | 4.5 | 1,533 | **1,749** | 1,429 | 1,168 |
+| MN p1 | 4.5 | 1,241 | **1,408** | 1,156 | 944 |
+| WA p1 | 4.5 | 3,133 | **3,012** | 2,612 | 1,310 |
+| GA p1 | 4.5 | 1,326 | **1,984** | 1,538 | 2,067 |
+
+Interpolation underestimates by 14 to 22 percent because the trajectory is not linear. The actual cycles 1 to 5 show growth (volume builds) before decline kicks in (cycles 5 onward as TPA artifacts emerge).
+
+Re-doing the RPA comparison at cycle 5 (the year 2024 RPA-comparable vintage):
+
+| State | c5 BAU vol (cuft/ac) | FIA all-live (cuft/ac) | Delta |
+|---|---:|---:|---:|
+| ME r21 RCP 4.5 | 1,749 | 1,581 | **+11%** |
+| MN p1 RCP 4.5 | 1,408 | 1,183 | **+19%** |
+| WA p1 RCP 4.5 | 3,012 | 4,318 | -30% |
+| GA p1 RCP 4.5 | 1,984 | 2,759 | -28% |
+
+**Reading:** at the cycle 5 horizon (manuscript-reportable vintage), all four states are within 30 percent of FIA published. ME and MN are slightly over (matching the per-acre publication direction). WA and GA are under by 28 to 30 percent.
+
+TPA at cycle 5 (510 to 946 trees/ac) is biophysically plausible. The TPA blow-up to 41,000+ trees/ac is a late-cycle artifact (cycles 10+) tied to SDImax cap not capping TPA. **Confirms cycle 5 is the right manuscript reporting horizon.**
+
+## proj_tpa code audit finding
+
+Located the TPA accumulation bug at `cem_pipeline_patch/06_projection_engine.R` lines 742-763, function `apply_sdimax_cap`. The function correctly reduces `proj_BA, proj_volcfnet, proj_volcsnet, proj_drybio, proj_carbon` by `sdi_ratio` when projected SDI exceeds SDImax. But `proj_tpa` is not included in the reduction. SDI grows without bound while BA and volume are clipped.
+
+Mathematically, SDI = TPA × (QMD/10)^1.605. If SDI > SDImax and we want to cap it, we must reduce TPA, QMD, or both. The current code reduces BA and volume (implicitly reducing QMD), but leaves TPA free to accumulate. This produces the "more, smaller trees" interpretation that's biophysically wrong — natural self-thinning kills small trees first while surviving trees grow bigger.
+
+**Proposed Layer 4 patch:**
+
+```r
+# In apply_sdimax_cap, line 754-758, ADD:
+proj_tpa      = proj_tpa      * sdi_ratio,
+```
+
+The trade-off: this would also reduce projected TPA at the SDImax cap, matching natural self-thinning where mortality removes small trees. The total biomass would be carried on fewer larger trees; per-acre volume might increase rather than decrease at the cap.
+
+A cleaner formulation: cap TPA at SDImax (with QMD fixed):
+
+```r
+# Replace the current 5-line block with:
+mutate(
+  ratio_for_BA = pmin(1, sdimax_eng / pmax(0.1, proj_sdi)),
+  ratio_for_tpa = ratio_for_BA,  # mortality removes small trees first
+  proj_tpa      = proj_tpa * ratio_for_tpa,
+  proj_BA       = proj_BA * sqrt(ratio_for_BA),       # less aggressive on BA
+  proj_volcfnet = proj_volcfnet * sqrt(ratio_for_BA),
+  proj_volcsnet = if ("proj_volcsnet" %in% names(df)) proj_volcsnet * sqrt(ratio_for_BA) else proj_volcsnet,
+  proj_drybio   = proj_drybio * sqrt(ratio_for_BA),
+  proj_carbon   = proj_carbon * sqrt(ratio_for_BA)
+)
+```
+
+The `sqrt(ratio)` distribution lets the cap split the impact between TPA (count) and BA-equivalents (size). At ratio = 0.5 (50 percent excess SDI), TPA drops by 50 percent and BA drops by ~30 percent. This is consistent with self-thinning dynamics.
+
+**Recommendation:** apply the minimal one-line patch first to confirm TPA capping works, then evaluate the sqrt variant if BA/vol need preservation. Both fixes should land before any cycle 10+ figures enter the manuscript.
