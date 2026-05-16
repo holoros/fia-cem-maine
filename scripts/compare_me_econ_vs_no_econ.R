@@ -92,8 +92,7 @@ no_45   <- load_run(sprintf("ME_%s_rcp45_hadgem2_wear_r21", no_econ_45),
 no_85   <- load_run(sprintf("ME_%s_rcp85_hadgem2_wear_r21", no_econ_85),
                      "RCP 8.5", "no econ")
 
-all_runs <- bind_rows(econ_45, econ_85, no_45, no_85) |>
-  filter(!is.null(.)) |>
+all_runs <- bind_rows(Filter(Negate(is.null), list(econ_45, econ_85, no_45, no_85))) |>
   mutate(
     year       = CYCLE_TO_YEAR(cycle),
     has_econ   = factor(has_econ, levels = c("no econ", "with econ")),
