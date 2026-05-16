@@ -66,8 +66,14 @@ state_cd <- STATE_CODES[[opt$state]]
 CYCLE_YEARS <- 5L
 
 # Unit conversions
-LB_TO_MMT  <- 4.53592e-10
-KGAC_TO_MMT_via_EXPNS <- 1e-9  # kg/ac * EXPNS_ac = kg, /1e9 = MMT (Tg)
+# CRITICAL: proj_carbon column in per_plot_projections.rds is in LB/AC, not
+# kg/ac, because R/01_data_prep.R builds carbon_ag = sum(TPA_UNADJ * CARBON_AG)
+# where CARBON_AG is in pounds per tree (FIA convention). The same conversion
+# factor applies to both observed and projected. Earlier versions of this
+# script used 1e-9 for the projection, treating it as kg, which produced a
+# spurious 2.2x over prediction. See VALIDATION_SYNTHESIS_20260513.md for the
+# investigation history.
+LB_TO_MMT <- 4.53592e-10
 
 # -----------------------------------------------------------------------------
 # Resolve paths
@@ -116,7 +122,7 @@ cat(sprintf("Subject plot count (cycle 1 PLT_CN): %d\n\n", length(subj_plots)))
 # Per cycle projected AGC at the plot level (mean across sims first, then aggregate)
 proj_per_plot <- d |>
   group_by(PLT_CN, CONDID, cycle, CONDPROP_UNADJ) |>
-  summarise(proj_carbon_kgac = mean(proj_carbon, na.rm = TRUE),
+  summarise(proj_carbon_lbac = mean(proj_carbon, na.rm = TRUE),
             .groups = "drop") |>
   mutate(PLT_CN_chr = format(PLT_CN, scientific = FALSE, trim = TRUE))
 
@@ -216,8 +222,8 @@ results <- map_dfr(seq_len(nrow(evt)), function(i) {
     pj <- proj_per_plot |>
       filter(cycle == cycle_match) |>
       inner_join(expns_e, by = c("PLT_CN_chr" = "PLT_CN"))
-    proj_agc <- sum(pj$proj_carbon_kgac * pj$CONDPROP_UNADJ * pj$EXPNS,
-                     na.rm = TRUE) * KGAC_TO_MMT_via_EXPNS
+    proj_agc <- sum(pj$proj_carbon_lbac * pj$CONDPROP_UNADJ * pj$EXPNS,
+                     na.rm = TRUE) * LB_TO_MMT
   }
 
   data.frame(

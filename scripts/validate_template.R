@@ -80,41 +80,41 @@ STATE_PROFILES <- list(
     forest_area_mac    = 22.0,
     per_ac_vol_cuft    = c(2700, 3300),  # smoke 3004, p1 3133
     per_ac_ba_sqft     = c(95, 115),     # smoke 106, p1 110
-    per_ac_carbon_kgac = c(55000, 65000),# smoke 59693, p1 62569
+    per_ac_carbon_kgac = c(55000, 65000),# p1 62569 lb/ac (column is lb/ac, not kg)
     per_ac_tpa         = c(280, 380),    # smoke 326, p1 340
     harvest_rate_pct   = c(9, 18),       # smoke 16.7, p1 9.8 (owner_balanced drops it)
     total_vol_bcuft    = c(55, 80),      # EVALIDator ~70, p1 68.9
-    total_carbon_tgc   = c(950, 1450)    # raised upper from 1300; p1 1377 within bound
+    total_carbon_tgc   = c(500, 800)     # FIA full panel ~650 TgC (re calibrated after lb fix)
   ),
   MN = list(
     forest_area_mac    = 17.4,
     per_ac_vol_cuft    = c(1050, 1450),  # smoke 1223; production 1241
     per_ac_ba_sqft     = c(60, 80),      # smoke 68, p1 68
-    per_ac_carbon_kgac = c(28000, 38000),# smoke 33150, p1 33650
+    per_ac_carbon_kgac = c(28000, 38000),# p1 33650 lb/ac
     per_ac_tpa         = c(450, 650),    # smoke 538, p1 543
     harvest_rate_pct   = c(8, 15),       # smoke 11.6, p1 9.9
     total_vol_bcuft    = c(18, 32),      # EVALIDator ~28, p1 21.6 (~23% under, structural)
-    total_carbon_tgc   = c(550, 800)     # EVALIDator ~700, p1 586
+    total_carbon_tgc   = c(180, 320)     # FIA full panel ~220 TgC (re calibrated after lb fix)
   ),
   GA = list(
     forest_area_mac    = 24.8,
     per_ac_vol_cuft    = c(1000, 1400),  # smoke 1205, p1 1326
     per_ac_ba_sqft     = c(50, 70),      # smoke 61, p1 67
-    per_ac_carbon_kgac = c(28000, 38000),# smoke 32085, p1 35214
+    per_ac_carbon_kgac = c(28000, 38000),# p1 35214 lb/ac
     per_ac_tpa         = c(400, 540),    # smoke 470, p1 498
     harvest_rate_pct   = c(9, 18),       # smoke 19.9, p1 9.9 (owner_balanced drops it)
     total_vol_bcuft    = c(25, 36),      # EVALIDator ~32, p1 32.9
-    total_carbon_tgc   = c(550, 950)     # raised upper from 850; p1 875 within bound
+    total_carbon_tgc   = c(330, 500)     # FIA full panel ~410 TgC (re calibrated after lb fix)
   ),
   ME = list(
     forest_area_mac    = 17.6,
     per_ac_vol_cuft    = c(1300, 1800),  # ME r21 1542
     per_ac_ba_sqft     = c(78, 105),     # ME r21 90
-    per_ac_carbon_kgac = c(38000, 50000),# ME r21 44240
+    per_ac_carbon_kgac = c(38000, 50000),# ME r21 44240 lb/ac
     per_ac_tpa         = c(600, 900),    # ME r21 742
     harvest_rate_pct   = c(7, 12),       # ME r21 8.9
     total_vol_bcuft    = c(22, 35),      # EVALIDator ~30
-    total_carbon_tgc   = c(650, 950)
+    total_carbon_tgc   = c(300, 420)     # FIA-derived 353 TgC (re calibrated after lb fix)
   )
 )
 
@@ -230,8 +230,13 @@ per_ac_carbon  <- cyc1$mean_carbon_mean[1]
 per_ac_tpa     <- cyc1$total_tpa_mean[1]
 harv_rate_pct  <- as.numeric(sub("%", "", as.character(cyc1$harvest_rate_mean[1])))
 
+# UNIT FIX (13 May 2026): per_ac_carbon from table_inventory_summary.csv is in
+# LB/AC, not kg/ac, because R/01_data_prep.R builds carbon_ag with TPA_UNADJ ×
+# CARBON_AG (FIA pounds). The conversion to TgC uses LB_TO_TG = 4.5359e-10.
+# Prior version used 1e-9 (treating as kg), which inflated statewide totals
+# by a factor of 2.2.
 total_vol_bcuft  <- (per_ac_vol * profile$forest_area_mac * 1e6) / 1e9
-total_carbon_tgc <- (per_ac_carbon * profile$forest_area_mac * 1e6) / 1e9
+total_carbon_tgc <- (per_ac_carbon * profile$forest_area_mac * 1e6) * 4.5359e-10
 
 gr_cyc1 <- if (!is.null(st_gr)) {
   gr_row <- st_gr |> filter(cycle == 1) |> slice(1)
