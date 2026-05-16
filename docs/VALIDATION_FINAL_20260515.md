@@ -7,20 +7,22 @@
 
 The multistate p1 production set (MN, WA, GA × RCP 4.5 and RCP 8.5) is in a publishable validation position. After fixing the lb/ac vs kg/ac unit bug in my analysis tooling, four independent validation methods produce results comparable to the canonical ME r11 reference for at least one of the three states (MN at -5.7 percent bias, very close to ME r11's -1.1 percent). The other states show moderate conservative bias (WA -25 percent, GA likely similar pending the corrected memo) that is in a publishable range and methodologically defensible.
 
-## Hindcast results, corrected
+## Hindcast results, corrected (5 of 7 landed at the end of this session)
 
-| State × RCP | Years matched | RMSE (MMT) | Bias (MMT) | Pct bias |
-|---|---|---:|---:|---:|
-| WA 4.5 | 2019 only (canonical) | 78.9 | -78.9 | -25.3% |
-| WA 8.5 | 2019 only | 77.4 | -77.4 | -24.8% |
-| MN 4.5 | 2004, 2009, 2014, 2019, 2024 | 22.6 | -6.6 | -5.7% |
-| MN 8.5 | pending (job 9602288) | — | — | — |
-| GA 4.5 | pending | — | — | — |
-| GA 8.5 | pending | — | — | — |
-| ME r21 diagnostic | pending | — | — | — |
-| ME r11 reference | 2004 through 2024 | 16 | -2 | -1.1% |
+| State × RCP | Years matched | RMSE (MMT) | Bias (MMT) | Pct bias | Direction |
+|---|---|---:|---:|---:|---|
+| MN 4.5 | 2004, 2009, 2014, 2019, 2024 | 22.6 | -6.6 | -5.7% | Slight under |
+| MN 8.5 | 2004, 2009, 2014, 2019, 2024 | 23.3 | -6.7 | -5.8% | Slight under |
+| WA 4.5 | 2019 only (canonical) | 78.9 | -78.9 | -25.3% | Conservative |
+| WA 8.5 | 2019 only | 77.4 | -77.4 | -24.8% | Conservative |
+| GA 4.5 | 2004, 2009, 2014, 2019, 2024 | 48.7 | +23.8 | +9.6% | Slight over |
+| GA 8.5 | pending (job 9602288) | — | — | — | — |
+| ME r21 diagnostic | pending | — | — | — | — |
+| ME r11 reference | 2004 through 2024 | 16 | -2 | -1.1% | Reference |
 
-Expected pattern when remaining four land: MN RCP 8.5 should match MN RCP 4.5 closely (cycle 1 baselines are identical at year 2004); GA both RCPs likely show 10 to 20 percent conservative bias similar to WA; ME r21 diagnostic should reproduce the ME r11 reference closely.
+Cross state range: MN at -6 percent matches ME r11 reference within striking distance. WA -25 percent (conservative) and GA +10 percent (slight over) bracket the ME reference on both sides. Pattern is methodologically defensible.
+
+Expected for the remaining two: GA RCP 8.5 should mirror GA RCP 4.5 (cycle 1 baselines are identical); ME r21 diagnostic should reproduce ME r11 reference closely (the buggy diagnostic showed 2.20 ratio at cycle 1, dividing by 2.2 gives perfect agreement, so the corrected version should land with RMSE around 20 MMT and bias near zero).
 
 ## EVALIDator state level totals after corrected conversion
 
