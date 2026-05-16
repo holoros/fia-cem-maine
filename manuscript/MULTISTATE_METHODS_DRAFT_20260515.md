@@ -57,11 +57,30 @@ Harris, Caputo, and Butler (2025) owner classes were joined to all six p1 output
 
 ## Section X.3: Limitations and known biases
 
-### Methodological note on unit handling
+### Methodological note on unit handling in the harvest economic overlay
 
-The harvest economic overlay subcomponent (Wear and Coulston 2025 logit) was identified as containing two parallel per acre conversion errors that required separate patches. The aggregation in `R/01_data_prep.R` builds `carbon_ag = sum(TPA_UNADJ * CARBON_AG)` and `volcfnet = sum(TPA_UNADJ * VOLCFNET)`, where `TPA_UNADJ` and per tree values combine to give per acre values. Two downstream uses in `R/03_harvest_choice.R` (the removed volume calculation and the expected value calculation) inadvertently multiplied by `tpa_live` (trees per acre) again, double counting the per acre conversion. The two errors compensated by coincidence in the harvest decision logit, producing an apparently reasonable Maine harvest rate prior to either patch. The Layer 2 patch (lines 409 and 414) and Layer 3 patch (line 108) together restore correct per acre dynamics in the harvest economic overlay. The multistate p1 runs documented above use the `--no_econ` and `--skip_supply` paths and are unaffected by either layer.
+During the multistate validation work, a systematic audit of the harvest economic overlay (Wear and Coulston 2025 logit implementation) uncovered four distinct unit and scaling errors that had accumulated in the codebase. The errors are discussed here as a worked example of the validation discipline required for a multi component forest projection pipeline.
 
-This unit handling experience is documented as a worked example of the kind of validation a multi component forest projection pipeline requires. Future implementations should adopt unit attributes on aggregated columns (for example using the units package in R) to prevent silent recurrence.
+The aggregation step in `R/01_data_prep.R` builds the per acre baseline columns via tree level expansion: `carbon_ag = sum(TPA_UNADJ * CARBON_AG)` and `volcfnet = sum(TPA_UNADJ * VOLCFNET)`. Because `TPA_UNADJ` is FIA's trees per acre expansion factor and the per tree volumes and carbon are in cubic feet and pounds respectively, the aggregated columns carry units of **cuft per acre** and **pounds per acre** at the condition level. Several downstream calculations in `R/03_harvest_choice.R` did not respect this per acre convention and produced inflated values that propagated to the harvest decision logit.
+
+The four corrections, ordered chronologically as we discovered them:
+
+| Layer | Site | Description | Status |
+|---|---|---|---|
+| 1 | `R/06_projection_engine.R` line 922 | gr_ratio reporting unit | Active code, fixed |
+| 2 | `R/03_harvest_choice.R` line 409 | `vol_removed_total = volcfnet × tpa_live × intensity` double counted per acre | Active code, fixed |
+| 3 | `R/03_harvest_choice.R` line 108 | `EV = T2_volcfnet × prices × tpa_live` double counted per acre | Dead code, fixed for consistency |
+| 4 | `R/03_harvest_choice.R` lines 80 to 91 | `REV = vol_sawtimber × $/MBF` mixed cuft volume with $/MBF and $/cord prices | Active code, decisive |
+
+Of the four, only Layer 4 directly affected the cycle 1 BAU harvest decision in production. The Layer 4 patch added explicit conversion factors `MBF_per_CUFT = 1/200` and `CORD_per_CUFT = 1/80` to the revenue calculation, correctly bridging the per acre cuft volumes against per MBF sawtimber and per cord pulpwood prices. Before the patch, treating $250 per MBF as $250 per cuft inflated revenue by approximately 200x; combined with the pulpwood 80x inflation, the resulting differential value (proxied by revenue in this implementation) saturated the logit term and produced near-deterministic harvest probabilities of approximately 0.84 per cycle, inconsistent with observed Maine harvest rates of approximately 0.10 per cycle.
+
+Post Layer 4, a 10 simulation ME baseline-as-usual smoke produced cycle 1 BAU harvest rate of 0.258, cycle 2 of 0.130, cycle 3 of 0.089, cycle 4 of 0.037, and cycle 5 of 0.028, averaging 0.108 across the five cycles. The elevated cycle 1 rate represents initial inventory liquidation of mature stands accumulated during the 1999 baseline period, with the system stabilizing to sustainable rates by cycle 3 onward. The gr_ratio (gross growth divided by harvest removals) follows the corresponding trajectory from 0.84 at cycle 1 to 9.83 at cycle 5, indicating the projection moves from initial inventory liquidation through sustained accumulation.
+
+Layers 2 and 3 turned out to be in code paths that did not drive cycle 1 harvest decisions; Layer 2 affected cycle 2 and later revenue feedback, and Layer 3 was in a never called function (`compute_ending_value()`). Both patches stay in the codebase for correctness and for any future code paths that might invoke them.
+
+The multistate p1 runs reported in Section X.2 use the `--no_econ` and `--skip_supply` paths and bypass the harvest economic overlay entirely. Their validation results are unaffected by any of the four layer patches. The ME r21 economic projection that is the canonical Maine result with the full Wear and Coulston (2025) harvest overlay was rerun after the Layer 4 patch landed and now produces realistic Maine harvest dynamics.
+
+Future implementations of the projection framework should adopt explicit unit attributes on aggregated columns (for example using the `units` package in R) to prevent recurrence of unit and scaling errors in the economic overlay.
 
 ### Outstanding state level limitations
 
