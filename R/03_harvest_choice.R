@@ -73,19 +73,33 @@ get_default_harvest_coefficients <- function() {
 #' @return Tibble with revenue estimates appended
 compute_harvest_revenue <- function(cond_data, prices) {
 
+  # Layer 4 fix (15 May 2026): vol_sawtimber_* and vol_pulpwood_* columns are
+  # in CUFT per acre (R/01_data_prep.R line ~178 builds them via TPA_UNADJ *
+  # VOLCFNET summed by product/wood_type). Prices in R/00_config.R are
+  # documented as $/MBF for sawtimber and $/cord for pulpwood. The prior
+  # version multiplied cuft/ac directly by $/MBF and $/cord, inflating
+  # revenue by approximately 200x for sawtimber and 80x for pulpwood. This
+  # propagated to dVAL via predict_harvest_probability line 257 (dVAL =
+  # REV_harvest as a Wear 2025 proxy) and saturated the logit term, producing
+  # the 83 percent cycle 1 BAU harvest rate observed in the Layer 2/3 smokes.
+  # Adding the cuft to MBF and cuft to cord conversions restores per acre
+  # dollar magnitude in the right ballpark for Maine stumpage.
+  MBF_per_CUFT  <- 1 / 200    # ~1 MBF per 200 cuft of net merchantable volume
+  CORD_per_CUFT <- 1 / 80     # ~1 cord per 80 cuft of solid pulpwood volume
+
   cond_data |>
     mutate(
-      # Revenue from sawtimber (volume * price)
-      rev_sawtimber = coalesce(vol_sawtimber_softwood, 0) *
+      # Revenue from sawtimber: cuft/ac * (1 MBF / 200 cuft) * $/MBF = $/ac
+      rev_sawtimber = coalesce(vol_sawtimber_softwood, 0) * MBF_per_CUFT *
                         prices$sawtimber$softwood +
-                      coalesce(vol_sawtimber_hardwood, 0) *
+                      coalesce(vol_sawtimber_hardwood, 0) * MBF_per_CUFT *
                         prices$sawtimber$hardwood,
-      # Revenue from pulpwood
-      rev_pulpwood  = coalesce(vol_pulpwood_softwood, 0) *
+      # Revenue from pulpwood: cuft/ac * (1 cord / 80 cuft) * $/cord = $/ac
+      rev_pulpwood  = coalesce(vol_pulpwood_softwood, 0) * CORD_per_CUFT *
                         prices$pulpwood$softwood +
-                      coalesce(vol_pulpwood_hardwood, 0) *
+                      coalesce(vol_pulpwood_hardwood, 0) * CORD_per_CUFT *
                         prices$pulpwood$hardwood,
-      # Total harvest revenue (per acre)
+      # Total harvest revenue (per acre, dollars)
       REV_harvest = rev_sawtimber + rev_pulpwood
     )
 }
