@@ -3,13 +3,15 @@
 *Generated 13 May 2026 covering all validation work in the multistate p1 sprint.*
 *Combines results from six p1 production validations, the Layer 2 gr_ratio patch regression, subject matched hindcasts, owner distribution analysis, and the carbon to volume ratio sanity check.*
 
-## Top line
+## Top line (revised 15 May after unit bug fix)
 
-Three independent validation methods produced consistent and decision relevant findings:
+The earlier draft of this memo reported a +65 to +145 percent over prediction in the multistate hindcasts. **That finding has been retracted.** Root cause was a unit conversion bug in my hindcast script and validation template: `proj_carbon` is in lb/ac (FIA pounds per tree × TPA_UNADJ), not kg/ac as I assumed. Multiplying by `1e-9` for kg-to-MMT instead of `4.5359e-10` for lb-to-MMT inflated projected statewide totals by 2.2x. Full documentation in `UNIT_BUG_FINDING_20260515.md`.
 
-1. **State level totals match EVALIDator closely** for WA (within 2 percent of 70 Bcuft published volume) and GA (within 3 percent of 32 Bcuft). MN sits 23 percent under EVALIDator and the gap is structural rather than smoke noise.
-2. **Owner distributions are biophysically defensible** across the three states. Pacific NW lands show federal majority by plot count, southern pine and Lake States show private majority. Harvest fractions cluster tightly at 9 to 10 percent across all owner groups, consistent with the BAU baseline scenario weights.
-3. **Subject matched hindcasts reveal a substantial overshoot for WA** (+65 percent over observed at year 2019). This is much larger than the ME r11 reference of -1.1 percent and warrants investigation before the multistate results carry to the manuscript.
+Three independent validation methods, recomputed with the corrected unit:
+
+1. **State level totals now closer to FIA full panel observed.** Corrected projected statewide carbon: WA 624 TgC vs FIA 650 (-4 percent), GA 397 vs 410 (-3 percent), MN 266 vs 220 (+21 percent). Volume totals were already correct (no unit issue with volcfnet): WA matches EVALIDator to 2 percent, GA to 3 percent, MN sits 23 percent under (structural).
+2. **Owner distributions are biophysically defensible** across the three states. Pacific NW shows federal majority by plot count, southern pine and Lake States show private majority. Harvest fractions cluster tightly at 9 to 10 percent across all owner groups, consistent with the BAU baseline scenario weights under `--use_owner_balanced`.
+3. **Subject matched hindcasts after the fix.** Corrected WA RCP 4.5: residual -79 MMT, -25 percent of observed mean (projection slightly underestimates). Corrected MN, GA, and ME r21 still landing in SLURM job 9602288. Cycle 1 (2004) ME r21 ratio collapses from 2.20 to 1.00 with the fix, confirming the projection's baseline is essentially exact when properly converted.
 
 The Layer 2 gr_ratio patch was independently validated via the ME 1 sim smoke and moves gr_ratio from 0.012 to 0.43, restoring biological magnitude. It only affects the `--use_maine_econ` path so does not change the multistate p1 outputs.
 
