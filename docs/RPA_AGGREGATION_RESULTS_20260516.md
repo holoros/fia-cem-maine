@@ -47,7 +47,24 @@ Log message: `Warning message: RPA baseline file not found at config/rpa_baselin
 
 ## Subregion coverage gaps
 
-Only 4 of the 7 RPA subregions are represented in the Phase 4 plot set. Missing subregions: North_East, Rocky_Mountains, Pacific_Southwest. The Pacific_Northwest cohort has only 50 plots (versus ~70,000 for NC and SE) and should be treated as not yet sampled rather than as a finding. A complete CONUS pass would require Phase 4 ingest of plots from the remaining states. Listing the 12 STATECD values currently covered: AL (1), IA (19), MI (26), MN (27), WA (53), WI (55), SC (45), TN (47), plus 4 others (need to recover with one more remote query).
+Only 4 of the 7 RPA subregions are represented in the Phase 4 plot set. Missing subregions: North_East, Rocky_Mountains, Pacific_Southwest. The Pacific_Northwest cohort has only 50 plots (versus ~70,000 for NC and SE) and should be treated as not yet sampled rather than as a finding. A complete CONUS pass would require Phase 4 ingest of plots from the remaining states. The 12 STATECD values currently covered (confirmed by direct inspection of `plot_pair_complete.qs`):
+
+| STATECD | State | Plot count | RPA subregion |
+|---:|---|---:|---|
+| 1 | AL | 11,926 | South_Central (per cfg) |
+| 12 | FL | 14,521 | South_East |
+| 13 | GA | 27,502 | South_East |
+| 16 | ID | 48 | Pacific_Northwest |
+| 19 | IA | 2,453 | North_Central |
+| 26 | MI | 18,720 | North_Central |
+| 27 | MN | 26,600 | North_Central |
+| 37 | NC | 13,587 | South_East |
+| 45 | SC | 14,661 | South_East |
+| 47 | TN | 10,109 | South_East (per cfg, may differ from FIA SRS) |
+| 53 | WA | 2 | Pacific_Northwest |
+| 55 | WI | 22,010 | North_Central |
+
+ID 48 plots and WA 2 plots together make up the 50 plot Pacific_Northwest cohort. Missing subregions for a complete pass: North_East (CT, MA, ME, NH, NJ, NY, PA, RI, VT), Rocky_Mountains (MT, WY, CO, UT, NV, NM, AZ), Pacific_Southwest (CA, OR, parts of AZ/UT).
 
 ## Cascading patch history (final)
 
