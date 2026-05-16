@@ -121,18 +121,31 @@ aggregate_to_rpa <- function(fit_m1_op, fit_m2, fit_m4,
   cli_alert_info("Computing HCS class probabilities...")
   # Issue #19 fix continued: use partial fit if M4 is regime-split. HCS
   # classification is regime-agnostic; partial dominates the data volume.
+  # Layer 20 fix (16 May 2026): if M4 fit is unavailable (empty list, NULL,
+  # or no fit.qs in the regime dirs), skip the HCS block and continue with
+  # M1+M2 aggregations. The CONUS HCS comparison vs RPA 2020 needs M1 and
+  # M2 primarily; M4 is a refinement not strictly required for the
+  # rpa_by_subregion and rpa_comparison tables.
   fit_m4_active <- if (is_regime_list(fit_m4)) fit_m4$partial else fit_m4
-  pred_p4 <- posterior_predict(fit_m4_active, newdata = plot_pair_complete,
-                                ndraws = 200, allow_new_levels = TRUE)
-  hcs_levels <- levels(plot_pair_complete$hcs_class)
-  # Issue #18 fix (Lane D, 12 May 2026): posterior_predict on a brms
-  # categorical model returns integer class indices. Convert to labels
-  # before tabulating so the factor matches hcs_levels (character).
-  hcs_share <- t(apply(pred_p4, 2, function(x) {
-    table(factor(hcs_levels[x], levels = hcs_levels)) / length(x)
-  }))
-  colnames(hcs_share) <- paste0("p_hcs_", hcs_levels)
-  plot_pair_complete <- dplyr::bind_cols(plot_pair_complete, as.data.frame(hcs_share))
+  m4_available <- !is.null(fit_m4_active) &&
+                  (inherits(fit_m4_active, "brmsfit") ||
+                   inherits(fit_m4_active, "stanfit"))
+
+  if (m4_available) {
+    pred_p4 <- posterior_predict(fit_m4_active, newdata = plot_pair_complete,
+                                  ndraws = 200, allow_new_levels = TRUE)
+    hcs_levels <- levels(plot_pair_complete$hcs_class)
+    # Issue #18 fix (Lane D, 12 May 2026): posterior_predict on a brms
+    # categorical model returns integer class indices. Convert to labels
+    # before tabulating so the factor matches hcs_levels (character).
+    hcs_share <- t(apply(pred_p4, 2, function(x) {
+      table(factor(hcs_levels[x], levels = hcs_levels)) / length(x)
+    }))
+    colnames(hcs_share) <- paste0("p_hcs_", hcs_levels)
+    plot_pair_complete <- dplyr::bind_cols(plot_pair_complete, as.data.frame(hcs_share))
+  } else {
+    cli_alert_warning("M4 HCS fit not available; skipping HCS shares. RPA aggregation continues with M1+M2 only.")
+  }
 
   # ---- Geographic crosswalk ----
   cli_alert_info("Joining geographic crosswalks...")
@@ -183,12 +196,17 @@ aggregate_to_rpa <- function(fit_m1_op, fit_m2, fit_m4,
     )
 
   # ---- HCS shares by region ----
+  # Layer 20: only compute HCS shares if M4 was available
   hcs_cols <- grep("^p_hcs_", names(plot_pair_complete), value = TRUE)
-  hcs_by_region <- plot_pair_complete |>
-    dplyr::group_by(rpa_subregion) |>
-    dplyr::summarise(dplyr::across(dplyr::all_of(hcs_cols),
-                                    ~ weighted.mean(.x, plot_area_ha, na.rm = TRUE)),
-                      .groups = "drop")
+  if (length(hcs_cols) > 0) {
+    hcs_by_region <- plot_pair_complete |>
+      dplyr::group_by(rpa_subregion) |>
+      dplyr::summarise(dplyr::across(dplyr::all_of(hcs_cols),
+                                      ~ weighted.mean(.x, plot_area_ha, na.rm = TRUE)),
+                        .groups = "drop")
+  } else {
+    hcs_by_region <- tibble::tibble(rpa_subregion = character(0))
+  }
 
   # ---- Comparison to RPA 2020 baseline ----
   rpa_baseline <- load_rpa_baseline()
