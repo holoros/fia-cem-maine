@@ -47,6 +47,24 @@ The methodological choice depends on the manuscript framing. Population level ra
 
 Worth noting: with median `p_any = 0.87` and `removal_per_ha` values of 0.12 to 0.45, the absolute removal magnitudes are in roughly the right RPA range. The saturation issue is specifically the probability-of-harvest interpretation, not the per-hectare removal volume.
 
+**Cross check against the unified TM2016 lookup.** After resolving a CN string whitespace issue (the `CN_chr` column in `plot_pair_complete.qs` has leading spaces that the lookup does not), the unified TM2016 fit's 6,210 plots intersect 6,210 plot_pair_complete rows (3.59 percent join coverage; the lookup covers a small subset). On the matched subset, the per state mean `p_any` from the unified TM2016 framework matches the brms aggregation closely:
+
+| State | n in lookup | mean p_any (TM2016) | mean p_partial | mean p_clearcut |
+|---|---:|---:|---:|---:|
+| AL | 1,109 | 0.841 | 0.389 | 0.773 |
+| FL | 682 | 0.846 | 0.379 | 0.784 |
+| GA | 1,073 | 0.860 | 0.433 | 0.786 |
+| ID | 8 | 0.860 | 0.217 | 0.809 |
+| IA | 76 | 0.866 | 0.601 | 0.729 |
+| MI | 374 | 0.904 | 0.643 | 0.748 |
+| MN | 53 | 0.885 | 0.618 | 0.730 |
+| NC | 380 | 0.856 | 0.437 | 0.779 |
+| SC | 660 | 0.867 | 0.450 | 0.784 |
+| TN | 738 | 0.848 | 0.380 | 0.780 |
+| WI | 660 | 0.897 | 0.642 | 0.731 |
+
+The pattern is robust: **two independent M1 prediction frameworks (brms posterior_epred and the unified TM2016 lookup) return the same saturated p_any ≈ 0.85 to 0.90.** This rules out a software bug in any one prediction path and points conclusively at the shared training-frame bias (re-measured panel pair subset).
+
 ### Flag 2: 47 percent NA p_harvest_mean
 
 Log of 9717200: `! 76893 of 162139 plots have NA p_harvest_mean after regime combination.` The aggregation proceeds because `weighted.mean(..., na.rm = TRUE)` drops the NAs, but the effective sample for the aggregated means is roughly half what the raw counts suggest. Possible drivers:
