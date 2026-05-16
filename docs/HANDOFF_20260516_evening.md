@@ -9,6 +9,8 @@ The multistate p1 production set is publication-ready. All six runs PASS 8/8 san
 
 **Post-handoff manuscript polish (16 May late, sandbox autopilot):** manuscript methods draft updated to remove the DESIGNCD attribution and now references the ME r21 econ production gr_ratio match at 3.46 vs Maine RPA 3.32. Superseded banner added to `MN_VOLUME_GAP_ROOT_CAUSE_20260516.md`. Manuscript supplementary materials filename pattern corrected (hindcast multistate files use `WEAR_P1` tag, not `R21`). Coherence check passed: all five figures referenced in the manuscript draft are present in `figures/`. Commits 29c403e, 202ed11, 882c369.
 
+**Layer 22 RPA aggregation success (16 May 18:25):** SSH connectivity restored in the sandbox; the conus_hcs RPA cascade completed. Layer 22 patch (drop preexisting `rpa_subregion` column before the `left_join` to avoid `.x/.y` collision) was applied to `~/conus_hcs/R/18_rpa_aggregation.R`. SLURM 9717200 completed in 16:38 with exit 0. Outputs `rpa_by_subregion_20260516.csv` and `rpa_comparison_20260516.csv` pulled to `figures/`. Four subregions populated: North_Central (69,783 plots), South_East (70,271), South_Central (22,035), Pacific_Northwest (50). Three methodological flags raised in `RPA_AGGREGATION_RESULTS_20260516.md`: p_harvest saturates 0.86-0.91 across all subregions (vs Maine RPA reference 0.10) likely from M1 regime union double-counting; 76,893 of 162,139 plots (47 pct) have NA `p_harvest_mean`; `config/rpa_baselines.csv` does not exist so pct_diff is NA. Commits 36cbdca, ad912f0, c2093cb.
+
 ## What's now settled
 
 | Item | Status | Reference |
