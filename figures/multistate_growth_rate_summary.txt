@@ -1,0 +1,23 @@
+MULTISTATE GROWTH RATE COMPARISON
+=================================
+
+Cycle 1 BAU per acre (multistate p1, RCP 4.5):
+    state n_sims mean_carbon mean_vol   mean_ba gross_growth total_tpa
+   <char>  <int>       <num>    <num>     <num>        <num>     <num>
+1:     WA    100    62569.11 3132.648 109.90876     743.8626  340.5272
+2:     ME    100    43845.62 1528.625  89.20310     285.4405  739.9548
+3:     GA    100    35214.17 1325.520  67.43348     428.7877  497.7444
+4:     MN    100    33650.22 1240.745  68.74916     271.5600  543.3022
+   rel_growth_rate
+             <num>
+1:     0.011888656
+2:     0.006510125
+3:     0.012176568
+4:     0.008070081
+
+Key observation:
+- If GA has highest mean_carbon AND highest gross_growth absolute,
+  but mid-range rel_growth_rate, the multiplicative effect is confirmed:
+  similar relative growth applied to higher baseline = larger absolute growth.
+- If GA has highest rel_growth_rate, the absolute over comes from a
+  faster donor-to-subject growth ratio not the baseline level.
