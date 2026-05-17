@@ -1,0 +1,39 @@
+WA DONOR POOL DIAGNOSTIC
+========================
+Baseline window: 1999-2008 (annualized inventory baseline window)
+WA subject conditions: 6193 (forested live, valid FORTYPCD)
+Donor (OR+ID+MT) conditions: 15816 (forested live, valid FORTYPCD)
+
+Top 12 forest type groups by WA subject area share:
+                               GROUP_NAME wa_pct donor_pct gap_pct
+                                   <char>  <num>     <num>   <num>
+ 1:                     Douglas-fir group  0.416     0.326   0.090
+ 2: Fir / spruce / mountain hemlock group  0.159     0.158   0.000
+ 3:          Hemlock / Sitka spruce group  0.141     0.030   0.111
+ 4:                  Ponderosa pine group  0.090     0.165  -0.075
+ 5:                   Alder / maple group  0.071     0.024   0.046
+ 6:                            Nonstocked  0.036     0.032   0.004
+ 7:                  Lodgepole pine group  0.034     0.098  -0.064
+ 8:                   Western larch group  0.018     0.013   0.005
+ 9:          Elm / ash / cottonwood group  0.009     0.004   0.005
+10:                   Aspen / birch group  0.006     0.008  -0.002
+11:                     Western oak group  0.006     0.010  -0.004
+12:         Other western softwoods group  0.005     0.077  -0.072
+
+Largest underrepresented groups in donor pool (WA share - donor share):
+                     GROUP_NAME wa_pct donor_pct gap_pct
+                         <char>  <num>     <num>   <num>
+1: Hemlock / Sitka spruce group  0.141     0.030   0.111
+2:            Douglas-fir group  0.416     0.326   0.090
+3:          Alder / maple group  0.071     0.024   0.046
+4: Elm / ash / cottonwood group  0.009     0.004   0.005
+5:          Western larch group  0.018     0.013   0.005
+
+Largest overrepresented groups in donor pool (donor share - WA share):
+                      GROUP_NAME wa_pct donor_pct gap_pct
+                          <char>  <num>     <num>   <num>
+1:          Ponderosa pine group  0.090     0.165  -0.075
+2: Other western softwoods group  0.005     0.077  -0.072
+3:          Lodgepole pine group  0.034     0.098  -0.064
+4:             Western oak group  0.006     0.010  -0.004
+5:      Woodland hardwoods group  0.003     0.006  -0.002
