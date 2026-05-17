@@ -53,11 +53,19 @@ For the manuscript, recommend reporting the WA bias as the methodological cost o
 
 The Georgia result shows the projection overestimates subject matched FIA observed AGC by about 10 percent. Both RCPs produce essentially the same bias at the cycle 1 baseline, with the over prediction growing through cycles 4 and 5 as plot attrition accelerates.
 
-Candidate mechanism: **southern pine plantation rotation regime in the donor pool exceeds observed natural stand accumulation.** GA uses FL, SC, NC, TN, and AL as donors. The southern donor pool contains a high fraction of intensively managed Pinus taeda plantations on 25 to 35 year rotations. When CEM matches a natural stand in GA to a managed plantation donor, the projection inherits the plantation's higher initial productivity and follows the plantation growth trajectory, which exceeds the observed mixed natural stand accumulation.
+The original hypothesis attributed the GA +10 percent bias to "CEM matches a natural stand in GA to a managed plantation donor, the projection inherits the plantation's higher initial productivity." A 17 May 2026 GA donor pool diagnostic (`GA_DONOR_POOL_DIAGNOSTIC_20260517.md`) **refutes this directional claim**. GA's own subjects are 43 percent plantation-indicative pine forest types (FORTYPCD 141, 142, 161, 165-168); the donor pool (FL, SC, AL, TN with NC missing from Cardinal data) is only 30 percent plantation-indicative. GA has more plantation types than its donor pool, not less.
 
-A second contributing factor: GA's southern pine plantations have a higher carbon to volume ratio (about 26 to 28 kg C per cuft of merchantable stemwood) than the regional natural stand average due to higher branch and bark fractions in fast growing plantations. If the projection applies plantation rates uniformly, the per acre carbon scales up faster than the per acre volume.
+Candidate alternative mechanisms now under investigation, in order of plausibility:
 
-For the manuscript, recommend reporting the GA bias as the methodological cost of mixing plantation and natural stand donor pools without stratifying the matching by stand origin (STDORGCD). A future iteration could split the donor pool by STDORGCD or use Potter 2017 species level vulnerability calibrated to the observed plantation versus natural stand difference.
+1. **Growth ratio multiplicative effect on GA's high productivity baseline.** CEM applies donor growth ratios `(T2 / T1)` to subject baseline. If donor pool baseline is lower (cooler TN, less intensive AL) and growth ratios are computed in donor-baseline-relative terms, applying those ratios to GA's higher productivity baseline can over-predict absolute growth even when relative growth is similar.
+
+2. **Carbon to volume ratio over-estimation in plantation forest types.** The v4 productivity multiplier (`config/cem_productivity_multipliers_v4.csv`) may apply higher per-cuft carbon factors to plantation-indicative types that don't match GA plot-level branch and bark fraction.
+
+3. **Disturbance schedule mis-specification.** GA's state_constants.csv (wildfire baseline, terminal age) may underestimate harvest and disturbance frequency on GA plantations, allowing the projection to accumulate growth that real GA stands lose to harvest.
+
+4. **Stand age distribution.** GA plantations are often on 25-35 year rotations; the projection may not be applying age-class saturation (`sat_for_age`) aggressively enough for these young intensively managed stands.
+
+For the manuscript, recommend reporting the GA bias as a known limitation with candidate mechanisms under investigation rather than asserting plantation/natural donor pool mixing as the dominant cause. The Cardinal FIA donor extracts for the southern cohort (FL, SC, AL, TN) lack the STDORGCD column entirely, so STDORGCD-stratified matching cannot be tested without additional FIA DataMart pulls.
 
 ### ME r21 diagnostic: -5.6 percent (essentially matches MN)
 
