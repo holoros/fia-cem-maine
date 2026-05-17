@@ -1,0 +1,121 @@
+TYPGRPCD,area_ha,pct_area,source,state,side,GROUP_NAME
+100,141.350415239364,0.0584551424333032,ME_subject,ME,subject,White / red / jack pine group
+100,229.297514906628,0.0510031685054459,ME_donor,ME,donor,White / red / jack pine group
+100,235.24117339631,0.0577369806242565,MN_subject,MN,subject,White / red / jack pine group
+100,1011.868173651,0.0887897353288328,MN_donor,MN,donor,White / red / jack pine group
+100,4.523379383744,0.00156565444809455,GA_subject,GA,subject,White / red / jack pine group
+100,44.23768757646,0.00351110995846269,GA_donor,GA,donor,White / red / jack pine group
+120,801.035388676858,0.33126636140353,ME_subject,ME,subject,Spruce / fir group
+120,116.8020111268,0.0259805373717242,ME_donor,ME,donor,Spruce / fir group
+120,936.042870887732,0.229739923159073,MN_subject,MN,subject,Spruce / fir group
+120,1202.25848733737,0.105496166069105,MN_donor,MN,donor,Spruce / fir group
+120,4.773365661838,0.000378858223131481,GA_donor,GA,donor,Spruce / fir group
+140,410.08654478715,0.14194118345614,GA_subject,GA,subject,Longleaf / slash pine group
+140,733.07010986574,0.0581831895835932,GA_donor,GA,donor,Longleaf / slash pine group
+160,0.404686,0.000167356974018821,ME_subject,ME,subject,Loblolly / shortleaf pine group
+160,26.272357164786,0.00584382024400259,ME_donor,ME,donor,Loblolly / shortleaf pine group
+160,8.074524528962,0.000708525986389982,MN_donor,MN,donor,Loblolly / shortleaf pine group
+160,873.6844158398,0.302403971863681,GA_subject,GA,subject,Loblolly / shortleaf pine group
+160,3280.84524907269,0.260398069096267,GA_donor,GA,donor,Loblolly / shortleaf pine group
+170,4.524372078502,0.00100636638646144,ME_donor,ME,donor,Other eastern softwoods group
+170,4.117488228836,0.00101058558183776,MN_subject,MN,subject,Other eastern softwoods group
+170,15.022823297992,0.00131822755103334,MN_donor,MN,donor,Other eastern softwoods group
+170,1.214058,0.000420215760538637,GA_subject,GA,subject,Other eastern softwoods group
+170,70.035566593686,0.00555866702771595,GA_donor,GA,donor,Other eastern softwoods group
+180,11.737672999656,0.00102996112157126,MN_donor,MN,donor,Pinyon / juniper group
+180,60.237366222412,0.0110264524509733,WA_donor,WA,donor,Pinyon / juniper group
+200,1.082705422806,0.000240828633243675,ME_donor,ME,donor,Douglas-fir group
+200,1.340359691228,0.000117614315113954,MN_donor,MN,donor,Douglas-fir group
+200,835.633501867522,0.416342314726438,WA_subject,WA,subject,Douglas-fir group
+200,1745.57003316574,0.319526668869939,WA_donor,WA,donor,Douglas-fir group
+220,130.600586026626,0.0114599824058644,MN_donor,MN,donor,Ponderosa pine group
+220,179.884295243366,0.0896247502011119,WA_subject,WA,subject,Ponderosa pine group
+220,896.894719218388,0.164176616528614,WA_donor,WA,donor,Ponderosa pine group
+240,1.6494596674,0.000821819439309759,WA_subject,WA,subject,Western white pine group
+240,5.06321674842,0.000926822041310513,WA_donor,WA,donor,Western white pine group
+260,0.230576323476,5.12876168082391e-05,ME_donor,ME,donor,Fir / spruce / mountain hemlock group
+260,3.952776170604,0.000346849480140974,MN_donor,MN,donor,Fir / spruce / mountain hemlock group
+260,318.741198034502,0.158808195090054,WA_subject,WA,subject,Fir / spruce / mountain hemlock group
+260,875.258675135936,0.160216137738398,WA_donor,WA,donor,Fir / spruce / mountain hemlock group
+280,68.89059213606,0.0343237418422094,WA_subject,WA,subject,Lodgepole pine group
+280,541.641866429662,0.0991475667045517,WA_donor,WA,donor,Lodgepole pine group
+300,282.595499211334,0.140799123072465,WA_subject,WA,subject,Hemlock / Sitka spruce group
+300,160.433565273378,0.0293673709520328,WA_donor,WA,donor,Hemlock / Sitka spruce group
+320,36.99807154347,0.0184337544059653,WA_subject,WA,subject,Western larch group
+320,73.822681312702,0.0135132449565002,WA_donor,WA,donor,Western larch group
+340,0.136783868,2.50382928595084e-05,WA_donor,WA,donor,Redwood group
+360,9.946961730816,0.00495592991694077,WA_subject,WA,subject,Other western softwoods group
+360,421.74739786217,0.0772008791300493,WA_donor,WA,donor,Other western softwoods group
+380,2.94351801931,0.00121728517586868,ME_subject,ME,subject,Exotic softwoods group
+380,33.589794720262,0.00747145454619725,ME_donor,ME,donor,Exotic softwoods group
+380,1.557956925312,0.0003823808881391,MN_subject,MN,subject,Exotic softwoods group
+380,54.223229237714,0.00475799743292627,MN_donor,MN,donor,Exotic softwoods group
+380,0.10926522,2.00010031717966e-05,WA_donor,WA,donor,Exotic softwoods group
+390,0.7082005,0.000157526650264176,ME_donor,ME,donor,Other softwoods group
+400,51.5978292174,0.0213381648086762,ME_subject,ME,subject,Oak / pine group
+400,156.800369232288,0.0348774632683093,ME_donor,ME,donor,Oak / pine group
+400,68.420223979516,0.0167928814891491,MN_subject,MN,subject,Oak / pine group
+400,332.267209224294,0.0291558903953139,MN_donor,MN,donor,Oak / pine group
+400,346.007663930172,0.119761884235032,GA_subject,GA,subject,Oak / pine group
+400,1455.29018662297,0.115505220698378,GA_donor,GA,donor,Oak / pine group
+500,45.84975425746,0.0189610614946775,ME_subject,ME,subject,Oak / hickory group
+500,1500.54863393153,0.333770450404537,ME_donor,ME,donor,Oak / hickory group
+500,476.194954666834,0.116876048839667,MN_subject,MN,subject,Oak / hickory group
+500,2546.78101145582,0.2234757627881,MN_donor,MN,donor,Oak / hickory group
+500,0.404686,7.40777895251728e-05,WA_donor,WA,donor,Oak / hickory group
+500,772.25688112475,0.267297371816695,GA_subject,GA,subject,Oak / hickory group
+500,5010.15302996103,0.397651847568066,GA_donor,GA,donor,Oak / hickory group
+600,13.9390855212,0.00310050254115961,ME_donor,ME,donor,Oak / gum / cypress group
+600,13.388021762198,0.00117477645783947,MN_donor,MN,donor,Oak / gum / cypress group
+600,384.301289140322,0.13301626321978,GA_subject,GA,subject,Oak / gum / cypress group
+600,1294.18478552886,0.102718413585869,GA_donor,GA,donor,Oak / gum / cypress group
+700,60.886759776322,0.0251795808947581,ME_subject,ME,subject,Elm / ash / cottonwood group
+700,178.447956173518,0.0396925853377719,ME_donor,ME,donor,Elm / ash / cottonwood group
+700,353.17398040204,0.0866821014751153,MN_subject,MN,subject,Elm / ash / cottonwood group
+700,1207.11866826336,0.105922638794808,MN_donor,MN,donor,Elm / ash / cottonwood group
+700,18.460173977498,0.00919751487568141,WA_subject,WA,subject,Elm / ash / cottonwood group
+700,24.174737294464,0.00442518669073219,WA_donor,WA,donor,Elm / ash / cottonwood group
+700,57.629146741542,0.0199468853441844,GA_subject,GA,subject,Elm / ash / cottonwood group
+700,392.718621156454,0.0311697635468156,GA_donor,GA,donor,Elm / ash / cottonwood group
+800,969.656870687026,0.400999391416405,ME_subject,ME,subject,Maple / beech / birch group
+800,1943.12771874506,0.432214324290055,ME_donor,ME,donor,Maple / beech / birch group
+800,282.60518172857,0.0693618794116799,MN_subject,MN,subject,Maple / beech / birch group
+800,2804.73203450288,0.246110532475055,MN_donor,MN,donor,Maple / beech / birch group
+800,77.051572163318,0.00611552179056013,GA_donor,GA,donor,Maple / beech / birch group
+900,319.423425382336,0.132096830388781,ME_subject,ME,subject,Aspen / birch group
+900,152.961677282572,0.0340236142746488,ME_donor,ME,donor,Aspen / birch group
+900,1616.75331921455,0.396811721851227,MN_subject,MN,subject,Aspen / birch group
+900,1868.03339706611,0.163916797889254,MN_donor,MN,donor,Aspen / birch group
+900,12.841147312668,0.00639791605285227,WA_subject,WA,subject,Aspen / birch group
+900,52.711675227906,0.00964887439410329,WA_donor,WA,donor,Aspen / birch group
+900,1.011715,8.0299012137251e-05,GA_donor,GA,donor,Aspen / birch group
+910,141.525336311318,0.0705129533229667,WA_subject,WA,subject,Alder / maple group
+910,127.934298151616,0.023418378722086,WA_donor,WA,donor,Alder / maple group
+920,12.301417189782,0.00612900331995233,WA_subject,WA,subject,Western oak group
+920,79.282493983296,0.0145126638982455,WA_donor,WA,donor,Western oak group
+940,70.986518800158,0.0129940852878598,WA_donor,WA,donor,Tanoak / laurel group
+960,19.140661984904,0.0079155771895015,ME_subject,ME,subject,Other hardwoods group
+960,97.98250754681,0.0217944723257514,ME_donor,ME,donor,Other hardwoods group
+960,36.808425162034,0.00903416395908476,MN_subject,MN,subject,Other hardwoods group
+960,57.08320226044,0.00500895526947844,MN_donor,MN,donor,Other hardwoods group
+960,8.428137132332,0.00419919751262349,WA_subject,WA,subject,Other hardwoods group
+960,45.639996600568,0.00835440332036808,WA_donor,WA,donor,Other hardwoods group
+960,3.291344826938,0.00113921655278962,GA_subject,GA,subject,Other hardwoods group
+960,41.756921523174,0.00331421353662206,GA_donor,GA,donor,Other hardwoods group
+970,7.007422179572,0.00349134682128974,WA_subject,WA,subject,Woodland hardwoods group
+970,35.974187230764,0.00658507650380713,WA_donor,WA,donor,Woodland hardwoods group
+980,0.607029,0.000210107880269319,GA_subject,GA,subject,Tropical hardwoods group
+980,37.779515757924,0.00299853001525628,GA_donor,GA,donor,Tropical hardwoods group
+990,2.71207404905,0.000603252807948097,ME_donor,ME,donor,Exotic hardwoods group
+990,1.162900428682,0.000285419251015373,MN_subject,MN,subject,Exotic hardwoods group
+990,10.297839870884,0.000903618179130372,MN_donor,MN,donor,Exotic hardwoods group
+990,6.020892408096,0.00208398106382839,GA_subject,GA,subject,Exotic hardwoods group
+990,20.162078522382,0.0016002480817038,GA_donor,GA,donor,Exotic hardwoods group
+999,5.81129500686,0.00240324782048,ME_subject,ME,subject,Nonstocked
+999,36.722839333952,0.00816834479567153,ME_donor,ME,donor,Nonstocked
+999,62.280295612636,0.0152859134697554,MN_subject,MN,subject,Nonstocked
+999,117.449174051478,0.0103059680600425,MN_donor,MN,donor,Nonstocked
+999,72.179593831058,0.0359624394001392,WA_subject,WA,subject,Nonstocked
+999,244.962820531022,0.0448404547248724,WA_donor,WA,donor,Nonstocked
+999,29.507449423666,0.010213264358969,GA_subject,GA,subject,Nonstocked
+999,136.275129540366,0.0108160482754207,GA_donor,GA,donor,Nonstocked
