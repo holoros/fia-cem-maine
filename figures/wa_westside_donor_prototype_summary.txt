@@ -1,0 +1,72 @@
+WA WEST-OF-CASCADE DONOR PROTOTYPE
+==================================
+Cascade LON cutoff: -122.0 deg W
+WA subject (forested baseline) conds: 6193
+Donor config 1 (current OR+ID+MT):    15816 conds
+Donor config 2 (OR westside only):     5589 conds
+Donor config 3 (OR west + WA west):   7563 conds
+
+Gap table by donor config for top 8 WA groups:
+                               GROUP_NAME                     config wa_pct
+                                   <char>                     <char>  <num>
+ 1:                   Alder / maple group donor_OR_west_plus_WA_west  0.071
+ 2:                   Alder / maple group     donor_OR_westside_only  0.071
+ 3:                   Alder / maple group        donor_full_OR_ID_MT  0.071
+ 4:                     Douglas-fir group donor_OR_west_plus_WA_west  0.416
+ 5:                     Douglas-fir group     donor_OR_westside_only  0.416
+ 6:                     Douglas-fir group        donor_full_OR_ID_MT  0.416
+ 7: Fir / spruce / mountain hemlock group donor_OR_west_plus_WA_west  0.159
+ 8: Fir / spruce / mountain hemlock group     donor_OR_westside_only  0.159
+ 9: Fir / spruce / mountain hemlock group        donor_full_OR_ID_MT  0.159
+10:          Hemlock / Sitka spruce group donor_OR_west_plus_WA_west  0.141
+11:          Hemlock / Sitka spruce group     donor_OR_westside_only  0.141
+12:          Hemlock / Sitka spruce group        donor_full_OR_ID_MT  0.141
+13:                  Lodgepole pine group donor_OR_west_plus_WA_west  0.034
+14:                  Lodgepole pine group     donor_OR_westside_only  0.034
+15:                  Lodgepole pine group        donor_full_OR_ID_MT  0.034
+16:                            Nonstocked donor_OR_west_plus_WA_west  0.036
+17:                            Nonstocked     donor_OR_westside_only  0.036
+18:                            Nonstocked        donor_full_OR_ID_MT  0.036
+19:                  Ponderosa pine group donor_OR_west_plus_WA_west  0.090
+20:                  Ponderosa pine group     donor_OR_westside_only  0.090
+21:                  Ponderosa pine group        donor_full_OR_ID_MT  0.090
+22:                   Western larch group donor_OR_west_plus_WA_west  0.018
+23:                   Western larch group     donor_OR_westside_only  0.018
+24:                   Western larch group        donor_full_OR_ID_MT  0.018
+                               GROUP_NAME                     config wa_pct
+                                   <char>                     <char>  <num>
+    donor_pct gap_pct
+        <num>   <num>
+ 1:     0.103  -0.032
+ 2:     0.076  -0.005
+ 3:     0.024   0.046
+ 4:     0.561  -0.145
+ 5:     0.599  -0.182
+ 6:     0.326   0.090
+ 7:     0.078   0.081
+ 8:     0.084   0.074
+ 9:     0.162  -0.003
+10:     0.113   0.028
+11:     0.062   0.079
+12:     0.030   0.111
+13:     0.013   0.021
+14:     0.016   0.019
+15:     0.098  -0.064
+16:     0.022   0.014
+17:     0.019   0.017
+18:     0.032   0.004
+19:     0.020   0.070
+20:     0.027   0.062
+21:     0.167  -0.078
+22:     0.000   0.018
+23:     0.000   0.018
+24:     0.013   0.005
+    donor_pct gap_pct
+        <num>   <num>
+
+Total absolute gap (sum of |gap_pct| over top 8 groups):
+                       config total_abs_gap
+                       <char>         <num>
+1: donor_OR_west_plus_WA_west         0.410
+2:     donor_OR_westside_only         0.457
+3:        donor_full_OR_ID_MT         0.401

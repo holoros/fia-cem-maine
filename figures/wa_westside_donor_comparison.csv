@@ -1,0 +1,69 @@
+TYPGRPCD,n_cond,area_ha,pct_area,source,GROUP_NAME
+200,2484,835.633501867522,0.416342314726438,WA_subject,Douglas-fir group
+220,523,179.884295243366,0.0896247502011119,WA_subject,Ponderosa pine group
+240,5,1.6494596674,0.000821819439309759,WA_subject,Western white pine group
+260,1024,318.741198034502,0.158808195090054,WA_subject,Fir / spruce / mountain hemlock group
+280,214,68.89059213606,0.0343237418422094,WA_subject,Lodgepole pine group
+300,890,282.595499211334,0.140799123072465,WA_subject,Hemlock / Sitka spruce group
+320,112,36.99807154347,0.0184337544059653,WA_subject,Western larch group
+360,38,9.946961730816,0.00495592991694077,WA_subject,Other western softwoods group
+700,65,18.460173977498,0.00919751487568141,WA_subject,Elm / ash / cottonwood group
+900,38,12.841147312668,0.00639791605285227,WA_subject,Aspen / birch group
+910,466,141.525336311318,0.0705129533229667,WA_subject,Alder / maple group
+920,39,12.301417189782,0.00612900331995233,WA_subject,Western oak group
+960,44,8.428137132332,0.00419919751262349,WA_subject,Other hardwoods group
+970,22,7.007422179572,0.00349134682128974,WA_subject,Woodland hardwoods group
+999,229,72.179593831058,0.0359624394001392,WA_subject,Nonstocked
+180,149,55.694838715892,0.0105357963773911,donor_full_OR_ID_MT,Pinyon / juniper group
+200,5317,1725.07777740624,0.326333078916494,donor_full_OR_ID_MT,Douglas-fir group
+220,2647,884.91880069087,0.167400148910815,donor_full_OR_ID_MT,Ponderosa pine group
+240,14,4.896561388016,0.000926282846363853,donor_full_OR_ID_MT,Western white pine group
+260,2390,857.974172667908,0.162303031819542,donor_full_OR_ID_MT,Fir / spruce / mountain hemlock group
+280,1466,517.897223345708,0.0979706524947647,donor_full_OR_ID_MT,Lodgepole pine group
+300,505,158.173667531114,0.0299217233013992,donor_full_OR_ID_MT,Hemlock / Sitka spruce group
+320,198,70.219720981416,0.0132834693302795,donor_full_OR_ID_MT,Western larch group
+340,1,0.136783868,2.58754134886961e-05,donor_full_OR_ID_MT,Redwood group
+360,1155,419.411191313688,0.079340043206179,donor_full_OR_ID_MT,Other western softwoods group
+380,1,0.10926522,2.0669708999846e-05,donor_full_OR_ID_MT,Exotic softwoods group
+500,1,0.404686,7.65544777772073e-05,donor_full_OR_ID_MT,Oak / hickory group
+700,70,21.06510417056,0.00398488716955786,donor_full_OR_ID_MT,Elm / ash / cottonwood group
+900,114,41.863014004934,0.00791922916860884,donor_full_OR_ID_MT,Aspen / birch group
+910,487,127.756201103934,0.0241676491361489,donor_full_OR_ID_MT,Alder / maple group
+920,282,79.282493983296,0.0149978747072194,donor_full_OR_ID_MT,Western oak group
+940,215,70.986518800158,0.0134285245251084,donor_full_OR_ID_MT,Tanoak / laurel group
+960,148,45.639996600568,0.00863372121968637,donor_full_OR_ID_MT,Other hardwoods group
+970,100,34.318153034608,0.00649196731254033,donor_full_OR_ID_MT,Woodland hardwoods group
+999,556,170.42241645674,0.032238819957635,donor_full_OR_ID_MT,Nonstocked
+200,3308,992.201788939728,0.598820726612447,donor_OR_westside_only,Douglas-fir group
+220,162,45.34542444711,0.0273671951801104,donor_OR_westside_only,Ponderosa pine group
+240,9,2.945308350174,0.00177757358030327,donor_OR_westside_only,Western white pine group
+260,420,139.887679715794,0.0844260138868077,donor_OR_westside_only,Fir / spruce / mountain hemlock group
+280,71,25.876978133414,0.015617459090599,donor_OR_westside_only,Lodgepole pine group
+300,359,102.93618995904,0.0621247862613293,donor_OR_westside_only,Hemlock / Sitka spruce group
+340,1,0.136783868,8.25527792205952e-05,donor_OR_westside_only,Redwood group
+360,29,7.518655933082,0.0045377130531163,donor_OR_westside_only,Other western softwoods group
+380,1,0.10926522,6.59445277797654e-05,donor_OR_westside_only,Exotic softwoods group
+700,39,9.953583607834,0.00600725803448734,donor_OR_westside_only,Elm / ash / cottonwood group
+910,477,125.264640051598,0.0756006123055893,donor_OR_westside_only,Alder / maple group
+920,240,65.532294438538,0.0395505194706416,donor_OR_westside_only,Western oak group
+940,212,70.017578705672,0.042257510340693,donor_OR_westside_only,Tanoak / laurel group
+960,120,36.69438909878,0.0221460603958517,donor_OR_westside_only,Other hardwoods group
+970,2,0.531898234728,0.000321015030363997,donor_OR_westside_only,Woodland hardwoods group
+999,139,31.973804608492,0.0192970594506604,donor_OR_westside_only,Nonstocked
+200,4206,1296.09763710279,0.561375469663646,donor_OR_west_plus_WA_west,Douglas-fir group
+220,162,45.34542444711,0.0196403482402729,donor_OR_west_plus_WA_west,Ponderosa pine group
+240,10,3.349994350174,0.00145097452372744,donor_OR_west_plus_WA_west,Western white pine group
+260,547,180.26264589723,0.078076700864584,donor_OR_west_plus_WA_west,Fir / spruce / mountain hemlock group
+280,85,30.00344836802,0.0129953172021641,donor_OR_west_plus_WA_west,Lodgepole pine group
+300,832,261.201336760454,0.113133469966385,donor_OR_west_plus_WA_west,Hemlock / Sitka spruce group
+340,1,0.136783868,5.92448484919351e-05,donor_OR_west_plus_WA_west,Redwood group
+360,32,7.672960681452,0.0033233699244212,donor_OR_west_plus_WA_west,Other western softwoods group
+380,1,0.10926522,4.73257665468121e-05,donor_OR_west_plus_WA_west,Exotic softwoods group
+700,63,18.086096807794,0.00783358506273728,donor_OR_west_plus_WA_west,Elm / ash / cottonwood group
+900,7,2.061999408602,0.000893108553949398,donor_OR_west_plus_WA_west,Aspen / birch group
+910,827,237.42986906499,0.102837394686158,donor_OR_west_plus_WA_west,Alder / maple group
+920,241,65.936980438538,0.0285591164602603,donor_OR_west_plus_WA_west,Western oak group
+940,212,70.017578705672,0.0303265355984061,donor_OR_west_plus_WA_west,Tanoak / laurel group
+960,130,40.148830477438,0.0173895607248378,donor_OR_west_plus_WA_west,Other hardwoods group
+970,4,1.113198512906,0.000482156837665707,donor_OR_west_plus_WA_west,Woodland hardwoods group
+999,203,49.815177674936,0.0215763210757457,donor_OR_west_plus_WA_west,Nonstocked
