@@ -55,17 +55,15 @@ The Georgia result shows the projection overestimates subject matched FIA observ
 
 The original hypothesis attributed the GA +10 percent bias to "CEM matches a natural stand in GA to a managed plantation donor, the projection inherits the plantation's higher initial productivity." A 17 May 2026 GA donor pool diagnostic (`GA_DONOR_POOL_DIAGNOSTIC_20260517.md`) **refutes this directional claim**. GA's own subjects are 43 percent plantation-indicative pine forest types (FORTYPCD 141, 142, 161, 165-168); the donor pool (FL, SC, AL, TN with NC missing from Cardinal data) is only 30 percent plantation-indicative. GA has more plantation types than its donor pool, not less.
 
-Candidate alternative mechanisms now under investigation, in order of plausibility:
+After targeted diagnostic work on 17 May 2026 (`GA_BIAS_CANDIDATES_20260517.md`), the mechanism is now resolved as a combination of two effects:
 
-1. **Growth ratio multiplicative effect on GA's high productivity baseline.** CEM applies donor growth ratios `(T2 / T1)` to subject baseline. If donor pool baseline is lower (cooler TN, less intensive AL) and growth ratios are computed in donor-baseline-relative terms, applying those ratios to GA's higher productivity baseline can over-predict absolute growth even when relative growth is similar.
+1. **Candidate 1 (multiplicative effect on high baseline): REFUTED.** Cross state cycle 1 BAU rel growth rate is GA 0.0122, WA 0.0119, MN 0.0081, ME 0.0065. GA's relative rate is the highest of all four states, consistent with the warm wet southeastern climate. The over does not come from "normal rate applied to high baseline" because GA's rate is itself high (and correctly so).
 
-2. **Carbon to volume ratio over-estimation in plantation forest types.** The v4 productivity multiplier (`config/cem_productivity_multipliers_v4.csv`) may apply higher per-cuft carbon factors to plantation-indicative types that don't match GA plot-level branch and bark fraction.
+2. **Candidate 4 (stand age saturation under-application): CONFIRMED dominant.** With GA's `terminal_age = 80` and `growth_start_age = 60`, 95.4 percent of GA plantation-indicative conditions have `sat_age = 1.0` (full unattenuated growth) at baseline. GA plantation cohort median age is 20 years; 74 percent are under 30; 95 percent under 60. All sit firmly in the unconstrained-growth zone where donor-to-subject growth ratios and climate multipliers are applied at full strength.
 
-3. **Disturbance schedule mis-specification.** GA's state_constants.csv (wildfire baseline, terminal age) may underestimate harvest and disturbance frequency on GA plantations, allowing the projection to accumulate growth that real GA stands lose to harvest.
+3. **Candidate 3 (harvest schedule forest-type-agnostic): DOMINANT companion.** GA BAU harvest_rate is ~10 percent per cycle, matching regional aggregate, but the harvest selection is not weighted by forest type or rotation-age-deviation. A 25 year old loblolly plantation and a 50 year old oak-hickory stand have approximately equal probability of selection per cycle. In reality, loblolly plantations are heavily clearcut at 25 to 35 years (terminal rotation) while natural hardwood stands receive partial cuts. The projection over-accumulates carbon on plantations that should be removed but are not preferentially selected.
 
-4. **Stand age distribution.** GA plantations are often on 25-35 year rotations; the projection may not be applying age-class saturation (`sat_for_age`) aggressively enough for these young intensively managed stands.
-
-For the manuscript, recommend reporting the GA bias as a known limitation with candidate mechanisms under investigation rather than asserting plantation/natural donor pool mixing as the dominant cause. The Cardinal FIA donor extracts for the southern cohort (FL, SC, AL, TN) lack the STDORGCD column entirely, so STDORGCD-stratified matching cannot be tested without additional FIA DataMart pulls.
+The full mechanism: GA plantations grow at full donor rates (no saturation attenuation) AND are not preferentially removed at rotation age, producing the +10 percent over. Future iterations should add forest-type-aware harvest selection or stand-age-relative-to-rotation-age weighting in the BAU scenario, and lower `terminal_age` for plantation forest types (FORTYPCD 141, 142, 161, 165-168) to roughly 50 years to begin saturation attenuation closer to rotation age.
 
 ### ME r21 diagnostic: -5.6 percent (essentially matches MN)
 
