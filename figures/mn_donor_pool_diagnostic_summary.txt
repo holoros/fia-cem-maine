@@ -1,0 +1,49 @@
+MN DONOR POOL DIAGNOSTIC
+========================
+Baseline: 1999-2008  forested conditions
+MN subject conditions:  13608
+Donor (Lake States) :   37802
+
+Per-donor-state breakdown:
+   STATECD n_cond pct_total
+     <int>  <int>     <num>
+1:      26  20074     0.531
+2:      55  13751     0.364
+3:      17   1769     0.047
+4:      19   1327     0.035
+5:      46    593     0.016
+6:      38    288     0.008
+
+Top 12 forest type groups by MN subject share:
+                       GROUP_NAME mn_pct donor_pct gap_pct
+                           <char>  <num>     <num>   <num>
+ 1:           Aspen / birch group  0.397     0.164   0.233
+ 2:            Spruce / fir group  0.230     0.105   0.124
+ 3:           Oak / hickory group  0.117     0.216  -0.099
+ 4:  Elm / ash / cottonwood group  0.087     0.106  -0.019
+ 5:   Maple / beech / birch group  0.069     0.246  -0.177
+ 6: White / red / jack pine group  0.058     0.083  -0.025
+ 7:              Oak / pine group  0.017     0.029  -0.012
+ 8:                    Nonstocked  0.015     0.010   0.005
+ 9:         Other hardwoods group  0.009     0.005   0.004
+10: Other eastern softwoods group  0.001     0.001   0.000
+11:        Exotic softwoods group  0.000     0.004  -0.004
+12:        Exotic hardwoods group  0.000     0.001  -0.001
+
+Largest underrepresented groups in donor pool (positive gap):
+                      GROUP_NAME mn_pct donor_pct gap_pct
+                          <char>  <num>     <num>   <num>
+1:           Aspen / birch group  0.397     0.164   0.233
+2:            Spruce / fir group  0.230     0.105   0.124
+3:                    Nonstocked  0.015     0.010   0.005
+4:         Other hardwoods group  0.009     0.005   0.004
+5: Other eastern softwoods group  0.001     0.001   0.000
+
+Largest overrepresented groups in donor pool (negative gap):
+                      GROUP_NAME mn_pct donor_pct gap_pct
+                          <char>  <num>     <num>   <num>
+1:   Maple / beech / birch group  0.069     0.246  -0.177
+2:           Oak / hickory group  0.117     0.216  -0.099
+3: White / red / jack pine group  0.058     0.083  -0.025
+4:  Elm / ash / cottonwood group  0.087     0.106  -0.019
+5:              Oak / pine group  0.017     0.029  -0.012

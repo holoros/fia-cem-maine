@@ -28,12 +28,12 @@ The Minnesota hindcast bias of -5.7 percent is small and matches the canonical M
 
 A separate and larger discrepancy exists at the statewide volume level: MN produces 21.6 Bcuft at cycle 1 baseline versus EVALIDator's 28 Bcuft (77 percent of target, -23 percent under). An MN-only diagnostic with baseline year shifted from 1999 to 2004 (aligning with MN's annualized FIA inventory start) produced 21.8 Bcuft, essentially identical to the 1999 baseline result. **The DESIGNCD periodic plot exclusion is not the dominant cause.**
 
-Four candidate mechanisms remain in play, in order of plausibility:
+After running the donor pool composition diagnostic against the full CONUS FIADB on 17 May 2026 (`MN_DONOR_POOL_DIAGNOSTIC_20260517.md`), Mechanism 1 is confirmed dominant. The Lake States donor cohort is 89 percent MI (53 percent) plus WI (36 percent), both central Great Lakes forest. The donor pool under-represents MN's northern boreal forest by 23.3 pp on aspen/birch (MN 39.7 percent vs donor 16.4 percent) and 12.4 pp on spruce/fir (MN 23.0 percent vs donor 10.5 percent). It over-represents central hardwoods by 17.7 pp on maple/beech/birch (donor 24.6 percent vs MN 6.9 percent) and 9.9 pp on oak/hickory. CEM matching imports slower climax-forest growth trajectories from MI/WI maple-beech-birch and oak-hickory donors onto MN's aspen-birch and spruce-fir subjects, suppressing projected accumulation. The remaining three mechanisms (HCB owner downscale, climate response gating, state_constants parameters) are likely contributory but not dominant. Remediation paths in order of effort:
 
-1. **Lake States donor pool composition.** MN uses ND, SD, IA, WI, MI, IL as donors. The Lake States donor cohort is dominated by managed northern hardwood and aspen-birch stands at lower per acre productivity than MN's actual mix of boreal mixed forest plus heavy aspen. If donor productivity is systematically lower than subject expectation, the projection trends low.
-2. **HCB owner downscale at 74 percent agreement.** The 26 percent of plots on default multipliers may over-suppress harvest relative to MN's actual private (NIPF) pattern.
-3. **MN climate response gating.** `--use_decoupled_climate` is not active for non Maine states because ClimateNA is blocked.
-4. **State_constants.csv MN parameters** may be mis-specified (wildfire baseline, terminal age, SDImax).
+1. Add MN itself to the donor pool with leave-one-out matching (3 hr).
+2. Restrict donor pool to MI/WI plots north of latitude 45.5 (capturing northern transition; 1 hr).
+3. Stratify CEM matching by FORTYPCD or TYPGRPCD (2 hr; aligns with WA recommendation).
+4. Add Bailey ecological section as a CEM matching covariate (4-8 hr, methodologically cleanest).
 
 For the manuscript, the MN hindcast bias establishes the multistate framework as transferable, but the statewide volume gap is reported as an outstanding known limitation pending future investigation. Recommended remediation paths in `MN_VOLUME_GAP_REVISED_20260516.md`.
 
