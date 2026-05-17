@@ -1,0 +1,49 @@
+CEM 3-WAY STRATIFICATION CELL SIZE TEST
+========================================
+Dimensions: ecoregion (us_l3code) x TYPGRPCD x HCB owner class
+
+Total CONUS forested baseline conds: 239464
+Unique ecoregions: 24
+Unique TYPGRPCDs : 32
+Unique HCB classes: 4
+Unique cells: 332
+
+Cell size distribution:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    1.0     2.0     7.0   721.3   200.0 56619.0 
+
+Cells >= 30 conds: 122 (36.7%)
+Cells >= 100 conds: 93 (28.0%)
+
+Subject cells with insufficient cross-state donors:
+Subject conds in low-donor cells: 1163 of 37337 (3.11%)
+
+Low-donor cells preview (top 20 by subject n):
+    STATECD us_l3code TYPGRPCD hcb_class n_self_state n_other_state_donors
+      <int>     <int>    <int>     <num>        <int>                <int>
+ 1:      53        15      200        40           93                    0
+ 2:      53         1      200        40           78                    0
+ 3:      13        65      160        40           76                    0
+ 4:      13        45      160        40           67                    0
+ 5:      13        65      500        40           64                    0
+ 6:      53         1      300        40           59                    0
+ 7:      53         2      200        40           58                    0
+ 8:      13        45      500        40           57                    0
+ 9:      53         4      200        40           52                    0
+10:      53        15      220        40           49                    0
+11:      13        65      600        40           46                    0
+12:      13        75      140        40           42                    0
+13:      13        65      140        40           41                    0
+14:      27        50      900        10           40                    0
+15:      13        75      600        40           38                    0
+16:      13        65      400        40           34                    0
+17:      53         2      910        40           32                    0
+18:      27        50      120        10           29                    0
+19:      53         1      910        40           28                    0
+20:      53         4      200        30           25                    0
+    STATECD us_l3code TYPGRPCD hcb_class n_self_state n_other_state_donors
+      <int>     <int>    <int>     <num>        <int>                <int>
+
+--- Comparison to 2-way stratification ---
+2-way (ecoregion x TYPGRPCD): 156 cells, 33% >= 30, 4% subj in zero-donor cells
+3-way (ecoregion x TYPGRPCD x HCB owner): 332 cells, 36.7% >= 30, 3.11% subj in low-donor cells
