@@ -1,0 +1,30 @@
+GA BIAS CANDIDATE DIAGNOSTIC
+============================
+
+Candidate 1: growth ratio multiplicative effect by baseline decile
+
+Candidate 4: GA stand age distribution by plantation/natural
+             plant_class n_cond mean_age median_age p25_age p75_age p90_age
+                  <char>  <int>    <num>      <int>   <num>   <num>   <num>
+1: plantation_indicative   4289     23.6         20      12      30      50
+2:     other_forest_type   5875     39.2         38      14      60      75
+   pct_age_lt_30 pct_age_lt_60 pct_age_lt_80
+           <num>         <num>         <num>
+1:         0.743         0.948         0.995
+2:         0.418         0.744         0.925
+
+Saturation factor distribution:
+             plant_class n_cond pct_sat_full_1 pct_sat_lt_05 pct_sat_0
+                  <char>  <int>          <num>         <num>     <num>
+1: plantation_indicative   4289          0.954         0.016     0.005
+2:     other_forest_type   5875          0.768         0.126     0.075
+   mean_sat_age
+          <num>
+1:        0.979
+2:        0.858
+
+Key signals:
+- If pct_age_lt_60 is high for plantation_indicative, those plots are
+  in the unconstrained sat_age=1.0 zone (no growth attenuation).
+- If implied gr_carbon (Candidate 1) is similar across deciles but
+  growth_increment scales with baseline, the multiplicative effect is real.
