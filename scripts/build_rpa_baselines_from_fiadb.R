@@ -43,31 +43,32 @@ compute_state_removals <- function(state_postal, statecd) {
   }
   cat(sprintf("  Reading %s rFIA DB...\n", state_postal))
   db <- readRDS(fp)
-  # rFIA::vol with REMV computes Net annual removals volume per acre on forest
-  # land. We want REMV_CF_AC (cubic feet per acre annual) and total
-  removals <- try(rFIA::vol(db,
-                              landType = "forest",
-                              treeType = "all",
-                              method   = "annual",
-                              totals   = TRUE,
-                              variance = FALSE,
-                              tidy     = TRUE),
+  # rFIA::growMort() computes annual growth, mortality, and removals on
+  # forest land. We want REMV_VOL_AC (cubic feet per acre per year) and the
+  # total expansion. method = "TI" gives the most-recent inventory estimate.
+  removals <- try(rFIA::growMort(db,
+                                   landType = "forest",
+                                   treeType = "all",
+                                   method   = "TI",
+                                   totals   = TRUE,
+                                   variance = FALSE),
                    silent = TRUE)
   if (inherits(removals, "try-error")) {
     cat(sprintf("  rFIA::vol() failed for %s: %s\n", state_postal,
                 attr(removals, "condition")$message))
     return(NULL)
   }
-  # rFIA tidy output includes columns YEAR, BAA, NETVOL_AC, GROW_AC, REMV_AC, MORT_AC, etc.
+  # rFIA::growMort returns columns including REMV_VOL_AC (cuft/ac/yr),
+  # REMV_BIO_AC, REMV_VOL_TOTAL, etc.
   cat(sprintf("  %s columns: %s\n", state_postal,
-              paste(head(colnames(removals), 20), collapse = ",")))
+              paste(head(colnames(removals), 25), collapse = ",")))
   cat(sprintf("  %s nrow: %d\n", state_postal, nrow(removals)))
   if (nrow(removals) == 0) return(NULL)
-  # Take latest year per state
   removals <- as.data.table(removals)
   if ("YEAR" %in% names(removals)) {
     latest_year <- max(removals$YEAR, na.rm = TRUE)
     removals <- removals[YEAR == latest_year]
+    cat(sprintf("  %s using YEAR = %d\n", state_postal, latest_year))
   }
   removals[, STATECD := statecd]
   removals[, state_postal := state_postal]
@@ -87,11 +88,16 @@ if (length(results) > 0) {
   all_state <- data.table::rbindlist(results, fill = TRUE)
   cat("\nPer state removals output sample:\n")
   print(head(all_state))
-  # Identify removal column. rFIA tidy output uses these:
-  #   REMV_AC      annual harvest removals volume per acre, cuft/acre/yr
-  #   REMV_TOTAL   annual harvest removals total, cuft/yr
-  rem_col_per <- intersect(c("REMV_AC", "REMV_CF_AC", "REMV"), names(all_state))[1]
-  rem_col_tot <- intersect(c("REMV_TOTAL", "REMV_CF_TOTAL", "REMV_TOT"), names(all_state))[1]
+  # Identify removal column. rFIA::growMort uses these for volume removals:
+  #   REMV_VOL_AC      annual removals volume per acre, cuft/acre/yr
+  #   REMV_VOL_TOTAL   annual removals volume total, cuft/yr
+  # Print full schema for diagnostic clarity
+  cat("\nAll columns across states:\n")
+  print(colnames(all_state))
+  rem_col_per <- intersect(c("REMV_VOL_AC", "REMV_AC", "REMV_CF_AC", "REMV"),
+                            names(all_state))[1]
+  rem_col_tot <- intersect(c("REMV_VOL_TOTAL", "REMV_TOTAL", "REMV_CF_TOTAL", "REMV_TOT"),
+                            names(all_state))[1]
   cat(sprintf("\nUsing per-acre col: %s   total col: %s\n", rem_col_per, rem_col_tot))
   if (!is.na(rem_col_per)) {
     summary_dt <- all_state[, .(
