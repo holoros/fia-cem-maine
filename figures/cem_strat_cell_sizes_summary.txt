@@ -1,0 +1,17 @@
+CEM ECOREGION X FORTYPCD STRATIFICATION CELL SIZE TEST
+=======================================================
+Total CONUS forested baseline conds: 239464
+Unique ecoregions: 24
+Unique TYPGRPCDs : 32
+Unique cells: 156
+
+Cell size distribution:
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    1.0     2.0     7.0  1535.0    57.5 67108.0 
+
+Cells >= 30 conds: 52 (33.3%)
+Cells >= 100 conds: 31 (19.9%)
+Cells >= 500 conds: 25 (16.0%)
+
+Subject cells with insufficient cross-state donors (< 30):
+Subject conds in low-donor cells: 1388 of 37337 (3.72%)
