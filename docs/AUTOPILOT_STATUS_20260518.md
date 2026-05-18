@@ -1,6 +1,6 @@
 # Autopilot status 18 May 2026
 
-*Snapshot at 11:25 AM ET while p2 production runs and p3 jobs pend.*
+*Snapshot at 6:00 PM ET. p2 deep into projection cycles after ~7h wall, p3 dependencies refactored to per-state so MN/WA can fire ahead of slow GA.*
 
 ## TLDR
 
@@ -71,6 +71,36 @@ If bias mechanisms hold (CURRENT_STATE_SYNTHESIS_20260517.md):
 - `docs/CROSSWALK_V3_VALIDATION_20260518.md`
 - `docs/AUTOPILOT_STATUS_20260518.md` (this file)
 - Local repo at 53+ commits ahead of origin/main (push pending)
+
+## Late afternoon update (6:00 PM)
+
+After 7 hours of wall, p2 is progressing through projection cycles. p2 final unmatched rates with v2 confirm the coverage deficiency (high, indicating many donors had NA us_l3code so iter 1 dropped them and iter 2 section coarsening could not recover):
+
+| Job | Final unmatched (v2) | Current cycle |
+|---|---:|---:|
+| MN p2 RCP4.5 | (in progress) | 4 of 15 |
+| MN p2 RCP8.5 | 24.7% | 1 |
+| WA p2 RCP4.5 | 25.4% | 8 |
+| WA p2 RCP8.5 | 9.7% | 1 |
+| GA p2 RCP4.5 | 39.1% | 4 |
+| GA p2 RCP8.5 | 35.3% | 4 |
+
+The ~25-39% unmatched is exactly the bias signal we expect to disappear with v3 (which carries 100 pct of cond_full's PLT_CNs).
+
+### p3 dependency refactor
+
+Initial submission used `--dependency=afterany:p2_all_six`, meaning every p3 waits for every p2 even though each p3 only needs its paired p2. With GA p2 likely 10+ more hours, this would have stalled MN/WA p3 needlessly. Refactored via `scontrol update` so each p3 only depends on its sibling p2:
+
+```
+9939142 fia_mn_p3    afterany:9936857  (MN RCP4.5)
+9939143 fia_mn_p3_85 afterany:9936858  (MN RCP8.5)
+9939144 fia_wa_p3    afterany:9936859  (WA RCP4.5)
+9939145 fia_wa_p3_85 afterany:9936860  (WA RCP8.5)
+9939146 fia_ga_p3    afterany:9936861  (GA RCP4.5)
+9939147 fia_ga_p3_85 afterany:9936862  (GA RCP8.5)
+```
+
+WA p2 RCP4.5 at cycle 8 is the most advanced and likely the first to complete; its p3 will fire next.
 
 ## Next on autopilot
 
