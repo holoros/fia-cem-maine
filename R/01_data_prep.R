@@ -213,6 +213,12 @@ build_condition_records <- function(db, cfg) {
   # Join us_l3code from HCB x L3 crosswalk for CEM ecoregion stratification
   # (Layer 7+7b patch). Safe no-op if the crosswalk CSV is missing:
   # R/02_cem_matching.R falls back to STATECD when us_l3code is absent.
+  #
+  # PLT_CN type discipline: the FIA RDS stores PLT_CN as int64 / double, but
+  # the crosswalk CSV reads PLT_CN as character. To avoid the downstream
+  # type-mismatch crash in flag_events() (which joins T2_PLT_CN back to the
+  # raw COND table), we use a temp .PLT_CN_chr column for the join only and
+  # leave cond_full$PLT_CN in its original type.
   hcb_l3_path <- file.path(cfg$paths$config_dir %||% cfg$config_dir %||% "config",
                             "fia_plots_hcb_l3.csv")
   if (file.exists(hcb_l3_path)) {
@@ -226,8 +232,10 @@ build_condition_records <- function(db, cfg) {
       dplyr::select(PLT_CN, us_l3code, us_l3name) |>
       dplyr::distinct(PLT_CN, .keep_all = TRUE)
     cond_full <- cond_full |>
-      dplyr::mutate(PLT_CN = as.character(PLT_CN)) |>
-      dplyr::left_join(hcb_l3, by = "PLT_CN")
+      dplyr::mutate(.PLT_CN_chr = format(as.numeric(PLT_CN),
+                                          scientific = FALSE, trim = TRUE)) |>
+      dplyr::left_join(hcb_l3, by = c(".PLT_CN_chr" = "PLT_CN")) |>
+      dplyr::select(-.PLT_CN_chr)
     cat(sprintf("  us_l3code joined from %s: %d of %d cond rows matched (%.1f%%)\n",
                 hcb_l3_path,
                 sum(!is.na(cond_full$us_l3code)),
