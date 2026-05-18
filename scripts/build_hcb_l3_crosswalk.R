@@ -53,9 +53,31 @@ cat("============================================\n\n")
 
 stopifnot(file.exists(HCB_TIF), file.exists(L3_SHP), dir.exists(FIA_DIR))
 
-## Target states for this audit batch.
-STATES <- c("ME", "MN", "WA", "GA")
-STATECD_LOOKUP <- c(ME = 23L, MN = 27L, WA = 53L, GA = 13L)
+## Target states + donors. Original (v1) covered ME/MN/WA/GA subjects only.
+## v2 (17 May 2026) extends to the full donor pool needed for production reruns
+## with CEM Layer 7 ecoregion stratification: without donor-state L3 codes,
+## R/02 cem_ecoregion key falls back to STATECD on the donor side, providing
+## only within-subject-state ecoregion differentiation (validated at 11.5%
+## cond match rate in the Layer 8 smoke).
+STATES <- c(
+  # Subject states
+  "ME", "MN", "WA", "GA",
+  # ME donors (per osc/00_download_data.R donor_map)
+  "NH", "VT", "NY", "MA", "CT", "RI",
+  # MN donors
+  "WI", "MI", "IA",
+  # WA donors
+  "OR", "ID", "MT",
+  # GA donors
+  "FL", "SC", "NC", "TN", "AL"
+)
+STATECD_LOOKUP <- c(
+  ME = 23L, MN = 27L, WA = 53L, GA = 13L,
+  NH = 33L, VT = 50L, NY = 36L, MA = 25L, CT = 9L, RI = 44L,
+  WI = 55L, MI = 26L, IA = 19L,
+  OR = 41L, ID = 16L, MT = 30L,
+  FL = 12L, SC = 45L, NC = 37L, TN = 47L, AL = 1L
+)
 
 ## ---- Load ENTIRE FIA tables once and filter to target STATECDs ----------
 ## ~/FIA/ENTIRE_PLOT.csv is 1.98M rows, 443 MB. data.table::fread is fast and
