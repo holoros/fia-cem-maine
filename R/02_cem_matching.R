@@ -80,8 +80,8 @@ coarsen_ecoregion <- function(l3code, level = 1, l3_to_section_lookup = NULL) {
   n <- length(l3code)
   if (all(is.na(l3code))) return(rep(0L, n))
   if (level == 1) {
-    out <- as.integer(l3code)
-    out[is.na(out)] <- 0L
+    out <- as.character(as.integer(l3code))
+    out[is.na(out)] <- "0"
     return(out)
   } else if (level == 2) {
     if (is.null(l3_to_section_lookup)) {
@@ -96,10 +96,10 @@ coarsen_ecoregion <- function(l3code, level = 1, l3_to_section_lookup = NULL) {
       out[is.na(out)] <- "UNKNOWN_SECTION"
       return(as.character(out))
     } else {
-      return(as.integer(l3code) %/% 10L)
+      return(as.character(as.integer(l3code) %/% 10L))
     }
   } else {
-    return(rep(0L, n))
+    return(rep("0", n))
   }
 }
 
@@ -165,7 +165,7 @@ apply_coarsening <- function(data, iteration = 1, cfg) {
         cem_condprop  = coarsen_condprop(CONDPROP_UNADJ),
         cem_owngrp    = 1L,
         cem_fortyp    = FORTYPCD,
-        cem_ecoregion = 0L,
+        cem_ecoregion = "0",
         cem_stdorg    = STDORGCD,
         cem_sitecl   = coarsen_sitecl(SITECLCD, cem_cfg$iter3$siteclcd_breaks),
         cem_age      = coarsen_age(STDAGE, cem_cfg$iter3$stdage_breaks),
