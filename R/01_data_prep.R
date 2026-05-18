@@ -210,6 +210,34 @@ build_condition_records <- function(db, cfg) {
       STDAGE = coalesce(STDAGE, 0L)
     )
 
+  # Join us_l3code from HCB x L3 crosswalk for CEM ecoregion stratification
+  # (Layer 7+7b patch). Safe no-op if the crosswalk CSV is missing:
+  # R/02_cem_matching.R falls back to STATECD when us_l3code is absent.
+  hcb_l3_path <- file.path(cfg$paths$config_dir %||% cfg$config_dir %||% "config",
+                            "fia_plots_hcb_l3.csv")
+  if (file.exists(hcb_l3_path)) {
+    hcb_l3 <- suppressWarnings(
+      readr::read_csv(hcb_l3_path,
+                       col_types = readr::cols(PLT_CN = readr::col_character(),
+                                                us_l3code = readr::col_integer(),
+                                                .default = readr::col_guess()),
+                       show_col_types = FALSE)
+    ) |>
+      dplyr::select(PLT_CN, us_l3code, us_l3name) |>
+      dplyr::distinct(PLT_CN, .keep_all = TRUE)
+    cond_full <- cond_full |>
+      dplyr::mutate(PLT_CN = as.character(PLT_CN)) |>
+      dplyr::left_join(hcb_l3, by = "PLT_CN")
+    cat(sprintf("  us_l3code joined from %s: %d of %d cond rows matched (%.1f%%)\n",
+                hcb_l3_path,
+                sum(!is.na(cond_full$us_l3code)),
+                nrow(cond_full),
+                100 * mean(!is.na(cond_full$us_l3code))))
+  } else {
+    cat(sprintf("  us_l3code crosswalk not at %s; CEM will fall back to STATECD\n",
+                hcb_l3_path))
+  }
+
   return(cond_full)
 }
 
@@ -254,7 +282,10 @@ identify_remeasured_pairs <- function(cond_records) {
            SITECLCD, STDAGE, BA, ba_live, tpa_live, qmd,
            volcfnet, volcsnet, drybio_ag, carbon_ag, n_species,
            dom_spcd, var_val, starts_with("vol_"),
-           LAT, LON, ELEV, PLT_CN)
+           LAT, LON, ELEV, PLT_CN,
+           # Pass-through ecoregion key for CEM Layer 7 stratification.
+           # any_of() so missing column is a soft no-op (falls back to STATECD).
+           any_of(c("us_l3code", "us_l3name")))
 
   t2 <- t1  # same structure for time 2
 
@@ -382,7 +413,9 @@ identify_subject_plots <- function(cond_records, remeasured, cfg = NULL) {
            SITECLCD, STDAGE, BA, ba_live, tpa_live, qmd,
            volcfnet, volcsnet, drybio_ag, carbon_ag, n_species,
            dom_spcd, var_val, starts_with("vol_"),
-           LAT, LON, ELEV, PLT_CN)
+           LAT, LON, ELEV, PLT_CN,
+           # Pass-through ecoregion key for CEM Layer 7 stratification.
+           any_of(c("us_l3code", "us_l3name")))
 
   cat(sprintf("  Identified %d subject plot conditions for projection\n",
               nrow(subjects)))
