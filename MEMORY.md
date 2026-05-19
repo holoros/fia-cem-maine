@@ -2,11 +2,20 @@
 
 *Created May 9, 2026 — last updated May 18, 2026*
 
-## Current state (18 May 2026 11:30 AM)
+## Current state (19 May 2026 6:50 AM)
 
-**p2 production set RUNNING** (6 jobs, v2 crosswalk, 38 pct cond_full coverage).
-**p3 production set QUEUED** (6 jobs, v3 crosswalk, 100 pct cond_full coverage)
-with `--dependency=afterany` on p2.
+**WA p3 validated and committed** (cycle 1 BAU gr_ratio 4.308 down from 4.803;
+hindcast bias -25 to -26 pct ≈ unchanged from p1).
+**MN p3 still running** at 9:40 wall (cycle 14/15 sim 84 RCP45, cycle 8/15
+sim 92 RCP85 — runs CEM per scenario x sim x cycle = 7500 matchings).
+**GA p3 OOMed** at 11h wall both runs. **GA p3lite running** (50 sims, no
+save_per_plot) as 9975778 / 9975779; CEM matching already at iter 3 98pct.
+
+## Older context (18 May 11:30 AM)
+
+p2 production set RUNNING (6 jobs, v2 crosswalk, 38 pct cond_full coverage).
+p3 production set QUEUED (6 jobs, v3 crosswalk, 100 pct cond_full coverage)
+with --dependency=afterany on p2.
 
 ### Today's deliverables
 
