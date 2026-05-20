@@ -37,7 +37,7 @@ dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
 
 STATES <- c("MN", "WA", "GA")
 RCPS   <- c(45, 85)
-VINTAGES <- c("p2", "p3")
+VINTAGES <- c("p2", "p3", "p3lite")
 
 ## ---- Locate latest dir per state x rcp x vintage ------------------------
 find_run_dir <- function(state, rcp, vintage) {
