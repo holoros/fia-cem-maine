@@ -1,0 +1,6 @@
+scenario,cycle,mean_ba_mean,mean_vol_mean,mean_carbon_mean,total_tpa_mean,harvest_rate_mean,plant_rate_mean
+BAU,1,76.2,1272.4,37202,679.8,26.0%,21.9%
+BAU,2,75.5,1323,38401,644.8,13.2%,11.2%
+BAU,3,74.6,1366.2,39355.4,622.3,8.9%,7.4%
+BAU,4,74.9,1427.6,40754.1,624.5,3.5%,3.0%
+BAU,5,74.3,1459.7,41368.7,645.7,2.5%,2.1%
