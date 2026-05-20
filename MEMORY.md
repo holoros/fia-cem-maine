@@ -2,13 +2,27 @@
 
 *Created May 9, 2026 — last updated May 18, 2026*
 
-## Current state (19 May 2026 6:50 AM)
+## Current state (20 May 2026 6:30 AM)
 
-**WA p3 validated and committed** (cycle 1 BAU gr_ratio 4.308 down from 4.803;
+**p3 multistate validation COMPLETE.** All four states have v3 production +
+hindcast residuals. Three distinct outcomes:
+
+- **MN**: clean v3 win at RPA cycle 4 (bias +6.8 -> -0.5pct).
+- **WA**: v3 unchanged at -25pct (donor pool composition limit, expected).
+- **GA**: v3 strata exclude 55pct of late-cycle subjects, isolating the young
+  plantation cohort. Apparent bias rises (+25 -> +69pct) but reflects subject
+  composition change, not projection drift.
+
+Only loose end: MN p3hindcast RCP85 (job 10021111 RUNNING) for the symmetric
+RCP8.5 hindcast comparison.
+
+## Older context (19 May 6:50 AM)
+
+WA p3 validated and committed (cycle 1 BAU gr_ratio 4.308 down from 4.803;
 hindcast bias -25 to -26 pct ≈ unchanged from p1).
-**MN p3 still running** at 9:40 wall (cycle 14/15 sim 84 RCP45, cycle 8/15
+MN p3 still running at 9:40 wall (cycle 14/15 sim 84 RCP45, cycle 8/15
 sim 92 RCP85 — runs CEM per scenario x sim x cycle = 7500 matchings).
-**GA p3 OOMed** at 11h wall both runs. **GA p3lite running** (50 sims, no
+GA p3 OOMed at 11h wall both runs. GA p3lite running (50 sims, no
 save_per_plot) as 9975778 / 9975779; CEM matching already at iter 3 98pct.
 
 ## Older context (18 May 11:30 AM)
