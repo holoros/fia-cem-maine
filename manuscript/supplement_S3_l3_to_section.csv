@@ -1,0 +1,86 @@
+us_l3code,us_l3name,section_code,section_name
+1,Coast Range,PNW_MARINE,Pacific Northwest Marine
+2,Puget Lowland,PNW_MARINE,Pacific Northwest Marine
+3,Willamette Valley,PNW_MARINE,Pacific Northwest Marine
+4,Cascades,PNW_MONTANE,Pacific Northwest Montane
+5,Sierra Nevada,PSW_MONTANE,Pacific Southwest Montane
+6,Central California Foothills and Coastal Mountains,PSW_COASTAL,Pacific Southwest Coastal
+7,Central California Valley,PSW_VALLEY,Pacific Southwest Valley
+8,Southern California Mountains,PSW_MONTANE,Pacific Southwest Montane
+9,Eastern Cascades Slopes and Foothills,PNW_INTERIOR,Pacific Northwest Interior
+10,Columbia Plateau,PNW_INTERIOR,Pacific Northwest Interior
+11,Blue Mountains,PNW_INTERIOR,Pacific Northwest Interior
+12,Snake River Plain,RM_INTERMOUNTAIN,Rocky Mountain Intermountain
+13,Central Basin and Range,RM_INTERMOUNTAIN,Rocky Mountain Intermountain
+14,Mojave Basin and Range,RM_INTERMOUNTAIN,Rocky Mountain Intermountain
+15,Northern Rockies,RM_NORTHERN,Rocky Mountain Northern
+16,Idaho Batholith,RM_NORTHERN,Rocky Mountain Northern
+17,Middle Rockies,RM_NORTHERN,Rocky Mountain Northern
+18,Wyoming Basin,RM_INTERMOUNTAIN,Rocky Mountain Intermountain
+19,Wasatch and Uinta Mountains,RM_SOUTHERN,Rocky Mountain Southern
+20,Colorado Plateaus,RM_SOUTHERN,Rocky Mountain Southern
+21,Southern Rockies,RM_SOUTHERN,Rocky Mountain Southern
+22,Arizona/New Mexico Plateau,RM_SOUTHERN,Rocky Mountain Southern
+23,Arizona/New Mexico Mountains,RM_SOUTHERN,Rocky Mountain Southern
+24,Chihuahuan Deserts,SC_SOUTHWEST,South Central Southwest
+25,Western High Plains,RM_PLAINS,Rocky Mountain Plains
+26,Southwestern Tablelands,RM_PLAINS,Rocky Mountain Plains
+27,Central Great Plains,NC_PLAINS,North Central Plains
+28,Flint Hills,NC_PLAINS,North Central Plains
+29,Cross Timbers,SC_TIMBERS,South Central Timbers
+30,Edwards Plateau,SC_TIMBERS,South Central Timbers
+31,Southern Texas Plains,SC_PLAINS,South Central Plains
+32,Texas Blackland Prairies,SC_PLAINS,South Central Plains
+33,East Central Texas Plains,SC_PLAINS,South Central Plains
+34,Western Gulf Coastal Plain,SC_GULF,South Central Gulf
+35,South Central Plains,SC_PLAINS,South Central Plains
+36,Ouachita Mountains,SC_OUACHITA,South Central Ouachita
+37,Arkansas Valley,SC_OUACHITA,South Central Ouachita
+38,Boston Mountains,SC_OZARK,South Central Ozark
+39,Ozark Highlands,SC_OZARK,South Central Ozark
+40,Central Irregular Plains,NC_PLAINS,North Central Plains
+41,Canadian Rockies,RM_NORTHERN,Rocky Mountain Northern
+42,Northwestern Glaciated Plains,NC_PLAINS,North Central Plains
+43,Northwestern Great Plains,NC_PLAINS,North Central Plains
+44,Nebraska Sand Hills,NC_PLAINS,North Central Plains
+45,Piedmont,SE_PIEDMONT,South East Piedmont
+46,Northern Glaciated Plains,NC_PLAINS,North Central Plains
+47,Western Corn Belt Plains,NC_PLAINS,North Central Plains
+48,Lake Agassiz Plain,NC_BOREAL,North Central Boreal
+49,Northern Minnesota Wetlands,NC_BOREAL,North Central Boreal
+50,Northern Lakes and Forests,NC_BOREAL,North Central Boreal
+51,North Central Hardwood Forests,NC_HARDWOOD,North Central Hardwood
+52,Driftless Area,NC_HARDWOOD,North Central Hardwood
+53,Southeastern Wisconsin Till Plains,NC_HARDWOOD,North Central Hardwood
+54,Central Corn Belt Plains,NC_PLAINS,North Central Plains
+55,Eastern Corn Belt Plains,NC_HARDWOOD,North Central Hardwood
+56,Southern Michigan/Northern Indiana Drift Plains,NC_HARDWOOD,North Central Hardwood
+57,Huron/Erie Lake Plains,NC_HARDWOOD,North Central Hardwood
+58,Northeastern Highlands,NE_NORTHERN,North East Northern
+59,Northeastern Coastal Zone,NE_COASTAL,North East Coastal
+60,Northern Appalachian Plateau and Uplands,NE_APPALACHIAN,North East Appalachian
+61,Erie Drift Plain,NE_APPALACHIAN,North East Appalachian
+62,North Central Appalachians,NE_APPALACHIAN,North East Appalachian
+63,Middle Atlantic Coastal Plain,SE_COASTAL,South East Coastal
+64,Northern Piedmont,NE_PIEDMONT,North East Piedmont
+65,Southeastern Plains,SE_PLAINS,South East Plains
+66,Blue Ridge,SE_APPALACHIAN,South East Appalachian
+67,Ridge and Valley,SE_APPALACHIAN,South East Appalachian
+68,Southwestern Appalachians,SE_APPALACHIAN,South East Appalachian
+69,Central Appalachians,NE_APPALACHIAN,North East Appalachian
+70,Western Allegheny Plateau,NE_APPALACHIAN,North East Appalachian
+71,Interior Plateau,SE_INTERIOR,South East Interior
+72,Interior River Valleys and Hills,NC_HARDWOOD,North Central Hardwood
+73,Mississippi Alluvial Plain,SC_DELTA,South Central Delta
+74,Mississippi Valley Loess Plains,SC_DELTA,South Central Delta
+75,Southern Coastal Plain,SE_COASTAL,South East Coastal
+76,Southern Florida Coastal Plain,SE_COASTAL,South East Coastal
+77,North Cascades,PNW_MONTANE,Pacific Northwest Montane
+78,Klamath Mountains/California High North Coast Range,PNW_MARINE,Pacific Northwest Marine
+79,Madrean Archipelago,RM_SOUTHERN,Rocky Mountain Southern
+80,Northern Basin and Range,RM_INTERMOUNTAIN,Rocky Mountain Intermountain
+81,Sonoran Desert,RM_SOUTHERN,Rocky Mountain Southern
+82,Acadian Plains and Hills,NE_NORTHERN,North East Northern
+83,Eastern Great Lakes Lowlands,NE_NORTHERN,North East Northern
+84,Atlantic Coastal Pine Barrens,NE_COASTAL,North East Coastal
+85,Southern Michigan/Northern Indiana,NC_HARDWOOD,North Central Hardwood

@@ -1,0 +1,71 @@
+state,TYPGRPCD,GROUP_NAME,subject_pct,donor_pct,gap_pp
+GA,160,Loblolly / shortleaf pine group,30.24,26.04,4.2
+GA,500,Oak / hickory group,26.73,39.77,-13.04
+GA,140,Longleaf / slash pine group,14.19,5.82,8.38
+GA,600,Oak / gum / cypress group,13.3,10.27,3.03
+GA,400,Oak / pine group,11.98,11.55,0.43
+GA,700,Elm / ash / cottonwood group,1.99,3.12,-1.12
+GA,999,Nonstocked,1.02,1.08,-0.06
+GA,990,Exotic hardwoods group,0.21,0.16,0.05
+GA,100,White / red / jack pine group,0.16,0.35,-0.19
+GA,960,Other hardwoods group,0.11,0.33,-0.22
+GA,170,Other eastern softwoods group,0.04,0.56,-0.51
+GA,980,Tropical hardwoods group,0.02,0.3,-0.28
+GA,120,,0.0,0.04,-0.04
+GA,800,,0.0,0.61,-0.61
+GA,900,,0.0,0.01,-0.01
+ME,800,Maple / beech / birch group,40.1,43.22,-3.12
+ME,120,Spruce / fir group,33.13,2.6,30.53
+ME,900,Aspen / birch group,13.21,3.4,9.81
+ME,100,White / red / jack pine group,5.85,5.1,0.75
+ME,700,Elm / ash / cottonwood group,2.52,3.97,-1.45
+ME,400,Oak / pine group,2.13,3.49,-1.35
+ME,500,Oak / hickory group,1.9,33.38,-31.48
+ME,960,Other hardwoods group,0.79,2.18,-1.39
+ME,999,Nonstocked,0.24,0.82,-0.58
+ME,380,Exotic softwoods group,0.12,0.75,-0.63
+ME,160,Loblolly / shortleaf pine group,0.02,0.58,-0.57
+ME,170,,0.0,0.1,-0.1
+ME,200,,0.0,0.02,-0.02
+ME,260,,0.0,0.01,-0.01
+ME,390,,0.0,0.02,-0.02
+ME,600,,0.0,0.31,-0.31
+ME,990,,0.0,0.06,-0.06
+MN,900,Aspen / birch group,39.68,16.39,23.29
+MN,120,Spruce / fir group,22.97,10.55,12.42
+MN,500,Oak / hickory group,11.69,22.35,-10.66
+MN,700,Elm / ash / cottonwood group,8.67,10.59,-1.92
+MN,800,Maple / beech / birch group,6.94,24.61,-17.67
+MN,100,White / red / jack pine group,5.77,8.88,-3.11
+MN,400,Oak / pine group,1.68,2.92,-1.24
+MN,999,Nonstocked,1.53,1.03,0.5
+MN,960,Other hardwoods group,0.9,0.5,0.4
+MN,170,Other eastern softwoods group,0.1,0.13,-0.03
+MN,380,Exotic softwoods group,0.04,0.48,-0.44
+MN,990,Exotic hardwoods group,0.03,0.09,-0.06
+MN,160,,0.0,0.07,-0.07
+MN,180,,0.0,0.1,-0.1
+MN,200,,0.0,0.01,-0.01
+MN,220,,0.0,1.15,-1.15
+MN,260,,0.0,0.03,-0.03
+MN,600,,0.0,0.12,-0.12
+WA,200,Douglas-fir group,41.63,31.95,9.68
+WA,260,Fir / spruce / mountain hemlock group,15.88,16.02,-0.14
+WA,300,Hemlock / Sitka spruce group,14.08,2.94,11.14
+WA,220,Ponderosa pine group,8.96,16.42,-7.46
+WA,910,Alder / maple group,7.05,2.34,4.71
+WA,999,Nonstocked,3.6,4.48,-0.89
+WA,280,Lodgepole pine group,3.43,9.91,-6.48
+WA,320,Western larch group,1.84,1.35,0.49
+WA,700,Elm / ash / cottonwood group,0.92,0.44,0.48
+WA,900,Aspen / birch group,0.64,0.96,-0.33
+WA,920,Western oak group,0.61,1.45,-0.84
+WA,360,Other western softwoods group,0.5,7.72,-7.22
+WA,960,Other hardwoods group,0.42,0.84,-0.42
+WA,970,Woodland hardwoods group,0.35,0.66,-0.31
+WA,240,Western white pine group,0.08,0.09,-0.01
+WA,180,,0.0,1.1,-1.1
+WA,340,,0.0,0.0,-0.0
+WA,380,,0.0,0.0,-0.0
+WA,500,,0.0,0.01,-0.01
+WA,940,,0.0,1.3,-1.3
