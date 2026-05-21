@@ -92,7 +92,7 @@ STATE_PROFILES <- list(
     per_ac_ba_sqft     = c(60, 80),      # smoke 68, p1 68
     per_ac_carbon_kgac = c(28000, 38000),# p1 33650 lb/ac
     per_ac_tpa         = c(450, 650),    # smoke 538, p1 543
-    harvest_rate_pct   = c(8, 15),       # smoke 11.6, p1 9.9
+    harvest_rate_pct   = c(9, 18),       # tightened 20260521 to standard 9-18 band (owner_balanced); MN l7b 9.9
     total_vol_bcuft    = c(18, 32),      # EVALIDator ~28, p1 21.6 (~23% under, structural)
     total_carbon_tgc   = c(180, 320)     # FIA full panel ~220 TgC (re calibrated after lb fix)
   ),
@@ -125,10 +125,13 @@ if (!opt$state %in% names(STATE_PROFILES)) {
 
 profile <- STATE_PROFILES[[opt$state]]
 
-# gr_ratio expected magnitude depends on Layer 1 vs Layer 2 patch state. The
-# six p1 multistate runs all have Layer 1 deployed, no econ overlay, so the
-# expected range is 0.003 to 0.010 driven by the 1/harvest_rate scaling.
-GR_RATIO_RANGE <- c(0.003, 0.012)
+# gr_ratio cycle 1 BAU magnitude. Recalibrated 20260521 to the l7b/p3 era
+# definition reported in table_gr_ratios.csv (a growth multiplier, not the old
+# 1/harvest_rate p1 scaling). Observed cycle 1 BAU across the current set: ME
+# econ_l7b 3.42, MN l7b 3.95, WA l7b 4.31, GA p3 5.62. Band brackets these with
+# margin. The prior bound (0.003 to 0.012) was for the superseded p1 definition
+# and would mis-flag every current run.
+GR_RATIO_RANGE <- c(3.0, 7.0)
 
 # -----------------------------------------------------------------------------
 # Resolve paths
@@ -220,6 +223,17 @@ st_inv <- safe_read_csv(file.path(state_dir, "table_inventory_summary.csv"))
 st_gr  <- safe_read_csv(file.path(state_dir, "table_gr_ratios.csv"))
 st_plot <- safe_read_rds(file.path(state_dir, "per_plot_projections.rds"))
 
+# Owner-column schema inspection (added 20260521). The owner distribution table
+# previously returned empty when per_plot used an unexpected owner column name
+# or lacked the scenario/cycle/PLT_CN keys the snapshot needs. Capture the
+# schema up front so the memo can always report what is actually present.
+owner_candidates_all <- c("OWNGRPCD", "owngrpcd", "owner_class", "OwnerClass",
+                          "hcb_class", "HCB_CLASS", "OWNCD", "owngrp", "OWNERCD")
+plot_schema <- if (!is.null(st_plot) && is.data.frame(st_plot)) names(st_plot) else character(0)
+owner_col_found <- intersect(owner_candidates_all, plot_schema)
+owner_keys_status <- vapply(c("scenario", "cycle", "PLT_CN", "proj_volcfnet", "was_harvested"),
+                            function(k) k %in% plot_schema, logical(1))
+
 ref_inv <- safe_read_csv(file.path(ref_dir, "table_inventory_summary.csv"))
 ref_available <- !is.null(ref_inv)
 
@@ -256,9 +270,7 @@ owngrp_legend <- c("10" = "USDA Forest Service",
 if (!is.null(st_plot) && is.data.frame(st_plot)) {
   # Owner column candidates (broad to narrow). Production per_plot_projections.rds
   # uses OWNGRPCD (FIA standard); older builds may use different names.
-  owner_cols <- intersect(c("OWNGRPCD", "owngrpcd", "owner_class",
-                            "OwnerClass", "hcb_class", "HCB_CLASS", "OWNCD"),
-                          names(st_plot))
+  owner_cols <- intersect(owner_candidates_all, names(st_plot))
   if (length(owner_cols) > 0) {
     oc <- owner_cols[1]
 
@@ -406,7 +418,23 @@ if (!is.null(owner_dist) && nrow(owner_dist) > 0) {
       "lives in `config/fia_plots_with_owner.csv` and is not joined into per_plot.\n\n",
       sep = "")
 } else {
-  cat("## Per ownership distribution\n\nOwner distribution unavailable from per_plot RDS. Inspect schema manually.\n\n")
+  cat("## Per ownership distribution\n\n")
+  cat("Owner distribution unavailable from per_plot RDS. Schema inspection follows.\n\n")
+  if (length(plot_schema) > 0) {
+    cat("- per_plot columns (", length(plot_schema), "): ",
+        paste(plot_schema, collapse = ", "), "\n", sep = "")
+    cat("- owner column candidates present: ",
+        if (length(owner_col_found) > 0) paste(owner_col_found, collapse = ", ") else "NONE of the known candidates",
+        "\n", sep = "")
+    for (k in names(owner_keys_status)) {
+      cat("- snapshot key '", k, "': ",
+          if (owner_keys_status[[k]]) "present" else "MISSING", "\n", sep = "")
+    }
+    cat("\nResolution: add the present owner column to owner_candidates_all, or ",
+        "supply the missing snapshot key when building per_plot, then re run.\n\n", sep = "")
+  } else {
+    cat("per_plot RDS not loadable or not a data frame.\n\n")
+  }
 }
 
 cat("## Flags and follow ups\n\n")
