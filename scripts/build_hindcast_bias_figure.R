@@ -35,9 +35,10 @@ parse_meta <- function(fname) {
   rcp <- ifelse(grepl("rcp85", tag), 85, 45)
   vintage <- dplyr::case_when(
     grepl("r21", tag) ~ "r21",
-    grepl("_p1$", tag) ~ "p1",
-    grepl("_p3$", tag) ~ "p3",
+    grepl("_p3hindcast$", tag) ~ "p3hindcast",
     grepl("_p3lite$", tag) ~ "p3lite",
+    grepl("_p3$", tag) ~ "p3",
+    grepl("_p1$", tag) ~ "p1",
     TRUE ~ "other"
   )
   data.frame(file = fname, state = state, rcp = rcp,
@@ -76,10 +77,10 @@ readr::write_csv(bias |> dplyr::select(state, vintage, rcp, cycle_match,
 
 ## ---- Plot ----------------------------------------------------------------
 state_colors <- c(ME = "#1b9e77", MN = "#d95f02", WA = "#7570b3", GA = "#e7298a")
-vintage_shapes <- c(p1 = 16, p3 = 17, p3lite = 15, r21 = 18)
+vintage_shapes <- c(p1 = 16, p3 = 17, p3lite = 15, p3hindcast = 4, r21 = 18)
 
 plot_data <- bias |>
-  dplyr::filter(vintage %in% c("p1", "p3", "p3lite", "r21")) |>
+  dplyr::filter(vintage %in% c("p1", "p3", "p3lite", "p3hindcast", "r21")) |>
   dplyr::mutate(rcp_label = paste0("RCP ", rcp / 10),
                 state_label = state,
                 vintage_label = vintage)
