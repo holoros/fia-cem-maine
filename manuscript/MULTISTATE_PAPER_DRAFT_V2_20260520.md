@@ -126,7 +126,7 @@ Available at `manuscript/supplement_S*`:
 - **S2** `supplement_S2_donor_pool_composition.csv` — Per-state forest type group composition (subject vs donor, gap in pp).
 - **S3** `supplement_S3_l3_to_section.csv` — EPA L3 ecoregion to Bailey-equivalent section crosswalk (85 to 20).
 - **S4** `supplement_S4_cem_layer7b_patched.R` — Patched R/02_cem_matching.R source code.
-- **S5** [PLACEHOLDER] Per-state hindcast detail tables (awaits L7b production rerun).
+- **S5** Per-state hindcast detail tables (the `HINDCAST_<STATE>_*` CSVs) plus the Washington remedy sequence; see `docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md` and `docs/CROSS_STATE_VALIDATION_SUMMARY_20260521.md`.
 - **S6** `supplement_S6_bias_mechanism_chronology.md` — Hypothesis-testing record 13-20 May 2026.
 - **S7** `supplement_S7_l7b_smoke_validation.md` — Pre-production patch validation (SLURM 9914786).
 - **S8** `supplement_S8_rpa_comparison.md` — conus_hcs RPA aggregation cross-comparison with 0.35 re-measurement correction.
@@ -163,17 +163,14 @@ All raw FIA data used in this paper is publicly available from the USDA Forest S
 
 ---
 
-## Editorial integration notes (post-production)
+## Editorial integration notes
 
-After SLURM 10021618-10021625 complete and `scripts/run_l7b_hindcasts.sh` produces `output/l7b_comparison_20260520/`:
+Status 2026-05-22. The production reruns are complete and the scientific narrative is settled (Section 3.5 and the diagnostic memos). Remaining assembly tasks:
 
-1. Pull `figures/l7b_vs_p1_cycle1_bau_figure.png` and supporting CSV to local
-2. Pull each `docs/HINDCAST_<STATE>_<L7b_TAG>.md` (8 memos)
-3. Populate Section 3.5 prose with the actual reduction percentages
-4. Populate Table 5 with the bias and RMSE columns
-5. Render Figure 7 (pre/post hindcast scatter, 4-panel comparison) by extending the existing `scripts/build_hindcast_plot.R`
-6. Build Suppl S5 by concatenating per-state HINDCAST_<STATE>_<L7b_TAG>.md plus the existing p1 hindcast tables
-7. Replace all `[INSERT: ...]` placeholders in this v2 draft with the actual section content from the individual drafts
-8. Final read-through for narrative flow, citation completeness, figure callouts
+1. Replace the `[INSERT: ...]` pointers in this v2 draft with the actual content from the individual section drafts (Introduction, Section X.1 methods, Section X.2 bias mechanism, Section 3.5 transferability limit, Discussion).
+2. Render the figures: a four-panel hindcast scatter (the four-state cross-state result) and the Washington remedy-sequence table or bar chart from Section 3.5. The per-state HINDCAST CSVs and `docs/CROSS_STATE_VALIDATION_SUMMARY_20260521.md` supply the numbers.
+3. Confirm the two Georgia cross-state cells once the 24h l7b reruns (SLURM 10310329, 10310330) land; the p3 proxies already agree within 0.1 percent, so no narrative change is expected.
+4. Complete the Section 8 citation lookups and the data and code availability URL once the repository is public.
+5. Final read-through for narrative flow and figure callouts.
 
-Estimated time: 6 hours.
+The headline result is a transferability limit, not a bias reduction: matching refinements do not close the Washington bias because its high-productivity maritime forest has no donor analog. The recommended remedy, a model-based productivity correction, is a candidate next study.

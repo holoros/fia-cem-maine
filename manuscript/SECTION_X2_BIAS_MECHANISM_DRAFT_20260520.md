@@ -1,7 +1,7 @@
 # Section X.2 (expanded): Bias mechanism and donor pool composition
 
 *Draft 20 May 2026 incorporating the resolved bias mechanism findings from the 17 May diagnostic suite.*
-*Intended to replace the current bias paragraphs in `MULTISTATE_METHODS_DRAFT_20260515.md` once Layer 7b production reruns confirm the projected reductions.*
+*Intended to replace the current bias paragraphs in `MULTISTATE_METHODS_DRAFT_20260515.md`. The production reruns did not confirm the projected reductions; X.2.5 reports the actual result (a transferability limit, not a bias reduction).*
 
 ## X.2.1 Cross-state hindcast bias pattern
 
@@ -51,19 +51,11 @@ We implemented this as a three-iteration matching strategy:
 
 Across the iterations, 99.7 percent of subject conditions match at least one donor with median 3 matches per subject, confirming the empirical cell sizes are adequate.
 
-## X.2.5 Bias reduction observed (placeholder for production rerun)
+## X.2.5 Production result: matching refinements do not reduce the Washington bias
 
-[Section to be completed after Layer 7b production reruns land. Expected outcomes per the empirical cell-size diagnostic and projected donor pool match closing:]
+The full production reruns resolved the projected reductions in the negative. Adding the EPA L3 ecoregion key to the matching strata left the Washington hindcast unchanged (residual minus 79.4 MMT with and without the key), because the key reorders which neighbor donors are selected without changing the neighbor cohort's growth rate composition. Expanding the donor pool to the full continental FIA database including California also left it unchanged (minus 77.2 and minus 77.4 MMT), because California donors carry a lower growth potential than the Pacific Northwest maritime forest. Matching directly on a continental site productivity surface (asymptotic aboveground biomass) reduced the percent bias on matched plots from minus 25 to minus 14 percent, but only by dropping roughly 47 to 48 percent of the high productivity subject plots as unmatched, a coverage loss the continental pool did not repair.
 
-[Insert revised bias table from `output/l7b_comparison_20260520/l7b_vs_p1_cycle1_bau_comparison.csv`]
-
-[Projected outcomes:]
-- WA -25% → -5 to -10%
-- MN -23% statewide → -3 to -8%
-- GA +10% → +3 to +5%
-- ME canonical -1.1% → unchanged
-
-[If observed reductions are within these projections, the manuscript narrative becomes: donor pool composition mismatch is the universal mechanism across all four states; the proposed three-iteration ecoregion-stratified matching demonstrates a quantitative path to reduce hindcast bias from the -25/-23/+10 percent range to within 5 to 10 percent for all subject states while preserving the canonical Maine reference bias at -1.1 percent.]
+The convergent result is that Washington's high productivity maritime Douglas fir has no analog in the available FIA donor universe, so no donor side matching strategy can supply an appropriate donor. This is a fundamental transferability limit rather than a bias that further matching can close. The full diagnostic sequence and conclusion are in Section 3.5 (Washington as a transferability limit) and the memos `docs/CONUS_DONOR_NULL_RESULT_20260521.md` and `docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md`. For Maine, Minnesota, and Georgia the framework transfers within validation bounds (all six production runs PASS, `docs/CROSS_STATE_VALIDATION_SUMMARY_20260521.md`); Washington is the exception that defines the method's boundary, and the recommended remedy for such productivity outlier forests is a model based productivity correction rather than a donor search.
 
 ## X.2.6 Method caveats and limitations
 
