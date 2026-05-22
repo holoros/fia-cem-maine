@@ -131,6 +131,8 @@ parse_cli_args <- function() {
         parsed$use_owner_stratification <- TRUE; i <- i + 1
       } else if (args[i] == "--use_owner_balanced") {
         parsed$use_owner_balanced <- TRUE; i <- i + 1
+      } else if (args[i] == "--use_productivity") {
+        parsed$use_productivity <- TRUE; i <- i + 1
       } else if (args[i] == "--use_v4_prod_mult") {
         parsed$use_v4_prod_mult <- TRUE; i <- i + 1
       } else if (args[i] == "--v4_prod_mult_strength") {
@@ -186,6 +188,7 @@ main <- function() {
   if (!is.null(cli_args$cycles))    CONFIG$n_cycles <- cli_args$cycles
   if (!is.null(cli_args$output))    CONFIG$output_dir <- cli_args$output
   if (!is.null(cli_args$no_econ))   CONFIG$harvest$use_economic_model <- FALSE
+  if (isTRUE(cli_args$use_productivity)) CONFIG$cem$use_productivity <- TRUE
   if (!is.null(cli_args$climate_file)) {
     CONFIG$climate$use_climate <- TRUE
     CONFIG$climate$data_file <- cli_args$climate_file

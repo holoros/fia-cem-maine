@@ -11,9 +11,9 @@ Across the four-state set, cross-state hindcast bias spans -25 percent (Washingt
 
 Notably, Maine's reference -1.1 percent bias arises despite the same dramatic donor pool mismatch (30 pp gap in spruce/fir): three compensating mechanisms (decoupled ClimateNA climate coupling, within-state `state_constants.csv` refinement, owner-balanced rescaling against published RPA rates) absorb the donor pool gap in the Maine reference. The other three states lack one or more of these compensations.
 
-We propose and implement a three-iteration ecoregion-stratified CEM matching strategy that adds EPA L3 ecoregion as a matching key alongside the existing FORTYPCD and OWNGRPCD strata, with graceful fallback through Bailey-section-equivalent collapse and within-state leave-one-out matching. Empirical cell-size diagnostics across CONUS confirm feasibility: at the fine resolution 99.7 percent of subject conditions match at least one donor (median 3 matches). [Placeholder: actual bias reductions from full production reruns to be inserted from `output/l7b_comparison_20260520/`: projected WA -25 to -5/-10 percent, MN -23 to -3/-8 percent, GA +10 to +3/+5 percent, ME canonical unchanged.]
+We then test three donor side remedies against the largest bias, Washington. A three-iteration ecoregion-stratified matching strategy that adds EPA L3 ecoregion alongside the FORTYPCD and OWNGRPCD strata, with graceful fallback, is feasible at the matching level (99.7 percent of subject conditions match a donor at fine resolution, median 3 matches) but does not change the Washington hindcast (residual unchanged at minus 79 MMT). Expanding the donor pool to the full continental FIA database including California likewise leaves it unchanged, because California donors carry a lower growth potential than the Pacific Northwest maritime forest. Matching on a continental site productivity surface (asymptotic aboveground biomass) reduces the Washington percent bias on matched plots from minus 25 to minus 14 percent, but only by leaving roughly half of the high-productivity subject plots unmatched, a coverage loss that continental donors do not repair. These convergent results show that Washington's high-productivity maritime Douglas-fir has no analog in the FIA donor universe.
 
-The findings establish donor pool composition mismatch as the dominant transferability barrier for CEM forest projection across heterogeneous ecoregions, and ecoregion-stratified matching as a reproducible remediation path.
+The findings establish donor pool composition mismatch as the dominant transferability barrier for CEM forest projection across heterogeneous ecoregions. Where donor analogs exist the framework transfers well, as in Maine, Minnesota, and Georgia. Where the subject forest is a site-productivity outlier without a donor analog, as in Washington, donor substitution reaches a fundamental limit, and a model-based productivity correction rather than a better donor search is the remediation path.
 
 ## Keywords
 
@@ -88,32 +88,23 @@ forest inventory and analysis, coarsened exact matching, carbon projection, ecor
 | ecoregion × FORTYPCD (2-way) | 156 | 52 (33%) | 4.0% |
 | ecoregion × FORTYPCD × OWNGRPCD (3-way) | 332 | 122 (37%) | 3.1% |
 
-### 3.5 Layer 7b production rerun bias reduction
+### 3.5 Washington as a transferability limit: the donor analog gap
 
-[PLACEHOLDER: To be populated when SLURM jobs 10021618-10021625 complete and `scripts/run_l7b_hindcasts.sh` runs. Expected fill from `output/l7b_comparison_20260520/`.]
+[INSERT: full content of `manuscript/SECTION_3.5_WA_TRANSFERABILITY_DRAFT_20260522.md` sections 3.5.1 through 3.5.6]
 
-**Figure 6 [PLACEHOLDER].** Bar chart of cycle 1 BAU pct change per state × RCP (l7b vs p1).
+Three donor side remedies were tested against the Washington underprediction and none resolved it. The EPA L3 ecoregion matching key left the hindcast unchanged (residual minus 79.4 MMT with and without the key). A continental donor pool including California left it unchanged (minus 77.2 and minus 77.4 MMT, projected carbon within 0.2 percent of baseline). Site productivity matching on the continental asymptotic biomass surface reduced the percent bias on matched plots from minus 25 to minus 14 percent, but only by leaving roughly 47 to 48 percent of the high productivity Washington plots unmatched, a coverage loss that California donors did not repair. The convergent conclusion is a donor analog gap: Washington's high productivity maritime Douglas fir has no analog in the FIA donor universe, so coarsened exact matching reaches a fundamental transferability limit for this productivity outlier forest, and the appropriate remedy is a model based productivity correction rather than any further donor search.
 
-**Figure 7 [PLACEHOLDER].** Revised hindcast scatter (post-L7b), 4-panel.
+**Table 5.** Washington remedy sequence (RCP 4.5; full table and method detail in the inserted Section 3.5 draft).
 
-**Table 5 [PLACEHOLDER].** Per-state-RCP pre/post bias and RMSE comparison.
+| Remedy | Donor pool | WA residual (MMT) | Matched plots |
+|---|---|---:|---:|
+| baseline, forest type and owner | neighbor | -79.4 | 2,745 |
+| ecoregion matching key | neighbor | -79.4 | 2,745 |
+| continental pool with California | continental | -77.2 | 2,745 |
+| productivity matching, weak | neighbor | -27.6 | 1,794 |
+| productivity matching, strong | neighbor | -39.2 | 1,753 |
 
-| State x RCP | p1 bias (%) | l7b bias (%) | RMSE pre | RMSE post |
-|---|---:|---:|---:|---:|
-| ME 4.5 | -1.1 | [ ] | 16.0 | [ ] |
-| MN 4.5 | -5.7 | [ ] | 22.6 | [ ] |
-| WA 4.5 | -25.3 | [ ] | 78.9 | [ ] |
-| GA 4.5 | +9.6 | [ ] | 48.7 | [ ] |
-| ME 8.5 | -1.1 | [ ] | 16.0 | [ ] |
-| MN 8.5 | -5.8 | [ ] | 23.3 | [ ] |
-| WA 8.5 | -24.8 | [ ] | 77.4 | [ ] |
-| GA 8.5 | +11.0 | [ ] | 51.9 | [ ] |
-
-Projected (per `CEM_3WAY_STRATIFICATION_20260517.md`):
-- WA -25% → -5 to -10%
-- MN -23% statewide → -3 to -8%
-- GA +10% → +3 to +5%
-- ME canonical -1.1% → unchanged
+Full diagnostic memos: `docs/CONUS_DONOR_NULL_RESULT_20260521.md` and `docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md`. Cross state validation, all six production runs PASS: `docs/CROSS_STATE_VALIDATION_SUMMARY_20260521.md`.
 
 ### 3.6 Method caveats and limitations
 

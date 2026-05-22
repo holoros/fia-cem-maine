@@ -173,6 +173,14 @@ apply_coarsening <- function(data, iteration = 1, cfg) {
       )
   }
 
+  # Optionally add productivity (asymptotic AGB / BGI) coarsening (R-prod)
+  if (isTRUE(cfg$cem$use_productivity) && "asym_agb" %in% names(data)) {
+    pb <- if (iteration == 1) cfg$cem$iter1$asym_breaks
+          else if (iteration == 2) cfg$cem$iter2$asym_breaks
+          else cfg$cem$iter3$asym_breaks
+    data$cem_prod <- if (is.null(pb)) "0" else as.character(coarsen_continuous(data$asym_agb, pb))
+  }
+
   # Optionally add climate coarsening
   if (cfg$climate$use_climate && "mat" %in% names(data)) {
     data <- data |>
@@ -197,6 +205,7 @@ build_cem_key <- function(data, use_climate = FALSE) {
 
   key_cols <- c("cem_condprop", "cem_owngrp", "cem_fortyp", "cem_ecoregion",
                 "cem_stdorg", "cem_sitecl", "cem_age", "cem_ba")
+  if ("cem_prod" %in% names(data)) key_cols <- c(key_cols, "cem_prod")
 
   if (use_climate && "cem_mat" %in% names(data)) {
     key_cols <- c(key_cols, "cem_mat", "cem_map")
@@ -293,6 +302,33 @@ run_cem_matching <- function(subjects, remeasured, cfg) {
     rename_with(~ str_remove(., "^T1_"),
                 .cols = starts_with("T1_")) |>
     mutate(donor_id = row_number())
+
+  # Robust productivity attach (R-prod): join per-plot asymptotic AGB onto BOTH
+  # subjects and donors by PLT_CN so the cem_prod key is symmetric regardless of
+  # how asym_agb propagated through the t1/t2/include_remeasured machinery.
+  if (isTRUE(cfg$cem$use_productivity)) {
+    .apath <- file.path(cfg$paths$config_dir %||% cfg$config_dir %||% "config",
+                        "asym_agb_by_pltcn.csv")
+    if (file.exists(.apath)) {
+      .alk <- suppressWarnings(readr::read_csv(.apath,
+               col_types = readr::cols(PLT_CN = readr::col_character(),
+                                       asym_agb = readr::col_double()),
+               show_col_types = FALSE)) |> dplyr::distinct(PLT_CN, .keep_all = TRUE)
+      .attach <- function(df) {
+        if (!"PLT_CN" %in% names(df)) return(df)
+        df |>
+          dplyr::select(-dplyr::any_of("asym_agb")) |>
+          dplyr::mutate(.k = format(as.numeric(PLT_CN), scientific = FALSE, trim = TRUE)) |>
+          dplyr::left_join(.alk, by = c(".k" = "PLT_CN")) |>
+          dplyr::select(-.k)
+      }
+      subjects <- .attach(subjects); donors <- .attach(donors)
+      cat(sprintf("  productivity attached: subj %.0f%%, donor %.0f%% non-NA asym_agb\n",
+                  100*mean(!is.na(subjects$asym_agb)), 100*mean(!is.na(donors$asym_agb))))
+    } else {
+      cat("  productivity lookup missing; cem_prod disabled this run\n")
+    }
+  }
 
   # Also ensure subjects have CONDPROP_UNADJ for coarsening
   if (!"CONDPROP_UNADJ" %in% names(subjects) && "CONDPROP_C" %in% names(subjects)) {

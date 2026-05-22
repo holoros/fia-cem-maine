@@ -1,0 +1,22 @@
+suppressPackageStartupMessages({library(data.table); library(terra)})
+db <- readRDS(path.expand("~/fia_data/fia_db_WA.rds"))
+p <- as.data.table(db$PLOT)
+cat("PLOT cols:", paste(intersect(c("CN","LON","LAT","STATECD"),names(p)),collapse=","), "\n")
+p <- unique(p[!is.na(LON) & !is.na(LAT), .(CN, LON, LAT, STATECD)], by="CN")
+cat("unique plots w/ coords:", nrow(p), "\n")
+rpath <- path.expand("~/FIA/FIA/asym_agb_analysis/results/stage4_asym_agb_conus_30m_overview1km.tif")
+r <- rast(rpath)
+cat("raster CRS name:", crs(r, describe=TRUE)$name, "| res:", paste(round(res(r)),collapse="x"), "\n")
+pts <- vect(as.data.frame(p), geom=c("LON","LAT"), crs="EPSG:4326")
+pts2 <- project(pts, crs(r))
+v <- terra::extract(r, pts2)
+p$asym_agb <- v[[2]]
+cat("coverage:", sum(!is.na(p$asym_agb)), "/", nrow(p), sprintf("(%.1f%%)\n", 100*mean(!is.na(p$asym_agb))))
+p[asym_agb < 0, asym_agb := NA]   # drop nonsensical negatives
+cat("after neg-clamp coverage:", sum(!is.na(p$asym_agb)), sprintf("(%.1f%%)\n", 100*mean(!is.na(p$asym_agb))))
+print(summary(p$asym_agb))
+print(quantile(p$asym_agb, c(.1,.2,.4,.6,.8,.9), na.rm=TRUE))
+out <- data.table(PLT_CN = format(as.numeric(p$CN), scientific=FALSE, trim=TRUE), asym_agb = round(p$asym_agb,2))
+out <- out[!is.na(asym_agb)]
+fwrite(out, path.expand("~/fia_cem_projections/config/asym_agb_by_pltcn.csv"))
+cat("wrote", nrow(out), "rows to config/asym_agb_by_pltcn.csv\n")

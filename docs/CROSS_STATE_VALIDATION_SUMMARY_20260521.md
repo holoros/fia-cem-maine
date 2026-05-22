@@ -14,7 +14,7 @@ All six production runs pass every headline check. Cycle 1 BAU values sit inside
 | WA | 4.5 | l7b | 68.6 [55,80] | 9.8 [9,18] | 622.0 [500,800] | 4.31 [3,7] | vol PASS, harv PASS, C PASS, gr PASS | PASS |
 | WA | 8.5 | l7b | 68.7 [55,80] | 9.8 [9,18] | 622.7 [500,800] | 4.31 [3,7] | vol PASS, harv PASS, C PASS, gr PASS | PASS |
 | MN | 4.5 | l7b | 21.6 [18,32] | 9.9 [9,18] | 265.5 [180,320] | 3.95 [3,7] | vol PASS, harv PASS, C PASS, gr PASS | PASS |
-| MN | 8.5 | p3 proxy | 21.6 [18,32] | 10.0 [9,18] | 265.8 [180,320] | 3.94 [3,7] | vol PASS, harv PASS, C PASS, gr PASS | PASS |
+| MN | 8.5 | l7b (canonical) | 21.6 [18,32] | 9.9 [9,18] | 265.7 [180,320] | 3.94 [3,7] | vol PASS, harv PASS, C PASS, gr PASS | PASS |
 | GA | 4.5 | p3 proxy | 32.8 [25,36] | 9.9 [9,18] | 396.0 [330,500] | 5.62 [3,7] | vol PASS, harv PASS, C PASS, gr PASS | PASS |
 | GA | 8.5 | p3 proxy | 32.9 [25,36] | 9.9 [9,18] | 396.8 [330,500] | 5.62 [3,7] | vol PASS, harv PASS, C PASS, gr PASS | PASS |
 
@@ -33,7 +33,9 @@ The California donor pool lowers WA cycle 1 volume and carbon relative to the ne
 
 Three of the six canonical l7b production runs (MN RCP 8.5, GA RCP 4.5, GA RCP 8.5) ran out of memory at the 200 GB hugemem cap (SLURM 10124342, 10124343, 10124344, all OUT_OF_MEMORY after 9 to 12 hours). They did not write usable inventory or per_plot outputs. For those three cells the table uses the immediately prior p3hindcast runs as a proxy. This is defensible for sanity validation because the p3 and l7b pipelines differ only in the ecoregion matching key, which the WA hindcast showed leaves the aggregate projection essentially unchanged (WA p3 and l7b hindcasts were identical at minus 79.4 MMT). The fourth run, MN RCP 4.5 l7b, completed and is shown as true l7b.
 
-Recommendation: rerun MN RCP 8.5, GA RCP 4.5, and GA RCP 8.5 l7b at 400 GB on the hugemem partition (it provides 480 GB) to replace the proxies with true l7b numbers. This was not auto-submitted, to respect the no-queue-disturbance and validation-only scope of this session.
+Recommendation: rerun MN RCP 8.5, GA RCP 4.5, and GA RCP 8.5 l7b at 400 GB on the hugemem partition (it provides 480 GB) to replace the proxies with true l7b numbers.
+
+Update 2026-05-22: the MN RCP 8.5 l7b rerun at 400 GB completed and validated PASS (8 of 8), with canonical numbers essentially identical to the p3 proxy (cycle 1 BAU volume 1,240.4 versus 1,240.8 cuft per acre, carbon 33,669 versus 33,683 lb per acre). That cell is now canonical in the table above. The GA RCP 4.5 and RCP 8.5 reruns timed out at the 16 hour wall limit (not out of memory), so they were resubmitted at 24 hours (SLURM 10310329 and 10310330) and are running; the two GA cells remain p3 proxy until those land. The p3 to l7b agreement seen for MN and Washington (hindcast identical, validation numbers within 0.1 percent) gives high confidence the GA proxies will also match their canonical reruns.
 
 ## Cross-state reference deltas (WA l7b RCP 4.5 vs ME econ_l7b)
 

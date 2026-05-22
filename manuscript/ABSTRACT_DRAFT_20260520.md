@@ -4,7 +4,7 @@
 
 ## Title (working)
 
-"A coarsened exact matching framework for state-level forest carbon projection: cross-state extension, bias mechanism, and ecoregion stratification"
+"A coarsened exact matching framework for state-level forest carbon projection: cross-state extension, the donor pool composition mechanism, and a transferability limit"
 
 Alternates:
 - "Donor pool composition limits transferability of FIA-based CEM forest carbon projections: diagnosis and stratified-matching remediation"
@@ -18,9 +18,9 @@ Across the four-state set, cross-state hindcast bias spans -25 percent (Washingt
 
 Notably, Maine's reference -1.1 percent bias arises despite the same dramatic donor pool mismatch (30 pp gap in spruce/fir): three compensating mechanisms (decoupled ClimateNA climate coupling, within-state `state_constants.csv` refinement, owner-balanced rescaling against published RPA rates) absorb the donor pool gap in the Maine reference. The other three states lack one or more of these compensations.
 
-We propose and implement a three-iteration ecoregion-stratified CEM matching strategy that adds EPA L3 ecoregion as a matching key alongside the existing FORTYPCD and OWNGRPCD strata, with graceful fallback through Bailey-section-equivalent collapse and within-state leave-one-out matching. Empirical cell-size diagnostics across CONUS confirm feasibility: at the fine resolution 99.7 percent of subject conditions match at least one donor (median 3 matches). [Placeholder: actual bias reductions from full production reruns to be inserted: projected WA -25 to -5/-10 percent, MN -23 to -3/-8 percent, GA +10 to +3/+5 percent, ME canonical unchanged.]
+We then test three donor side remedies against the largest bias, Washington. A three-iteration ecoregion-stratified matching strategy that adds EPA L3 ecoregion alongside the FORTYPCD and OWNGRPCD strata, with graceful fallback, is feasible at the matching level (99.7 percent of subject conditions match a donor at fine resolution) but does not change the Washington hindcast (residual unchanged at minus 79 MMT). Expanding the donor pool to the full continental FIA database including California likewise leaves it unchanged, because California donors carry a lower growth potential than the Pacific Northwest maritime forest. Matching on a continental site productivity surface (asymptotic aboveground biomass) reduces the Washington percent bias on matched plots from minus 25 to minus 14 percent, but only by leaving roughly half of the high-productivity subject plots unmatched, a coverage loss continental donors do not repair. These convergent results show Washington's high-productivity maritime Douglas-fir has no analog in the FIA donor universe.
 
-The findings establish donor pool composition mismatch as the dominant transferability barrier for CEM forest projection across heterogeneous ecoregions, and ecoregion-stratified matching as a reproducible remediation path. The framework is computationally tractable, requires no new data beyond what the FIA database already publishes, and produces RPA-comparable state-level carbon projections suitable for the methodologically heterogeneous multi-model comparison community.
+The findings establish donor pool composition mismatch as the dominant transferability barrier for CEM forest projection across heterogeneous ecoregions. Where donor analogs exist the framework transfers well, as in Maine, Minnesota, and Georgia; where the subject forest is a site-productivity outlier without a donor analog, as in Washington, donor substitution reaches a fundamental limit, and a model-based productivity correction rather than a better donor search is the remediation path. The framework is computationally tractable, requires no new data beyond what the FIA database already publishes, and produces RPA-comparable state-level carbon projections suitable for the methodologically heterogeneous multi-model comparison community.
 
 ## Keywords
 

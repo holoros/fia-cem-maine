@@ -246,6 +246,30 @@ build_condition_records <- function(db, cfg) {
                 hcb_l3_path))
   }
 
+  # Join per-plot productivity (asymptotic AGB / BGI) for CEM productivity
+  # stratification (R-prod). Safe no-op if the lookup CSV is missing.
+  asym_path <- file.path(cfg$paths$config_dir %||% cfg$config_dir %||% "config",
+                         "asym_agb_by_pltcn.csv")
+  if (file.exists(asym_path)) {
+    asym_lk <- suppressWarnings(
+      readr::read_csv(asym_path,
+                       col_types = readr::cols(PLT_CN = readr::col_character(),
+                                                asym_agb = readr::col_double()),
+                       show_col_types = FALSE)
+    ) |>
+      dplyr::distinct(PLT_CN, .keep_all = TRUE)
+    cond_full <- cond_full |>
+      dplyr::mutate(.PLT_CN_chr = format(as.numeric(PLT_CN),
+                                          scientific = FALSE, trim = TRUE)) |>
+      dplyr::left_join(asym_lk, by = c(".PLT_CN_chr" = "PLT_CN")) |>
+      dplyr::select(-.PLT_CN_chr)
+    cat(sprintf("  asym_agb joined from %s: %d of %d cond rows matched (%.1f%%)\n",
+                asym_path, sum(!is.na(cond_full$asym_agb)), nrow(cond_full),
+                100 * mean(!is.na(cond_full$asym_agb))))
+  } else {
+    cat(sprintf("  asym_agb lookup not at %s; CEM productivity key disabled\n", asym_path))
+  }
+
   return(cond_full)
 }
 
@@ -293,7 +317,7 @@ identify_remeasured_pairs <- function(cond_records) {
            LAT, LON, ELEV, PLT_CN,
            # Pass-through ecoregion key for CEM Layer 7 stratification.
            # any_of() so missing column is a soft no-op (falls back to STATECD).
-           any_of(c("us_l3code", "us_l3name")))
+           any_of(c("us_l3code", "us_l3name", "asym_agb")))
 
   t2 <- t1  # same structure for time 2
 
@@ -423,7 +447,7 @@ identify_subject_plots <- function(cond_records, remeasured, cfg = NULL) {
            dom_spcd, var_val, starts_with("vol_"),
            LAT, LON, ELEV, PLT_CN,
            # Pass-through ecoregion key for CEM Layer 7 stratification.
-           any_of(c("us_l3code", "us_l3name")))
+           any_of(c("us_l3code", "us_l3name", "asym_agb")))
 
   cat(sprintf("  Identified %d subject plot conditions for projection\n",
               nrow(subjects)))

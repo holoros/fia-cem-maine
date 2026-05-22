@@ -25,9 +25,9 @@ The contribution of each of these three compensations to the residual -1.1 perce
 
 The implication for the field is that bias-mitigation in a CEM forest projection is not just a question of donor pool selection; it depends on the interaction of donor pool, climate coupling, state-specific calibration parameters, and harvest module rescaling. The single largest leverage point is donor pool selection, but the other three each compound. Our proposed ecoregion-stratified matching addresses donor pool selection directly; the other three compensations should be considered in parallel.
 
-## 4.3 Three-iteration ecoregion-stratified CEM as a portable remediation
+## 4.3 Ecoregion-stratified matching: a portable refinement, not a remediation for outlier forests
 
-The proposed remediation is portable because:
+Ecoregion-stratified matching is a portable refinement to the donor selection step. Our production hindcasts show it does not by itself remediate the largest bias, since the Washington residual was unchanged with and without the ecoregion key (Section 3.5). It remains useful donor-selection infrastructure and is portable because:
 
 1. **Requires no new data.** EPA L3 ecoregion codes are available for all CONUS FIA plots via the HCB crosswalk (and easily extended to full coverage via spatial join). FORTYPCD and OWNGRPCD are in FIA COND directly. The L3-to-section crosswalk for iter2 coarsening is provided in the manuscript supplement (`config/l3_to_section.csv`, 85 ecoregions to 20 sections).
 
@@ -36,6 +36,8 @@ The proposed remediation is portable because:
 3. **Reproducible across modeling frameworks.** The same ecoregion x forest type x owner stratification can be applied to other CEM-style forest projection systems (FOROM, RPA Forest Resources, the conus_hcs project) and even non-CEM frameworks where donor selection occurs.
 
 4. **Aligned with ecological understanding.** Bailey ecological sections are the standard mid-level ecological stratification in US forest ecology; using EPA L3 ecoregions with a section-level coarsening lookup respects this convention.
+
+The remediation finding, however, is sharper than any matching refinement. For Washington the high-productivity maritime forest has no donor analog anywhere in the FIA donor universe, so no donor side strategy, ecoregion stratification, continental pool expansion, or site productivity matching, can supply an appropriate donor (Section 3.5). The portable remediation for such productivity outlier forests is therefore a model based productivity correction, calibrated against the asymptotic biomass surface and applied to the unmatched high productivity plots, rather than a further donor search.
 
 ## 4.4 Implications for the PERSEUS multi-model comparison
 
@@ -46,7 +48,7 @@ The PERSEUS effort compares four state-level forest carbon projection frameworks
 [Inherited from existing Section X.3 + additional points:]
 
 - HCB owner classification covers only Maine in the current crosswalk. CONUS extension is a multi-day geospatial task that would enable HCB's 10-class stratification instead of OWNGRPCD's 4-class.
-- The Layer 7b ecoregion patch is validated at smoke scale (ME 10-sim) and at the cell-size feasibility level. Full production bias reduction from the 8-job multistate p1 rerun is the publishable headline number [to be inserted from production results].
+- The ecoregion (Layer 7b) matching key ran to full production. The production hindcasts show it does not reduce the Washington bias, so the publishable headline is the donor-analog-gap transferability limit (Section 3.5), not a bias reduction. The four-state cross-state validation (all six production runs PASS) is in `docs/CROSS_STATE_VALIDATION_SUMMARY_20260521.md`.
 - The GA stand-age saturation mechanism is identified but not corrected in the current Layer 7b patch. A `terminal_age` reduction for plantation FORTYPCDs is staged as a future iteration.
 - ClimateNA decoupled climate coupling is only active for Maine because ClimateNA's desktop GUI workflow blocks automated execution across CONUS. Once per-state ClimateNA outputs are processed externally, decoupled climate coupling for MN, WA, GA would close additional residual bias.
 - The conus_hcs RPA aggregation comparison (this paper's Section X.4) over-predicts the RPA 2016 baseline by 2.5x to 3.7x after unit conversion. The re-measurement bias correction factor (~0.35) is a methodological refinement applicable to all CEM frameworks that train on re-measured panel pairs.
