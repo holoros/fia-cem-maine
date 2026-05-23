@@ -39,6 +39,12 @@ parse_meta <- function(fname) {
     grepl("_p3lite$", tag) ~ "p3lite",
     grepl("_p3$", tag) ~ "p3",
     grepl("_p1$", tag) ~ "p1",
+    grepl("_conusCA_l7b$", tag) ~ "conusCA_l7b",
+    grepl("_conus_l7b$", tag) ~ "conus_l7b",
+    grepl("_prodS_l7b$", tag) ~ "prod_strong",
+    grepl("_prodL7b$", tag) ~ "prod_weak",
+    grepl("_econ_l7b$", tag) ~ "l7b",
+    grepl("_l7b$", tag) ~ "l7b",
     TRUE ~ "other"
   )
   data.frame(file = fname, state = state, rcp = rcp,
@@ -77,10 +83,14 @@ readr::write_csv(bias |> dplyr::select(state, vintage, rcp, cycle_match,
 
 ## ---- Plot ----------------------------------------------------------------
 state_colors <- c(ME = "#1b9e77", MN = "#d95f02", WA = "#7570b3", GA = "#e7298a")
-vintage_shapes <- c(p1 = 16, p3 = 17, p3lite = 15, p3hindcast = 4, r21 = 18)
+vintage_shapes <- c(p1 = 16, p3 = 17, p3lite = 15, p3hindcast = 4, r21 = 18,
+                    l7b = 8, conus_l7b = 10, conusCA_l7b = 11,
+                    prod_weak = 13, prod_strong = 14)
 
 plot_data <- bias |>
-  dplyr::filter(vintage %in% c("p1", "p3", "p3lite", "p3hindcast", "r21")) |>
+  dplyr::filter(vintage %in% c("p1", "p3", "p3lite", "p3hindcast", "r21",
+                                "l7b", "conus_l7b", "conusCA_l7b",
+                                "prod_weak", "prod_strong")) |>
   dplyr::mutate(rcp_label = paste0("RCP ", rcp / 10),
                 state_label = state,
                 vintage_label = vintage)

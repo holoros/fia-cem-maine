@@ -1,94 +1,109 @@
 # Project Memory
 
-*Created May 9, 2026 — last updated May 18, 2026*
+*Created May 9, 2026 — last updated 23 May 2026 06:25 AM ET*
 
-## Current state (20 May 2026 6:30 AM)
+## Current state (23 May 2026 06:25 ET)
 
-**p3 multistate validation COMPLETE.** All four states have v3 production +
-hindcast residuals. Three distinct outcomes:
+**Washington bias story closed.** Three independent remediation paths
+(CONUS donor expansion, California donor addition, productivity matching)
+all converge on the same finding: WA west side maritime Douglas fir has
+no donor analog in the available FIA universe. The remedy is a model
+based growth rate correction, not donor substitution. See
+`docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md` for the decisive memo.
 
-- **MN**: clean v3 win at RPA cycle 4 (bias +6.8 -> -0.5pct).
-- **WA**: v3 unchanged at -25pct (donor pool composition limit, expected).
-- **GA**: v3 strata exclude 55pct of late-cycle subjects, isolating the young
-  plantation cohort. Apparent bias rises (+25 -> +69pct) but reflects subject
-  composition change, not projection drift.
+**Multistate hindcast table closed for ME, MN, WA, GA at cycle 4.** Only
+loose end is GA RCP85 Layer 7b production, which has OOMed three times
+on 200-480 G and the latest hugemem retry (10310330) is approaching its
+24 hour wall.
 
-Only loose end: MN p3hindcast RCP85 (job 10021111 RUNNING) for the symmetric
-RCP8.5 hindcast comparison.
+### Cycle 4 (RPA reference year 2019) bias table
 
-## Older context (19 May 6:50 AM)
+| State | p1 RCP45 | p3 RCP45 | l7b RCP45 | conusCA RCP45 | prod weak RCP45 |
+|---|---:|---:|---:|---:|---:|
+| ME | n/a | n/a | +11.7% | n/a | n/a |
+| MN | +6.8% | **-0.5%** | n/a | n/a | n/a |
+| WA | -25.3% | -25.0% | -25.0% | -24.5% | -13.8% (~17% drop) |
+| GA | +24.9% | +68.8%* | n/a | n/a | n/a |
 
-WA p3 validated and committed (cycle 1 BAU gr_ratio 4.308 down from 4.803;
-hindcast bias -25 to -26 pct ≈ unchanged from p1).
-MN p3 still running at 9:40 wall (cycle 14/15 sim 84 RCP45, cycle 8/15
-sim 92 RCP85 — runs CEM per scenario x sim x cycle = 7500 matchings).
-GA p3 OOMed at 11h wall both runs. GA p3lite running (50 sims, no
-save_per_plot) as 9975778 / 9975779; CEM matching already at iter 3 98pct.
+`*` GA p3hindcast keeps only 45% of late cycle subjects; +69% is on the
+selected plantation heavy subset, not the full subject pool.
 
-## Older context (18 May 11:30 AM)
+### Closing manuscript story
 
-p2 production set RUNNING (6 jobs, v2 crosswalk, 38 pct cond_full coverage).
-p3 production set QUEUED (6 jobs, v3 crosswalk, 100 pct cond_full coverage)
-with --dependency=afterany on p2.
+The multistate CEM framework transfers well to states whose forests have
+donor analogs (ME, MN, GA). It fails for WA in a specific, diagnosable
+way: the west side maritime forest is a high productivity outlier with
+no donor analog, so no matching strategy (neighbor, CONUS, ecoregion,
+productivity) can supply an appropriate donor. The paper presents
+productivity matching as the diagnostic that localizes the failure to a
+donor analog gap, and recommends a hybrid model correction for outlier
+forests as the path forward.
 
-### Today's deliverables
+## Active SLURM jobs (06:25 ET 23 May)
 
-- Diagnosed iter 2 section coarsening 0 pct match anomaly. Root cause: v2 crosswalk used `slice_max(INVYR)` per plot identity, so only 38.8 pct of cond_full's measurement specific PLT_CNs joined; donors not in v2 defaulted to NA us_l3code and the iter 2 section key never aligned.
-- Built `scripts/build_hcb_l3_crosswalk_v3.R`: emits one row per PLT_CN across all measurement years. SLURM 9938372 produced 904,215 rows in ~2 min.
-- Validated v3: 100.0 pct cond_full coverage vs v2's 38.8 pct.
-- Swapped v3 into `config/fia_plots_hcb_l3.csv` (v2 preserved as `.v2_backup.csv`).
-- Queued p3 production (6 jobs) with dependency on p2.
-- Built `scripts/build_p2_vs_p3_comparison.R` for the moment p3 outputs land.
+| Job | Name | Status |
+|---|---|---|
+| 10310330 | fia_ga_hm_85 | RUNNING 21h14 of 24h. GA L7b RCP85 hugemem retry; expect TIMEOUT in ~2.5h unless it finishes. |
 
-### Live jobs on Cardinal
+## Live state of Cardinal storage
 
-| Job ID | Name | State | Crosswalk |
-|---|---|---|---|
-| 9936857 | fia_mn_p2 | RUNNING | v2 |
-| 9936858 | fia_mn_p2_85 | RUNNING | v2 |
-| 9936859 | fia_wa_p2 | RUNNING | v2 |
-| 9936860 | fia_wa_p2_85 | RUNNING | v2 |
-| 9936861 | fia_ga_p2 | RUNNING | v2 |
-| 9936862 | fia_ga_p2_85 | RUNNING | v2 |
-| 9939142 | fia_mn_p3 | PENDING | v3 |
-| 9939143 | fia_mn_p3_85 | PENDING | v3 |
-| 9939144 | fia_wa_p3 | PENDING | v3 |
-| 9939145 | fia_wa_p3_85 | PENDING | v3 |
-| 9939146 | fia_ga_p3 | PENDING | v3 |
-| 9939147 | fia_ga_p3_85 | PENDING | v3 |
+- `fia_db_WA.rds` symlink restored to baseline (STATECDs 16, 41, 53 only;
+  91,169 plots; no California). The conusCA experiment used a temporary
+  rebuilt `fia_db_WA_addCA.rds`; baseline was restored before May 22.
+- Cardinal cleanup 21 May freed ~51 GB; output/ went from 78 GB to 31 GB.
+  21 superseded directories removed, keepers and 6 in-flight jobs preserved.
 
-### Next session pickup checklist
+## Key documents (most recent first)
 
-1. SSH cardinal, `squeue -u crsfaaron -t COMPLETED -h` and `sacct` to confirm p2 and p3 statuses.
-2. Sync output dirs locally: `MN_20260518_rcp45_wear_p2`, `MN_20260518_rcp85_wear_p2`, `WA_20260518_*_p2`, `GA_20260518_*_p2`, plus the same set with `_p3`.
-3. Run `Rscript scripts/build_p2_vs_p3_comparison.R` to render 4 panel figures and the gr_ratio table.
-4. Run `Rscript scripts/hindcast_multistate.R --state {MN,WA,GA} --tag rcp45_wear_p3 --date 20260518` (and rcp85) for the residual table.
-5. Write `docs/P3_VALIDATION_20260518.md` synthesizing iter rates, gr_ratio cycle 1 and cycle 5, and hindcast residuals.
-6. If p3 bias holds the projection (WA -10, MN -5, GA +3 to +5), the manuscript can use p3 as the primary production set.
+- `docs/SESSION_HANDOFF_20260523.md` — this session's full handoff
+- `docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md` — closing WA donor analog gap memo
+- `docs/HINDCAST_WA_RCP{45,85}_WEAR_PRODL7B.md` and `_PRODS_L7B.md` — productivity hindcast results
+- `docs/HINDCAST_WA_RCP{45,85}_WEAR_CONUSCA_L7B.md` — conusCA hindcast results
+- `docs/CONUS_DONOR_NULL_RESULT_20260521.md` — diagnoses why naive --conus_donors did nothing
+- `docs/HINDCAST_MN_RCP85_WEAR_P3HINDCAST.md` — the cycle 4 +9.1% MN RCP85 entry that closes the four state table
+- `docs/HANDOFF_COMPREHENSIVE_20260521.md` — pre conusCA state and corrected narrative
+- `docs/VALIDATION_*_L7B*.md` and `VALIDATION_*_P3PROXY_*.md` — per state systematic validation memos (May 21-22)
 
-### Key documents
+## Manuscript inventory
 
-- `docs/CROSSWALK_V3_VALIDATION_20260518.md` — v3 build and coverage validation
-- `docs/AUTOPILOT_STATUS_20260518.md` — full session state at 11:25 AM
-- `docs/CURRENT_STATE_SYNTHESIS_20260517.md` — manuscript readiness synthesis
-- `docs/CEM_LAYER7_DEPLOYMENT_20260517.md` — Layer 7b deployment record
-- `docs/HANDOFF_20260517_late.md` — pre v3 session handoff
+Main draft assembled (commit c1db4c6): Abstract, 1 Intro, 2 Methods, 3
+Results (3.1 to 3.6), 4 Discussion, 5 Conclusion, 6 Suppl index, 7 data
+and code, 8 References, 9 Acknowledgments. Supplements S1-S4, S7, S8
+drafted (commit 4f5cdda). S5 (per state hindcasts) and S6 (bias
+mechanism chronology) drafted (commit 9661054).
 
-### Open questions for the user
+**Required revisions** before submission: Sections 3.5, Discussion, and
+Abstract need updates to lead with the donor analog gap finding from the
+productivity memo. The original "v3 clean win" framing has been
+superseded.
 
-1. Manuscript framing — Option A framework validation vs Option B bias attribution methodology
-2. STDORGCD plantation vs natural CEM matching for GA bias
-3. ClimateNA per state run timing (manual GUI step on user side)
-4. Reporting horizon for the manuscript (cycle 5 vs cycle 15)
+## Repository state
 
-### Repository state
+- Local main 75+ commits ahead of origin (HTTPS auth not available from
+  this Cowork sandbox; push from workstation or via Cardinal's GitHub
+  SSH).
+- This session committed: MN p3hindcast RCP85 hindcast CSV, updated
+  build_hindcast_bias_figure.R parser, validation memo syncs, the
+  SESSION_HANDOFF_20260523.md, and this updated MEMORY.md.
 
-- Local main: 60+ commits ahead of origin/main
-- Push pending (HTTPS auth not available from this session — push from workstation with `git push origin main`)
-- Latest commits: ed86a0c (p2 vs p3 comparison script), f97d165 (autopilot memo), 47ca4d4 (p3 submitters), ba8d831 (v3 validation), ac858ab (v3 build), cb7b390 (Layer 8b)
+## Next session pickup checklist
 
-### Original relocation note
+1. `squeue -u crsfaaron` to check 10310330 outcome (COMPLETED, TIMEOUT,
+   or OUT_OF_MEMORY).
+2. If 10310330 succeeded: pull `output/GA_*_rcp85_wear_l7b/` and submit
+   GA RCP85 l7b hindcast.
+3. If 10310330 failed: decide whether to retry with further memory
+   mitigation (lower n_sims) or accept p3hindcast as the GA RCP85 row in
+   the manuscript table.
+4. Revise manuscript Sections 3.5 and Discussion using
+   PRODUCTIVITY_MATCHING_RESULT_20260522.md as the closing donor analog
+   gap finding.
+5. Resolve the 75+ commit backlog on origin/main from workstation.
 
-This project was moved from `~/Documents/Claude/` root into the active-projects tree on May 9, 2026 to consolidate research output tracking under a single index. Existing README, CHANGELOG, HANDOFF, and other project documentation remain authoritative.
+## Original relocation note
 
-For full project context see `README.md` or `HANDOFF.md`.
+This project was moved from `~/Documents/Claude/` root into the
+active-projects tree on May 9, 2026 to consolidate research output
+tracking under a single index. Existing README, CHANGELOG, HANDOFF, and
+other project documentation remain authoritative. For full project
+context see `README.md` or `HANDOFF.md`.
