@@ -1,8 +1,14 @@
 # Project Memory
 
-*Created May 9, 2026 — last updated 23 May 2026 06:25 AM ET*
+*Created May 9, 2026 — last updated 24 May 2026 12:25 PM ET*
 
-## Current state (23 May 2026 06:25 ET)
+## Current state (24 May 2026 12:25 ET)
+
+**All loose ends closed.** GA RCP85 Layer 7b production landed
+(10310330 COMPLETED 21h19, exit 0), and the closing hindcast
+(10347584) ran in 14 minutes with cycle 4 bias of **+41.2%**. The
+multistate hindcast table is now complete for ME, MN, WA, GA at
+cycle 4 across both RCPs. No active SLURM jobs for fia_plot_matching.
 
 **Washington bias story closed.** Three independent remediation paths
 (CONUS donor expansion, California donor addition, productivity matching)
@@ -11,22 +17,20 @@ no donor analog in the available FIA universe. The remedy is a model
 based growth rate correction, not donor substitution. See
 `docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md` for the decisive memo.
 
-**Multistate hindcast table closed for ME, MN, WA, GA at cycle 4.** Only
-loose end is GA RCP85 Layer 7b production, which has OOMed three times
-on 200-480 G and the latest hugemem retry (10310330) is approaching its
-24 hour wall.
-
 ### Cycle 4 (RPA reference year 2019) bias table
 
-| State | p1 RCP45 | p3 RCP45 | l7b RCP45 | conusCA RCP45 | prod weak RCP45 |
-|---|---:|---:|---:|---:|---:|
-| ME | n/a | n/a | +11.7% | n/a | n/a |
-| MN | +6.8% | **-0.5%** | n/a | n/a | n/a |
-| WA | -25.3% | -25.0% | -25.0% | -24.5% | -13.8% (~17% drop) |
-| GA | +24.9% | +68.8%* | n/a | n/a | n/a |
+| State | p1 RCP45 | p1 RCP85 | p3 RCP45 | p3hindcast RCP85 | l7b RCP45 | l7b RCP85 | conusCA RCP85 | prod weak RCP45 | prod strong RCP45 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| ME | n/a | n/a | n/a | n/a | +11.7% | +11.4% | n/a | n/a | n/a |
+| MN | +6.8% | +6.6% | **-0.5%** | +9.1% | n/a | n/a | n/a | n/a | n/a |
+| WA | -25.3% | -24.8% | -25.0% | n/a | -25.0% | -25.8% | -24.6% | -13.8% (~17% drop) | -19.6% (~48% drop) |
+| GA | +24.9% | +25.1% | +68.8%* | +78.7%* | n/a | **+41.2%** | n/a | n/a | n/a |
 
-`*` GA p3hindcast keeps only 45% of late cycle subjects; +69% is on the
-selected plantation heavy subset, not the full subject pool.
+`*` GA p3hindcast keeps only 45 percent of late cycle subjects; +69 and
++79 percent are on the selected plantation heavy subset, not the full
+subject pool. GA RCP85 l7b at +41 percent retains the full subject pool
+and shows the cost of adding ecoregion matching where it does not align
+with the GA donor structure: bigger overshoot than the p1 baseline.
 
 ### Closing manuscript story
 
@@ -39,11 +43,12 @@ productivity matching as the diagnostic that localizes the failure to a
 donor analog gap, and recommends a hybrid model correction for outlier
 forests as the path forward.
 
-## Active SLURM jobs (06:25 ET 23 May)
+## Active SLURM jobs (12:25 ET 24 May)
 
-| Job | Name | Status |
-|---|---|---|
-| 10310330 | fia_ga_hm_85 | RUNNING 21h14 of 24h. GA L7b RCP85 hugemem retry; expect TIMEOUT in ~2.5h unless it finishes. |
+No active fia_plot_matching jobs. 10310330 (GA L7b RCP85 production)
+completed in 21h19 with exit 0; 10347584 (GA RCP85 l7b hindcast)
+completed in 14m with exit 0. Other queued items belong to a separate
+array (10413144_*, akhi_24h).
 
 ## Live state of Cardinal storage
 
@@ -88,17 +93,23 @@ superseded.
 
 ## Next session pickup checklist
 
-1. `squeue -u crsfaaron` to check 10310330 outcome (COMPLETED, TIMEOUT,
-   or OUT_OF_MEMORY).
-2. If 10310330 succeeded: pull `output/GA_*_rcp85_wear_l7b/` and submit
-   GA RCP85 l7b hindcast.
-3. If 10310330 failed: decide whether to retry with further memory
-   mitigation (lower n_sims) or accept p3hindcast as the GA RCP85 row in
-   the manuscript table.
-4. Revise manuscript Sections 3.5 and Discussion using
+1. Revise manuscript Sections 3.5 and Discussion using
    PRODUCTIVITY_MATCHING_RESULT_20260522.md as the closing donor analog
-   gap finding.
-5. Resolve the 75+ commit backlog on origin/main from workstation.
+   gap finding. The figure is now final: 72 rows across ME/MN/WA/GA
+   and ten vintages.
+2. Write a brief addendum (or expand the GA section in
+   docs/PRODUCTIVITY_MATCHING_RESULT_*) noting GA RCP85 l7b at +41
+   percent. The interpretation is that adding L3 ecoregion matching
+   to GA (where the p1 baseline is already +25 percent) widens the
+   overshoot rather than closing it, because GA donors share regional
+   ecology but differ in growth composition, and the ecoregion key
+   binds to a faster growing donor subset.
+3. Decide whether to fold GA RCP85 l7b into the manuscript Section 3.5
+   table or leave it as a supplementary entry. The p1 + p3hindcast
+   pair already characterizes GA; the l7b entry mainly reinforces that
+   ecoregion matching helps ME but does not help GA.
+4. Resolve the 75+ commit backlog on origin/main from workstation
+   (HTTPS auth still unavailable from Cowork sandbox).
 
 ## Original relocation note
 
