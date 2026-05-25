@@ -1,0 +1,34 @@
+GA RCP85 wear_l7b cycle 4 (2019) cohort decomposition
+=====================================================
+
+Observed total AGC:     181.5 MMT (full subject pool, 1836 plots)
+Projected total AGC:    256.2 MMT
+Excess:                 +74.7 MMT (+41.16 pct)
+
+Plantation-indicative cohort (FORTYPCD 141, 142, 161-168):
+  n_plots: 39273 (37.4 pct of subject pool)
+  mean projected AGC: 44637.58 Mg/ha
+  median STDAGE:      34 years
+  share of total projected: 42.5 pct
+
+Other forest types:
+  n_plots: 65850 (62.6 pct of subject pool)
+  mean projected AGC: 34633.26 Mg/ha
+  median STDAGE:      57 years
+  share of total projected: 57.5 pct
+
+Ratio of plantation to other:
+  per-plot mean projected AGC ratio: 1.29x
+  age ratio (lower means younger plantations): 0.60x
+
+Interpretation:
+  If plantation share of total projected AGC is much higher than its
+  share of the plot count, the cohort is being projected high. Combined
+  with the May 17 donor pool diagnostic finding that plantation plots
+  have median STDAGE 20 years and 95 pct have sat_age = 1.0 (no growth
+  attenuation), this isolates the +41 pct overshoot to a specific
+  unattenuated young plantation cohort whose donors share that profile.
+
+Run timestamp:
+2026-05-25 07:55:36
+

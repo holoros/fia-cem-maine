@@ -84,32 +84,35 @@ superseded.
 
 ## Repository state
 
-- Local main 75+ commits ahead of origin (HTTPS auth not available from
-  this Cowork sandbox; push from workstation or via Cardinal's GitHub
-  SSH).
-- This session committed: MN p3hindcast RCP85 hindcast CSV, updated
-  build_hindcast_bias_figure.R parser, validation memo syncs, the
-  SESSION_HANDOFF_20260523.md, and this updated MEMORY.md.
+- Local main fully synced to origin/main at commit `9a24790` (push
+  via gh CLI using the holoros PAT, 24 May 2026). The "75+ commit
+  backlog" referenced in earlier memos had already been resolved on
+  a prior workstation push; only two commits actually needed sending
+  this session (`933b085` and `9a24790`).
+- This session committed: GA RCP85 l7b hindcast CSV, GA L7b memo,
+  multistate bias figure refresh (72 rows), and this MEMORY.md
+  update.
 
 ## Next session pickup checklist
 
-1. Revise manuscript Sections 3.5 and Discussion using
-   PRODUCTIVITY_MATCHING_RESULT_20260522.md as the closing donor analog
-   gap finding. The figure is now final: 72 rows across ME/MN/WA/GA
-   and ten vintages.
-2. Write a brief addendum (or expand the GA section in
-   docs/PRODUCTIVITY_MATCHING_RESULT_*) noting GA RCP85 l7b at +41
-   percent. The interpretation is that adding L3 ecoregion matching
-   to GA (where the p1 baseline is already +25 percent) widens the
-   overshoot rather than closing it, because GA donors share regional
-   ecology but differ in growth composition, and the ecoregion key
-   binds to a faster growing donor subset.
-3. Decide whether to fold GA RCP85 l7b into the manuscript Section 3.5
-   table or leave it as a supplementary entry. The p1 + p3hindcast
-   pair already characterizes GA; the l7b entry mainly reinforces that
-   ecoregion matching helps ME but does not help GA.
-4. Resolve the 75+ commit backlog on origin/main from workstation
-   (HTTPS auth still unavailable from Cowork sandbox).
+1. Revise manuscript Sections 3.5 and Discussion to integrate the GA
+   cohort attribution from `docs/GA_L7B_DRIVERS_20260525.md` together
+   with the WA donor analog gap from
+   `docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md`. The closing
+   framework is: the CEM matching engine amplifies whatever growth
+   rate asymmetry exists in the regional donor pool. ME diverse pool
+   plus L3 = +12 pct (key selects right growth match). GA homogeneous
+   pool plus L3 = +41 pct (key concentrates plantation cohort). WA
+   absent analog = -25 pct floor (key cannot find a match).
+2. Fold the cohort cross-tab figure (or table) from
+   `output/ga_l7b_residual_20260524/` into the manuscript supplement.
+3. Optional follow-up analyses, not in scope for current manuscript:
+   stratify GA matching by STDAGE class, apply plantation-specific
+   sat_age cap below 1.0 for ages under 40, or remove plantation
+   indicative donors from the GA pool.
+4. gh CLI authentication is now configured via the github-manager
+   skill. The GA RCP85 l7b commit (9a24790) and the GA driver memo
+   commits push cleanly to origin/main with `git push origin main`.
 
 ## Original relocation note
 
