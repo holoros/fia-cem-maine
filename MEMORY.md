@@ -1,14 +1,37 @@
 # Project Memory
 
-*Created May 9, 2026 — last updated 24 May 2026 12:25 PM ET*
+*Created May 9, 2026 — last updated 26 May 2026 PM ET*
 
-## Current state (24 May 2026 12:25 ET)
+## Current state (26 May 2026)
 
-**All loose ends closed.** GA RCP85 Layer 7b production landed
-(10310330 COMPLETED 21h19, exit 0), and the closing hindcast
-(10347584) ran in 14 minutes with cycle 4 bias of **+41.2%**. The
-multistate hindcast table is now complete for ME, MN, WA, GA at
-cycle 4 across both RCPs. No active SLURM jobs for fia_plot_matching.
+**Project closed.** Hindcast table complete, donor analog gap (WA) and
+GA cohort attribution memos in place, origin/main fully synced through
+commit `9cd014f`. The manuscript revision (Sections 3.5, Discussion,
+Abstract) is the only remaining work and is a writing session task,
+not a Cardinal compute task. No active fia_plot_matching SLURM jobs.
+
+GA RCP85 Layer 7b production landed (10310330 COMPLETED 21h19, exit 0),
+the closing hindcast (10347584) ran in 14 minutes with cycle 4 bias of
+**+41.2%**, and the cohort decomposition (10428127) localized that
+overshoot to the 21-40 yr plantation cohort (1.61x mean projected AGC
+vs same-age other forest types, 22.5 pct share of total cycle 4
+projected AGC).
+
+## Cardinal status snapshot (26 May 2026)
+
+| Project | Active jobs | Status |
+|---|---|---|
+| fia_plot_matching | none | All loose ends closed |
+| fvs-conus | cspi_v3_30mF (20h+), hg_unified_100k (14h, 85 pct sampling) | Healthy, productive |
+| Disturbance | fig3regen2 (FAILED, exit 1) | Needs separate session |
+
+The Disturbance `fig3regen2` job (10460245) failed in
+`predict_vintage_lookup_v5 -> extract_treemap_attrs` with
+`topht_range` evaluating to NaN, suggesting the STANDHT lookup join
+returned all NA. That belongs to the Disturbance project memory, not
+this one.
+
+Quota: 334 G / 500 G (67 pct), 268k / 1M inodes. Healthy.
 
 **Washington bias story closed.** Three independent remediation paths
 (CONUS donor expansion, California donor addition, productivity matching)
@@ -43,12 +66,20 @@ productivity matching as the diagnostic that localizes the failure to a
 donor analog gap, and recommends a hybrid model correction for outlier
 forests as the path forward.
 
-## Active SLURM jobs (12:25 ET 24 May)
+## Active SLURM jobs (26 May 2026)
 
-No active fia_plot_matching jobs. 10310330 (GA L7b RCP85 production)
-completed in 21h19 with exit 0; 10347584 (GA RCP85 l7b hindcast)
-completed in 14m with exit 0. Other queued items belong to a separate
-array (10413144_*, akhi_24h).
+No active fia_plot_matching jobs. Three jobs in queue belong to other
+projects: 10460201 hg_unified_100k (fvs-conus, Stan MCMC 85 pct
+through 2000 iter), 10442822 cspi_v3_30mF (fvs-conus 30m raster
+prediction loop, 20 h+), and 10442824 cspi_v3_ pending dependency.
+
+Session timeline:
+- 10310330 fia_ga_hm_85: COMPLETED 21h19 exit 0 (GA L7b RCP85 production)
+- 10347584 hc_ga_l7b85: COMPLETED 14m exit 0 (GA RCP85 l7b hindcast)
+- 10420898 ga_l7b_resid: failed module load (gdal/3.7.3 needed gcc first)
+- 10420899 ga_l7b_resid: OUT_OF_MEMORY 13m at 32 G (RDS expanded past 32 G)
+- 10421015 ga_l7b_resid: completed 13:46 but R script silently errored on obs_col=NA
+- 10428127 ga_l7b_cohort: COMPLETED 13:39 exit 0, produced cohort decomposition outputs
 
 ## Live state of Cardinal storage
 
@@ -60,7 +91,9 @@ array (10413144_*, akhi_24h).
 
 ## Key documents (most recent first)
 
-- `docs/SESSION_HANDOFF_20260523.md` — this session's full handoff
+- `docs/GA_L7B_DRIVERS_20260525.md` — GA +41 pct overshoot localizes to 21-40 yr plantation cohort
+- `docs/HINDCAST_GA_RCP85_WEAR_L7B.md` — GA RCP85 l7b cycle 4 +41.2 pct closing memo
+- `docs/SESSION_HANDOFF_20260523.md` — prior session full handoff
 - `docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md` — closing WA donor analog gap memo
 - `docs/HINDCAST_WA_RCP{45,85}_WEAR_PRODL7B.md` and `_PRODS_L7B.md` — productivity hindcast results
 - `docs/HINDCAST_WA_RCP{45,85}_WEAR_CONUSCA_L7B.md` — conusCA hindcast results
@@ -84,14 +117,15 @@ superseded.
 
 ## Repository state
 
-- Local main fully synced to origin/main at commit `9a24790` (push
-  via gh CLI using the holoros PAT, 24 May 2026). The "75+ commit
-  backlog" referenced in earlier memos had already been resolved on
-  a prior workstation push; only two commits actually needed sending
-  this session (`933b085` and `9a24790`).
-- This session committed: GA RCP85 l7b hindcast CSV, GA L7b memo,
-  multistate bias figure refresh (72 rows), and this MEMORY.md
-  update.
+- Local main fully synced to origin/main at commit `9cd014f`. The
+  "75+ commit backlog" referenced in earlier memos had already been
+  resolved on a prior workstation push.
+- Recent session commits pushed via gh CLI (holoros PAT):
+  - `933b085` session handoff for the May 23 multistate work
+  - `9a24790` GA RCP85 l7b cycle 4 +41.2 pct hindcast closure
+  - `9cd014f` GA driver investigation: 21-40 yr plantation cohort
+    accounts for 22.5 pct of total projected cycle 4 AGC at 1.61x
+    the mean of same-age other forest types
 
 ## Next session pickup checklist
 
