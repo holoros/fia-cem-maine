@@ -47,3 +47,11 @@ Priority order: HWP first (the key ask and the clearest bias fix), then CSPI-bas
 4. Add `hwp_total` to the PERSEUS metric catalog and ingest via the `--state` adapter, so CEM and YC HWP are shown together.
 
 This is a self-contained module (the harvested-carbon stream already exists), so it can be built and validated against WPsCS before touching the production runs.
+
+## Update (2026-06-02): WPsCS validated in our environment; approach revised
+
+WPsCS-Estimator now runs on Cardinal (clean venv: numpy 2.4.6, scipy 1.17.1, pandas 3.0.3; one Linux path-separator fix) and reproduces its own bundled Scenario_1 reference output to within rounding (max abs diff 1.0 across 119 years x 25 columns). The HWP storage pool extracts cleanly as in-use product stock plus landfill (plus charcoal).
+
+This changes the build decision: **drive Wei's validated Python model directly rather than re-port it to R.** A re-implementation cannot be more accurate than the original and only risks subtle mismatch in the cohort-decay integrals, while the original is citable. The runnable setup, the HWP-pool definition, the decay parameters, and the remaining wiring steps are captured in `perseus_integration/hwp/HWP_SETUP.md`.
+
+Remaining concrete steps (unchanged in substance): emit CEM harvested carbon by product (Year, Biomass, Pulpwood, Sawlog) per scenario, extend the product-allocation parameters past 2020 to the projection horizon, run the bridge, add `hwp_total` plus a `total_system_c` to the state-summary CI, and ingest `hwp_total` into PERSEUS alongside the YC HWP `net_stock`.
