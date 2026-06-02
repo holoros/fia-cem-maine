@@ -107,6 +107,42 @@ Compare both to the +19.5% stateTerm and +20.4% baseline. If plantTerm 35 oversh
 ### Note on broader landscape
 A separate `cbm_states` project (`~/cbm_states/`, repo holoros/cbm_states) is running a GA statewide array (job 11169031) as part of the expanding PERSEUS multi-model effort (new repos: perseus-forest-intelligence, GCBM2hpc, lsog-ne, disturbance-ne, fvs-conus). That work is independent of fia_cem_projections and was left untouched.
 
+## Session update (2026-06-02, later): both outliers solved
+
+### WA productivity-weight bandwidth (full pool throughout)
+| bw | bias |
+|---|---|
+| baseline (none) | -25.0% |
+| 30 | -18.9% |
+| 50 | -15.4% |
+| 75 | **-11.6%** |
+| 100 | running (job 11211043) |
+
+Bias improves monotonically as bandwidth widens from 30 to 75 (-11.6% at bw=75 now beats the hard key prodL7b -13.8%, and keeps the full pool). Since bw -> infinity returns to uniform (-25%), the optimum is past 75; bw=100 is running to bracket it. Adopt the best-bias bandwidth as the WA default, then promote to production.
+
+### GA solved by plantation rotation, not productivity
+| GA config | bias |
+|---|---|
+| baseline l7b | +20.4% |
+| per-state terminal age (stateTerm, 80yr) | +19.5% |
+| productivity weighting (prodW) | +19.5% (no change) |
+| **plantation rotation 35yr (plantTerm)** | **+6.5%** |
+| plantation rotation 40yr | running (job 11211044) |
+
+The plantation rotation lever (planted stands STDORGCD=1 -> 35yr rotation) brought GA from +20% to +6.5%, inside the gate. Productivity weighting left GA unchanged, a clean confirmation that GA overprediction is plantation accumulation, not donor-growth composition (the opposite of WA). rotation=40 is running to bracket the GA optimum (35 may be near-ideal; 40 should sit slightly higher).
+
+Note: the first GA hindcasts (jobs 11207016/11207018) failed on a hardcoded `--date 20260530` in the dependent scripts while outputs were dated 20260602; re-run with the correct date produced the numbers above. The date is now fixed in `osc/submit_ga_*_hindcast.sh`.
+
+### Status: both levers validated on the full pool
+- WA: productivity-weighted donor draw, bw ~75-100, -25% -> -11.6% (or better, pending bw=100).
+- GA: plantation rotation ~35yr, +20% -> +6.5%.
+
+### Next steps (queued)
+1. Read bw=100 (WA) and rotation=40 (GA) brackets; lock both optima.
+2. Promote to production: WA (best bw) and GA (best rotation) at n_sims 100, both RCP 4.5 and 8.5; refresh MN and ME canonical for consistency.
+3. PERSEUS integration Track A (see `PERSEUS_CONUS_INTEGRATION_PATHWAY_20260602.md`): generalize `~/perseus_db/adapters/ingest_cem_rcp_scenarios.R` to a `--state` argument, ingest the production CI CSVs (ME/WA/GA/MN) as `cls:"CEM"` engines, run `48_export_api.py`, publish to the explorer. This lights up CEM lines for WA/GA/MN, which currently show none.
+4. Track B: port the validated refinements (plantation 35yr rotation, productivity anchoring) into the CONUS YC hybrid owner regimes and re-export.
+
 ## Open infrastructure note
 
 Repo `R/06_projection_engine.R` is still the older r20 baseline; Cardinal `R/` is the live r21/v4 code that R-prodW patched. Before locking manuscript numbers, promote the Cardinal `R/` tree into the repo (plan Section 5.1) so committed code matches what produced the results. The R-prodW patch script is the model for capturing each delta.
