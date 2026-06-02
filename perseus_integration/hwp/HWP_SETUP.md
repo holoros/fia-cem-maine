@@ -58,6 +58,45 @@ Decay parameters (Params2): paper service life 10 yr, building construction
 40 yr; charcoal decay 0.1%/yr (near-permanent). Maine and US parameterizations
 ship in `WPsCS-Estimator/WP_Data/{Maine,US}_WPs.csv`.
 
+## Bridge built and proven (2026-06-02)
+
+`cem_to_hwp.py` drives the validated WPsCS engine on any CEM harvested-carbon
+series (`Year, Biomass, Pulpwood, Sawlog`), forward-filling the product
+allocation parameters to the series length, and returns the HWP pool
+(`HWP_inuse`, `HWP_landfill`, `HWP_charcoal`, `HWP_total`). Proven on the
+bundled data: 119-year run, HWP_total reproduces the validated WPsCS result.
+So the CEM-to-WPsCS plumbing is done; the only missing piece is the CEM input
+series.
+
+## How CEM must emit the input (settled by the per-plot probe)
+
+The per-plot output (`per_plot_projections.rds`, 9.2M rows x 35 cols) carries
+`scenario, sim, cycle, PLT_CN, proj_carbon, was_harvested, harvest_intensity,
+is_clearcut`, the disturbance flags, etc., but it does NOT persist the removed
+volume by product (`vol_removed_sawtimber/pulpwood/total` are intermediate in
+the engine and dropped). So harvested carbon by product cannot be recovered
+from existing outputs and must be emitted from the pipeline.
+
+Planned emission patch (flag-gated `--emit_hwp_input`, off by default):
+
+1. **Engine (`06_projection_engine.R`), harvest branch:** where `vol_removed_*`
+   and `harvest_intensity` are in scope, add per-plot removed carbon by product
+   to the saved columns:
+   `harv_c_total = pre_carbon_ag * harvest_intensity`, then split by the volume
+   shares `harv_c_saw = harv_c_total * vol_removed_sawtimber/vol_removed_total`,
+   `harv_c_pulp` likewise, `harv_c_residue = harv_c_total - saw - pulp`. The
+   not-harvested branch sets these to 0 so the `bind_rows` is consistent.
+2. **Expansion (`10_state_expansion.R`):** EXPNS-weight `harv_c_{saw,pulp,residue}`
+   by scenario x cycle and write `state_<tag>_harvest_by_product.csv` with
+   columns `Year, Biomass(=residue), Pulpwood(=pulp), Sawlog(=saw)` in Tg C.
+3. **Run with production.** Because the input is produced during the projection,
+   this lands automatically with the gated WA/GA production promotion: one run
+   yields both the refined trajectory and the HWP input. Then `cem_to_hwp.py`
+   converts it and the pool is appended to the state-summary CI.
+
+This unifies the HWP wiring with the production runs, so no extra projection is
+needed solely for HWP.
+
 ## Remaining steps to wire CEM in
 
 1. **Emit CEM harvested carbon by product.** Add a per-scenario annual series
