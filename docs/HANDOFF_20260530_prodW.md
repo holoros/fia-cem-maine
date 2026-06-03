@@ -143,6 +143,28 @@ Note: the first GA hindcasts (jobs 11207016/11207018) failed on a hardcoded `--d
 3. PERSEUS integration Track A (see `PERSEUS_CONUS_INTEGRATION_PATHWAY_20260602.md`): generalize `~/perseus_db/adapters/ingest_cem_rcp_scenarios.R` to a `--state` argument, ingest the production CI CSVs (ME/WA/GA/MN) as `cls:"CEM"` engines, run `48_export_api.py`, publish to the explorer. This lights up CEM lines for WA/GA/MN, which currently show none.
 4. Track B: port the validated refinements (plantation 35yr rotation, productivity anchoring) into the CONUS YC hybrid owner regimes and re-export.
 
+## CRITICAL correction (2026-06-02 evening): smoke hindcasts were optimistic
+
+The WA production runs (n_sims 100) revealed that the n_sims=20 smoke hindcasts systematically under-sampled the subject pool and overstated the bias improvement. The production projection is byte-consistent with the smoke (cycle-1 BAU carbon 63,342 vs 63,189; weighting activated; 14,130 matched), but the hindcast differs because of subject coverage:
+
+| WA config | n_sims | hindcast subjects | bias |
+|---|---|---|---|
+| baseline l7b | 100 | 11,630 | -25.0% |
+| prodS (hard key) | 20 | 7,288 | -19.6% |
+| prodL7b (hard key) | 20 | 7,421 | -13.8% |
+| prodW bw50/75/100 (smoke) | 20 | ~7,418 | -15.4 / -11.6 / -11.1% |
+| **prodW bw100 (production)** | **100** | **11,614** | **RCP45 -22.9%, RCP85 -21.2%** |
+
+The n_sims=20 hindcasts only cover ~7,400 of the ~11,630 subjects, and that subset is better-predicted, so every smoke (hard key and soft weighting alike) looked far better than it is. At full sample, productivity weighting improves WA by about 2 points (-25.0% to -22.9%), not the ~13 points the smokes implied.
+
+Implications:
+1. The production runs are the canonical, trustworthy numbers; the smoke magnitudes are not. Tuning (bandwidth, rotation) must be validated at full n_sims, not n_sims=20.
+2. WA prodW is a real but modest improvement. Closing the WA gap further needs another lever (the asymptote-anchoring mechanism from plan Section 2.1, or combining levers), evaluated at full n_sims.
+3. GA plantTerm's +6.5% smoke is likewise unconfirmed; the GA production hindcast (running, job 11212498/99) is the real test. Expect it to be less favorable than the smoke.
+4. The production runs are still valid outputs and carry the HWP emission (harv_c_* in per_plot, 45.6M rows), so the expansion + HWP + PERSEUS-ingest pipeline can proceed; the correction is to the expected magnitude and narrative, not the run validity.
+
+This was caught by validating at production scale before publishing. The methodology lesson: smokes show direction, production shows magnitude.
+
 ## Open infrastructure note
 
 Repo `R/06_projection_engine.R` is still the older r20 baseline; Cardinal `R/` is the live r21/v4 code that R-prodW patched. Before locking manuscript numbers, promote the Cardinal `R/` tree into the repo (plan Section 5.1) so committed code matches what produced the results. The R-prodW patch script is the model for capturing each delta.
