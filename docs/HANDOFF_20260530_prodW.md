@@ -165,6 +165,39 @@ Implications:
 
 This was caught by validating at production scale before publishing. The methodology lesson: smokes show direction, production shows magnitude.
 
+## WA asymptote-anchor experiment: NEGATIVE result (2026-06-03)
+
+Full-sample (n_sims 100) WA with prodW bw100 + per-plot asymptote anchor (str 1.0):
+RCP45 bias -23.6% (11,614 subjects), slightly WORSE than prodW alone (-22.9%).
+
+The anchor scales growth by (subject_asym/donor_asym)^(strength/n_cycles), assuming
+donors have lower carrying capacity. For WA that assumption is wrong: the matched
+PNW donor pool (incl. slow-growing high-asymptote old stands) has asymptotes >=
+the subjects', so the ratio < 1 and the anchor slightly suppressed growth. WA's
+underprediction is growth-rate composition, not carrying capacity, so an asymptote
+lever is the wrong instrument. Strength tuning won't fix a direction error.
+
+WA full-sample ladder (the trustworthy numbers):
+| config | bias |
+|---|---|
+| baseline l7b | -25.0% |
+| prodW bw100 | -22.9% (RCP45) / -21.2% (RCP85) |
+| prodW bw100 + asym anchor str1.0 | -23.6% (RCP45) |
+
+**Conclusion: prodW bw100 is WA's best (-22.9%), a modest ~2-point gain. Two
+donor-side levers (soft weighting, asymptote anchor) have now been exhausted with
+small effect.** Closing WA further needs a different instrument (the west/east
+Cascades matching-key split from plan Section 2.1 mechanism 2, or importing a
+process/empirical growth model for PNW), which is a strategic build, not more
+donor-pool tuning. Recommend pausing WA donor tuning and treating prodW bw100 as
+the canonical WA run (it carries the HWP emission).
+
+Operational notes this round: WA anchor hindcasts initially failed on the
+midnight date-rollover (run started 6/2, finished 6/3; output dir dated 6/2,
+inline hindcast looked for 6/3) and were re-run with --date 20260602. GA n_sims
+100 OOM'd at 200G once the harv_c_*/donor_asym columns inflated memory; resubmitted
+on hugemem exclusive nodes (jobs 11229000/01, 2TB, both RCPs).
+
 ## Open infrastructure note
 
 Repo `R/06_projection_engine.R` is still the older r20 baseline; Cardinal `R/` is the live r21/v4 code that R-prodW patched. Before locking manuscript numbers, promote the Cardinal `R/` tree into the repo (plan Section 5.1) so committed code matches what produced the results. The R-prodW patch script is the model for capturing each delta.
