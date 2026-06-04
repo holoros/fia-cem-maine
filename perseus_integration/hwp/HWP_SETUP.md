@@ -97,6 +97,33 @@ Planned emission patch (flag-gated `--emit_hwp_input`, off by default):
 This unifies the HWP wiring with the production runs, so no extra projection is
 needed solely for HWP.
 
+## End-to-end run completed (2026-06-04): first CEM HWP pool
+
+Full chain executed on the canonical WA prodW bw100 production run:
+per_plot (harv_c_*) -> 10_state_expansion.R (R-hwpExp) -> state_<tag>_harvest_by_product.csv
+-> cem_to_hwp.py -> HWP pool. Result in `results/wa_hwp_rcp45_bau.csv` (WA RCP45 BAU):
+
+| Year | HWP_total (MMT C) |
+|---|---|
+| 2004 | 1.2 |
+| 2023 | 13.1 |
+| 2053 | 18.3 (peak) |
+| 2073 | 16.0 |
+
+The pool builds as products accumulate, then declines after ~2053 as in-use stock
+turns over faster than new harvest adds, a sensible managed-forest product-carbon
+curve. WA harvest is sawlog-dominated (~10.6 vs 2.6 MMT pulpwood per cycle; residue ~0).
+
+### Two operational notes for the bridge
+
+1. **Annualize the 5-yr cycle harvest.** The CEM harvest_by_product is per 5-yr
+   cycle at 5-yr steps; WPsCS expects annual input. Divide each cycle by 5 and
+   replicate across its 5 years before the bridge.
+2. **Scale to avoid WPsCS round() underflow.** WPsCS rounds to integers at every
+   step, so MMT-scale inputs (~2/yr) collapse to 0. Multiply the input by 1e6
+   (MMT C -> tonnes C), run, then divide the HWP pool by 1e6 to report in MMT C.
+   (Both handled in the WA run wrapper; fold into cem_to_hwp.py as a --scale arg.)
+
 ## Remaining steps to wire CEM in
 
 1. **Emit CEM harvested carbon by product.** Add a per-scenario annual series
