@@ -57,3 +57,17 @@ Real Maine forests are near carbon steady state under current harvest, so a mana
 4. **Refresh and re-ingest** the canonical Maine CEM into PERSEUS once the trajectory is defensible, and fix the v5_anchored anchor discontinuity.
 
 Items 1 and 2 are full-n_sims runs (smokes mislead on magnitude, per the established lesson) of ~5 to 6 h each.
+
+## The decline is systemic across states (added 2026-06-04)
+
+The validated `ingest_cem_state.R` was run on the actual WA and GA production CIs (scratch DB, production untouched). The pipeline works end to end (2,475 rows each, correct `[year, value]` contract), but the forward AGC trajectories show the same crash as Maine:
+
+| state (BAU AGC, Tg C) | 2004 | 2024 | 2074 |
+|---|---|---|---|
+| WA prodW | 243 | 199 | 76 |
+| GA plantTerm | 353 | 291 | 92 |
+| ME wear | 239 | 186 | 96 |
+
+All three decline ~60 to 75% by 2074 under the harvest scenarios. The hindcasts are good (WA -22.9%, GA +0.3%, ME RMSE 16) because they only cover 2004 to 2024, where the decline is still modest; the 2024 to 2074 forward projection is where every state goes non-physical. So this is a **system-wide CEM harvest/regrowth issue**, not Maine-specific, and the Maine diagnostics (SDImax-off, prodW) are really diagnosing the shared mechanism.
+
+**Consequence: hold PERSEUS publication of the WA/GA/ME CEM forward series until the trajectory decline is resolved.** The hindcast-validated bias numbers stand; the forward trajectory shape does not yet. The ingest pipeline itself is validated and ready; only the data is gated.
