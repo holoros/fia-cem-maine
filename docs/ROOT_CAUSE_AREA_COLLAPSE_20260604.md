@@ -42,6 +42,24 @@ Every CEM production run uses `--bootstrap_plots`, so all forward trajectories (
 2. **Fix condition retention.** The projection must carry every condition forward each cycle. For the bootstrap, either resample without replacement (0.9n unique, slight CI narrowing) or attach a unique replicate id so duplicates do not collapse in joins/group_bys.
 3. **Re-run** the focal-state production trajectories after the fix; only then ingest forward series into PERSEUS.
 
+## Refinement (after tracing + checking CURRENT production CIs)
+
+The picture is two distinct problems, not one. Checking the current WA prodW and GA plantTerm production CIs (BAU), decomposed into area x density:
+
+| run | metric | cyc1 | cyc15 | change |
+|---|---|---|---|---|
+| WA prodW | n_cond / area | 2852 / 3150 | 1308 / 1423 | -55% |
+| WA prodW | density (AGC/area) | 0.077 | 0.054 | -30% |
+| GA plantTerm | n_cond / area | 5349 / 8446 | 2965 / 4398 | -48% |
+| GA plantTerm | density | 0.042 | 0.021 | -50% |
+
+So in the CURRENT engine **both** area and density decline (my earlier "density stable" was from the old r19 data PERSEUS shows; r19 was almost pure area collapse). Two contributors:
+
+1. **Area / condition collapse (artifact).** Traced into `run_cem_matching`: subjects in (9,015) > selected + unmatched out (7,320); ~1,695 vanish (neither matched nor unmatched). Driven by `--bootstrap_plots` resampling WITH replacement (no-bootstrap loss was -8%, with-bootstrap -19%): duplicate conditions collapse in the matching. **Fix applied (R-areafix): bootstrap subjects without replacement** (`replace = FALSE`), so there are no duplicates to collapse. One-line change; verification run launched (job 11295651, ME full config + fix, n_sims 20).
+2. **Density decline (forest dynamics).** AGC/area falls ~30 to 50% (WA, GA). This is the harvest / regrowth / SDImax question, the original hypothesis, which is real and separate from the area artifact. The SDImax-off and prodW diagnostics address this part.
+
+Net: the area artifact is a genuine bug now patched; the density decline is a modeling question still under diagnosis. Both must be resolved before the CEM forward trajectories are defensible. PERSEUS publication of forward series stays gated.
+
 ## Status of the two ME diagnostics (SDImax-off, prodW)
 
 Still running, but they target carbon density, which is not the problem. Their value now is the prodW run also refreshes the (stale) PERSEUS Maine data; the SDImax comparison is secondary. The real fix is condition retention, not the density-throttling stack.
