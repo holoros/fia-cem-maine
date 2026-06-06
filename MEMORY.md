@@ -108,18 +108,36 @@ Conclusion, supplements S1 to S8). Drafts live in `manuscript/`.
    forward (2024 to 2074) trajectories as results until the ingrowth fix lands; if
    forward projections are in scope, gate them on the fix.
 
+## Ingrowth fix status (6 June PM)
+
+**Applied and smoke-verified.** `patch_tpa_saturation.py` is on the live Cardinal
+engine (backup retained). The n_sims=1 smoke (`ME_20260606_tpasat_smoke`, job
+11315513) confirms the primary bug is fixed: proj_tpa now declines gently to a few
+hundred TPA (BAU 714->484, No_harvest 739->631) instead of exploding to 9,773/20,997,
+and No_harvest carbon now rises then plateaus (+10%). The n_sims=20 confirmation (job
+11315505) is running with an auto-dependent decomposition (job 11315510). Two
+residuals remain, see `docs/TPASAT_SMOKE_RESULT_20260606.md`:
+- proj_qmd is on an independent path; BA/TPA/QMD coherence improved 159x -> 6x but is
+  not closed. One-line fix: recompute proj_qmd from capped BA and TPA in
+  apply_sdimax_cap. Do AFTER the n_sims=20 verify so it is not invalidated.
+- BAU/managed carbon still declines ~27%, sign-conflicting with the recalibrated YC ME
+  managed-harvest (+27%). Likely CEM BAU harvest intensity exceeds the FIADB working
+  fraction (same issue YC already corrected). Reconcile against
+  zenodo_upload/fia_mgmt_shares_bystate.csv before publishing managed forward series.
+
 ## Next session pickup checklist
 
-1. **Apply the ingrowth fix** (`patch_tpa_saturation.py`): add `.sat_age` to
-   `gr_tpa` at both branches; make `apply_sdimax_cap` scale `proj_tpa`. One-sim ME
-   smoke, then full ME area-fix verify; confirm TPA stabilizes and BA-implied
-   matches reported.
-2. Re-run ME/WA/GA forward production on the fixed engine.
-3. Promote the patched engine into the repo canonical `R/`, tag a release.
-4. Publish WA + GA CIs to PERSEUS (adapter is ready) once forward series is clean.
-5. Add `total_system_c` to state CIs; run `cem_to_hwp.py` for remaining scenarios.
-6. Finish manuscript revisions per `manuscript/REVISION_GUIDANCE_20260606.md`.
-7. Zenodo: `zenodo_upload/` package is staged (June 5); push when ready.
+1. Read the n_sims=20 confirmation (jobs 11315505 -> 11315510 auto-decomp); confirm the
+   smoke result holds at production sampling.
+2. Apply the one-line proj_qmd recompute (close residual 1), re-smoke.
+3. Reconcile CEM BAU harvest intensity vs FIADB working fractions (close residual 2).
+4. Re-run ME/WA/GA forward production on the fixed engine.
+5. Promote the patched engine into the repo canonical `R/`, tag a release.
+6. Publish reserve-scenario WA + GA CIs to PERSEUS (adapter ready); hold managed
+   scenarios until residual 2 closes.
+7. Add `total_system_c` to state CIs; run `cem_to_hwp.py` for remaining scenarios.
+8. Finish manuscript revisions per `manuscript/REVISION_GUIDANCE_20260606.md`.
+9. Zenodo: `zenodo_upload/` package is staged (June 5); push when ready.
 
 ## Original relocation note
 
