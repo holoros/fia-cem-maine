@@ -1,157 +1,127 @@
 # Project Memory
 
-*Created May 9, 2026 — last updated 26 May 2026 PM ET*
+*Created May 9, 2026 — last updated 6 June 2026 PM ET*
 
-## Current state (26 May 2026)
+## Current state (6 June 2026)
 
-**Project closed.** Hindcast table complete, donor analog gap (WA) and
-GA cohort attribution memos in place, origin/main fully synced through
-commit `9cd014f`. The manuscript revision (Sections 3.5, Discussion,
-Abstract) is the only remaining work and is a writing session task,
-not a Cardinal compute task. No active fia_plot_matching SLURM jobs.
+**Active, not closed.** The May 26 "project closed" note was superseded by three
+weeks of work: state bias refinements (WA, GA), PERSEUS CONUS integration, HWP
+storage wiring, and the discovery + partial fix of a forward-trajectory bug. The
+gating open item is a single-line engine bug now fully diagnosed (see below).
 
-GA RCP85 Layer 7b production landed (10310330 COMPLETED 21h19, exit 0),
-the closing hindcast (10347584) ran in 14 minutes with cycle 4 bias of
-**+41.2%**, and the cohort decomposition (10428127) localized that
-overshoot to the 21-40 yr plantation cohort (1.61x mean projected AGC
-vs same-age other forest types, 22.5 pct share of total cycle 4
-projected AGC).
+### The forward-trajectory bug (the thing that gates everything)
 
-## Cardinal status snapshot (26 May 2026)
+PERSEUS showed the Maine CEM managed-harvest carbon crashing (280 -> ~50 Tg),
+the lone outlier among engines. Investigation (June 4 to 6) found TWO causes:
 
-| Project | Active jobs | Status |
-|---|---|---|
-| fia_plot_matching | none | All loose ends closed |
-| fvs-conus | cspi_v3_30mF (20h+), hg_unified_100k (14h, 85 pct sampling) | Healthy, productive |
-| Disturbance | fig3regen2 (FAILED, exit 1) | Needs separate session |
+1. **Area/condition collapse (artifact) - FIXED and VERIFIED 6 June.** The
+   `--bootstrap_plots` resample-with-replacement collapsed duplicate conditions
+   in the matching join. Fix: `replace = FALSE`. Verified in
+   `ME_20260605_areafix_verify` (job 11295651) + decomposition (job 11315075):
+   area (sum CONDPROP) is now flat across 15 cycles, and No_harvest condition
+   count is perfectly retained (7299 -> 7299). See
+   `docs/AREAFIX_VERIFY_AND_INGROWTH_DIAGNOSIS_20260606.md`.
+2. **Runaway ingrowth (modeling bug) - DIAGNOSED, fix not yet applied.** The
+   residual crash is NOT density decline and NOT area loss: `proj_tpa` runs away
+   to physically impossible values (No_harvest reaches 20,997 TPA/acre by cycle
+   15) while BA and carbon fall. Root cause located in
+   `cem_pipeline_patch/06_projection_engine.R`: `gr_tpa` (lines ~794 and ~830) is
+   the only growth rate missing the `* .sat_age` saturation term, so tree count
+   compounds at up to 2.0x/cycle forever; `apply_sdimax_cap` then scales BA and
+   carbon down by `sdi_ratio` (driven by the inflated `proj_sdi`) but never scales
+   `proj_tpa`, so the three state variables decouple (160x BA divergence by cycle
+   15). Surgical fix in the memo: saturate `gr_tpa`, and make the SDImax cap bind
+   on `proj_tpa` too.
 
-The Disturbance `fig3regen2` job (10460245) failed in
-`predict_vintage_lookup_v5 -> extract_treemap_attrs` with
-`topht_range` evaluating to NaN, suggesting the STANDHT lookup join
-returned all NA. That belongs to the Disturbance project memory, not
-this one.
+**This gates PERSEUS publication of the CEM forward series.** Hindcast bias numbers
+(5-cycle, subject-matched) do not reach the runaway regime and remain sound.
 
-Quota: 334 G / 500 G (67 pct), 268k / 1M inodes. Healthy.
+## State refinement results (full n_sims=100, trustworthy)
 
-**Washington bias story closed.** Three independent remediation paths
-(CONUS donor expansion, California donor addition, productivity matching)
-all converge on the same finding: WA west side maritime Douglas fir has
-no donor analog in the available FIA universe. The remedy is a model
-based growth rate correction, not donor substitution. See
-`docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md` for the decisive memo.
+| State | config | hindcast bias | status |
+|---|---|---|---|
+| ME | r11/L7B | RMSE 16 MMT (6%), bias -1.1% | reference, good |
+| WA | prodW bw100 | -22.9% / -21.2% (RCP45/85) | canonical; donor levers exhausted |
+| GA | plantTerm rot35 + prod L7B | **+0.3%** (RMSE 19.2%) | SOLVED (was +20.4%) |
+| MN | L7B | within +/-10% | good |
 
-### Cycle 4 (RPA reference year 2019) bias table
+WA underprediction is a donor-analog gap (west-side maritime Douglas fir has no
+FIA analog); closing it needs a structural instrument (Cascades-split key or a
+process/empirical PNW growth model), not more donor tuning. GA overprediction is
+solved by the stand-origin-aware plantation rotation (STDORGCD=1 -> 35 yr).
 
-| State | p1 RCP45 | p1 RCP85 | p3 RCP45 | p3hindcast RCP85 | l7b RCP45 | l7b RCP85 | conusCA RCP85 | prod weak RCP45 | prod strong RCP45 |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| ME | n/a | n/a | n/a | n/a | +11.7% | +11.4% | n/a | n/a | n/a |
-| MN | +6.8% | +6.6% | **-0.5%** | +9.1% | n/a | n/a | n/a | n/a | n/a |
-| WA | -25.3% | -24.8% | -25.0% | n/a | -25.0% | -25.8% | -24.6% | -13.8% (~17% drop) | -19.6% (~48% drop) |
-| GA | +24.9% | +25.1% | +68.8%* | +78.7%* | n/a | **+41.2%** | n/a | n/a | n/a |
+## PERSEUS integration (CONUS)
 
-`*` GA p3hindcast keeps only 45 percent of late cycle subjects; +69 and
-+79 percent are on the selected plantation heavy subset, not the full
-subject pool. GA RCP85 l7b at +41 percent retains the full subject pool
-and shows the cost of adding ecoregion matching where it does not align
-with the GA donor structure: bigger overshoot than the p1 baseline.
+- Explorer: github.com/holoros/perseus-forest-intelligence, live at
+  holoros.github.io/perseus-forest-intelligence. Static read layer over
+  `~/perseus_db` on Cardinal (SQLite -> `48_export_api.py` -> api JSON).
+- State-general adapter `perseus_integration/ingest_cem_state.R` is built and, as
+  of 6 June, **dry-run validated end to end** against a copy of the production DB:
+  WA prodW and GA plantTerm each ingest 2475 rows (5 scenarios x 11 metrics, 2004
+  to 2074) cleanly. Production DB untouched.
+- **Held:** do not publish the CEM forward series to production until the ingrowth
+  bug is fixed (the 2024 to 2074 window carries the artifact). The YC hybrid engine
+  and hindcast-validated bias numbers remain publishable.
+- The PERSEUS FIA yield-curve engine (separate from CEM) was unified onto one
+  hybrid Chapman-Richards form and the managed scenarios recalibrated to FIADB
+  working fractions; see `PERSEUS_session_handoff.md` and `PERSEUS_yield_curve_memo.md`.
 
-### Closing manuscript story
+## HWP long-term storage
 
-The multistate CEM framework transfers well to states whose forests have
-donor analogs (ME, MN, GA). It fails for WA in a specific, diagnosable
-way: the west side maritime forest is a high productivity outlier with
-no donor analog, so no matching strategy (neighbor, CONUS, ecoregion,
-productivity) can supply an appropriate donor. The paper presents
-productivity matching as the diagnostic that localizes the failure to a
-donor analog gap, and recommends a hybrid model correction for outlier
-forests as the path forward.
+- CEM harvest stream wired to Wei's WPsCS-Estimator. Bridge:
+  `perseus_integration/hwp/cem_to_hwp.py`. First pools produced: WA RCP45 BAU
+  (`wa_hwp_rcp45_bau.csv`) and GA RCP45 BAU (`ga_hwp_rcp45_bau.csv`).
+- Next: add `total_system_c = ecosystem_c + hwp_total` to the state-summary CI so
+  managed-vs-reserve is a fair comparison; expose `hwp_total` in PERSEUS.
 
-## Active SLURM jobs (26 May 2026)
+## Repository state (6 June)
 
-No active fia_plot_matching jobs. Three jobs in queue belong to other
-projects: 10460201 hg_unified_100k (fvs-conus, Stan MCMC 85 pct
-through 2000 iter), 10442822 cspi_v3_30mF (fvs-conus 30m raster
-prediction loop, 20 h+), and 10442824 cspi_v3_ pending dependency.
+- Active branch `cem-wa-ga-refinements-20260602` (PR #3 to holoros/fia-cem-maine),
+  in sync with origin; HEAD `ac22efe`.
+- Uncommitted June work present locally: `PERSEUS_session_handoff.md`,
+  `PERSEUS_yield_curve_memo.md`, `yc_engine_outputs/`, `zenodo_upload/`, plus the
+  new `docs/AREAFIX_VERIFY_AND_INGROWTH_DIAGNOSIS_20260606.md`. Commit these.
+- Reproducibility item: the patched Cardinal r21 engine
+  (`cem_pipeline_patch/06_projection_engine.R`, 1236 lines) is newer than the repo
+  canonical `R/06_projection_engine.R` (1109 lines). **Do NOT promote the engine
+  yet** - promoting now would canonicalize the known ingrowth bug. Promote + tag a
+  release only after the `gr_tpa` saturation fix is in and re-verified.
+- gh auth is via the github-manager skill (not active in a fresh session).
 
-Session timeline:
-- 10310330 fia_ga_hm_85: COMPLETED 21h19 exit 0 (GA L7b RCP85 production)
-- 10347584 hc_ga_l7b85: COMPLETED 14m exit 0 (GA RCP85 l7b hindcast)
-- 10420898 ga_l7b_resid: failed module load (gdal/3.7.3 needed gcc first)
-- 10420899 ga_l7b_resid: OUT_OF_MEMORY 13m at 32 G (RDS expanded past 32 G)
-- 10421015 ga_l7b_resid: completed 13:46 but R script silently errored on obs_col=NA
-- 10428127 ga_l7b_cohort: COMPLETED 13:39 exit 0, produced cohort decomposition outputs
+## Cardinal snapshot (6 June)
 
-## Live state of Cardinal storage
-
-- `fia_db_WA.rds` symlink restored to baseline (STATECDs 16, 41, 53 only;
-  91,169 plots; no California). The conusCA experiment used a temporary
-  rebuilt `fia_db_WA_addCA.rds`; baseline was restored before May 22.
-- Cardinal cleanup 21 May freed ~51 GB; output/ went from 78 GB to 31 GB.
-  21 superseded directories removed, keepers and 6 in-flight jobs preserved.
-
-## Key documents (most recent first)
-
-- `docs/GA_L7B_DRIVERS_20260525.md` — GA +41 pct overshoot localizes to 21-40 yr plantation cohort
-- `docs/HINDCAST_GA_RCP85_WEAR_L7B.md` — GA RCP85 l7b cycle 4 +41.2 pct closing memo
-- `docs/SESSION_HANDOFF_20260523.md` — prior session full handoff
-- `docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md` — closing WA donor analog gap memo
-- `docs/HINDCAST_WA_RCP{45,85}_WEAR_PRODL7B.md` and `_PRODS_L7B.md` — productivity hindcast results
-- `docs/HINDCAST_WA_RCP{45,85}_WEAR_CONUSCA_L7B.md` — conusCA hindcast results
-- `docs/CONUS_DONOR_NULL_RESULT_20260521.md` — diagnoses why naive --conus_donors did nothing
-- `docs/HINDCAST_MN_RCP85_WEAR_P3HINDCAST.md` — the cycle 4 +9.1% MN RCP85 entry that closes the four state table
-- `docs/HANDOFF_COMPREHENSIVE_20260521.md` — pre conusCA state and corrected narrative
-- `docs/VALIDATION_*_L7B*.md` and `VALIDATION_*_P3PROXY_*.md` — per state systematic validation memos (May 21-22)
+- One active job `tm_total` (11314579) belongs to PERSEUS TreeMap, not CEM.
+- `~/fia_cem_projections` is 104 GB. Account PUOM0008.
+- Module load order is mandatory: `gcc/12.3.0` first, then R/4.4.0.
 
 ## Manuscript inventory
 
-Main draft assembled (commit c1db4c6): Abstract, 1 Intro, 2 Methods, 3
-Results (3.1 to 3.6), 4 Discussion, 5 Conclusion, 6 Suppl index, 7 data
-and code, 8 References, 9 Acknowledgments. Supplements S1-S4, S7, S8
-drafted (commit 4f5cdda). S5 (per state hindcasts) and S6 (bias
-mechanism chronology) drafted (commit 9661054).
+Main draft assembled (Abstract, Intro, Methods, Results 3.1 to 3.6, Discussion,
+Conclusion, supplements S1 to S8). Drafts live in `manuscript/`.
 
-**Required revisions** before submission: Sections 3.5, Discussion, and
-Abstract need updates to lead with the donor analog gap finding from the
-productivity memo. The original "v3 clean win" framing has been
-superseded.
-
-## Repository state
-
-- Local main fully synced to origin/main at commit `9cd014f`. The
-  "75+ commit backlog" referenced in earlier memos had already been
-  resolved on a prior workstation push.
-- Recent session commits pushed via gh CLI (holoros PAT):
-  - `933b085` session handoff for the May 23 multistate work
-  - `9a24790` GA RCP85 l7b cycle 4 +41.2 pct hindcast closure
-  - `9cd014f` GA driver investigation: 21-40 yr plantation cohort
-    accounts for 22.5 pct of total projected cycle 4 AGC at 1.61x
-    the mean of same-age other forest types
+**Required revisions** before submission (see
+`manuscript/REVISION_GUIDANCE_20260606.md`):
+1. Lead Section 3.5, Discussion, and Abstract with the donor-analog-gap framing
+   (WA) plus the GA cohort/plantation-rotation result, replacing the old "v3 clean
+   win" framing.
+2. The manuscript reports HINDCAST validation, which is sound. Do NOT present CEM
+   forward (2024 to 2074) trajectories as results until the ingrowth fix lands; if
+   forward projections are in scope, gate them on the fix.
 
 ## Next session pickup checklist
 
-1. Revise manuscript Sections 3.5 and Discussion to integrate the GA
-   cohort attribution from `docs/GA_L7B_DRIVERS_20260525.md` together
-   with the WA donor analog gap from
-   `docs/PRODUCTIVITY_MATCHING_RESULT_20260522.md`. The closing
-   framework is: the CEM matching engine amplifies whatever growth
-   rate asymmetry exists in the regional donor pool. ME diverse pool
-   plus L3 = +12 pct (key selects right growth match). GA homogeneous
-   pool plus L3 = +41 pct (key concentrates plantation cohort). WA
-   absent analog = -25 pct floor (key cannot find a match).
-2. Fold the cohort cross-tab figure (or table) from
-   `output/ga_l7b_residual_20260524/` into the manuscript supplement.
-3. Optional follow-up analyses, not in scope for current manuscript:
-   stratify GA matching by STDAGE class, apply plantation-specific
-   sat_age cap below 1.0 for ages under 40, or remove plantation
-   indicative donors from the GA pool.
-4. gh CLI authentication is now configured via the github-manager
-   skill. The GA RCP85 l7b commit (9a24790) and the GA driver memo
-   commits push cleanly to origin/main with `git push origin main`.
+1. **Apply the ingrowth fix** (`patch_tpa_saturation.py`): add `.sat_age` to
+   `gr_tpa` at both branches; make `apply_sdimax_cap` scale `proj_tpa`. One-sim ME
+   smoke, then full ME area-fix verify; confirm TPA stabilizes and BA-implied
+   matches reported.
+2. Re-run ME/WA/GA forward production on the fixed engine.
+3. Promote the patched engine into the repo canonical `R/`, tag a release.
+4. Publish WA + GA CIs to PERSEUS (adapter is ready) once forward series is clean.
+5. Add `total_system_c` to state CIs; run `cem_to_hwp.py` for remaining scenarios.
+6. Finish manuscript revisions per `manuscript/REVISION_GUIDANCE_20260606.md`.
+7. Zenodo: `zenodo_upload/` package is staged (June 5); push when ready.
 
 ## Original relocation note
 
-This project was moved from `~/Documents/Claude/` root into the
-active-projects tree on May 9, 2026 to consolidate research output
-tracking under a single index. Existing README, CHANGELOG, HANDOFF, and
-other project documentation remain authoritative. For full project
-context see `README.md` or `HANDOFF.md`.
+Moved from `~/Documents/Claude/` root into the active-projects tree May 9, 2026.
+See `README.md` / `HANDOFF.md` for full project context.

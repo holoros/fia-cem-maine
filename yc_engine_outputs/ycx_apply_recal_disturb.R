@@ -25,23 +25,39 @@
 
 out <- if(length(commandArgs(TRUE))>=1) commandArgs(TRUE)[1] else file.path(Sys.getenv("HOME"),"yield_curves_conus")
 td  <- file.path(out,"treemap"); stg<-file.path(out,"recal_staging"); dir.create(stg,showWarnings=FALSE)
-RECAL <- file.path(td,"recal_cell","conus_recal_cell_100yr.csv")
+RECAL <- file.path(td,"recal_cell","conus_recal_capped_100yr.csv")  # APPROVED: agedist + ceiling
 DARMS <- file.path(td,"disturb","disturb_arms_bystate_100yr.csv")
+MARMS <- file.path(td,"disturb","mortarm_bystate_100yr.csv")
 NEWSC <- "reserve (no harvest, disturbance-exposed)"
+NEWSC2<- "reserve (no harvest, mortality-stressed)"
+NEWSC_MD <- "managed (harvest, disturbance-exposed)"
+NEWSC_MM <- "managed (harvest, mortality-stressed)"
 RESERVE <- "reserve (no harvest)"
+MANAGED <- "managed (harvest)"
 
 RATIO_CAP <- 2.0   # guard tiny-state sparse-plot blowups (e.g. RI); review knob
 rc <- read.csv(RECAL,stringsAsFactors=FALSE)        # state,year,hybrid_Tg,recal_Tg,...
 rc$ratio <- with(rc, pmin(ifelse(hybrid_Tg>0, recal_Tg/hybrid_Tg, 1), RATIO_CAP))
 da <- read.csv(DARMS,stringsAsFactors=FALSE)        # state,arm,year,agc_Tg
+ma <- read.csv(MARMS,stringsAsFactors=FALSE)        # state,arm,year,agc_Tg (mortality arms)
+MGR  <- file.path(td,"disturb","managed_stress_ratio_bystate.csv")  # in-loop managed ratios (3 regimes)
+mg <- read.csv(MGR,stringsAsFactors=FALSE)          # state,regime,year,dist_moderate,dist_severe,mort_1p5x,mort_2x
+mg_fun <- function(st,regime,col){d<-mg[mg$state==st & mg$regime==regime,]; if(!nrow(d)) return(function(y) rep(1,length(y))); approxfun(d$year,d[[col]],rule=2)}
+## management regime -> (baseline bucket, regime key)
+REGMAP <- list(
+  list(base="managed (harvest)",      rk="harvest"),
+  list(base="managed (intensive)",    rk="intensive"),
+  list(base="managed (conservation)", rk="conservation"))
 
 recal_fun <- function(st){d<-rc[rc$state==st,]; if(!nrow(d)) return(function(y) rep(1,length(y)))
   approxfun(d$year, d$ratio, rule=2)}
-arm_ratio_fun <- function(st, arm){
-  num<-da[da$state==st & da$arm==arm,]; den<-da[da$state==st & da$arm=="recent",]
+ratio_fun <- function(tbl, st, arm, denom){
+  num<-tbl[tbl$state==st & tbl$arm==arm,]; den<-tbl[tbl$state==st & tbl$arm==denom,]
   if(!nrow(num)||!nrow(den)) return(function(y) rep(1,length(y)))
   m<-merge(num[,c("year","agc_Tg")],den[,c("year","agc_Tg")],by="year",suffixes=c(".n",".d"))
   m$r<-ifelse(m$agc_Tg.d>0, m$agc_Tg.n/m$agc_Tg.d, 1); approxfun(m$year,m$r,rule=2)}
+arm_ratio_fun <- function(st, arm) ratio_fun(da, st, arm, "recent")
+mort_ratio_fun<- function(st, arm) ratio_fun(ma, st, arm, "baseline")
 
 files <- list.files(out, pattern="^ycx_[A-Z]{2}_state_series\\.csv$", full.names=TRUE)
 summ <- list()
@@ -51,8 +67,10 @@ for(f in files){
   rf <- recal_fun(st); rr<-rf(s$year)
   # 1. growth recalibration on all rows
   for(c0 in c("value","value_lo","value_hi")) s[[c0]] <- s[[c0]]*rr
-  # 2. disturbance-exposed reserve, per metric
+  # 2. disturbance-exposed reserve (exogenous fire/insect frequency), per metric
   rmod<-arm_ratio_fun(st,"moderate"); rsev<-arm_ratio_fun(st,"severe")
+  # 3. mortality-stressed reserve (endogenous GRM density mortality), per metric
+  m15<-mort_ratio_fun(st,"mort_1p5x"); m20<-mort_ratio_fun(st,"mort_2x")
   add <- list()
   for(mt in unique(s$metric)){
     base <- s[s$metric==mt & s$mgmt==RESERVE,]; if(!nrow(base)) next
@@ -60,7 +78,26 @@ for(f in files){
     nb$value    <- base$value * rmod(base$year)
     nb$value_lo <- base$value * rsev(base$year)
     nb$value_hi <- base$value                      # historical-rate upper edge
-    add[[mt]] <- nb
+    add[[paste0(mt,"_d")]] <- nb
+    nm <- base; nm$mgmt <- NEWSC2
+    nm$value    <- base$value * m15(base$year)      # central = 1.5x mortality
+    nm$value_lo <- base$value * m20(base$year)      # 2x mortality
+    nm$value_hi <- base$value                       # baseline mortality
+    add[[paste0(mt,"_m")]] <- nm
+    # 4. in-loop climate stress on ALL THREE management regimes (harvest / intensive /
+    #    conservation): per-regime ratios from ycx_managed_stress.R (raster-driven
+    #    disturbance + GRM mortality; harvest age-resets lower exposure).
+    for(R in REGMAP){
+      mb <- s[s$metric==mt & s$mgmt==R$base,]; if(!nrow(mb)) next
+      gd<-mg_fun(st,R$rk,"dist_moderate"); gs<-mg_fun(st,R$rk,"dist_severe")
+      g1<-mg_fun(st,R$rk,"mort_1p5x");     g2<-mg_fun(st,R$rk,"mort_2x")
+      md <- mb; md$mgmt <- sub("\\)$",", disturbance-exposed)",R$base)
+      md$value<-mb$value*gd(mb$year); md$value_lo<-mb$value*gs(mb$year); md$value_hi<-mb$value
+      add[[paste0(mt,"_",R$rk,"_d")]] <- md
+      mm2 <- mb; mm2$mgmt <- sub("\\)$",", mortality-stressed)",R$base)
+      mm2$value<-mb$value*g1(mb$year); mm2$value_lo<-mb$value*g2(mb$year); mm2$value_hi<-mb$value
+      add[[paste0(mt,"_",R$rk,"_m")]] <- mm2
+    }
   }
   s2 <- rbind(s, do.call(rbind, add))
   s2[,c("value","value_lo","value_hi")] <- lapply(s2[,c("value","value_lo","value_hi")], function(x) round(x,5))
