@@ -55,6 +55,25 @@ over-aggressive-harvest issue the YC engine already corrected. **Action before
 publishing managed forward series:** reconcile the CEM BAU harvest intensity against
 the FIADB working fractions in `zenodo_upload/fia_mgmt_shares_bystate.csv`.
 
+## Update (same day): QMD reconciliation applied and confirmed
+
+`patch_qmd_reconcile.py` was applied on top of the TPA-saturation patch (derive proj_qmd
+from the capped BA and TPA inside apply_sdimax_cap). A fresh ME smoke
+(`ME_20260606_qmdrecon_smoke`, job 11315532) confirms it closed residual 1:
+
+- Per-plot BA identity now holds: at cycle 15, median relative error 0.95%, mean 3.4%,
+  p95 6.0% (n=34,894). The earlier 159x and 6x aggregate gaps were a mix of the real QMD
+  overshoot (now fixed) and a Jensen artifact of comparing means; the per-plot identity is
+  what matters and it is now satisfied.
+- QMD growth is now realistic (No_harvest +28% over 75 yr vs the prior +106%).
+- Reconciling QMD also lifted carbon, because realistic QMD feeds a less aggressive SDImax
+  cap: No_harvest carbon +35% (was +10%), BAU -16% (was -27%). The reserve trajectory is now
+  a clean accumulate-then-plateau with BA +11%, fully defensible.
+
+The canonical engine is now the 3-part patched engine (areafix + tpaSat + qmdRecon). The
+n_sims=20 confirmation was relaunched on this engine (job 11315557) with a chained state
+expansion (11315558) to produce the publishable ME CI.
+
 ## Bottom line
 
 - Primary runaway-ingrowth bug: FIXED. Reserve/No_harvest forward carbon is now

@@ -125,19 +125,36 @@ residuals remain, see `docs/TPASAT_SMOKE_RESULT_20260606.md`:
   fraction (same issue YC already corrected). Reconcile against
   zenodo_upload/fia_mgmt_shares_bystate.csv before publishing managed forward series.
 
+## 6 June PM update: both engine fixes done, pushed, production launched
+
+- **Engine is now 3-part fixed:** areafix + tpaSat + qmdRecon. Both new patch scripts
+  (`patch_tpa_saturation.py`, `patch_qmd_reconcile.py`) are applied to the live Cardinal
+  engine and committed. Per-plot BA identity holds (median 0.95% err). Reserve carbon +35%,
+  BAU -16%, TPA stable. See `docs/TPASAT_SMOKE_RESULT_20260606.md`.
+- **Pushed to origin:** branch `cem-wa-ga-refinements-20260602` pushed through commit
+  `a436a74` (all today's work, including the patched engine synced into the patch reference).
+- **Production launched:** ME 3-part production (job 11315557, n_sims=20) + chained state
+  expansion (11315558) will write `output/state_summary_progression/state_me_fixed_l7b_rcp45_ci.csv`,
+  the publishable ME CI. ~90 min + 40 min.
+- **Harvest calibration is a DECISION for Aaron**, not a bug: CEM BAU (-16%) uses a
+  county-active-management harvest basis far heavier than the FIADB working fraction the YC
+  engine uses (+27%). Reserve scenario is unaffected. See
+  `docs/HARVEST_CALIBRATION_FLAG_20260606.md` for the two options.
+
 ## Next session pickup checklist
 
-1. Read the n_sims=20 confirmation (jobs 11315505 -> 11315510 auto-decomp); confirm the
-   smoke result holds at production sampling.
-2. Apply the one-line proj_qmd recompute (close residual 1), re-smoke.
-3. Reconcile CEM BAU harvest intensity vs FIADB working fractions (close residual 2).
-4. Re-run ME/WA/GA forward production on the fixed engine.
-5. Promote the patched engine into the repo canonical `R/`, tag a release.
-6. Publish reserve-scenario WA + GA CIs to PERSEUS (adapter ready); hold managed
-   scenarios until residual 2 closes.
-7. Add `total_system_c` to state CIs; run `cem_to_hwp.py` for remaining scenarios.
-8. Finish manuscript revisions per `manuscript/REVISION_GUIDANCE_20260606.md`.
-9. Zenodo: `zenodo_upload/` package is staged (June 5); push when ready.
+1. When job 11315557 -> 11315558 finish, the ME fixed CI lands. Ingest its **reserve
+   (No_harvest)** series to PERSEUS production via `perseus_db/adapters/ingest_cem_state.R`,
+   run `48_export_api.py`, publish (respect the gh-pages/main desync in the perseus README).
+2. Decide the harvest calibration (option 1 label vs option 2 recalibrate); then publish the
+   managed CEM series.
+3. Re-run WA/GA forward production on the 3-part engine (reuse the prodW / plantTerm submit
+   scripts) for their fixed CIs, then ingest.
+4. Promote the patched engine into the repo canonical `R/` and tag a release (the patch
+   reference `cem_pipeline_patch/06_projection_engine.R` is already current at 1267 lines).
+5. Add `total_system_c` to state CIs; run `cem_to_hwp.py` for remaining scenarios.
+6. Finish manuscript revisions per `manuscript/REVISION_GUIDANCE_20260606.md`.
+7. Zenodo: `zenodo_upload/` package is staged (June 5); push when ready.
 
 ## Original relocation note
 
