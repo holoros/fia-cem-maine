@@ -41,7 +41,31 @@ staging. Two decisions remain before the CEM forward series goes live, both your
    reads `<root>/db/perseus_results.sqlite`.
 6. **Production DB backed up:** `~/perseus_db/db/perseus_results.sqlite.bak_20260606`.
 
-## Two decisions needed before going LIVE (yours)
+## DECISIONS MADE (6 June, late) + recalibration launched
+
+Aaron's calls this session:
+- **Scenario framing:** reserve (No_harvest) = conservation scenario; the county-active-
+  management BAU = active-management scenario (kept, labeled as such).
+- **Add a FIADB working-fraction managed scenario** for apples-to-apples comparison with the
+  YC engine. ME FIADB `harvested_share` = **0.1198** per remeasurement (from
+  `zenodo_upload/fia_mgmt_shares_bystate.csv`).
+
+Acted on it: launched a recalibrated ME production (job **11356875**, expansion **11356876**)
+that drops `--use_county_harvest` and sets `--fixed_harvest_rate 0.1198`, tag `me_fixed_fiadb`,
+writing `output/state_summary_progression/state_me_fiadb_l7b_rcp45_ci.csv`. Its BAU is the
+working-fraction managed line; its No_harvest is the same conservation line.
+
+So three publishable CEM ME lines will exist: conservation (No_harvest), active management
+(county BAU from `state_me_fixed_l7b_rcp45_ci.csv`), and working-fraction managed (BAU from
+`state_me_fiadb_l7b_rcp45_ci.csv`).
+
+**Publish timing note:** as of this writing Aaron has parallel CEM jobs running (the
+`cem_rerun` array, `compos_v2_prod`, `cfi_ingfix`). Do the production-DB ingest + the
+perseus-repo push only once those settle AND the recalibrated CI lands, to avoid colliding
+with his in-flight ingests on the shared `~/perseus_db` and the live repo. The publish is
+otherwise staging-validated and ready (see below).
+
+## Original two decisions (now resolved above)
 
 1. **Model reconciliation.** The live DB has ~10 CEM ME models (`cem_wear_nh_rcp45`,
    `cem_wear_rcp45`, `cem_wear_econ_*`, `cem_policy_*`, `cem_v5_anchored`, `cem_flagged`).
