@@ -79,6 +79,36 @@ otherwise staging-validated and ready (see below).
    managed as deliberately heavier active management, or (2) recalibrate to the FIADB working
    fraction for an apples-to-apples comparison. The reserve series publishes either way.
 
+## DISCOVERY: a CONUS harmonized CEM rerun is already in flight (coordinate the publish)
+
+Aaron has a 39-state array running, `run_cem_conus_rerun.slurm` (array 11356648), n_sims=100,
+`--scenario_set harvest --save_per_plot`, tag `conus_harmonized_<ST>`, covering all states
+incl WA, GA, ME. It runs on the live engine, which now carries both fixes, so this is the
+CONUS-wide fixed-engine refresh. Implications:
+
+- **WA/GA dedicated reruns are unnecessary** for the fixed CIs; the harmonized array produces
+  fixed per-plot for every state. Per-state donor tuning (prodW for WA, plantTerm for GA,
+  brms_sdimax) is NOT in the harmonized config by design (one config for all states).
+- **IMPORTANT engine nuance:** the harmonized array does not pass `--use_brms_sdimax`. The
+  `apply_sdimax_cap` function returns early without a lookup, so the cap-based parts of the
+  fix (the `proj_tpa` scaling and the QMD recompute) DO NOT engage in the harmonized runs.
+  Only the `gr_tpa` `* .sat_age` saturation (which is outside the cap and always applies)
+  engages. That saturation IS the critical runaway fix, so the harmonized runs are protected
+  from the TPA explosion. But they will not have the SDImax density throttle or the QMD
+  reconciliation. Decide whether the harmonized CONUS runs should add `--use_brms_sdimax` to
+  pick up those refinements, or whether the gr_tpa fix alone is the intended harmonized basis.
+- **Publish coordination:** the CEM PERSEUS publish should fold into this CONUS harmonized
+  refresh rather than race it. Ingest the harmonized CONUS series once the array + per-state
+  expansion finish, alongside (or instead of) the ME-specific conservation / active-management
+  / working-fraction lines. Doing a separate ME-only push now would collide with the in-flight
+  array on the shared `~/perseus_db` and would be superseded by the CONUS refresh.
+
+## Engine promotion (done)
+
+The patched engine (1267 lines, both fixes) is now the repo canonical
+`R/06_projection_engine.R` (was the 1109-line r20 baseline; backup
+`R/06_projection_engine.R.bak_r20_20260606`). Release tag deferred until PR #3 merges to main.
+
 ## Exact steps to go live (once decisions made)
 
 ```bash
