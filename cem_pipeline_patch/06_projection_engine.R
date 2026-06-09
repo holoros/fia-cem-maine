@@ -754,8 +754,12 @@ project_one_cycle <- function(subjects, remeasured, scenario,
       dplyr::left_join(as.data.frame(brms_lookup), by = c("PLT_CN_chr" = "PLT_CN")) |>
       dplyr::left_join(as.data.frame(fortyp_state_lookup), by = c("STATECD","FORTYPCD")) |>
       dplyr::mutate(
-        sdimax_eng = dplyr::coalesce(sdimax_eng_plot, sdimax_eng_fortyp,
-                                       GLOBAL_SDIMAX_DEFAULT_ENG),
+        sdimax_eng = dplyr::coalesce(
+          # sdiGuard fix (20260608): accept plot/fortyp SDImax only within a sane
+          # imperial band [150, 800] trees/acre; else fall through to the default.
+          dplyr::if_else(dplyr::between(sdimax_eng_plot,   150, 800), sdimax_eng_plot,   NA_real_),
+          dplyr::if_else(dplyr::between(sdimax_eng_fortyp, 150, 800), sdimax_eng_fortyp, NA_real_),
+          GLOBAL_SDIMAX_DEFAULT_ENG),
         proj_sdi   = proj_tpa * (proj_qmd / 10)^REINEKE_EXP,
         sdi_ratio  = pmin(1, sdimax_eng / pmax(0.1, proj_sdi)),
         # Apply ratio to BA and biomass-related columns
