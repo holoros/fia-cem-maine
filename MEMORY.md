@@ -1,6 +1,11 @@
 # Project Memory
 
-*Created May 9, 2026 — last updated 6 June 2026 PM ET*
+*Created May 9, 2026 — last updated 8 June 2026 PM ET*
+
+> **Current authoritative handoff: `docs/SESSION_HANDOFF_20260608.md`.**
+> Engine at r22 (three patches: tpaSat, qmdRecon, sdiGuard), promoted to canonical `R/`.
+> SDImax-enabled CONUS rerun launched (array 11387267 + GA hugemem 11387249); PERSEUS publish
+> runs after it completes (steps in the 0608 handoff). The sections below are prior context.
 
 ## Current state (6 June 2026)
 
