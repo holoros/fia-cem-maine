@@ -11,6 +11,24 @@ folders (110 GB) inside `output/`, most of them superseded attempts. This map pl
 fix that. The other project folders in `~` (Disturbance, fvs-conus, cbm_maine, perseus_db,
 LANDIS, etc.) are SEPARATE projects, not CEM.
 
+## Two CONUS engines feed PERSEUS (know which home you are in)
+
+PERSEUS compares engines. Two of them are generated under separate Cardinal homes, and both
+ingest into `~/perseus_db`:
+
+- **CEM** lives in `~/fia_cem_projections` (this map). State CIs in
+  `output/state_summary_progression/`.
+- **YC** (FIA hybrid yield curves, FIADB + TreeMap expansions) lives in
+  `~/yield_curves_conus`. Canonical CIs in `~/yield_curves_conus/canonical/`
+  (`ci_yc_{fiadb,treemap}_<st>_{rcp45,rcp85}.csv`), 48 states x 2 expansions x 2 RCPs = 192,
+  completed 2026-06-08. Its publish is staged in `~/yield_curves_conus/ingest_yc_production.sh`
+  (registers models `yc_fiadb_rcp45/85`, `yc_treemap_rcp45/85`, class YC; has a collision guard
+  that aborts while CEM/compos/ingest jobs run; validated on `staging_yc/`).
+
+A unified index of every publishable CI across both engines is at
+`CATALOG/PUBLISHABLE_CIS.csv` (regenerate with `CATALOG/refresh_publishable_cis.sh`); 236 CIs
+as of 2026-06-08 (CEM 44, YC 192).
+
 ## Canonical layout (everything is already here)
 
 ```

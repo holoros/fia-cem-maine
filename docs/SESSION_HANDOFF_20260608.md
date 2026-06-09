@@ -74,6 +74,25 @@ staging-validated (climate key must be `rcp45_hadgem3`; exporter is positional
 Publish the conservation (reserve) line with confidence; label the managed line as a CEM
 active-management projection, not directly comparable to the YC managed bucket.
 
+## Update: CONUS YC outputs ready, and a workspace catalog now exists
+
+- **YC CONUS outputs complete.** `~/yield_curves_conus/canonical/` holds 192 CIs (48 states x
+  {fiadb, treemap} x {rcp45, rcp85}), finished 2026-06-08. The publish is staged in
+  `~/yield_curves_conus/ingest_yc_production.sh`: it registers `yc_fiadb_rcp45/85` and
+  `yc_treemap_rcp45/85` (class YC), backs up the DB, and has a collision guard that aborts
+  while `cem_rerun`/`compos`/`ingest` jobs are running. Validated on `staging_yc/`.
+- **Two CONUS engines now converge on the same publish window.** Both CEM (sdimax, in progress)
+  and YC (ready) ingest into `~/perseus_db`, and both wait for the in-flight jobs to settle.
+  When the queue clears: run `ingest_yc_production.sh` for YC, and the CEM publish steps below
+  for CEM, then one `48_export_api.py` + deploy covers both.
+- **Workspace catalog (orientation aid).** `~/fia_cem_projections/CATALOG/` now centralizes
+  orientation: `PROJECT_MAP.md` (start here), `OUTPUT_CATALOG.csv` (all 200 CEM run folders
+  parsed), `PUBLISHABLE_CIS.csv` (236 CIs across CEM + YC), and `refresh_*.sh` regenerators.
+  Mirror in the repo under `cardinal_catalog/`.
+- **Output tidy-up status.** The CEM `output/` physical archive (move superseded runs to
+  `_ARCHIVE/`) is still deferred because the CONUS array, GA, and other jobs are writing those
+  paths. The catalog handles tracking in the meantime. Run the archive sweep once idle.
+
 ## Remaining (not blocking)
 
 - WA/GA per-state donor tuning (prodW, plantTerm) is intentionally NOT in the harmonized
