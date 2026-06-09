@@ -50,6 +50,31 @@ This is a modeling-intent question, not a code fix, so it is yours to make:
    apples-to-apples. Expected effect: CEM managed carbon moves up toward the reserve, likely
    into agreement with the YC +27%.
 
+## Result of the FIADB recalibration (8 June): it does NOT reconcile CEM with YC
+
+Ran ME at the FIADB working fraction (`--fixed_harvest_rate 0.1198`, no county overlay;
+`state_me_fiadb_l7b_rcp45_ci.csv`). Outcome:
+
+| run | BAU (managed) 2004->2074 | No_harvest (reserve) |
+|---|---|---|
+| county active-management (`state_me_fixed`) | 223.9 -> 176.0 (-21%) | +31% |
+| FIADB working fraction (`state_me_fiadb`) | 221.0 -> 151.8 (**-31%**) | +31% |
+| PERSEUS YC managed (reference) | +27% | +63% (CONUS) |
+
+The FIADB rate gives a HEAVIER decline (-31%) than the county basis (-21%), and still nothing
+like the YC +27%. So matching the harvest RATE does not reconcile the engines. The gap is
+structural: CEM applies harvest intensity to harvested conditions and projects their regrowth,
+which does not recover within the 75 yr horizon, whereas YC blends a fraction onto the reserve
+(`managed = phi*rotation + (1-phi)*reserve`), keeping (1-phi) of the land on the rising reserve
+trajectory. Two different managed-forest models, not two calibrations of one.
+
+Implication: the **reserve/conservation line is the robust, cross-engine-agreeing series** and is
+the one to publish with confidence. The CEM managed lines are engine-structure-dependent and
+should be labeled as a CEM active-management projection, not presented as comparable to the YC
+managed bucket. If a directly YC-comparable CEM managed line is wanted, CEM would need to adopt
+the blend structure (project a (1-phi) reserve share alongside the harvested share), which is a
+modeling change, not a rate tweak.
+
 ## Recommendation
 
 For the immediate PERSEUS publish, publish the **reserve** CEM forward series now (defensible,
