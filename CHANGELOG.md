@@ -1,5 +1,22 @@
 # Changelog
 
+## r22 — 6 June 2026 (landed): forward-trajectory fixes
+
+- **Root cause of the CEM forward crash:** two bugs, both fixed.
+  - Area/condition collapse (artifact): `--bootstrap_plots` resampled with replacement,
+    collapsing duplicate conditions in matching. Fixed earlier with `replace = FALSE`
+    (verified: No_harvest conditions retained 7299 -> 7299, area flat).
+  - Runaway ingrowth: `gr_tpa` lacked the `* .sat_age` age-saturation term every other growth
+    rate carries, so projected tree count compounded at up to 2.0x/cycle (No_harvest reached
+    ~21,000 TPA/acre by cycle 15) while `apply_sdimax_cap` crushed BA/carbon via the inflated
+    proj_sdi. Fixed by `patch_tpa_saturation.py` (saturate `gr_tpa` both branches; scale
+    `proj_tpa` in the cap) and `patch_qmd_reconcile.py` (derive `proj_qmd` from capped BA/TPA).
+- **Validation:** per-plot BA identity holds within 0.95% median. ME reserve carbon now rises
+  234 -> 327 (2054) -> 307 (2074), a clean accumulate-then-plateau; the 280 -> 50 crash is gone.
+- **Engine promoted** to repo canonical `R/06_projection_engine.R` (1267 lines).
+- Patch scripts in `cem_pipeline_patch/`. Full detail in `docs/AREAFIX_VERIFY_AND_INGROWTH_DIAGNOSIS_20260606.md`,
+  `docs/TPASAT_SMOKE_RESULT_20260606.md`, `docs/SESSION_HANDOFF_20260606.md`.
+
 ## r20 — 29 April 2026 (in flight)
 - Mass-balanced R14 variant: rescale owner multipliers by 1/forest-area-mean (1/0.81) so that the average plot has multiplier 1.0
 - Isolates the spatial-redistribution effect of ownership from the net rate reduction in r18/r19

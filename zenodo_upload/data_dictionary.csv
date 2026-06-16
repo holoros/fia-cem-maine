@@ -1,0 +1,17 @@
+file,column,description,units
+fia_hybrid_fullseries_<metric>.csv,state,Two-letter US state postal abbreviation (48 CONUS states),
+fia_hybrid_fullseries_<metric>.csv,scenario,"Management and disturbance scenario: reserve (no harvest) / managed (harvest|intensive|conservation), each optionally with ', disturbance-exposed' or ', mortality-stressed'",
+fia_hybrid_fullseries_<metric>.csv,year,Projection year (2025 to 2125 in 10-year steps),calendar year
+fia_hybrid_fullseries_<metric>.csv,value,State-total projected stock (central trajectory),see metric
+fia_hybrid_fullseries_<metric>.csv,lo,Lower band (stress-scenario low or disturbance-severe arm),see metric
+fia_hybrid_fullseries_<metric>.csv,hi,Upper band (unstressed / historical-rate arm),see metric
+fia_hybrid_fullseries_agc.csv,value,Above-ground live tree carbon,Tg C
+fia_hybrid_fullseries_agb.csv,value,Above-ground dry biomass,Tg dry biomass
+fia_hybrid_fullseries_vol_stem.csv,value,Live stem volume,Mm3
+fia_hybrid_fullseries_merch_vol_mcf.csv,value,Merchantable volume,Mcf
+fia_hybrid_fullseries_merch_bio_dry.csv,value,Merchantable bole dry biomass,Tg dry biomass
+fia_mgmt_shares_bystate.csv,state,Two-letter state abbreviation,
+fia_mgmt_shares_bystate.csv,n,Number of FIA membership plots in state,count
+fia_mgmt_shares_bystate.csv,reserved_share,Share of forest in FIA reserved (protected) status (RESERVCD majority),fraction
+fia_mgmt_shares_bystate.csv,planted_share,Share of forest in planted stands (STDORGCD=1),fraction
+fia_mgmt_shares_bystate.csv,harvested_share,Share of plots with observed FIA harvest treatment,fraction

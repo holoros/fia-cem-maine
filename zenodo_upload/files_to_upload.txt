@@ -1,0 +1,10 @@
+/users/PUOM0008/crsfaaron/zenodo_staging/perseus-yield-curves/zenodo_upload/README.md
+/users/PUOM0008/crsfaaron/zenodo_staging/perseus-yield-curves/zenodo_upload/data_dictionary.csv
+/users/PUOM0008/crsfaaron/zenodo_staging/perseus-yield-curves/zenodo_upload/CITATION.cff
+/users/PUOM0008/crsfaaron/zenodo_staging/perseus-yield-curves/zenodo_upload/METHODS.md
+/users/PUOM0008/crsfaaron/zenodo_staging/perseus-yield-curves/zenodo_upload/fia_mgmt_shares_bystate.csv
+/users/PUOM0008/crsfaaron/yield_curves_conus/treemap/recal_cell/fia_hybrid_fullseries_agc.csv
+/users/PUOM0008/crsfaaron/yield_curves_conus/treemap/recal_cell/fia_hybrid_fullseries_agb.csv
+/users/PUOM0008/crsfaaron/yield_curves_conus/treemap/recal_cell/fia_hybrid_fullseries_vol_stem.csv
+/users/PUOM0008/crsfaaron/yield_curves_conus/treemap/recal_cell/fia_hybrid_fullseries_merch_vol_mcf.csv
+/users/PUOM0008/crsfaaron/yield_curves_conus/treemap/recal_cell/fia_hybrid_fullseries_merch_bio_dry.csv

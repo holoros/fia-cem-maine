@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+title: "PERSEUS CONUS forest yield curves: FIA hybrid + recalibrated growth projections (48 states, five stock metrics, twelve scenarios)"
+type: dataset
+authors:
+  - family-names: Weiskittel
+    given-names: Aaron
+    orcid: "https://orcid.org/0000-0003-2534-4478"
+    affiliation: "University of Maine, Center for Research on Sustainable Forests"
+version: "1.0.0"
+date-released: "2026-06-04"
+license: CC-BY-4.0
+keywords:
+  - forest inventory and analysis
+  - FIA
+  - forest carbon
+  - yield curves
+  - growth and yield
+  - CONUS
+  - aboveground biomass
+  - timber volume
+  - forest management scenarios
+repository-code: "https://github.com/holoros/perseus-forest-intelligence"
+url: "https://holoros.github.io/perseus-forest-intelligence"

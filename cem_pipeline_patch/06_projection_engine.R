@@ -646,11 +646,19 @@ project_one_cycle <- function(subjects, remeasured, scenario,
   # zero at the terminal age (120 for Maine northern hardwood-conifer mixes).
   # Both growth-rate departures and the climate multiplier are attenuated
   # by the same saturation factor.
-  terminal_age     <- cfg$terminal_age     %||% 120
+  terminal_age     <- cfg$terminal_age     %||% state_const$terminal_age %||% 120  # R-stateTerm: per-state terminal age (GA 80, WA 200, MN 110); ME 120 unchanged
   growth_start_age <- cfg$growth_start_age %||% 60
-  sat_for_age <- function(age) {
-    age <- pmin(pmax(coalesce(age, 0), 0), terminal_age)
-    pmax(0, pmin(1, (terminal_age - age) / (terminal_age - growth_start_age)))
+  # R-plantTerm: optional stand-origin-aware rotation age. Planted stands
+  # (STDORGCD==1) use a shorter terminal/rotation age so plantation carbon does
+  # not over-accumulate toward the natural terminal age. NULL -> unchanged.
+  plant_term   <- cfg$plantation_terminal_age
+  plant_gstart <- cfg$plantation_growth_start %||% 15
+  .row_term <- function(stdorg) if (is.null(plant_term)) rep(terminal_age, length(stdorg)) else dplyr::if_else(dplyr::coalesce(stdorg, 0L) == 1L, as.numeric(plant_term), as.numeric(terminal_age))
+  .row_gstart <- function(stdorg) if (is.null(plant_term)) rep(growth_start_age, length(stdorg)) else dplyr::if_else(dplyr::coalesce(stdorg, 0L) == 1L, as.numeric(plant_gstart), as.numeric(growth_start_age))
+  sat_for_age <- function(age, term = terminal_age, gstart = growth_start_age) {
+    term  <- pmax(term, gstart + 5)
+    age   <- pmin(pmax(coalesce(age, 0), 0), term)
+    pmax(0, pmin(1, (term - age) / (term - gstart)))
   }
 
   # -- BRMS Reineke SDImax cap (R5) -----------------------------------------
@@ -746,8 +754,12 @@ project_one_cycle <- function(subjects, remeasured, scenario,
       dplyr::left_join(as.data.frame(brms_lookup), by = c("PLT_CN_chr" = "PLT_CN")) |>
       dplyr::left_join(as.data.frame(fortyp_state_lookup), by = c("STATECD","FORTYPCD")) |>
       dplyr::mutate(
-        sdimax_eng = dplyr::coalesce(sdimax_eng_plot, sdimax_eng_fortyp,
-                                       GLOBAL_SDIMAX_DEFAULT_ENG),
+        sdimax_eng = dplyr::coalesce(
+          # sdiGuard fix (20260608): accept plot/fortyp SDImax only within a sane
+          # imperial band [150, 800] trees/acre; else fall through to the default.
+          dplyr::if_else(dplyr::between(sdimax_eng_plot,   150, 800), sdimax_eng_plot,   NA_real_),
+          dplyr::if_else(dplyr::between(sdimax_eng_fortyp, 150, 800), sdimax_eng_fortyp, NA_real_),
+          GLOBAL_SDIMAX_DEFAULT_ENG),
         proj_sdi   = proj_tpa * (proj_qmd / 10)^REINEKE_EXP,
         sdi_ratio  = pmin(1, sdimax_eng / pmax(0.1, proj_sdi)),
         # Apply ratio to BA and biomass-related columns
@@ -755,7 +767,16 @@ project_one_cycle <- function(subjects, remeasured, scenario,
         proj_volcfnet = proj_volcfnet * sdi_ratio,
         proj_volcsnet = if ("proj_volcsnet" %in% names(df)) proj_volcsnet * sdi_ratio else proj_volcsnet,
         proj_drybio   = proj_drybio   * sdi_ratio,
-        proj_carbon   = proj_carbon   * sdi_ratio
+        proj_carbon   = proj_carbon   * sdi_ratio,
+        # tpaSat fix (20260606): bind the SDImax cap on tree count too, so
+        # proj_tpa stays on the Reineke line and TPA/BA/QMD stay consistent.
+        # QMD is held; TPA and BA both scale by sdi_ratio.
+        proj_tpa      = proj_tpa      * sdi_ratio,
+        # qmdRecon fix (20260606): derive QMD from the capped BA and TPA so
+        # BA = TPA * 0.005454 * QMD^2 holds exactly (closes the BA/QMD decoupling).
+        proj_qmd      = dplyr::if_else(proj_tpa > 0,
+                                       sqrt(proj_BA / (proj_tpa * 0.005454)),
+                                       proj_qmd)
       ) |>
       dplyr::select(-PLT_CN_chr, -sdimax_eng_plot, -sdimax_eng_fortyp,
                     -sdimax_eng, -proj_sdi, -sdi_ratio)
@@ -778,7 +799,7 @@ project_one_cycle <- function(subjects, remeasured, scenario,
       # Age-class saturation (Wear 2019): unity for stands <=60 yr, decays
       # linearly to zero at terminal_age (120). Used to attenuate both donor
       # growth-rate departures and the climate multiplier in mature stands.
-      .sat_age     = sat_for_age(STDAGE),
+      .sat_age     = sat_for_age(STDAGE, .row_term(STDORGCD), .row_gstart(STDORGCD)),  # R-plantTerm
       # Growth rates from donor (T2 / T1), capped to [0.5, 2.0] per 5yr cycle
       # so extreme donor ratios do not dominate. Saturation ramps the
       # departure from 1.0 rather than the raw multiplier itself, so under
@@ -791,25 +812,30 @@ project_one_cycle <- function(subjects, remeasured, scenario,
                        else 1.0,
       gr_drybio    = 1 + (pmin(pmax(if_else(d_drybio_ag > 0, T2_drybio_ag / d_drybio_ag, 1.0), 0.5), 2.0) - 1) * .sat_age,
       gr_carbon    = 1 + (pmin(pmax(if_else(d_carbon_ag > 0, T2_carbon_ag / d_carbon_ag, 1.0), 0.5), 2.0) - 1) * .sat_age,
-      gr_tpa       = pmin(pmax(if_else(d_tpa_live > 0,  T2_tpa_live / d_tpa_live, 1.0),  0.5), 2.0),
+      gr_tpa       = 1 + (pmin(pmax(if_else(d_tpa_live > 0,  T2_tpa_live / d_tpa_live, 1.0),  0.5), 2.0) - 1) * .sat_age,
       gr_qmd       = pmin(pmax(if_else(d_qmd > 0,       T2_qmd / d_qmd, 1.0),       0.7), 1.5),
       # Climate multiplier similarly attenuated to avoid compounding in
       # mature stands under warming scenarios.
       .cm          = 1 + (climate_mult - 1) * .sat_age,
+      .anchor_pc    = if (isTRUE(getOption("cem.asym_anchor", FALSE))) {   # R-asymAnchor
+                        .ar <- (coalesce(asym_agb, donor_asym) / pmax(coalesce(donor_asym, asym_agb), 1e-6))^(as.numeric(getOption("cem.asym_anchor_strength", 1)) / max(cfg$n_cycles, 1L))
+                        .ar[is.na(.ar)] <- 1; pmin(pmax(.ar, 0.90), 1.12)
+                      } else 1,
       # Apply donor growth rate to subject's own level, times climate multiplier
-      proj_BA       = BA * gr_BA * .cm,
-      proj_volcfnet = volcfnet * gr_volcfnet * .cm,
-      proj_volcsnet = if ("volcsnet" %in% names(not_harvested)) volcsnet * gr_volcsnet * .cm else NA_real_,
-      proj_drybio   = drybio_ag * gr_drybio * .cm,
-      proj_carbon   = carbon_ag * gr_carbon * .cm,
+      proj_BA       = BA * gr_BA * .cm * .anchor_pc,
+      proj_volcfnet = volcfnet * gr_volcfnet * .cm * .anchor_pc,
+      proj_volcsnet = if ("volcsnet" %in% names(not_harvested)) volcsnet * gr_volcsnet * .cm * .anchor_pc else NA_real_,
+      proj_drybio   = drybio_ag * gr_drybio * .cm * .anchor_pc,
+      proj_carbon   = carbon_ag * gr_carbon * .cm * .anchor_pc,
       proj_tpa      = tpa_live * gr_tpa,
       proj_qmd      = qmd * gr_qmd,
+      harv_c_total = 0, harv_c_saw = 0, harv_c_pulp = 0, harv_c_residue = 0,   # R-hwpEmit
       cycle         = cycle_num,
       sim           = sim_id,
       was_harvested = FALSE,
       was_planted   = FALSE,
       was_unmatched = FALSE
-    ) |> select(-.sat_age, -.cm),
+    ) |> select(-.sat_age, -.cm, -.anchor_pc),
     harvested_plots |> mutate(
       # Harvested: growth rate applied, then reduced by harvest intensity.
       # Age setback differs by cut type (Wear 2019 Table 2):
@@ -819,7 +845,7 @@ project_one_cycle <- function(subjects, remeasured, scenario,
       # If the is_clearcut column is absent (Maine econ overlay disabled),
       # fall back to partial treatment for backward compatibility.
       .is_cc       = coalesce(is_clearcut, FALSE),
-      .sat_age     = if_else(.is_cc, sat_for_age(0), sat_for_age(pmax(0, STDAGE - 40))),
+      .sat_age     = if_else(.is_cc, sat_for_age(0, .row_term(STDORGCD), .row_gstart(STDORGCD)), sat_for_age(pmax(0, STDAGE - 40), .row_term(STDORGCD), .row_gstart(STDORGCD))),  # R-plantTerm
       gr_BA        = 1 + (pmin(pmax(if_else(d_BA > 0,        T2_BA / d_BA,        1.0), 0.5), 2.0) - 1) * .sat_age,
       gr_volcfnet  = 1 + (pmin(pmax(if_else(d_volcfnet > 0,  T2_volcfnet / d_volcfnet,  1.0), 0.5), 2.0) - 1) * .sat_age,
       gr_volcsnet  = if ("d_volcsnet" %in% names(harvested_plots) & "T2_volcsnet" %in% names(harvested_plots))
@@ -827,22 +853,30 @@ project_one_cycle <- function(subjects, remeasured, scenario,
                        else 1.0,
       gr_drybio    = 1 + (pmin(pmax(if_else(d_drybio_ag > 0, T2_drybio_ag / d_drybio_ag, 1.0), 0.5), 2.0) - 1) * .sat_age,
       gr_carbon    = 1 + (pmin(pmax(if_else(d_carbon_ag > 0, T2_carbon_ag / d_carbon_ag, 1.0), 0.5), 2.0) - 1) * .sat_age,
-      gr_tpa       = pmin(pmax(if_else(d_tpa_live > 0,  T2_tpa_live / d_tpa_live, 1.0),  0.5), 2.0),
+      gr_tpa       = 1 + (pmin(pmax(if_else(d_tpa_live > 0,  T2_tpa_live / d_tpa_live, 1.0),  0.5), 2.0) - 1) * .sat_age,
       gr_qmd       = pmin(pmax(if_else(d_qmd > 0,       T2_qmd / d_qmd, 1.0),       0.7), 1.5),
       .cm          = 1 + (climate_mult - 1) * .sat_age,
-      proj_BA       = BA * gr_BA * .cm * (1 - harvest_intensity),
-      proj_volcfnet = volcfnet * gr_volcfnet * .cm * (1 - harvest_intensity),
-      proj_volcsnet = if ("volcsnet" %in% names(harvested_plots)) volcsnet * gr_volcsnet * .cm * (1 - harvest_intensity) else NA_real_,
-      proj_drybio   = drybio_ag * gr_drybio * .cm * (1 - harvest_intensity),
-      proj_carbon   = carbon_ag * gr_carbon * .cm * (1 - harvest_intensity),
+      .anchor_pc    = if (isTRUE(getOption("cem.asym_anchor", FALSE))) {   # R-asymAnchor
+                        .ar <- (coalesce(asym_agb, donor_asym) / pmax(coalesce(donor_asym, asym_agb), 1e-6))^(as.numeric(getOption("cem.asym_anchor_strength", 1)) / max(cfg$n_cycles, 1L))
+                        .ar[is.na(.ar)] <- 1; pmin(pmax(.ar, 0.90), 1.12)
+                      } else 1,
+      proj_BA       = BA * gr_BA * .cm * .anchor_pc * (1 - harvest_intensity),
+      proj_volcfnet = volcfnet * gr_volcfnet * .cm * .anchor_pc * (1 - harvest_intensity),
+      proj_volcsnet = if ("volcsnet" %in% names(harvested_plots)) volcsnet * gr_volcsnet * .cm * .anchor_pc * (1 - harvest_intensity) else NA_real_,
+      proj_drybio   = drybio_ag * gr_drybio * .cm * .anchor_pc * (1 - harvest_intensity),
+      proj_carbon   = carbon_ag * gr_carbon * .cm * .anchor_pc * (1 - harvest_intensity),
       proj_tpa      = tpa_live * gr_tpa * (1 - harvest_intensity * 0.7),
       proj_qmd      = qmd * gr_qmd * sqrt(1 - harvest_intensity * 0.3),
+      harv_c_total   = carbon_ag * gr_carbon * .cm * harvest_intensity,                                          # R-hwpEmit
+      harv_c_saw     = ifelse(coalesce(vol_removed_total, 0) > 0, harv_c_total * coalesce(vol_removed_sawtimber, 0) / vol_removed_total, 0),  # R-hwpEmit
+      harv_c_pulp    = ifelse(coalesce(vol_removed_total, 0) > 0, harv_c_total * coalesce(vol_removed_pulpwood,  0) / vol_removed_total, 0),  # R-hwpEmit
+      harv_c_residue = pmax(harv_c_total - harv_c_saw - harv_c_pulp, 0),                                          # R-hwpEmit
       cycle         = cycle_num,
       sim           = sim_id,
       was_harvested = TRUE,
       was_planted   = coalesce(planted, FALSE),
       was_unmatched = FALSE
-    ) |> select(-.sat_age, -.cm, -.is_cc),
+    ) |> select(-.sat_age, -.cm, -.is_cc, -.anchor_pc),
     # Unmatched subjects: no growth / no change. Uses T1 (subject) values
     # as the projected values so downstream aggregation treats them as
     # steady-state. pre_* = T2_* = projected = subject values. Product
@@ -874,6 +908,7 @@ project_one_cycle <- function(subjects, remeasured, scenario,
       proj_carbon   = carbon_ag,
       proj_tpa      = tpa_live,
       proj_qmd      = qmd,
+      harv_c_total = 0, harv_c_saw = 0, harv_c_pulp = 0, harv_c_residue = 0,   # R-hwpEmit
       cycle         = cycle_num,
       sim           = sim_id,
       was_harvested = FALSE,
@@ -1086,7 +1121,7 @@ run_monte_carlo <- function(data_list, scenarios = NULL, cfg = CONFIG) {
         set.seed(cfg$seed + sim * 17L)
         n_sub <- nrow(data_list$subjects)
         sub_idx <- sample.int(n_sub, size = round(n_sub * boot_frac),
-                              replace = TRUE)
+                              replace = FALSE)  # R-areafix: no-replace avoids duplicate collapse in matching
         sim_data$subjects <- data_list$subjects[sub_idx, , drop = FALSE]
         if (!is.null(data_list$remeasured)) {
           n_rem <- nrow(data_list$remeasured)

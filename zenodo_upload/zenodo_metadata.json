@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "PERSEUS CONUS forest yield curves: FIA hybrid + recalibrated growth projections (48 states, five stock metrics, twelve scenarios)",
+    "upload_type": "dataset",
+    "publication_date": "2026-06-04",
+    "creators": [
+      {
+        "name": "Weiskittel, Aaron",
+        "affiliation": "University of Maine, Center for Research on Sustainable Forests",
+        "orcid": "0000-0003-2534-4478"
+      }
+    ],
+    "description": "<p>One-hundred-year projected forest stock trajectories for the 48 conterminous United States, derived from USDA Forest Inventory and Analysis (FIA) plot data with the PERSEUS hybrid yield-curve engine. Five stock metrics (above-ground live carbon, above-ground dry biomass, live stem volume, merchantable volume, merchantable bole biomass) are projected at the state level from 2025 to 2125 in 10-year steps, under twelve management and disturbance scenarios.</p><p>Stocks are projected on a hybrid Chapman-Richards growth curve with a senescence decline tail, recalibrated to the FIA longitudinal remeasurement increment and capped at the 95th percentile of observed standing stock, fit per forest-type by EPA level-3 ecoregion by ownership cell. Managed scenarios apply an owner-typical harvest regime to a FIADB-derived fraction of the land base (observed harvest share for business-as-usual and conservation, plantation share for intensive), with FIA reserved (protected) plots excluded; this calibrates harvest intensity to the observed landscape rather than a whole-landscape rotation. Disturbance-exposed and mortality-stressed variants apply FIA-calibrated disturbance and density-mortality drags.</p><p>This is the data layer behind the PERSEUS Forest Intelligence dashboard (https://holoros.github.io/perseus-forest-intelligence). Source code, decision records, and methods notes are at https://github.com/holoros/perseus-forest-intelligence. Underlying FIA data are public domain (USDA Forest Service).</p>",
+    "keywords": [
+      "forest inventory and analysis",
+      "FIA",
+      "forest carbon",
+      "yield curves",
+      "growth and yield",
+      "CONUS",
+      "aboveground biomass",
+      "timber volume",
+      "forest management scenarios",
+      "TreeMap"
+    ],
+    "license": "cc-by-4.0",
+    "version": "1.0.0",
+    "access_right": "open",
+    "language": "eng",
+    "communities": [
+      {"identifier": "forestry"}
+    ]
+  }
+}
